@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Jannis Bolzern and Elke Michlmayr">
 
-<title>Preprocessing: monthly home ranges</title>
+<title>How does human activity affect the movement patterns of wild animals?</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,72 +21,104 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
 }
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
 }
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-</style>
-
-
-<script src="preprocessing_monthly_home_ranges_files/libs/clipboard/clipboard.min.js"></script>
-<script src="preprocessing_monthly_home_ranges_files/libs/quarto-html/quarto.js"></script>
-<script src="preprocessing_monthly_home_ranges_files/libs/quarto-html/popper.min.js"></script>
-<script src="preprocessing_monthly_home_ranges_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="preprocessing_monthly_home_ranges_files/libs/quarto-html/anchor.min.js"></script>
-<link href="preprocessing_monthly_home_ranges_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="preprocessing_monthly_home_ranges_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="preprocessing_monthly_home_ranges_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="preprocessing_monthly_home_ranges_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="preprocessing_monthly_home_ranges_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+}</script>
 
 
 </head>
 
-<body class="fullcontent">
+<body>
 
-<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
-
+<div id="quarto-search-results"></div>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="index.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></div>
+<!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Preprocessing: monthly home ranges</h1>
+<h1 class="title">How does human activity affect the movement patterns of wild animals?</h1>
+<p class="subtitle lead">An analysis of selected data sets from the Movebank animal tracking database</p>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Jannis Bolzern and Elke Michlmayr </p>
+          </div>
+  </div>
     
   
     
@@ -96,950 +129,256 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
+<section id="abstract" class="level1">
+<h1>Abstract</h1>
+<p>We investigate how human activity influences the movement patterns of wild animals. Using tracking data from red foxes, bobcats, and coyotes across rural and remote areas in England, Canada, and the US, we analyze home range sizes, temporal activity shifts, and habitat selection in relation to human footprint and land use data.</p>
+</section>
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<p>Research questions:</p>
+<ol type="1">
+<li>Home Range Implications: Do animals exhibit smaller home ranges in high human-impact areas? Similar to <span class="citation" data-cites="doherty2021human">Doherty, Hays, and Driscoll (<a href="#ref-doherty2021human" role="doc-biblioref">2021</a>)</span> (TBD download via ZHAW)</li>
+<li>Temporal Shifts in Activity Patterns: Do animals become more nocturnal in high human-impact areas to avoid direct human encounters?</li>
+<li>Habitat Selection in Human-Dominated Landscapes: How do animals select habitats (e.g., forests, agriculture) under varying levels of human influence?</li>
+</ol>
+<p>Different data sets will be used for each research question. Relying on Movebank data, as described in <a href="#sec-movebank" class="quarto-xref">Section&nbsp;3.2.1</a>, presents additional challenges stemming from the facts that (1) the data will be used for purposes it was not originally collected for and (2) data from different studies that was collected in different manners will be compared, and (3) subsets for existing data set will be employed, i.e.&nbsp;only some of the animals from the existing studies are considered.</p>
+</section>
+<section id="material-and-methods" class="level1">
+<h1>Material and Methods</h1>
+<p>This section describes the data sets, the steps taken to prepare and process the different data sets in use, and the methodological approach that was employed.</p>
+<section id="data-sets" class="level2">
+<h2 class="anchored" data-anchor-id="data-sets">Data sets</h2>
+<p>The Movebank database by <span class="citation" data-cites="kays2022movebank">Kays et al. (<a href="#ref-kays2022movebank" role="doc-biblioref">2022</a>)</span> provides means for researchers to publish animal tracking data for public use, e.g.&nbsp;under Creative Commons licenses. The following data was selected:</p>
+<ul>
+<li>Red fox data from <span class="citation" data-cites="porteus2024movement">Porteus et al. (<a href="#ref-porteus2024movement" role="doc-biblioref">2024</a>)</span> for the outskirt areas of villages in Wiltshire, UK and from <span class="citation" data-cites="lai2022red">Lai et al. (<a href="#ref-lai2022red" role="doc-biblioref">2022</a>)</span> for the highly remote uninhabitated islands Bylot and Herschel, Canada, and</li>
+<li>Bobcat and coyote data from <span class="citation" data-cites="prugh2023fear">Prugh et al. (<a href="#ref-prugh2023fear" role="doc-biblioref">2023</a>)</span> for remote areas with some rural structures in northern Washington, US.</li>
+</ul>
+<p>For the human footprint data, the global 100 meter resolution terrestrial human footprint data (HFP-100) by <span class="citation" data-cites="gassert2023operational">Gassert et al. (<a href="#ref-gassert2023operational" role="doc-biblioref">2023</a>)</span> was chosen. For land use, the ESA WorldCover data <span class="citation" data-cites="zanaga2022esa">Zanaga et al. (<a href="#ref-zanaga2022esa" role="doc-biblioref">2022</a>)</span> is employed.</p>
+</section>
+<section id="data-preparation-and-processing" class="level2">
+<h2 class="anchored" data-anchor-id="data-preparation-and-processing">Data preparation and processing</h2>
+<section id="sec-movebank" class="level3">
+<h3 class="anchored" data-anchor-id="sec-movebank">Movebank</h3>
+<p>All Movebank data sets have the same schema. This simplifies data handling, enables code re-use, and requires the data contributors do perform preprocessing and data cleaning on their side to provide the data in an appropriate format. A library for data processing and trajectory handling in R is provided by <span class="citation" data-cites="kranstauber2024move2">Kranstauber, Safi, and Scharf (<a href="#ref-kranstauber2024move2" role="doc-biblioref">2024</a>)</span>.</p>
+<p>The R code for data download, preprocessing, and serialization of relevant data and charts can be found the the following linked documents: <a href="https://elkeelke.github.io/MovebankProject/preprocessing_uk_wader_nesting_season_home_range.html">Red fox: UK wader nesting season home range</a>, <a href="https://elkeelke.github.io/MovebankProject/preprocessing_monthly_home_ranges.html">Red fox: montly home ranges</a>.</p>
+</section>
+<section id="hrp-100" class="level3">
+<h3 class="anchored" data-anchor-id="hrp-100">HRP-100</h3>
+<p>This raster data set uses the Mollweide projection as described by <span class="citation" data-cites="lapaine2011mollweide">Lapaine (<a href="#ref-lapaine2011mollweide" role="doc-biblioref">2011</a>)</span>. The 2020 version of the data was used. Since the data set is very large, only the relevant areas were downloaded using a 200 km buffer around the tracking points.</p>
+</section>
+<section id="esa-worldcover" class="level3">
+<h3 class="anchored" data-anchor-id="esa-worldcover">ESA WorldCover</h3>
+<p>The ESA WorldCover 2021 data at 10m resolution was downloaded via the Microsoft Planetary Computer STAC API <a href="https://planetarycomputer.microsoft.com/docs/quickstarts/reading-stac/">[link]</a> for simple programmatic access in R.</p>
+</section>
+</section>
+<section id="data-exploration-and-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="data-exploration-and-analysis">Data exploration and analysis</h2>
+<section id="sec-redfoxdata" class="level3">
+<h3 class="anchored" data-anchor-id="sec-redfoxdata">Red fox data</h3>
+<p>The Wiltshire data was collected between 2016 to 2019 during the UK wader nesting season, which was defined to be March 15th to June 15th, for 35 foxes in total. It was sampled at 10 or 60 minute rates. The research team could set the sampling rate remotely to save battery at times the data was considered less interesting.</p>
+<p>The Bylot/Herschel Canadian data was collected all year round, at a much lower sampling rate of once per day, at random afternoon times of the day. The collection period was June 2009 to Feb 2010 for Herschel and from 2011 to 2015 for Bylot, for two foxes per island. <a href="#fig-datapoints-year" class="quarto-xref">Figure&nbsp;1</a> provides an overview of the amount of data points available per year. There is much more data from Wiltshire because of the higher number of foxes and the higher sampling rate.</p>
+<div id="fig-datapoints-year" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-datapoints-year-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/year_count.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-datapoints-year-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Data points per year
+</figcaption>
+</figure>
+</div>
+<p>Looking at the breakdowns by month as shown in <a href="#fig-datapoints-month" class="quarto-xref">Figure&nbsp;2</a> reveals seasonal differences in the amount of data available.</p>
+<div id="fig-datapoints-month" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-datapoints-month-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/month_count.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-datapoints-month-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Data points per month
+</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="sec-methodology" class="level2">
+<h2 class="anchored" data-anchor-id="sec-methodology">Methodology</h2>
+<section id="trajectory-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="trajectory-analysis">Trajectory Analysis</h3>
+<p>Movement paths will be analyzed to identify patterns in speed, direction, and habitat use. Step lengths and turning angles will help infer behavioral states. Step-selection functions (SSFs) as described by <span class="citation" data-cites="fortin2005wolves">Fortin et al. (<a href="#ref-fortin2005wolves" role="doc-biblioref">2005</a>)</span> will be employed as a statistical model for habitat preferences relative to movement patterns, allowing us to quantify how animals respond to environmental covariates such as human footprint and land use.</p>
+</section>
+<section id="home-range-assessment" class="level3">
+<h3 class="anchored" data-anchor-id="home-range-assessment">Home Range Assessment</h3>
+<p>The red fox data will be used for home range assessment present for a rural and a remote location. Home range sizes will be calculated using minimum convex polygons (MCPs). This will provide estimates of the area used by each individual.</p>
+<p>As discussed in <a href="#sec-redfoxdata" class="quarto-xref">Section&nbsp;3.3.1</a>, the data for the two locations have different temporal scale. <span class="citation" data-cites="laube2011">Laube and Purves (<a href="#ref-laube2011" role="doc-biblioref">2011</a>)</span> have found that the choice of temporal scale has considerable effects on movement parameter calculations, in turn affecting home range results.</p>
+<p>How to make this data comparable? Problem #1 is that the sampling intervals are different. Problem #2 is that the data coverage varies by time of the year. Problem #3 is that there are highly different amounts of data. Selecting the means and parameters for the comparison involves complex choices that will influence the results.</p>
+<p>For #1, a possible approach to achieve similar sampling intervals would be to sample a random afternoon data point for each 24 hour window. However, this would include the implicit assumption that foxes will follow similar daily patterns in the different environments. For #2, a possible approach would be to compare the data for the same time of the year. However, the geographical locations are different. The seasonal weather conditions will differ for the same day of the year, likely leading to different animal behavior. For #3, aggregated comparisons can solve the issue, assuming there is enough data for the smaller data source.</p>
+<p>For data exploration the simplest possible imperfect approach was employed, which is to ignore the different sampling intervals for problem #1, to compare the data for the same time of the year for problem #2 even if animal behavior might be different, and to use exploratory data analysis to find out if a representative answer can be found given the amount of data present for problem #3. Note that this approach has obvious limits. Among them is that the Herschel data is not applicable, since it has minimal overlaps with the Wiltshire data (cf. <a href="#fig-datapoints-month" class="quarto-xref">Figure&nbsp;2</a>).</p>
+<p>To explore the impact of sampling intervals for problem #1, the home ranges for the Wiltshire data were additionally calculated on downsampled data, where a random data point from every 24 hour period was selected. Finally, an analysis of monthly home ranges was conducted on all three data sets as an alternative solution to address problem #2.</p>
+</section>
+<section id="temporal-activity-patterns" class="level3">
+<h3 class="anchored" data-anchor-id="temporal-activity-patterns">Temporal Activity Patterns</h3>
+<p>Movement rates will be used to quantify diel activity shifts. We will test whether animals in high human-impact areas exhibit increased nocturnality, potentially as a strategy to avoid direct human encounters. This analysis will reveal how temporal behavior adapts to human presence.</p>
+</section>
+<section id="habitat-selection" class="level3">
+<h3 class="anchored" data-anchor-id="habitat-selection">Habitat Selection</h3>
+<p>SSFs will quantify selection for human-modified habitats (e.g., agricultural areas, urban edges) relative to natural habitats. By comparing selection patterns across species and regions, we will assess how habitat preferences vary with human influence.</p>
+</section>
+</section>
+</section>
+<section id="results" class="level1">
+<h1>Results</h1>
+<p>The resulting home ranges for the UK wader nesting season time frame are shown in <a href="#fig-home-ranges-bylot" class="quarto-xref">Figure&nbsp;3</a> and <a href="#fig-home-ranges-wiltshire" class="quarto-xref">Figure&nbsp;4</a>. The median home rage size for the foxes in Herschel (75.3 km<sup>2</sup>) is more than 65 times bigger compared to the foxes in Wiltshire (1.1 km<sup>2</sup>). The home range for the sampled Wiltshire data is shown in <a href="#fig-home-ranges-wiltshire-sampled24h" class="quarto-xref">Figure&nbsp;5</a>. It is 0.56 km<sup>2</sup> for the sampled data, which is roughly half as for the full data. This demonstrates that the influence of sampling intervals is definitely present, but is dwarfed in comparison to the difference in fox behavior.</p>
+<p>The same effect with differences in order of magnitude between remote and rural fox home range can be seen <a href="#fig-home-ranges-boxplot" class="quarto-xref">Figure&nbsp;6</a> which shows the results for monthly home ranges.</p>
+<div id="fig-home-ranges-bylot" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-home-ranges-bylot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/home_range_bylot_wader.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-home-ranges-bylot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Home ranges for Bylot foxes (March 15th to June 15th, 2012)
+</figcaption>
+</figure>
+</div>
+<div id="fig-home-ranges-wiltshire" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-home-ranges-wiltshire-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/home_range_wiltshire_wader.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-home-ranges-wiltshire-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Home ranges for Wiltshire foxes (March 15th to June 15th, 2019)
+</figcaption>
+</figure>
+</div>
+<div id="fig-home-ranges-wiltshire-sampled24h" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-home-ranges-wiltshire-sampled24h-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/home_range_wiltshire_wader_sampled.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-home-ranges-wiltshire-sampled24h-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: Home ranges for Wiltshire foxes (March 15th to June 15th, 2019, 24 hour sampling interval)
+</figcaption>
+</figure>
+</div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"dplyr"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>
-Attaching package: 'dplyr'</code></pre>
+<div class="cell-output-display">
+<div id="fig-home-ranges-boxplot" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-home-ranges-boxplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="index_files/figure-html/fig-home-ranges-boxplot-1.png" class="img-fluid figure-img" width="672">
 </div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following objects are masked from 'package:stats':
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-home-ranges-boxplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6: Box plot comparing monthly home ranges (outliers removed)
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<section id="result-validation" class="level2">
+<h2 class="anchored" data-anchor-id="result-validation">Result validation</h2>
+</section>
+</section>
+<section id="discussion" class="level1">
+<h1>Discussion</h1>
+<p>The fox home range results differ enormously between rural and remote areas. We can conclude that human presence impacts fox movement behavior significantly, with availability of anthropogenic food sources likely being relevant. The influence of technical aspects like sampling intervals on home range calculation results is significant. However, it plays a secondary role in comparison to the difference in fox behavior, which enables the chosen approach of comparing data from heterogeneous sources.</p>
+</section>
+<section id="appendix" class="level1">
+<h1>Appendix</h1>
+<section id="dont-do" class="level2">
+<h2 class="anchored" data-anchor-id="dont-do">Don’t do</h2>
+<ul>
+<li>There are several ways to calculate home range, we could compare (and could focus on only that)</li>
+<li>Do home range for foxes first, for bobcat and coyote data later, potentially even cross-species analysis</li>
+<li>Use kernel density estimation (KDE)</li>
+</ul>
+</section>
+<section id="wordcount" class="level2">
+<h2 class="anchored" data-anchor-id="wordcount">Wordcount</h2>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Method</th>
+<th style="text-align: left;">koRpus</th>
+<th style="text-align: left;">stringi</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Word count</td>
+<td style="text-align: left;">1457</td>
+<td style="text-align: left;">1450</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Character count</td>
+<td style="text-align: left;">9373</td>
+<td style="text-align: left;">9396</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Sentence count</td>
+<td style="text-align: left;">85</td>
+<td style="text-align: left;">Not available</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Reading time</td>
+<td style="text-align: left;">7.3 minutes</td>
+<td style="text-align: left;">7.2 minutes</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="use-of-large-language-models-and-generative-ai" class="level2">
+<h2 class="anchored" data-anchor-id="use-of-large-language-models-and-generative-ai">Use of Large Language Models and Generative AI</h2>
+<p>Elke used <span class="citation" data-cites="notebooklm">NotebookLM (<a href="#ref-notebooklm" role="doc-biblioref">2025</a>)</span> for querying the papers cited in the references.</p>
+</section>
+</section>
+<section id="references" class="level1">
 
-    filter, lag</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following objects are masked from 'package:base':
 
-    intersect, setdiff, setequal, union</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"move2"</span>)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"units"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>udunits database from /Users/elkemichlmayr/Library/R/arm64/4.4/library/units/share/udunits/udunits2.xml</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"rnaturalearth"</span>)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"lubridate"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>
-Attaching package: 'lubridate'</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following objects are masked from 'package:base':
 
-    date, intersect, setdiff, union</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"sf"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Linking to GEOS 3.11.0, GDAL 3.5.3, PROJ 9.1.0; sf_use_s2() is TRUE</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"readr"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Registered S3 methods overwritten by 'readr':
-  method                    from 
-  as.data.frame.spec_tbl_df vroom
-  as_tibble.spec_tbl_df     vroom
-  format.col_spec           vroom
-  print.col_spec            vroom
-  print.collector           vroom
-  print.date_names          vroom
-  print.locale              vroom
-  str.col_spec              vroom</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"ggplot2"</span>) <span class="co"># Keep ggplot related parts even if inaccessible.</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>flatten_array <span class="ot">&lt;-</span> <span class="cf">function</span>(areas) {</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  all_areas <span class="ot">&lt;-</span> <span class="fu">c</span>()</span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (area <span class="cf">in</span> areas) {</span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>    all_areas <span class="ot">&lt;-</span> <span class="fu">c</span>(all_areas, area)</span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(all_areas)</span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>calculate_monthly_home_ranges <span class="ot">&lt;-</span> <span class="cf">function</span>(ts_start, num_months, study_id, license_string_with_quotes) {</span>
-<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>  areas <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
-<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>  gg <span class="ot">&lt;-</span> <span class="fu">ggplot</span>()</span>
-<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>  ts_end <span class="ot">&lt;-</span> <span class="fu">add_with_rollback</span>(ts_start, <span class="fu">months</span>(<span class="dv">1</span>))</span>
-<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>num_months) {</span>
-<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(i)</span>
-<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tryCatch</span>({</span>
-<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>      foxes <span class="ot">&lt;-</span> <span class="fu">movebank_download_study</span>(</span>
-<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>        <span class="at">study_id =</span> study_id,</span>
-<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a>        <span class="st">'license-md5'</span><span class="ot">=</span>license_string_with_quotes,</span>
-<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a>        <span class="at">timestamp_start =</span> ts_start,</span>
-<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a>        <span class="at">timestamp_end =</span> ts_end</span>
-<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a>      ) </span>
-<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a>      tracks <span class="ot">&lt;-</span> <span class="fu">mt_track_lines</span>(foxes)</span>
-<span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a>      mcp <span class="ot">&lt;-</span> <span class="fu">st_convex_hull</span>(tracks)</span>
-<span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a>      areas[[i]] <span class="ot">&lt;-</span> <span class="fu">st_area</span>(mcp)</span>
-<span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a>      gg <span class="ot">&lt;-</span> gg <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="at">data =</span> mcp, <span class="fu">aes</span>(<span class="at">fill =</span> <span class="fu">as.factor</span>(individual_id)), <span class="at">alpha =</span> <span class="fl">0.4</span>)</span>
-<span id="cb14-28"><a href="#cb14-28" aria-hidden="true" tabindex="-1"></a>    }, <span class="at">error =</span> <span class="cf">function</span>(e) {</span>
-<span id="cb14-29"><a href="#cb14-29" aria-hidden="true" tabindex="-1"></a>      <span class="co"># There will be an error if there is no data for a month. This does happen</span></span>
-<span id="cb14-30"><a href="#cb14-30" aria-hidden="true" tabindex="-1"></a>      <span class="co"># in practice since some of the studies ran only for parts of the year.</span></span>
-<span id="cb14-31"><a href="#cb14-31" aria-hidden="true" tabindex="-1"></a>      <span class="co"># The error is expected and of no concern. We just want to skip the month.</span></span>
-<span id="cb14-32"><a href="#cb14-32" aria-hidden="true" tabindex="-1"></a>      <span class="fu">print</span>(e)</span>
-<span id="cb14-33"><a href="#cb14-33" aria-hidden="true" tabindex="-1"></a>    }, <span class="at">finally =</span> {</span>
-<span id="cb14-34"><a href="#cb14-34" aria-hidden="true" tabindex="-1"></a>      ts_start <span class="ot">=</span> ts_end</span>
-<span id="cb14-35"><a href="#cb14-35" aria-hidden="true" tabindex="-1"></a>      ts_end <span class="ot">&lt;-</span> <span class="fu">add_with_rollback</span>(ts_end, <span class="fu">months</span>(<span class="dv">1</span>))</span>
-<span id="cb14-36"><a href="#cb14-36" aria-hidden="true" tabindex="-1"></a>    })</span>
-<span id="cb14-37"><a href="#cb14-37" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb14-38"><a href="#cb14-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">list</span>(<span class="at">gg =</span> gg, <span class="at">areas =</span> <span class="fu">flatten_array</span>(areas)))</span>
-<span id="cb14-39"><a href="#cb14-39" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb14-40"><a href="#cb14-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-41"><a href="#cb14-41" aria-hidden="true" tabindex="-1"></a>results_bylot <span class="ot">&lt;-</span> <span class="fu">calculate_monthly_home_ranges</span>(<span class="fu">as.POSIXct</span>(<span class="st">"2011-07-01 00:00:00"</span>), <span class="dv">44</span>, <span class="dv">1371322147</span>, <span class="st">'9559cb1b1cca51e9f3fd69812e5e22dc'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 1
-[1] 2
-[1] 3
-[1] 4
-[1] 5</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>ℹ In total 7 records were omitted as they were not deployed (the
-  `deployment_id` was `NA`).</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 6
-[1] 7
-[1] 8
-[1] 9
-[1] 10
-[1] 11
-[1] 12
-[1] 13
-[1] 14
-[1] 15
-[1] 16
-[1] 17
-[1] 18
-[1] 19
-[1] 20
-[1] 21
-[1] 22
-[1] 23
-[1] 24
-[1] 25
-[1] 26
-[1] 27</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>ℹ In total 1 record were omitted as they were not deployed (the `deployment_id`
-  was `NA`).</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 28
-[1] 29
-[1] 30
-[1] 31</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>ℹ In total 2 records were omitted as they were not deployed (the
-  `deployment_id` was `NA`).</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 32
-[1] 33
-[1] 34
-[1] 35
-[1] 36
-[1] 37
-[1] 38
-[1] 39
-[1] 40
-[1] 41
-[1] 42
-[1] 43
-[1] 44</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>ℹ In total 3 records were omitted as they were not deployed (the
-  `deployment_id` was `NA`).</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(<span class="fu">data.frame</span>(<span class="at">areas =</span> results_bylot<span class="sc">$</span>areas), <span class="st">"data/output_bylot.csv"</span>)</span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>results_herschel <span class="ot">=</span> <span class="fu">calculate_monthly_home_ranges</span>(<span class="fu">as.POSIXct</span>(<span class="st">"2009-07-01 00:00:00"</span>), <span class="dv">9</span>, <span class="dv">1371529289</span>, <span class="st">'436e8205d0c2973115e2024b146a6ad5'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 1
-[1] 2
-[1] 3
-[1] 4
-[1] 5
-[1] 6
-[1] 7</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>ℹ In total 49 records were omitted as they were not deployed (the
-  `deployment_id` was `NA`).</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 8</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>ℹ In total 94 records were omitted as they were not deployed (the
-  `deployment_id` was `NA`).</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 9
-&lt;error/move2_error_no_deployed_data&gt;
-Error in `movebank_download_study()`:
-Even though 46 event records were downloaded, none seem to be deployed
-(`deployment_id` is `NA` for all records).
-ℹ This can be resolved by defining deployments in movebank
-  (&lt;https://www.movebank.org/cms/movebank-content/deployment-manager&gt;).
----
-Backtrace:
-    ▆
- 1. └─global calculate_monthly_home_ranges(...)
- 2.   ├─base::tryCatch(...)
- 3.   │ └─base (local) tryCatchList(expr, classes, parentenv, handlers)
- 4.   │   └─base (local) tryCatchOne(expr, names, parentenv, handlers[[1L]])
- 5.   │     └─base (local) doTryCatch(return(expr), name, parentenv, handler)
- 6.   └─move2::movebank_download_study(...)</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(<span class="fu">data.frame</span>(<span class="at">areas =</span> results_herschel<span class="sc">$</span>areas), <span class="st">"data/output_herschel.csv"</span>)</span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>results_wiltshire <span class="ot">=</span> <span class="fu">calculate_monthly_home_ranges</span>(<span class="fu">as.POSIXct</span>(<span class="st">"2016-01-01 00:00:00"</span>), <span class="dv">43</span>, <span class="dv">3179890710</span>, <span class="st">'ffa36f79defe10eac9fe70f6502a17e0'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 1
-&lt;error/move2_error_no_data_found&gt;
-Error in `movebank_download_study()`:
-! The request did not result in any data, this might be caused by trying
-  to retrieve a none existant individual. Or no data is available for download
-  in this study for your user account.
----
-Backtrace:
-    ▆
- 1. └─global calculate_monthly_home_ranges(...)
- 2.   ├─base::tryCatch(...)
- 3.   │ └─base (local) tryCatchList(expr, classes, parentenv, handlers)
- 4.   │   └─base (local) tryCatchOne(expr, names, parentenv, handlers[[1L]])
- 5.   │     └─base (local) doTryCatch(return(expr), name, parentenv, handler)
- 6.   └─move2::movebank_download_study(...)
-[1] 2
-&lt;error/move2_error_no_data_found&gt;
-Error in `movebank_download_study()`:
-! The request did not result in any data, this might be caused by trying
-  to retrieve a none existant individual. Or no data is available for download
-  in this study for your user account.
----
-Backtrace:
-    ▆
- 1. └─global calculate_monthly_home_ranges(...)
- 2.   ├─base::tryCatch(...)
- 3.   │ └─base (local) tryCatchList(expr, classes, parentenv, handlers)
- 4.   │   └─base (local) tryCatchOne(expr, names, parentenv, handlers[[1L]])
- 5.   │     └─base (local) doTryCatch(return(expr), name, parentenv, handler)
- 6.   └─move2::movebank_download_study(...)
-[1] 3
-[1] 4
-[1] 5
-[1] 6
-[1] 7
-&lt;error/move2_error_no_data_found&gt;
-Error in `movebank_download_study()`:
-! The request did not result in any data, this might be caused by trying
-  to retrieve a none existant individual. Or no data is available for download
-  in this study for your user account.
----
-Backtrace:
-    ▆
- 1. └─global calculate_monthly_home_ranges(...)
- 2.   ├─base::tryCatch(...)
- 3.   │ └─base (local) tryCatchList(expr, classes, parentenv, handlers)
- 4.   │   └─base (local) tryCatchOne(expr, names, parentenv, handlers[[1L]])
- 5.   │     └─base (local) doTryCatch(return(expr), name, parentenv, handler)
- 6.   └─move2::movebank_download_study(...)
-[1] 8
-&lt;error/move2_error_no_data_found&gt;
-Error in `movebank_download_study()`:
-! The request did not result in any data, this might be caused by trying
-  to retrieve a none existant individual. Or no data is available for download
-  in this study for your user account.
----
-Backtrace:
-    ▆
- 1. └─global calculate_monthly_home_ranges(...)
- 2.   ├─base::tryCatch(...)
- 3.   │ └─base (local) tryCatchList(expr, classes, parentenv, handlers)
- 4.   │   └─base (local) tryCatchOne(expr, names, parentenv, handlers[[1L]])
- 5.   │     └─base (local) doTryCatch(return(expr), name, parentenv, handler)
- 6.   └─move2::movebank_download_study(...)
-[1] 9
-&lt;error/move2_error_no_data_found&gt;
-Error in `movebank_download_study()`:
-! The request did not result in any data, this might be caused by trying
-  to retrieve a none existant individual. Or no data is available for download
-  in this study for your user account.
----
-Backtrace:
-    ▆
- 1. └─global calculate_monthly_home_ranges(...)
- 2.   ├─base::tryCatch(...)
- 3.   │ └─base (local) tryCatchList(expr, classes, parentenv, handlers)
- 4.   │   └─base (local) tryCatchOne(expr, names, parentenv, handlers[[1L]])
- 5.   │     └─base (local) doTryCatch(return(expr), name, parentenv, handler)
- 6.   └─move2::movebank_download_study(...)
-[1] 10
-&lt;error/move2_error_no_data_found&gt;
-Error in `movebank_download_study()`:
-! The request did not result in any data, this might be caused by trying
-  to retrieve a none existant individual. Or no data is available for download
-  in this study for your user account.
----
-Backtrace:
-    ▆
- 1. └─global calculate_monthly_home_ranges(...)
- 2.   ├─base::tryCatch(...)
- 3.   │ └─base (local) tryCatchList(expr, classes, parentenv, handlers)
- 4.   │   └─base (local) tryCatchOne(expr, names, parentenv, handlers[[1L]])
- 5.   │     └─base (local) doTryCatch(return(expr), name, parentenv, handler)
- 6.   └─move2::movebank_download_study(...)
-[1] 11
-&lt;error/move2_error_no_data_found&gt;
-Error in `movebank_download_study()`:
-! The request did not result in any data, this might be caused by trying
-  to retrieve a none existant individual. Or no data is available for download
-  in this study for your user account.
----
-Backtrace:
-    ▆
- 1. └─global calculate_monthly_home_ranges(...)
- 2.   ├─base::tryCatch(...)
- 3.   │ └─base (local) tryCatchList(expr, classes, parentenv, handlers)
- 4.   │   └─base (local) tryCatchOne(expr, names, parentenv, handlers[[1L]])
- 5.   │     └─base (local) doTryCatch(return(expr), name, parentenv, handler)
- 6.   └─move2::movebank_download_study(...)
-[1] 12
-&lt;error/move2_error_no_data_found&gt;
-Error in `movebank_download_study()`:
-! The request did not result in any data, this might be caused by trying
-  to retrieve a none existant individual. Or no data is available for download
-  in this study for your user account.
----
-Backtrace:
-    ▆
- 1. └─global calculate_monthly_home_ranges(...)
- 2.   ├─base::tryCatch(...)
- 3.   │ └─base (local) tryCatchList(expr, classes, parentenv, handlers)
- 4.   │   └─base (local) tryCatchOne(expr, names, parentenv, handlers[[1L]])
- 5.   │     └─base (local) doTryCatch(return(expr), name, parentenv, handler)
- 6.   └─move2::movebank_download_study(...)
-[1] 13
-&lt;error/move2_error_no_data_found&gt;
-Error in `movebank_download_study()`:
-! The request did not result in any data, this might be caused by trying
-  to retrieve a none existant individual. Or no data is available for download
-  in this study for your user account.
----
-Backtrace:
-    ▆
- 1. └─global calculate_monthly_home_ranges(...)
- 2.   ├─base::tryCatch(...)
- 3.   │ └─base (local) tryCatchList(expr, classes, parentenv, handlers)
- 4.   │   └─base (local) tryCatchOne(expr, names, parentenv, handlers[[1L]])
- 5.   │     └─base (local) doTryCatch(return(expr), name, parentenv, handler)
- 6.   └─move2::movebank_download_study(...)
-[1] 14
-&lt;error/move2_error_no_data_found&gt;
-Error in `movebank_download_study()`:
-! The request did not result in any data, this might be caused by trying
-  to retrieve a none existant individual. Or no data is available for download
-  in this study for your user account.
----
-Backtrace:
-    ▆
- 1. └─global calculate_monthly_home_ranges(...)
- 2.   ├─base::tryCatch(...)
- 3.   │ └─base (local) tryCatchList(expr, classes, parentenv, handlers)
- 4.   │   └─base (local) tryCatchOne(expr, names, parentenv, handlers[[1L]])
- 5.   │     └─base (local) doTryCatch(return(expr), name, parentenv, handler)
- 6.   └─move2::movebank_download_study(...)
-[1] 15
-[1] 16
-[1] 17
-[1] 18
-[1] 19
-&lt;error/move2_error_no_data_found&gt;
-Error in `movebank_download_study()`:
-! The request did not result in any data, this might be caused by trying
-  to retrieve a none existant individual. Or no data is available for download
-  in this study for your user account.
----
-Backtrace:
-    ▆
- 1. └─global calculate_monthly_home_ranges(...)
- 2.   ├─base::tryCatch(...)
- 3.   │ └─base (local) tryCatchList(expr, classes, parentenv, handlers)
- 4.   │   └─base (local) tryCatchOne(expr, names, parentenv, handlers[[1L]])
- 5.   │     └─base (local) doTryCatch(return(expr), name, parentenv, handler)
- 6.   └─move2::movebank_download_study(...)
-[1] 20
-&lt;error/move2_error_no_data_found&gt;
-Error in `movebank_download_study()`:
-! The request did not result in any data, this might be caused by trying
-  to retrieve a none existant individual. Or no data is available for download
-  in this study for your user account.
----
-Backtrace:
-    ▆
- 1. └─global calculate_monthly_home_ranges(...)
- 2.   ├─base::tryCatch(...)
- 3.   │ └─base (local) tryCatchList(expr, classes, parentenv, handlers)
- 4.   │   └─base (local) tryCatchOne(expr, names, parentenv, handlers[[1L]])
- 5.   │     └─base (local) doTryCatch(return(expr), name, parentenv, handler)
- 6.   └─move2::movebank_download_study(...)
-[1] 21
-&lt;error/move2_error_no_data_found&gt;
-Error in `movebank_download_study()`:
-! The request did not result in any data, this might be caused by trying
-  to retrieve a none existant individual. Or no data is available for download
-  in this study for your user account.
----
-Backtrace:
-    ▆
- 1. └─global calculate_monthly_home_ranges(...)
- 2.   ├─base::tryCatch(...)
- 3.   │ └─base (local) tryCatchList(expr, classes, parentenv, handlers)
- 4.   │   └─base (local) tryCatchOne(expr, names, parentenv, handlers[[1L]])
- 5.   │     └─base (local) doTryCatch(return(expr), name, parentenv, handler)
- 6.   └─move2::movebank_download_study(...)
-[1] 22
-&lt;error/move2_error_no_data_found&gt;
-Error in `movebank_download_study()`:
-! The request did not result in any data, this might be caused by trying
-  to retrieve a none existant individual. Or no data is available for download
-  in this study for your user account.
----
-Backtrace:
-    ▆
- 1. └─global calculate_monthly_home_ranges(...)
- 2.   ├─base::tryCatch(...)
- 3.   │ └─base (local) tryCatchList(expr, classes, parentenv, handlers)
- 4.   │   └─base (local) tryCatchOne(expr, names, parentenv, handlers[[1L]])
- 5.   │     └─base (local) doTryCatch(return(expr), name, parentenv, handler)
- 6.   └─move2::movebank_download_study(...)
-[1] 23
-&lt;error/move2_error_no_data_found&gt;
-Error in `movebank_download_study()`:
-! The request did not result in any data, this might be caused by trying
-  to retrieve a none existant individual. Or no data is available for download
-  in this study for your user account.
----
-Backtrace:
-    ▆
- 1. └─global calculate_monthly_home_ranges(...)
- 2.   ├─base::tryCatch(...)
- 3.   │ └─base (local) tryCatchList(expr, classes, parentenv, handlers)
- 4.   │   └─base (local) tryCatchOne(expr, names, parentenv, handlers[[1L]])
- 5.   │     └─base (local) doTryCatch(return(expr), name, parentenv, handler)
- 6.   └─move2::movebank_download_study(...)
-[1] 24
-&lt;error/move2_error_no_data_found&gt;
-Error in `movebank_download_study()`:
-! The request did not result in any data, this might be caused by trying
-  to retrieve a none existant individual. Or no data is available for download
-  in this study for your user account.
----
-Backtrace:
-    ▆
- 1. └─global calculate_monthly_home_ranges(...)
- 2.   ├─base::tryCatch(...)
- 3.   │ └─base (local) tryCatchList(expr, classes, parentenv, handlers)
- 4.   │   └─base (local) tryCatchOne(expr, names, parentenv, handlers[[1L]])
- 5.   │     └─base (local) doTryCatch(return(expr), name, parentenv, handler)
- 6.   └─move2::movebank_download_study(...)
-[1] 25
-&lt;error/move2_error_no_data_found&gt;
-Error in `movebank_download_study()`:
-! The request did not result in any data, this might be caused by trying
-  to retrieve a none existant individual. Or no data is available for download
-  in this study for your user account.
----
-Backtrace:
-    ▆
- 1. └─global calculate_monthly_home_ranges(...)
- 2.   ├─base::tryCatch(...)
- 3.   │ └─base (local) tryCatchList(expr, classes, parentenv, handlers)
- 4.   │   └─base (local) tryCatchOne(expr, names, parentenv, handlers[[1L]])
- 5.   │     └─base (local) doTryCatch(return(expr), name, parentenv, handler)
- 6.   └─move2::movebank_download_study(...)
-[1] 26
-[1] 27
-[1] 28
-[1] 29
-[1] 30
-[1] 31
-[1] 32
-&lt;error/move2_error_no_data_found&gt;
-Error in `movebank_download_study()`:
-! The request did not result in any data, this might be caused by trying
-  to retrieve a none existant individual. Or no data is available for download
-  in this study for your user account.
----
-Backtrace:
-    ▆
- 1. └─global calculate_monthly_home_ranges(...)
- 2.   ├─base::tryCatch(...)
- 3.   │ └─base (local) tryCatchList(expr, classes, parentenv, handlers)
- 4.   │   └─base (local) tryCatchOne(expr, names, parentenv, handlers[[1L]])
- 5.   │     └─base (local) doTryCatch(return(expr), name, parentenv, handler)
- 6.   └─move2::movebank_download_study(...)
-[1] 33
-&lt;error/move2_error_no_data_found&gt;
-Error in `movebank_download_study()`:
-! The request did not result in any data, this might be caused by trying
-  to retrieve a none existant individual. Or no data is available for download
-  in this study for your user account.
----
-Backtrace:
-    ▆
- 1. └─global calculate_monthly_home_ranges(...)
- 2.   ├─base::tryCatch(...)
- 3.   │ └─base (local) tryCatchList(expr, classes, parentenv, handlers)
- 4.   │   └─base (local) tryCatchOne(expr, names, parentenv, handlers[[1L]])
- 5.   │     └─base (local) doTryCatch(return(expr), name, parentenv, handler)
- 6.   └─move2::movebank_download_study(...)
-[1] 34
-&lt;error/move2_error_no_data_found&gt;
-Error in `movebank_download_study()`:
-! The request did not result in any data, this might be caused by trying
-  to retrieve a none existant individual. Or no data is available for download
-  in this study for your user account.
----
-Backtrace:
-    ▆
- 1. └─global calculate_monthly_home_ranges(...)
- 2.   ├─base::tryCatch(...)
- 3.   │ └─base (local) tryCatchList(expr, classes, parentenv, handlers)
- 4.   │   └─base (local) tryCatchOne(expr, names, parentenv, handlers[[1L]])
- 5.   │     └─base (local) doTryCatch(return(expr), name, parentenv, handler)
- 6.   └─move2::movebank_download_study(...)
-[1] 35
-&lt;error/move2_error_no_data_found&gt;
-Error in `movebank_download_study()`:
-! The request did not result in any data, this might be caused by trying
-  to retrieve a none existant individual. Or no data is available for download
-  in this study for your user account.
----
-Backtrace:
-    ▆
- 1. └─global calculate_monthly_home_ranges(...)
- 2.   ├─base::tryCatch(...)
- 3.   │ └─base (local) tryCatchList(expr, classes, parentenv, handlers)
- 4.   │   └─base (local) tryCatchOne(expr, names, parentenv, handlers[[1L]])
- 5.   │     └─base (local) doTryCatch(return(expr), name, parentenv, handler)
- 6.   └─move2::movebank_download_study(...)
-[1] 36
-&lt;error/move2_error_no_data_found&gt;
-Error in `movebank_download_study()`:
-! The request did not result in any data, this might be caused by trying
-  to retrieve a none existant individual. Or no data is available for download
-  in this study for your user account.
----
-Backtrace:
-    ▆
- 1. └─global calculate_monthly_home_ranges(...)
- 2.   ├─base::tryCatch(...)
- 3.   │ └─base (local) tryCatchList(expr, classes, parentenv, handlers)
- 4.   │   └─base (local) tryCatchOne(expr, names, parentenv, handlers[[1L]])
- 5.   │     └─base (local) doTryCatch(return(expr), name, parentenv, handler)
- 6.   └─move2::movebank_download_study(...)
-[1] 37
-&lt;error/move2_error_no_data_found&gt;
-Error in `movebank_download_study()`:
-! The request did not result in any data, this might be caused by trying
-  to retrieve a none existant individual. Or no data is available for download
-  in this study for your user account.
----
-Backtrace:
-    ▆
- 1. └─global calculate_monthly_home_ranges(...)
- 2.   ├─base::tryCatch(...)
- 3.   │ └─base (local) tryCatchList(expr, classes, parentenv, handlers)
- 4.   │   └─base (local) tryCatchOne(expr, names, parentenv, handlers[[1L]])
- 5.   │     └─base (local) doTryCatch(return(expr), name, parentenv, handler)
- 6.   └─move2::movebank_download_study(...)
-[1] 38
-&lt;error/move2_error_no_data_found&gt;
-Error in `movebank_download_study()`:
-! The request did not result in any data, this might be caused by trying
-  to retrieve a none existant individual. Or no data is available for download
-  in this study for your user account.
----
-Backtrace:
-    ▆
- 1. └─global calculate_monthly_home_ranges(...)
- 2.   ├─base::tryCatch(...)
- 3.   │ └─base (local) tryCatchList(expr, classes, parentenv, handlers)
- 4.   │   └─base (local) tryCatchOne(expr, names, parentenv, handlers[[1L]])
- 5.   │     └─base (local) doTryCatch(return(expr), name, parentenv, handler)
- 6.   └─move2::movebank_download_study(...)
-[1] 39
-&lt;error/move2_error_no_data_found&gt;
-Error in `movebank_download_study()`:
-! The request did not result in any data, this might be caused by trying
-  to retrieve a none existant individual. Or no data is available for download
-  in this study for your user account.
----
-Backtrace:
-    ▆
- 1. └─global calculate_monthly_home_ranges(...)
- 2.   ├─base::tryCatch(...)
- 3.   │ └─base (local) tryCatchList(expr, classes, parentenv, handlers)
- 4.   │   └─base (local) tryCatchOne(expr, names, parentenv, handlers[[1L]])
- 5.   │     └─base (local) doTryCatch(return(expr), name, parentenv, handler)
- 6.   └─move2::movebank_download_study(...)
-[1] 40
-[1] 41
-&lt;error/rlang_error&gt;
-Error in `path_to_connection()`:
-! 
-  'alt_project_id,animal_life_stage,animal_mass,animal_reproductive_condition,attachment_body_part,attachment_comments,attachment_type,behavior_according_to,capture_handling_time,capture_latitude,capture_longitude,capture_method,capture_timestamp,comments,data_processing_software,dba_comments,deploy_off_latitude,deploy_off_longitude,deploy_off_measurements,deploy_off_person,deploy_off_sampling,deploy_off_timestamp,deploy_on_latitude,deploy_on_longitude,deploy_on_measurements,deploy_on_person,deploy_on_sampling,deploy_on_timestamp,deployment_end_comments,deployment_end_type,deployment_image,duty_cycle,geolocator_calibration,geolocator_light_threshold,geolocator_sensor_comments,geolocator_sun_elevation_angle,georeference_protocol,habitat_according_to,id,local_identifier,locality_according_to,location_accuracy_comments,manipulation_comments,manipulation_type,outlier_comments,partial_identifier,scheduled_detachment_date,study_site,tag_calibration,tag_firmware,tag_mass_total,tag_readout_method,tag_retrieval_date,tag_settings,timestamp_start,timestamp_end,number_of_events,sensor_type_ids
-  ,"adult",,,,,"collar",,360,51.05246,-1.7649454,,,,,,,,,"Tom
-  Porteus",,2016-05-22 07:40:00.000,,,,"Mike Short",,2016-04-16
-  05:29:00.000,,"equipment-failure",,,,,,,,,3179942273,"B16F01_5546",,,,"none","Lat/Lon
-  values visibly outside study area (e.g. located at 0.0 degrees) assumed
-  errors so set as NA. 2D relocations and those with altitude below zero or +/-
-  200m of median altitude recorded for each individual marked as
-  outliers.",,,"Britford",,,,"phone-network",,,2016-04-16
-  05:29:00.000,2016-05-22 07:40:00.000,1834,"gps"
-  ,"adult",,,,,"collar",,357,51.048163,-1.7613294,,,,,,,,,"Tom
-  Porteus",,2016-06-17 00:00:00.000,,,,"Mike Short",,2016-04-28
-  05:32:00.000,,"removal",,,,,,,,,3179942269,"B16F02_5543",,,,"none","Lat/Lon
-  values visibly outside study area (e.g. located at 0.0 degrees) assumed
-  errors so set as NA. 2D relocations and those with altitude below zero or +/-
-  200m of median altitude recorded for each individual marked as
-  outliers.",,,"Britford",,,,"phone-network",,,2016-04-28
-  05:32:00.000,2016-06-17 00:00:00.000,5129,"gps"
-  ,"adult",,,,,"collar",,265,51.051378,-1.7593299,,,,,,,,,"Tom
-  Porteus",,2016-06-08 05:50:00.000,,,,"Mike Short",,2016-05-01
-  08:33:00.000,,"equipment-failure",,,,,,,,,3179942253,"B16F03_4971",,,,"none","Lat/Lon
-  values visibly outside study area (e.g. located at 0.0 degrees) assumed
-  errors so set as NA. 2D relocations and those with altitude below zero or +/-
-  200m of median altitude recorded for each individual marked as
-  outliers.",,,"Britford",,,,"phone-network",,,2016-05-01
-  08:33:00.000,2016-06-08 03:50:00.000,3816,"gps"
-  ,"adult",,,,,"collar",,,51.052008,-1.7642059,,,,,,,,,"Tom
-  Porteus",,2016-03-25 23:00:00.000,,,,"Mike Short",,2016-03-16
-  06:32:00.000,,"dead",,,,,,,,,3179942259,"B16M01_4971",,,,"none","Lat/Lon
-  values visibly outside study area (e.g. located at 0.0 degrees) assumed
-  errors so set as NA. 2D relocations and those with altitude below zero or +/-
-  200m of median altitude recorded for each individual marked as
-  outliers.",,,"Britford",,,,"phone-network",,,2016-03-16
-  06:32:00.000,2016-03-25 23:00:00.000,1078,"gps"
-  ,"adult",,,,,"collar",,,51.052111,-1.7659887,,,,,,,,,"Tom
-  Porteus",,2016-03-23 20:50:00.000,,,,"Mike Short",,2016-03-20
-  06:24:00.000,,"removal",,,,,,,,,3179942246,"B16M02_4972",,,,"none","Lat/Lon
-  values visibly outside study area (e.g. located at 0.0 degrees) assumed
-  errors so set as NA. 2D relocations and those with altitude below zero or +/-
-  200m of median altitude recorded for each individual marked as
-  outliers.",,,"Britford",,,,"phone-network",,,2016-03-20
-  06:24:00.000,2016-03-23 20:50:00.000,507,"gps"
-  ,"adult",,,,,"collar",,,51.051812,-1.7651199,,,,,,,,,"Tom
-  Porteus",,2016-06-16 02:40:00.000,,,,"Mike Short",,2016-04-15
-  05:45:00.000,,"removal",,,,,,,,,3179942255,"B16M02_4973",,,,"none","Lat/Lon
-  values visibly outside study area (e.g. located at 0.0 degrees) assumed
-  errors so set as NA. 2D relocations and those with altitude below zero or +/-
-  200m of median altitude recorded for each individual marked as
-  outliers.",,,"Britford",,,,"phone-network",,,2016-04-15
-  05:45:00.000,2016-06-16 02:40:00.000,5899,"gps"
-  ,"adult",,,,,"collar",,332,51.049379,-1.7582132,,,,,,,,,"Tom
-  Porteus",,2016-05-25 13:10:00.000,,,,"Mike Short",,2016-03-20
-  07:06:00.000,,"removal",,,,,,,,,3179942263,"B16M03_4974",,,,"none","Lat/Lon
-  values visibly outside study area (e.g. located at 0.0 degrees) assumed
-  errors so set as NA. 2D relocations and those with altitude below zero or +/-
-  200m of median altitude recorded for each individual marked as
-  outliers.",,,"Britford",,,,"phone-network",,,2016-03-20
-  07:06:00.000,2016-05-25 13:10:00.000,4276,"gps"
-  ,"adult",,,,,"collar",,441,51.052468,-1.7645317,,,,,,,,,"Tom
-  Porteus",,2016-04-28 03:00:00.000,,,,"Mike Short",,2016-04-19
-  06:01:00.000,,"dead",,,,,,,,,3179942257,"B16M04_5545",,,,"none","Lat/Lon
-  values visibly outside study area (e.g. located at 0.0 degrees) assumed
-  errors so set as NA. 2D relocations and those with altitude below zero or +/-
-  200m of median altitude recorded for each individual marked as
-  outliers.",,,"Britford",,,,"phone-network",,,2016-04-19
-  06:01:00.000,2016-04-28 03:00:00.000,968,"gps"
-  ,"adult",,,,,"collar",,,51.052911,-1.7614049,,,,,,,,,"Tom
-  Porteus",,2016-06-19 06:30:00.000,,,,"Mike Short",,2016-04-28
-  06:01:00.000,,"removal",,,,,,,,,3179942233,"B16M05_5544",,,,"none","Lat/Lon
-  values visibly outside study area (e.g. located at 0.0 degrees) assumed
-  errors so set as NA. 2D relocations and those with altitude below zero or +/-
-  200m of median altitude recorded for each individual marked as
-  outliers.",,,"Britford",,,,"phone-network",,,2016-04-28
-  06:01:00.000,2016-06-19 06:30:00.000,5150,"gps"
-  ,"adult",,,,,"collar",,373,51.048865,-1.7617538,,,,,,,,,"Tom
-  Porteus",,2016-06-17 14:50:00.000,,,,"Mike Short",,2016-05-12
-  05:23:00.000,,"removal",,,,,,,,,3179942243,"B16M06_5545",,,,"none","Lat/Lon
-  values visibly outside study area (e.g. located at 0.0 degrees) assumed
-  errors so set as NA. 2D relocations and those with altitude below zero or +/-
-  200m of median altitude recorded for each individual marked as
-  outliers.",,,"Britford",,,,"phone-network",,,2016-05-12
-  05:23:00.000,2016-06-17 14:50:00.000,4778,"gps"
-  ,"adult",,,,,"collar",,,51.054073,-1.762255,,,,,,,,,"Tom Porteus",,2017-04-04
-  06:10:00.000,,,,"Mike Short",,2017-03-07
-  07:03:00.000,,"dead",,,,,,,,,3179942256,"B17F01_4974",,,,"none","Lat/Lon
-  values visibly outside study area (e.g. located at 0.0 degrees) assumed
-  errors so set as NA. 2D relocations and those with altitude below zero or +/-
-  200m of median altitude recorded for each individual marked as
-  outliers.",,,"Britford",,,,"phone-network",,,2017-03-07
-  07:03:00.000,2017-04-04 06:10:00.000,3342,"gps"
-  ,"adult",,,,,"collar",,324,51.052086,-1.7582705,,,,,,,,,"Tom
-  Porteus",,2017-03-15 01:30:00.000,,,,"Mike Short",,2017-03-14
-  06:31:00.000,,"fall-off",,,,,,,,,3179942262,"B17F02_5546",,,,"none","Lat/Lon
-  values visibly outside study area (e.g. located at 0.0 degrees) assumed
-  errors so set as NA. 2D relocations and those with altitude below zero or +/-
-  200m of median altitude recorded for each individual marked as
-  outliers.",,,"Britford",,,,"phone-network",,,2017-03-14
-  06:31:00.000,2017-03-15 01:30:00.000,114,"gps"
-  ,"adult",,,,,"collar",,356,51.051816,-1.7581292,,,,,,,,,"Tom
-  Porteus",,2017-05-19 09:40:00.000,,,,"Mike Short",,2017-03-17
-  06:15:00.000,,"removal",,,,,,,,,3179942237,"B17F03_5545",,,,"none","Lat/Lon
-  values visibly outside study area (e.g. located at 0.0 degrees) assumed
-  errors so set as NA. 2D relocations and those with altitude below zero or +/-
-  200m of median altitude recorded for each individual marked as
-  outliers.",,,"Britford",,,,"phone-network",,,2017-03-17
-  06:15:00.000,2017-05-19 09:40:00.000,4716,"gps"
-  ,"adult",,,,,"collar",,372,51.051996,-1.7582709,,,,,,,,,"Tom
-  Porteus",,2017-05-25 01:00:00.000,,,,"Mike Short",,2017-03-22
-  06:02:00.000,,"removal",,,,,,,,,3179942238,"B17F04_5543",,,,"none","Lat/Lon
-  values visibly outside study area (e.g. located at 0.0 degrees) assumed
-  errors so set as NA. 2D relocations and those with altitude below zero or +/-
-  200m of median altitude recorded for each individual marked as
-  outliers.",,,"Britford",,,,"phone-network",,,2017-03-22
-  06:02:00.000,2017-05-25 00:50:00.000,5231,"gps"
-  ,"adult",,,,,"collar",,315,51.053807,-1.7641111,,,,,,,,,"Tom
-  Porteus",,2017-05-23 12:50:00.000,,,,"Mike Short",,2017-04-16
-  16:22:00.000,,"equipment-failure",,,,,,,,,3179942235,"B17F05_5951",,,,"none","Lat/Lon
-  values visibly outside study area (e.g. located at 0.0 degrees) assumed
-  errors so set as NA. 2D relocations and those with altitude below zero or +/-
-  200m of median altitude recorded for each individual marked as
-  outliers.",,,"Britford",,,,"phone-network",,,2017-04-16
-  16:22:00.000,2017-05-23 12:50:00.000,3742,"gps"
-  ,"adult",,,,,"collar",,323,51.0502,-1.7594216,,,,,,,,,"Tom
-  Porteus",,2017-04-17 17:30:00.000,,,,"Mike Short",,2017-03-15
-  06:45:00.000,,"equipment-failure",,,,,,,,,3179942232,"B17M01_4972",,,,"none","Lat/Lon
-  values visibly outside study area (e.g. located at 0.0 degrees) assumed
-  errors so set as NA. 2D relocations and those with altitude below zero or +/-
-  200m of median altitude recorded for each individual marked as
-  outliers.",,,"Britford",,,,"phone-network",,,2017-03-15
-  06:45:00.000,2017-04-17 17:20:00.000,1590,"gps"
-  ,"adult",,,,,"collar",,450,51.052175,-1.7575567,,,,,,,,,"Tom
-  Porteus",,2017-05-07 16:00:00.000,,,,"Mike Short",,2017-03-22
-  06:17:00.000,,"dead",,,,,,,,,3179942260,"B17M02_5544",,,,"none","Lat/Lon
-  values visibly outside study area (e.g. located at 0.0 degrees) assumed
-  errors so set as NA. 2D relocations and those with altitude below zero or +/-
-  200m of median altitude recorded for each individual marked as
-  outliers.",,,"Britford",,,,"phone-network",,,2017-03-22
-  06:17:00.000,2017-05-07 16:00:00.000,3857,"gps"
-  ,"adult",,,,,"collar",,305,51.050741,-1.7598468,,,,,,,,,"Tom
-  Porteus",,2017-05-13 22:00:00.000,,,,"Mike Short",,2017-03-22
-  06:49:00.000,,"dead",,,,,,,,,3179942254,"B17M03_4973",,,,"none","Lat/Lon
-  values visibly outside study area (e.g. located at 0.0 degrees) assumed
-  errors so set as NA. 2D relocations and those with altitude below zero or +/-
-  200m of median altitude recorded for each individual marked as
-  outliers.",,,"Britford",,,,"phone-network",,,2017-03-22
-  06:49:00.000,2017-05-13 22:00:00.000,4259,"gps"
-  ,"adult",,,,,"collar",,633,51.053821,-1.7622848,,,,,,,,,"Tom
-  Porteus",,2017-05-16 18:50:00.000,,,,"Mike Short",,2017-04-01
-  05:53:00.000,,"equipment-failure",,,,,,,,,3179942264,"B17M04_5952",,,,"none","Lat/Lon
-  values visibly outside study area (e.g. located at 0.0 degrees) assumed
-  errors so set as NA. 2D relocations and those with altitude below zero or +/-
-  200m of median altitude recorded for each individual marked as
-  outliers.",,,"Britford",,,,"phone-network",,,2017-04-01
-  05:53:00.000,2017-05-16 18:50:00.000,4172,"gps"
-  ,"adult",,,,,"collar",,478,51.048943,-1.7599987,,,,,,,,,"Tom
-  Porteus",,2017-06-02 04:00:00.000,,,,"Mike Short",,2017-04-18
-  05:13:00.000,,"equipment-failure",,,,,,,,,3179942271,"B17M05_5950",,,,"none","Lat/Lon
-  values visibly outside study area (e.g. located at 0.0 degrees) assumed
-  errors so set as NA. 2D relocations and those with altitude below zero or +/-
-  200m of median altitude recorded for each individual marked as
-  outliers.",,,"Britford",,,,"phone-network",,,2017-04-18
-  05:13:00.000,2017-06-02 04:00:00.000,4289,"gps"
-  ,"adult",,,,,"collar",,,50.895493,-1.7853292,,,,,,,,,"Tom
-  Porteus",,2018-05-22 04:40:00.000,,,,"Mike Short",,2018-04-26
-  05:20:00.000,,"removal",,,,,,,,,3179942239,"S18F01_4973",,,,"none","Lat/Lon
-  values visibly outside study area (e.g. located at 0.0 degrees) assumed
-  errors so set as NA. 2D relocations and those with altitude below zero or +/-
-  200m of median altitude recorded for each individual marked as
-  outliers.",,,"Somerley",,,,"phone-network",,,2018-04-26
-  05:20:00.000,2018-05-22 04:40:00.000,2321,"gps"
-  ,"adult",,,,,"collar",,,50.869497,-1.7958651,,,,,,,,,"Tom
-  Porteus",,2018-05-13 05:20:00.000,,,,"Mike Short",,2018-05-01
-  05:27:00.000,,"removal",,,,,,,,,3179942248,"S18F02_5543",,,,"none","Lat/Lon
-  values visibly outside study area (e.g. located at 0.0 degrees) assumed
-  errors so set as NA. 2D relocations and those with altitude below zero or +/-
-  200m of median altitude recorded for each individual marked as
-  outliers.",,,"Somerley",,,,"phone-network",,,2018-05-01
-  05:27:00.000,2018-05-13 05:20:00.000,1705,"gps"
-  ,"adult",,,,,"collar",,,50.86694,-1.7937731,,,,,,,,,"Tom Porteus",,2018-06-07
-  22:30:00.000,,,,"Mike Short",,2018-05-13
-  05:21:00.000,,"removal",,,,,,,,,3179942267,"S18F02_5951",,,,"none","Lat/Lon
-  values visibly outside study area (e.g. located at 0.0 degrees) assumed
-  errors so set as NA. 2D relocations and those with altitude below zero or +/-
-  200m of median altitude recorded for each individual marked as
-  outliers.",,,"Somerley",,,,"phone-network",,,2018-05-13
-  05:21:00.000,2018-06-07 22:30:00.000,3343,"gps"
-  ,"adult",,,,,"collar",,,50.879247,-1.8023752,,,,,,,,,"Tom
-  Porteus",,2018-05-03 09:40:00.000,,,,"Mike Short",,2018-02-28
-  07:02:00.000,,"removal",,,,,,,,,3179942265,"S18M01_4974",,,,"none","Lat/Lon
-  values visibly outside study area (e.g. located at 0.0 degrees) assumed
-  errors so set as NA. 2D relocations and those with altitude below zero or +/-
-  200m of median altitude recorded for each individual marked as
-  outliers.",,,"Somerley",,,,"phone-network",,,2018-02-28
-  07:02:00.000,2018-05-03 09:40:00.000,2965,"gps"
-  ,"adult",,,,,"collar",,,50.879067,-1.8023759,,,,,,,,,"Tom
-  Porteus",,2018-05-19 11:00:00.000,,,,"Mike Short",,2018-03-01
-  07:02:00.000,,"removal",,,,,,,,,3179942261,"S18M02_5544",,,,"none","Lat/Lon
-  values visibly outside study area (e.g. located at 0.0 degrees) assumed
-  errors so set as NA. 2D relocations and those with altitude below zero or +/-
-  200m of median altitude recorded for each individual marked as
-  outliers.",,,"Somerley",,,,"phone-network",,,2018-03-01
-  07:02:00.000,2018-05-19 11:00:00.000,4557,"gps"
-  ,"adult",,,,,"collar",,,50.862124,-1.7964372,,,,,,,,,"Tom
-  Porteus",,2018-07-01 22:10:00.000,,,,"Mike Short",,2018-05-02
-  05:43:00.000,,"removal",,,,,,,,,3179942274,"S18M03_5952",,,,"none","Lat/Lon
-  values visibly outside study area (e.g. located at 0.0 degrees) assumed
-  errors so set as NA. 2D relocations and those with altitude below zero or +/-
-  200m of median altitude recorded for each individual marked as
-  outliers.",,,"Somerley",,,,"phone-network",,,2018-05-02
-  05:43:00.000,2018-07-01 22:10:00.000,6373,"gps"
-  ,"adult",,,,,"collar",,,50.862097,-1.7964089,,,,,,,,,"Tom
-  Porteus",,2018-07-01 21:00:00.000,,,,"Mike Short",,2018-05-11
-  05:25:00.000,,"removal",,,,,,,,,3179942258,"S18M04_5545",,,,"none","Lat/Lon
-  values visibly outside study area (e.g. located at 0.0 degrees) assumed
-  errors so set as NA. 2D relocations and those with altitude below zero or +/-
-  200m of median altitude recorded for each individual marked as
-  outliers.",,,"Somerley",,,,"phone-network",,,2018-05-11
-  05:25:00.000,2018-07-01 21:00:00.000,5034,"gps"
-  ,"adult",,,,,"collar",,,50.89073,-1.7868297,,,,,,,,,"Tom Porteus",,2019-05-09
-  13:30:00.000,,,,"Mike Short",,2019-04-03
-  05:38:00.000,,"removal",,,,,,,,,3179942240,"S19F01_4974",,,,"none","Lat/Lon
-  values visibly outside study area (e.g. located at 0.0 degrees) assumed
-  errors so set as NA. 2D relocations and those with altitude below zero or +/-
-  200m of median altitude recorded for each individual marked as
-  outliers.",,,"Somerley",,,,"phone-network",,,2019-04-03
-  05:38:00.000,2019-05-09 13:10:00.000,2237,"gps"
-  ,"adult",,,,,"collar",,,50.895961,-1.7807058,,,,,,,,,"Tom
-  Porteus",,2019-06-26 15:00:00.000,,,,"Mike Short",,2019-05-21
-  04:43:00.000,,"removal",,,,,,,,,3179942241,"S19F01_5951",,,,"none","Lat/Lon
-  values visibly outside study area (e.g. located at 0.0 degrees) assumed
-  errors so set as NA. 2D relocations and those with altitude below zero or +/-
-  200m of median altitude recorded for each individual marked as
-  outliers.",,,"Somerley",,,,"phone-network",,,2019-05-21
-  04:43:00.000,2019-06-26 14:50:00.000,4098,"gps"
-  ,"adult",,,,,"collar",,,50.891719,-1.7868251,,,,,,,,,"Tom
-  Porteus",,2019-05-07 21:00:00.000,,,,"Mike Short",,2019-04-15
-  05:33:00.000,,"dead",,,,,,,,,3179942234,"S19F02_6644",,,,"none","Lat/Lon
-  values visibly outside study area (e.g. located at 0.0 degrees) assumed
-  errors so set as NA. 2D relocations and those with altitude below zero or +/-
-  200m of median altitude recorded for each individual marked as
-  outliers.",,,"Somerley",,,,"phone-network",,,2019-04-15
-  05:33:00.000,2019-05-07 21:00:00.000,2900,"gps"
-  ,"adult",,,,,"collar",,,50.899901,-1.786219,,,,,,,,,"Tom Porteus",,2019-05-08
-  21:40:00.000,,,,"Mike Short",,2019-04-19
-  06:15:00.000,,"removal",,,,,,,,,3179942251,"S19F03_6643",,,,"none","Lat/Lon
-  values visibly outside study area (e.g. located at 0.0 degrees) assumed
-  errors so set as NA. 2D relocations and those with altitude below zero or +/-
-  200m of median altitude recorded for each individual marked as
-  outliers.",,,"Somerley",,,,"phone-network",,,2019-04-19
-  06:30:00.000,2019-05-08 21:40:00.000,813,"gps"
-  ,"adult",,,,,"collar",,,50.882393,-1.8017933,,,,,,,,,"Tom
-  Porteus",,2019-06-20 10:40:00.000,,,,"Mike Short",,2019-05-10
-  05:13:00.000,,"removal",,,,,,,,,3179942236,"S19F04_4973",,,,"none","Lat/Lon
-  values visibly outside study area (e.g. located at 0.0 degrees) assumed
-  errors so set as NA. 2D relocations and those with altitude below zero or +/-
-  200m of median altitude recorded for each individual marked as
-  outliers.",,,"Somerley",,,,"phone-network",,,2019-05-10
-  05:13:00.000,2019-06-20 10:40:00.000,5492,"gps"
-  ,"adult",,,,,"collar",,,50.878566,-1.8039558,,,,,,,,,"Tom
-  Porteus",,2019-06-21 07:50:00.000,,,,"Mike Short",,2019-05-15
-  04:48:00.000,,"removal",,,,,,,,,3179942266,"S19F05_5544",,,,"none","Lat/Lon
-  values visibly outside study area (e.g. located at 0.0 degrees) assumed
-  errors so set as NA. 2D relocations and those with altitude below zero or +/-
-  200m of median altitude recorded for each individual marked as
-  outliers.",,,"Somerley",,,,"phone-network",,,2019-05-15
-  04:48:00.000,2019-06-21 07:50:00.000,5038,"gps"
-  ,"adult",,,,,"collar",,,50.895933,-1.7798386,,,,,,,,,"Tom
-  Porteus",,2019-07-04 04:10:00.000,,,,"Mike Short",,2019-05-23
-  05:07:00.000,,"removal",,,,,,,,,3179942270,"S19F06_5543",,,,"none","Lat/Lon
-  values visibly outside study area (e.g. located at 0.0 degrees) assumed
-  errors so set as NA. 2D relocations and those with altitude below zero or +/-
-  200m of median altitude recorded for each individual marked as
-  outliers.",,,"Somerley",,,,"phone-network",,,2019-05-23
-  05:07:00.000,2019-07-04 04:10:00.000,5645,"gps"
-  ,"adult",,,,,"collar",,,50.882393,-1.8016511,,,,,,,,,"Tom
-  Porteus",,2019-05-15 04:30:00.000,,,,"Mike Short",,2019-04-12
-  05:20:00.000,,"removal",,,,,,,,,3179942275,"S19M01_4972",,,,"none","Lat/Lon
-  values visibly outside study area (e.g. located at 0.0 degrees) assumed
-  errors so set as NA. 2D relocations and those with altitude below zero or +/-
-  200m of median altitude recorded for each individual marked as
-  outliers.",,,"Somerley",,,,"phone-network",,,2019-04-12
-  05:20:00.000,2019-05-15 04:20:00.000,4233,"gps"
-  ,"adult",,,,,"collar",,,50.895966,-1.7786583,,,,,,,,,"Tom
-  Porteus",,2019-07-04 20:00:00.000,,,,"Mike Short",,2019-05-22
-  04:54:00.000,,"removal",,,,,,,,,3179942276,"S19M02_5546",,,,"none","Lat/Lon
-  values visibly outside study area (e.g. located at 0.0 degrees) assumed
-  errors so set as NA. 2D relocations and those with altitude below zero or +/-
-  200m of median altitude recorded for each individual marked as
-  outliers.",,,"Somerley",,,,"phone-network",,,2019-05-22
-  04:54:00.000,2019-07-04 20:00:00.000,5914,"gps"
-  ,"adult",,,,,"collar",,,50.893516,-1.7859639,,,,,,,,,"Tom
-  Porteus",,2019-05-22 04:20:00.000,,,,"Mike Short",,2019-04-15
-  05:57:00.000,,"removal",,,,,,,,,3179942278,"S19M02_6645",,,,"none","Lat/Lon
-  values visibly outside study area (e.g. located at 0.0 degrees) assumed
-  errors so set as NA. 2D relocations and those with altitude below zero or +/-
-  200m of median altitude recorded for each individual marked as
-  outliers.",,,"Somerley",,,,"phone-network",,,2019-04-15
-  05:57:00.000,2019-05-22 04:20:00.000,4149,"gps"
-  ,"adult",,,,,"collar",,,50.898282,-1.785942,,,,,,,,,"Tom Porteus",,2019-06-12
-  19:10:00.000,,,,"Mike Short",,2019-04-19
-  05:53:00.000,,"removal",,,,,,,,,3179942277,"S19M03_5952",,,,"none","Lat/Lon
-  values visibly outside study area (e.g. located at 0.0 degrees) assumed
-  errors so set as NA. 2D relocations and those with altitude below zero or +/-
-  200m of median altitude recorded for each individual marked as
-  outliers.",,,"Somerley",,,,"phone-network",,,2019-04-19
-  05:53:00.000,2019-06-12 19:10:00.000,6417,"gps"
-  ,"adult",,,,,"collar",,,50.878621,-1.8045099,,,,,,,,,"Tom
-  Porteus",,2019-06-14 22:10:00.000,,,,"Mike Short",,2019-05-15
-  05:16:00.000,,"removal",,,,,,,,,3179942279,"S19M04_5545",,,,"none","Lat/Lon
-  values visibly outside study area (e.g. located at 0.0 degrees) assumed
-  errors so set as NA. 2D relocations and those with altitude below zero or +/-
-  200m of median altitude recorded for each individual marked as
-  outliers.",,,"Somerley",,,,"phone-network",,,2019-05-15
-  05:16:00.000,2019-06-14 22:10:00.000,4091,"gps"
- ' does not exist in current
-  working directory ('/Users/elkemichlmayr/Documents/ZHAW/Patterns and Trends
-  in Environmental Data/GPS/MovebankProject2').
----
-Backtrace:
-     ▆
-  1. └─global calculate_monthly_home_ranges(...)
-  2.   ├─base::tryCatch(...)
-  3.   │ └─base (local) tryCatchList(expr, classes, parentenv, handlers)
-  4.   │   └─base (local) tryCatchOne(expr, names, parentenv, handlers[[1L]])
-  5.   │     └─base (local) doTryCatch(return(expr), name, parentenv, handler)
-  6.   └─move2::movebank_download_study(...)
-  7.     ├─dplyr::filter(...)
-  8.     └─move2::movebank_download_deployment(study_id = study_id, ...)
-  9.       ├─rlang::exec(...)
- 10.       └─move2::movebank_retrieve(...)
- 11.         ├─base::gsub(...)
- 12.         │ └─base::is.factor(x)
- 13.         ├─xml2::xml_text(xml2::read_html(gsub("&lt;br&gt;", "\n", rawToChar(error_return$content))))
- 14.         ├─xml2::read_html(gsub("&lt;br&gt;", "\n", rawToChar(error_return$content)))
- 15.         └─xml2:::read_html.default(gsub("&lt;br&gt;", "\n", rawToChar(error_return$content)))
- 16.           ├─base::suppressWarnings(...)
- 17.           │ └─base::withCallingHandlers(...)
- 18.           ├─xml2::read_xml(x, encoding = encoding, ..., as_html = TRUE, options = options)
- 19.           └─xml2:::read_xml.character(...)
- 20.             └─xml2:::path_to_connection(x)
-[1] 42
-[1] 43</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(<span class="fu">data.frame</span>(<span class="at">areas =</span> results_wiltshire<span class="sc">$</span>areas), <span class="st">"data/output_wiltshire.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 
-</main>
-<!-- /main column -->
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-doherty2021human" class="csl-entry" role="listitem">
+Doherty, Tim S, Graeme C Hays, and Don A Driscoll. 2021. <span>“Human Disturbance Causes Widespread Disruption of Animal Movement.”</span> <em>Nature Ecology &amp; Evolution</em> 5 (4): 513–19.
+</div>
+<div id="ref-fortin2005wolves" class="csl-entry" role="listitem">
+Fortin, Daniel, Hawthorne L Beyer, Mark S Boyce, Douglas W Smith, Thierry Duchesne, and Julie S Mao. 2005. <span>“Wolves Influence Elk Movements: Behavior Shapes a Trophic Cascade in Yellowstone National Park.”</span> <em>Ecology</em> 86 (5): 1320–30.
+</div>
+<div id="ref-gassert2023operational" class="csl-entry" role="listitem">
+Gassert, Francis, Oscar Venter, James EM Watson, Steven P Brumby, Joseph C Mazzariello, Scott C Atkinson, and Samantha Hyde. 2023. <span>“An Operational Approach to Near Real Time Global High Resolution Mapping of the Terrestrial Human Footprint.”</span> <em>Frontiers in Remote Sensing</em> 4: 1130896.
+</div>
+<div id="ref-kays2022movebank" class="csl-entry" role="listitem">
+Kays, Roland, Sarah C Davidson, Matthias Berger, Gil Bohrer, Wolfgang Fiedler, Andrea Flack, Julian Hirt, et al. 2022. <span>“The Movebank System for Studying Global Animal Movement and Demography.”</span> <em>Methods in Ecology and Evolution</em> 13 (2): 419–31.
+</div>
+<div id="ref-kranstauber2024move2" class="csl-entry" role="listitem">
+Kranstauber, Bart, Kamran Safi, and Anne K Scharf. 2024. <span>“Move2: R Package for Processing Movement Data.”</span> <em>Methods in Ecology and Evolution</em> 15 (9): 1561–67.
+</div>
+<div id="ref-lai2022red" class="csl-entry" role="listitem">
+Lai, Sandra, Chloé Warret Rodrigues, Daniel Gallant, James D Roth, and Dominique Berteaux. 2022. <span>“Red Foxes at Their Northern Edge: Competition with the Arctic Fox and Winter Movements.”</span> <em>Journal of Mammalogy</em> 103 (3): 586–97.
+</div>
+<div id="ref-lapaine2011mollweide" class="csl-entry" role="listitem">
+Lapaine, Miljenko. 2011. <span>“Mollweide Map Projection.”</span> <em>KoG</em> 15 (15.): 7–16.
+</div>
+<div id="ref-laube2011" class="csl-entry" role="listitem">
+Laube, Patrick, and Ross S Purves. 2011. <span>“How Fast Is a Cow? Cross-Scale Analysis of Movement Data.”</span> <em>Transactions in GIS</em> 15 (3): 401–18.
+</div>
+<div id="ref-notebooklm" class="csl-entry" role="listitem">
+NotebookLM. 2025. <span>“NotebookLM.”</span> <a href="https://notebooklm.google/" class="uri">https://notebooklm.google/</a>.
+</div>
+<div id="ref-porteus2024movement" class="csl-entry" role="listitem">
+Porteus, Tom A, Mike J Short, Andrew N Hoodless, and Jonathan C Reynolds. 2024. <span>“Movement Ecology and Minimum Density Estimates of Red Foxes in Wet Grassland Habitats Used by Breeding Wading Birds.”</span> <em>European Journal of Wildlife Research</em> 70 (1): 8.
+</div>
+<div id="ref-prugh2023fear" class="csl-entry" role="listitem">
+Prugh, Laura R, Calum X Cunningham, Rebecca M Windell, Brian N Kertson, Taylor R Ganz, Savanah L Walker, and Aaron J Wirsing. 2023. <span>“Fear of Large Carnivores Amplifies Human-Caused Mortality for Mesopredators.”</span> <em>Science</em> 380 (6646): 754–58.
+</div>
+<div id="ref-zanaga2022esa" class="csl-entry" role="listitem">
+Zanaga, Daniele, Ruben Van De Kerchove, Dirk Daems, Wanda De Keersmaecker, Carsten Brockmann, Grit Kirches, Jan Wevers, et al. 2022. <span>“ESA WorldCover 10 m 2021 V200.”</span>
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -1132,7 +471,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
+      var filterRegex = new RegExp("https:\/\/elkeelke\.github\.io\/MovebankProject\/");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }

@@ -57,24 +57,61 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="preprocessing_monthly_home_ranges_files/libs/clipboard/clipboard.min.js"></script>
-<script src="preprocessing_monthly_home_ranges_files/libs/quarto-html/quarto.js"></script>
-<script src="preprocessing_monthly_home_ranges_files/libs/quarto-html/popper.min.js"></script>
-<script src="preprocessing_monthly_home_ranges_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="preprocessing_monthly_home_ranges_files/libs/quarto-html/anchor.min.js"></script>
-<link href="preprocessing_monthly_home_ranges_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="preprocessing_monthly_home_ranges_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="preprocessing_monthly_home_ranges_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="preprocessing_monthly_home_ranges_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="preprocessing_monthly_home_ranges_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
 
 
 </head>
 
 <body class="fullcontent">
 
-<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
-
+<div id="quarto-search-results"></div>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
@@ -690,356 +727,15 @@ Backtrace:
  6.   └─move2::movebank_download_study(...)
 [1] 40
 [1] 41
-&lt;error/rlang_error&gt;
-Error in `path_to_connection()`:
-! 
-  'alt_project_id,animal_life_stage,animal_mass,animal_reproductive_condition,attachment_body_part,attachment_comments,attachment_type,behavior_according_to,capture_handling_time,capture_latitude,capture_longitude,capture_method,capture_timestamp,comments,data_processing_software,dba_comments,deploy_off_latitude,deploy_off_longitude,deploy_off_measurements,deploy_off_person,deploy_off_sampling,deploy_off_timestamp,deploy_on_latitude,deploy_on_longitude,deploy_on_measurements,deploy_on_person,deploy_on_sampling,deploy_on_timestamp,deployment_end_comments,deployment_end_type,deployment_image,duty_cycle,geolocator_calibration,geolocator_light_threshold,geolocator_sensor_comments,geolocator_sun_elevation_angle,georeference_protocol,habitat_according_to,id,local_identifier,locality_according_to,location_accuracy_comments,manipulation_comments,manipulation_type,outlier_comments,partial_identifier,scheduled_detachment_date,study_site,tag_calibration,tag_firmware,tag_mass_total,tag_readout_method,tag_retrieval_date,tag_settings,timestamp_start,timestamp_end,number_of_events,sensor_type_ids
-  ,"adult",,,,,"collar",,360,51.05246,-1.7649454,,,,,,,,,"Tom
-  Porteus",,2016-05-22 07:40:00.000,,,,"Mike Short",,2016-04-16
-  05:29:00.000,,"equipment-failure",,,,,,,,,3179942273,"B16F01_5546",,,,"none","Lat/Lon
-  values visibly outside study area (e.g. located at 0.0 degrees) assumed
-  errors so set as NA. 2D relocations and those with altitude below zero or +/-
-  200m of median altitude recorded for each individual marked as
-  outliers.",,,"Britford",,,,"phone-network",,,2016-04-16
-  05:29:00.000,2016-05-22 07:40:00.000,1834,"gps"
-  ,"adult",,,,,"collar",,357,51.048163,-1.7613294,,,,,,,,,"Tom
-  Porteus",,2016-06-17 00:00:00.000,,,,"Mike Short",,2016-04-28
-  05:32:00.000,,"removal",,,,,,,,,3179942269,"B16F02_5543",,,,"none","Lat/Lon
-  values visibly outside study area (e.g. located at 0.0 degrees) assumed
-  errors so set as NA. 2D relocations and those with altitude below zero or +/-
-  200m of median altitude recorded for each individual marked as
-  outliers.",,,"Britford",,,,"phone-network",,,2016-04-28
-  05:32:00.000,2016-06-17 00:00:00.000,5129,"gps"
-  ,"adult",,,,,"collar",,265,51.051378,-1.7593299,,,,,,,,,"Tom
-  Porteus",,2016-06-08 05:50:00.000,,,,"Mike Short",,2016-05-01
-  08:33:00.000,,"equipment-failure",,,,,,,,,3179942253,"B16F03_4971",,,,"none","Lat/Lon
-  values visibly outside study area (e.g. located at 0.0 degrees) assumed
-  errors so set as NA. 2D relocations and those with altitude below zero or +/-
-  200m of median altitude recorded for each individual marked as
-  outliers.",,,"Britford",,,,"phone-network",,,2016-05-01
-  08:33:00.000,2016-06-08 03:50:00.000,3816,"gps"
-  ,"adult",,,,,"collar",,,51.052008,-1.7642059,,,,,,,,,"Tom
-  Porteus",,2016-03-25 23:00:00.000,,,,"Mike Short",,2016-03-16
-  06:32:00.000,,"dead",,,,,,,,,3179942259,"B16M01_4971",,,,"none","Lat/Lon
-  values visibly outside study area (e.g. located at 0.0 degrees) assumed
-  errors so set as NA. 2D relocations and those with altitude below zero or +/-
-  200m of median altitude recorded for each individual marked as
-  outliers.",,,"Britford",,,,"phone-network",,,2016-03-16
-  06:32:00.000,2016-03-25 23:00:00.000,1078,"gps"
-  ,"adult",,,,,"collar",,,51.052111,-1.7659887,,,,,,,,,"Tom
-  Porteus",,2016-03-23 20:50:00.000,,,,"Mike Short",,2016-03-20
-  06:24:00.000,,"removal",,,,,,,,,3179942246,"B16M02_4972",,,,"none","Lat/Lon
-  values visibly outside study area (e.g. located at 0.0 degrees) assumed
-  errors so set as NA. 2D relocations and those with altitude below zero or +/-
-  200m of median altitude recorded for each individual marked as
-  outliers.",,,"Britford",,,,"phone-network",,,2016-03-20
-  06:24:00.000,2016-03-23 20:50:00.000,507,"gps"
-  ,"adult",,,,,"collar",,,51.051812,-1.7651199,,,,,,,,,"Tom
-  Porteus",,2016-06-16 02:40:00.000,,,,"Mike Short",,2016-04-15
-  05:45:00.000,,"removal",,,,,,,,,3179942255,"B16M02_4973",,,,"none","Lat/Lon
-  values visibly outside study area (e.g. located at 0.0 degrees) assumed
-  errors so set as NA. 2D relocations and those with altitude below zero or +/-
-  200m of median altitude recorded for each individual marked as
-  outliers.",,,"Britford",,,,"phone-network",,,2016-04-15
-  05:45:00.000,2016-06-16 02:40:00.000,5899,"gps"
-  ,"adult",,,,,"collar",,332,51.049379,-1.7582132,,,,,,,,,"Tom
-  Porteus",,2016-05-25 13:10:00.000,,,,"Mike Short",,2016-03-20
-  07:06:00.000,,"removal",,,,,,,,,3179942263,"B16M03_4974",,,,"none","Lat/Lon
-  values visibly outside study area (e.g. located at 0.0 degrees) assumed
-  errors so set as NA. 2D relocations and those with altitude below zero or +/-
-  200m of median altitude recorded for each individual marked as
-  outliers.",,,"Britford",,,,"phone-network",,,2016-03-20
-  07:06:00.000,2016-05-25 13:10:00.000,4276,"gps"
-  ,"adult",,,,,"collar",,441,51.052468,-1.7645317,,,,,,,,,"Tom
-  Porteus",,2016-04-28 03:00:00.000,,,,"Mike Short",,2016-04-19
-  06:01:00.000,,"dead",,,,,,,,,3179942257,"B16M04_5545",,,,"none","Lat/Lon
-  values visibly outside study area (e.g. located at 0.0 degrees) assumed
-  errors so set as NA. 2D relocations and those with altitude below zero or +/-
-  200m of median altitude recorded for each individual marked as
-  outliers.",,,"Britford",,,,"phone-network",,,2016-04-19
-  06:01:00.000,2016-04-28 03:00:00.000,968,"gps"
-  ,"adult",,,,,"collar",,,51.052911,-1.7614049,,,,,,,,,"Tom
-  Porteus",,2016-06-19 06:30:00.000,,,,"Mike Short",,2016-04-28
-  06:01:00.000,,"removal",,,,,,,,,3179942233,"B16M05_5544",,,,"none","Lat/Lon
-  values visibly outside study area (e.g. located at 0.0 degrees) assumed
-  errors so set as NA. 2D relocations and those with altitude below zero or +/-
-  200m of median altitude recorded for each individual marked as
-  outliers.",,,"Britford",,,,"phone-network",,,2016-04-28
-  06:01:00.000,2016-06-19 06:30:00.000,5150,"gps"
-  ,"adult",,,,,"collar",,373,51.048865,-1.7617538,,,,,,,,,"Tom
-  Porteus",,2016-06-17 14:50:00.000,,,,"Mike Short",,2016-05-12
-  05:23:00.000,,"removal",,,,,,,,,3179942243,"B16M06_5545",,,,"none","Lat/Lon
-  values visibly outside study area (e.g. located at 0.0 degrees) assumed
-  errors so set as NA. 2D relocations and those with altitude below zero or +/-
-  200m of median altitude recorded for each individual marked as
-  outliers.",,,"Britford",,,,"phone-network",,,2016-05-12
-  05:23:00.000,2016-06-17 14:50:00.000,4778,"gps"
-  ,"adult",,,,,"collar",,,51.054073,-1.762255,,,,,,,,,"Tom Porteus",,2017-04-04
-  06:10:00.000,,,,"Mike Short",,2017-03-07
-  07:03:00.000,,"dead",,,,,,,,,3179942256,"B17F01_4974",,,,"none","Lat/Lon
-  values visibly outside study area (e.g. located at 0.0 degrees) assumed
-  errors so set as NA. 2D relocations and those with altitude below zero or +/-
-  200m of median altitude recorded for each individual marked as
-  outliers.",,,"Britford",,,,"phone-network",,,2017-03-07
-  07:03:00.000,2017-04-04 06:10:00.000,3342,"gps"
-  ,"adult",,,,,"collar",,324,51.052086,-1.7582705,,,,,,,,,"Tom
-  Porteus",,2017-03-15 01:30:00.000,,,,"Mike Short",,2017-03-14
-  06:31:00.000,,"fall-off",,,,,,,,,3179942262,"B17F02_5546",,,,"none","Lat/Lon
-  values visibly outside study area (e.g. located at 0.0 degrees) assumed
-  errors so set as NA. 2D relocations and those with altitude below zero or +/-
-  200m of median altitude recorded for each individual marked as
-  outliers.",,,"Britford",,,,"phone-network",,,2017-03-14
-  06:31:00.000,2017-03-15 01:30:00.000,114,"gps"
-  ,"adult",,,,,"collar",,356,51.051816,-1.7581292,,,,,,,,,"Tom
-  Porteus",,2017-05-19 09:40:00.000,,,,"Mike Short",,2017-03-17
-  06:15:00.000,,"removal",,,,,,,,,3179942237,"B17F03_5545",,,,"none","Lat/Lon
-  values visibly outside study area (e.g. located at 0.0 degrees) assumed
-  errors so set as NA. 2D relocations and those with altitude below zero or +/-
-  200m of median altitude recorded for each individual marked as
-  outliers.",,,"Britford",,,,"phone-network",,,2017-03-17
-  06:15:00.000,2017-05-19 09:40:00.000,4716,"gps"
-  ,"adult",,,,,"collar",,372,51.051996,-1.7582709,,,,,,,,,"Tom
-  Porteus",,2017-05-25 01:00:00.000,,,,"Mike Short",,2017-03-22
-  06:02:00.000,,"removal",,,,,,,,,3179942238,"B17F04_5543",,,,"none","Lat/Lon
-  values visibly outside study area (e.g. located at 0.0 degrees) assumed
-  errors so set as NA. 2D relocations and those with altitude below zero or +/-
-  200m of median altitude recorded for each individual marked as
-  outliers.",,,"Britford",,,,"phone-network",,,2017-03-22
-  06:02:00.000,2017-05-25 00:50:00.000,5231,"gps"
-  ,"adult",,,,,"collar",,315,51.053807,-1.7641111,,,,,,,,,"Tom
-  Porteus",,2017-05-23 12:50:00.000,,,,"Mike Short",,2017-04-16
-  16:22:00.000,,"equipment-failure",,,,,,,,,3179942235,"B17F05_5951",,,,"none","Lat/Lon
-  values visibly outside study area (e.g. located at 0.0 degrees) assumed
-  errors so set as NA. 2D relocations and those with altitude below zero or +/-
-  200m of median altitude recorded for each individual marked as
-  outliers.",,,"Britford",,,,"phone-network",,,2017-04-16
-  16:22:00.000,2017-05-23 12:50:00.000,3742,"gps"
-  ,"adult",,,,,"collar",,323,51.0502,-1.7594216,,,,,,,,,"Tom
-  Porteus",,2017-04-17 17:30:00.000,,,,"Mike Short",,2017-03-15
-  06:45:00.000,,"equipment-failure",,,,,,,,,3179942232,"B17M01_4972",,,,"none","Lat/Lon
-  values visibly outside study area (e.g. located at 0.0 degrees) assumed
-  errors so set as NA. 2D relocations and those with altitude below zero or +/-
-  200m of median altitude recorded for each individual marked as
-  outliers.",,,"Britford",,,,"phone-network",,,2017-03-15
-  06:45:00.000,2017-04-17 17:20:00.000,1590,"gps"
-  ,"adult",,,,,"collar",,450,51.052175,-1.7575567,,,,,,,,,"Tom
-  Porteus",,2017-05-07 16:00:00.000,,,,"Mike Short",,2017-03-22
-  06:17:00.000,,"dead",,,,,,,,,3179942260,"B17M02_5544",,,,"none","Lat/Lon
-  values visibly outside study area (e.g. located at 0.0 degrees) assumed
-  errors so set as NA. 2D relocations and those with altitude below zero or +/-
-  200m of median altitude recorded for each individual marked as
-  outliers.",,,"Britford",,,,"phone-network",,,2017-03-22
-  06:17:00.000,2017-05-07 16:00:00.000,3857,"gps"
-  ,"adult",,,,,"collar",,305,51.050741,-1.7598468,,,,,,,,,"Tom
-  Porteus",,2017-05-13 22:00:00.000,,,,"Mike Short",,2017-03-22
-  06:49:00.000,,"dead",,,,,,,,,3179942254,"B17M03_4973",,,,"none","Lat/Lon
-  values visibly outside study area (e.g. located at 0.0 degrees) assumed
-  errors so set as NA. 2D relocations and those with altitude below zero or +/-
-  200m of median altitude recorded for each individual marked as
-  outliers.",,,"Britford",,,,"phone-network",,,2017-03-22
-  06:49:00.000,2017-05-13 22:00:00.000,4259,"gps"
-  ,"adult",,,,,"collar",,633,51.053821,-1.7622848,,,,,,,,,"Tom
-  Porteus",,2017-05-16 18:50:00.000,,,,"Mike Short",,2017-04-01
-  05:53:00.000,,"equipment-failure",,,,,,,,,3179942264,"B17M04_5952",,,,"none","Lat/Lon
-  values visibly outside study area (e.g. located at 0.0 degrees) assumed
-  errors so set as NA. 2D relocations and those with altitude below zero or +/-
-  200m of median altitude recorded for each individual marked as
-  outliers.",,,"Britford",,,,"phone-network",,,2017-04-01
-  05:53:00.000,2017-05-16 18:50:00.000,4172,"gps"
-  ,"adult",,,,,"collar",,478,51.048943,-1.7599987,,,,,,,,,"Tom
-  Porteus",,2017-06-02 04:00:00.000,,,,"Mike Short",,2017-04-18
-  05:13:00.000,,"equipment-failure",,,,,,,,,3179942271,"B17M05_5950",,,,"none","Lat/Lon
-  values visibly outside study area (e.g. located at 0.0 degrees) assumed
-  errors so set as NA. 2D relocations and those with altitude below zero or +/-
-  200m of median altitude recorded for each individual marked as
-  outliers.",,,"Britford",,,,"phone-network",,,2017-04-18
-  05:13:00.000,2017-06-02 04:00:00.000,4289,"gps"
-  ,"adult",,,,,"collar",,,50.895493,-1.7853292,,,,,,,,,"Tom
-  Porteus",,2018-05-22 04:40:00.000,,,,"Mike Short",,2018-04-26
-  05:20:00.000,,"removal",,,,,,,,,3179942239,"S18F01_4973",,,,"none","Lat/Lon
-  values visibly outside study area (e.g. located at 0.0 degrees) assumed
-  errors so set as NA. 2D relocations and those with altitude below zero or +/-
-  200m of median altitude recorded for each individual marked as
-  outliers.",,,"Somerley",,,,"phone-network",,,2018-04-26
-  05:20:00.000,2018-05-22 04:40:00.000,2321,"gps"
-  ,"adult",,,,,"collar",,,50.869497,-1.7958651,,,,,,,,,"Tom
-  Porteus",,2018-05-13 05:20:00.000,,,,"Mike Short",,2018-05-01
-  05:27:00.000,,"removal",,,,,,,,,3179942248,"S18F02_5543",,,,"none","Lat/Lon
-  values visibly outside study area (e.g. located at 0.0 degrees) assumed
-  errors so set as NA. 2D relocations and those with altitude below zero or +/-
-  200m of median altitude recorded for each individual marked as
-  outliers.",,,"Somerley",,,,"phone-network",,,2018-05-01
-  05:27:00.000,2018-05-13 05:20:00.000,1705,"gps"
-  ,"adult",,,,,"collar",,,50.86694,-1.7937731,,,,,,,,,"Tom Porteus",,2018-06-07
-  22:30:00.000,,,,"Mike Short",,2018-05-13
-  05:21:00.000,,"removal",,,,,,,,,3179942267,"S18F02_5951",,,,"none","Lat/Lon
-  values visibly outside study area (e.g. located at 0.0 degrees) assumed
-  errors so set as NA. 2D relocations and those with altitude below zero or +/-
-  200m of median altitude recorded for each individual marked as
-  outliers.",,,"Somerley",,,,"phone-network",,,2018-05-13
-  05:21:00.000,2018-06-07 22:30:00.000,3343,"gps"
-  ,"adult",,,,,"collar",,,50.879247,-1.8023752,,,,,,,,,"Tom
-  Porteus",,2018-05-03 09:40:00.000,,,,"Mike Short",,2018-02-28
-  07:02:00.000,,"removal",,,,,,,,,3179942265,"S18M01_4974",,,,"none","Lat/Lon
-  values visibly outside study area (e.g. located at 0.0 degrees) assumed
-  errors so set as NA. 2D relocations and those with altitude below zero or +/-
-  200m of median altitude recorded for each individual marked as
-  outliers.",,,"Somerley",,,,"phone-network",,,2018-02-28
-  07:02:00.000,2018-05-03 09:40:00.000,2965,"gps"
-  ,"adult",,,,,"collar",,,50.879067,-1.8023759,,,,,,,,,"Tom
-  Porteus",,2018-05-19 11:00:00.000,,,,"Mike Short",,2018-03-01
-  07:02:00.000,,"removal",,,,,,,,,3179942261,"S18M02_5544",,,,"none","Lat/Lon
-  values visibly outside study area (e.g. located at 0.0 degrees) assumed
-  errors so set as NA. 2D relocations and those with altitude below zero or +/-
-  200m of median altitude recorded for each individual marked as
-  outliers.",,,"Somerley",,,,"phone-network",,,2018-03-01
-  07:02:00.000,2018-05-19 11:00:00.000,4557,"gps"
-  ,"adult",,,,,"collar",,,50.862124,-1.7964372,,,,,,,,,"Tom
-  Porteus",,2018-07-01 22:10:00.000,,,,"Mike Short",,2018-05-02
-  05:43:00.000,,"removal",,,,,,,,,3179942274,"S18M03_5952",,,,"none","Lat/Lon
-  values visibly outside study area (e.g. located at 0.0 degrees) assumed
-  errors so set as NA. 2D relocations and those with altitude below zero or +/-
-  200m of median altitude recorded for each individual marked as
-  outliers.",,,"Somerley",,,,"phone-network",,,2018-05-02
-  05:43:00.000,2018-07-01 22:10:00.000,6373,"gps"
-  ,"adult",,,,,"collar",,,50.862097,-1.7964089,,,,,,,,,"Tom
-  Porteus",,2018-07-01 21:00:00.000,,,,"Mike Short",,2018-05-11
-  05:25:00.000,,"removal",,,,,,,,,3179942258,"S18M04_5545",,,,"none","Lat/Lon
-  values visibly outside study area (e.g. located at 0.0 degrees) assumed
-  errors so set as NA. 2D relocations and those with altitude below zero or +/-
-  200m of median altitude recorded for each individual marked as
-  outliers.",,,"Somerley",,,,"phone-network",,,2018-05-11
-  05:25:00.000,2018-07-01 21:00:00.000,5034,"gps"
-  ,"adult",,,,,"collar",,,50.89073,-1.7868297,,,,,,,,,"Tom Porteus",,2019-05-09
-  13:30:00.000,,,,"Mike Short",,2019-04-03
-  05:38:00.000,,"removal",,,,,,,,,3179942240,"S19F01_4974",,,,"none","Lat/Lon
-  values visibly outside study area (e.g. located at 0.0 degrees) assumed
-  errors so set as NA. 2D relocations and those with altitude below zero or +/-
-  200m of median altitude recorded for each individual marked as
-  outliers.",,,"Somerley",,,,"phone-network",,,2019-04-03
-  05:38:00.000,2019-05-09 13:10:00.000,2237,"gps"
-  ,"adult",,,,,"collar",,,50.895961,-1.7807058,,,,,,,,,"Tom
-  Porteus",,2019-06-26 15:00:00.000,,,,"Mike Short",,2019-05-21
-  04:43:00.000,,"removal",,,,,,,,,3179942241,"S19F01_5951",,,,"none","Lat/Lon
-  values visibly outside study area (e.g. located at 0.0 degrees) assumed
-  errors so set as NA. 2D relocations and those with altitude below zero or +/-
-  200m of median altitude recorded for each individual marked as
-  outliers.",,,"Somerley",,,,"phone-network",,,2019-05-21
-  04:43:00.000,2019-06-26 14:50:00.000,4098,"gps"
-  ,"adult",,,,,"collar",,,50.891719,-1.7868251,,,,,,,,,"Tom
-  Porteus",,2019-05-07 21:00:00.000,,,,"Mike Short",,2019-04-15
-  05:33:00.000,,"dead",,,,,,,,,3179942234,"S19F02_6644",,,,"none","Lat/Lon
-  values visibly outside study area (e.g. located at 0.0 degrees) assumed
-  errors so set as NA. 2D relocations and those with altitude below zero or +/-
-  200m of median altitude recorded for each individual marked as
-  outliers.",,,"Somerley",,,,"phone-network",,,2019-04-15
-  05:33:00.000,2019-05-07 21:00:00.000,2900,"gps"
-  ,"adult",,,,,"collar",,,50.899901,-1.786219,,,,,,,,,"Tom Porteus",,2019-05-08
-  21:40:00.000,,,,"Mike Short",,2019-04-19
-  06:15:00.000,,"removal",,,,,,,,,3179942251,"S19F03_6643",,,,"none","Lat/Lon
-  values visibly outside study area (e.g. located at 0.0 degrees) assumed
-  errors so set as NA. 2D relocations and those with altitude below zero or +/-
-  200m of median altitude recorded for each individual marked as
-  outliers.",,,"Somerley",,,,"phone-network",,,2019-04-19
-  06:30:00.000,2019-05-08 21:40:00.000,813,"gps"
-  ,"adult",,,,,"collar",,,50.882393,-1.8017933,,,,,,,,,"Tom
-  Porteus",,2019-06-20 10:40:00.000,,,,"Mike Short",,2019-05-10
-  05:13:00.000,,"removal",,,,,,,,,3179942236,"S19F04_4973",,,,"none","Lat/Lon
-  values visibly outside study area (e.g. located at 0.0 degrees) assumed
-  errors so set as NA. 2D relocations and those with altitude below zero or +/-
-  200m of median altitude recorded for each individual marked as
-  outliers.",,,"Somerley",,,,"phone-network",,,2019-05-10
-  05:13:00.000,2019-06-20 10:40:00.000,5492,"gps"
-  ,"adult",,,,,"collar",,,50.878566,-1.8039558,,,,,,,,,"Tom
-  Porteus",,2019-06-21 07:50:00.000,,,,"Mike Short",,2019-05-15
-  04:48:00.000,,"removal",,,,,,,,,3179942266,"S19F05_5544",,,,"none","Lat/Lon
-  values visibly outside study area (e.g. located at 0.0 degrees) assumed
-  errors so set as NA. 2D relocations and those with altitude below zero or +/-
-  200m of median altitude recorded for each individual marked as
-  outliers.",,,"Somerley",,,,"phone-network",,,2019-05-15
-  04:48:00.000,2019-06-21 07:50:00.000,5038,"gps"
-  ,"adult",,,,,"collar",,,50.895933,-1.7798386,,,,,,,,,"Tom
-  Porteus",,2019-07-04 04:10:00.000,,,,"Mike Short",,2019-05-23
-  05:07:00.000,,"removal",,,,,,,,,3179942270,"S19F06_5543",,,,"none","Lat/Lon
-  values visibly outside study area (e.g. located at 0.0 degrees) assumed
-  errors so set as NA. 2D relocations and those with altitude below zero or +/-
-  200m of median altitude recorded for each individual marked as
-  outliers.",,,"Somerley",,,,"phone-network",,,2019-05-23
-  05:07:00.000,2019-07-04 04:10:00.000,5645,"gps"
-  ,"adult",,,,,"collar",,,50.882393,-1.8016511,,,,,,,,,"Tom
-  Porteus",,2019-05-15 04:30:00.000,,,,"Mike Short",,2019-04-12
-  05:20:00.000,,"removal",,,,,,,,,3179942275,"S19M01_4972",,,,"none","Lat/Lon
-  values visibly outside study area (e.g. located at 0.0 degrees) assumed
-  errors so set as NA. 2D relocations and those with altitude below zero or +/-
-  200m of median altitude recorded for each individual marked as
-  outliers.",,,"Somerley",,,,"phone-network",,,2019-04-12
-  05:20:00.000,2019-05-15 04:20:00.000,4233,"gps"
-  ,"adult",,,,,"collar",,,50.895966,-1.7786583,,,,,,,,,"Tom
-  Porteus",,2019-07-04 20:00:00.000,,,,"Mike Short",,2019-05-22
-  04:54:00.000,,"removal",,,,,,,,,3179942276,"S19M02_5546",,,,"none","Lat/Lon
-  values visibly outside study area (e.g. located at 0.0 degrees) assumed
-  errors so set as NA. 2D relocations and those with altitude below zero or +/-
-  200m of median altitude recorded for each individual marked as
-  outliers.",,,"Somerley",,,,"phone-network",,,2019-05-22
-  04:54:00.000,2019-07-04 20:00:00.000,5914,"gps"
-  ,"adult",,,,,"collar",,,50.893516,-1.7859639,,,,,,,,,"Tom
-  Porteus",,2019-05-22 04:20:00.000,,,,"Mike Short",,2019-04-15
-  05:57:00.000,,"removal",,,,,,,,,3179942278,"S19M02_6645",,,,"none","Lat/Lon
-  values visibly outside study area (e.g. located at 0.0 degrees) assumed
-  errors so set as NA. 2D relocations and those with altitude below zero or +/-
-  200m of median altitude recorded for each individual marked as
-  outliers.",,,"Somerley",,,,"phone-network",,,2019-04-15
-  05:57:00.000,2019-05-22 04:20:00.000,4149,"gps"
-  ,"adult",,,,,"collar",,,50.898282,-1.785942,,,,,,,,,"Tom Porteus",,2019-06-12
-  19:10:00.000,,,,"Mike Short",,2019-04-19
-  05:53:00.000,,"removal",,,,,,,,,3179942277,"S19M03_5952",,,,"none","Lat/Lon
-  values visibly outside study area (e.g. located at 0.0 degrees) assumed
-  errors so set as NA. 2D relocations and those with altitude below zero or +/-
-  200m of median altitude recorded for each individual marked as
-  outliers.",,,"Somerley",,,,"phone-network",,,2019-04-19
-  05:53:00.000,2019-06-12 19:10:00.000,6417,"gps"
-  ,"adult",,,,,"collar",,,50.878621,-1.8045099,,,,,,,,,"Tom
-  Porteus",,2019-06-14 22:10:00.000,,,,"Mike Short",,2019-05-15
-  05:16:00.000,,"removal",,,,,,,,,3179942279,"S19M04_5545",,,,"none","Lat/Lon
-  values visibly outside study area (e.g. located at 0.0 degrees) assumed
-  errors so set as NA. 2D relocations and those with altitude below zero or +/-
-  200m of median altitude recorded for each individual marked as
-  outliers.",,,"Somerley",,,,"phone-network",,,2019-05-15
-  05:16:00.000,2019-06-14 22:10:00.000,4091,"gps"
- ' does not exist in current
-  working directory ('/Users/elkemichlmayr/Documents/ZHAW/Patterns and Trends
-  in Environmental Data/GPS/MovebankProject2').
----
-Backtrace:
-     ▆
-  1. └─global calculate_monthly_home_ranges(...)
-  2.   ├─base::tryCatch(...)
-  3.   │ └─base (local) tryCatchList(expr, classes, parentenv, handlers)
-  4.   │   └─base (local) tryCatchOne(expr, names, parentenv, handlers[[1L]])
-  5.   │     └─base (local) doTryCatch(return(expr), name, parentenv, handler)
-  6.   └─move2::movebank_download_study(...)
-  7.     ├─dplyr::filter(...)
-  8.     └─move2::movebank_download_deployment(study_id = study_id, ...)
-  9.       ├─rlang::exec(...)
- 10.       └─move2::movebank_retrieve(...)
- 11.         ├─base::gsub(...)
- 12.         │ └─base::is.factor(x)
- 13.         ├─xml2::xml_text(xml2::read_html(gsub("&lt;br&gt;", "\n", rawToChar(error_return$content))))
- 14.         ├─xml2::read_html(gsub("&lt;br&gt;", "\n", rawToChar(error_return$content)))
- 15.         └─xml2:::read_html.default(gsub("&lt;br&gt;", "\n", rawToChar(error_return$content)))
- 16.           ├─base::suppressWarnings(...)
- 17.           │ └─base::withCallingHandlers(...)
- 18.           ├─xml2::read_xml(x, encoding = encoding, ..., as_html = TRUE, options = options)
- 19.           └─xml2:::read_xml.character(...)
- 20.             └─xml2:::path_to_connection(x)
 [1] 42
 [1] 43</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(<span class="fu">data.frame</span>(<span class="at">areas =</span> results_wiltshire<span class="sc">$</span>areas), <span class="st">"data/output_wiltshire.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
-</main>
-<!-- /main column -->
+
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -1132,7 +828,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
+      var filterRegex = new RegExp("https:\/\/elkeelke\.github\.io\/MovebankProject\/");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
