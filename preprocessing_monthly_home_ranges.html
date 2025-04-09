@@ -292,8 +292,11 @@ Attaching package: 'lubridate'</code></pre>
   `deployment_id` was `NA`).</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(<span class="fu">data.frame</span>(<span class="at">areas =</span> results_bylot<span class="sc">$</span>areas), <span class="st">"data/output_bylot.csv"</span>)</span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>results_herschel <span class="ot">=</span> <span class="fu">calculate_monthly_home_ranges</span>(<span class="fu">as.POSIXct</span>(<span class="st">"2009-07-01 00:00:00"</span>), <span class="dv">9</span>, <span class="dv">1371529289</span>, <span class="st">'436e8205d0c2973115e2024b146a6ad5'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">"img/bylot_monthly.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Saving 7 x 5 in image</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>results_herschel <span class="ot">=</span> <span class="fu">calculate_monthly_home_ranges</span>(<span class="fu">as.POSIXct</span>(<span class="st">"2009-07-01 00:00:00"</span>), <span class="dv">9</span>, <span class="dv">1371529289</span>, <span class="st">'436e8205d0c2973115e2024b146a6ad5'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1
 [1] 2
@@ -332,9 +335,12 @@ Backtrace:
  5.   │     └─base (local) doTryCatch(return(expr), name, parentenv, handler)
  6.   └─move2::movebank_download_study(...)</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(<span class="fu">data.frame</span>(<span class="at">areas =</span> results_herschel<span class="sc">$</span>areas), <span class="st">"data/output_herschel.csv"</span>)</span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>results_wiltshire <span class="ot">=</span> <span class="fu">calculate_monthly_home_ranges</span>(<span class="fu">as.POSIXct</span>(<span class="st">"2016-01-01 00:00:00"</span>), <span class="dv">43</span>, <span class="dv">3179890710</span>, <span class="st">'ffa36f79defe10eac9fe70f6502a17e0'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(<span class="fu">data.frame</span>(<span class="at">areas =</span> results_herschel<span class="sc">$</span>areas), <span class="st">"data/output_herschel.csv"</span>)</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">"img/herschel_monthly.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Saving 7 x 5 in image</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>results_wiltshire <span class="ot">=</span> <span class="fu">calculate_monthly_home_ranges</span>(<span class="fu">as.POSIXct</span>(<span class="st">"2016-01-01 00:00:00"</span>), <span class="dv">43</span>, <span class="dv">3179890710</span>, <span class="st">'ffa36f79defe10eac9fe70f6502a17e0'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1
 &lt;error/move2_error_no_data_found&gt;
@@ -730,7 +736,11 @@ Backtrace:
 [1] 42
 [1] 43</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(<span class="fu">data.frame</span>(<span class="at">areas =</span> results_wiltshire<span class="sc">$</span>areas), <span class="st">"data/output_wiltshire.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(<span class="fu">data.frame</span>(<span class="at">areas =</span> results_wiltshire<span class="sc">$</span>areas), <span class="st">"data/output_wiltshire.csv"</span>)</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">"img/wiltshire_monthly.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Saving 7 x 5 in image</code></pre>
+</div>
 </div>
 
 
