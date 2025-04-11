@@ -52699,16 +52699,18 @@ Figure&nbsp;2: Home ranges for Wiltshire foxes (March 15th to June 15th, 2019)
 <section id="check-if-there-is-distortion-in-the-coordinate-system-bylot-is-high-up-north" class="level3">
 <h3 class="anchored" data-anchor-id="check-if-there-is-distortion-in-the-coordinate-system-bylot-is-high-up-north">Check if there is distortion in the coordinate system (Bylot is high up North)</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># c1 is Bylot island, which is 11.067 km^2 and split over two UTM zones:</span></span>
-<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="co"># EPSG:2958 NAD83(CSRS) / UTM zone 17N</span></span>
-<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="co"># EPSG:2959 NAD83(CSRS) / UTM zone 18N</span></span>
-<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a><span class="co"># This coordinate system covers them both: EPSG:3347 NAD83 / Statistics Canada Lambert</span></span>
-<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a>convert_m2_to_km2 <span class="ot">&lt;-</span> <span class="cf">function</span>(area) {</span>
-<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(area <span class="sc">*</span> <span class="fl">0.000001</span>)</span>
-<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a>c1_mcp_3347 <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(c1_mcp, <span class="dv">3347</span>)</span>
-<span id="cb42-10"><a href="#cb42-10" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">convert_m2_to_km2</span>(<span class="fu">median</span>(<span class="fu">st_area</span>(c1_mcp_3347))))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># EPSG:3154 NAD83(CSRS) / UTM zone 7N Herschel Island, also known as Qikiqtaruk,  69°35'23" N, 139°05'57" W</span></span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="co"># c1 is Bylot island, which is 11.067 km^2 and split over two UTM zones:</span></span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a><span class="co"># EPSG:2958 NAD83(CSRS) / UTM zone 17N</span></span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a><span class="co"># EPSG:2959 NAD83(CSRS) / UTM zone 18N</span></span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a><span class="co"># This coordinate system covers them both: EPSG:3347 NAD83 / Statistics Canada Lambert</span></span>
+<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a>convert_m2_to_km2 <span class="ot">&lt;-</span> <span class="cf">function</span>(area) {</span>
+<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(area <span class="sc">*</span> <span class="fl">0.000001</span>)</span>
+<span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb42-10"><a href="#cb42-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-11"><a href="#cb42-11" aria-hidden="true" tabindex="-1"></a>c1_mcp_3347 <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(c1_mcp, <span class="dv">3347</span>)</span>
+<span id="cb42-12"><a href="#cb42-12" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">convert_m2_to_km2</span>(<span class="fu">median</span>(<span class="fu">st_area</span>(c1_mcp_3347))))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>73.31395 [m^2]</code></pre>
 </div>
