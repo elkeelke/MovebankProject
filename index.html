@@ -99,8 +99,49 @@ div.csl-indent {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="index.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#abstract" id="toc-abstract" class="nav-link active" data-scroll-target="#abstract">Abstract</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#material-and-methods" id="toc-material-and-methods" class="nav-link" data-scroll-target="#material-and-methods">Material and Methods</a>
+  <ul class="collapse">
+  <li><a href="#data-sets" id="toc-data-sets" class="nav-link" data-scroll-target="#data-sets">Data sets</a></li>
+  <li><a href="#data-preparation-and-processing" id="toc-data-preparation-and-processing" class="nav-link" data-scroll-target="#data-preparation-and-processing">Data preparation and processing</a>
+  <ul class="collapse">
+  <li><a href="#sec-movebank" id="toc-sec-movebank" class="nav-link" data-scroll-target="#sec-movebank">Movebank</a></li>
+  <li><a href="#hfp-100" id="toc-hfp-100" class="nav-link" data-scroll-target="#hfp-100">HFP-100</a></li>
+  <li><a href="#esa-worldcover" id="toc-esa-worldcover" class="nav-link" data-scroll-target="#esa-worldcover">ESA WorldCover</a></li>
+  </ul></li>
+  <li><a href="#data-exploration-and-analysis" id="toc-data-exploration-and-analysis" class="nav-link" data-scroll-target="#data-exploration-and-analysis">Data exploration and analysis</a>
+  <ul class="collapse">
+  <li><a href="#sec-redfoxdata" id="toc-sec-redfoxdata" class="nav-link" data-scroll-target="#sec-redfoxdata">Red fox data</a></li>
+  </ul></li>
+  <li><a href="#sec-methodology" id="toc-sec-methodology" class="nav-link" data-scroll-target="#sec-methodology">Methodology</a>
+  <ul class="collapse">
+  <li><a href="#trajectory-analysis" id="toc-trajectory-analysis" class="nav-link" data-scroll-target="#trajectory-analysis">Trajectory Analysis</a></li>
+  <li><a href="#home-range-assessment" id="toc-home-range-assessment" class="nav-link" data-scroll-target="#home-range-assessment">Home Range Assessment</a></li>
+  <li><a href="#temporal-activity-patterns" id="toc-temporal-activity-patterns" class="nav-link" data-scroll-target="#temporal-activity-patterns">Temporal Activity Patterns</a></li>
+  <li><a href="#habitat-selection" id="toc-habitat-selection" class="nav-link" data-scroll-target="#habitat-selection">Habitat Selection</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a>
+  <ul class="collapse">
+  <li><a href="#model-validation" id="toc-model-validation" class="nav-link" data-scroll-target="#model-validation">Model validation</a></li>
+  </ul></li>
+  <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion">Discussion</a></li>
+  <li><a href="#appendix" id="toc-appendix" class="nav-link" data-scroll-target="#appendix">Appendix</a>
+  <ul class="collapse">
+  <li><a href="#dont-do" id="toc-dont-do" class="nav-link" data-scroll-target="#dont-do">Don’t do</a></li>
+  <li><a href="#wordcount" id="toc-wordcount" class="nav-link" data-scroll-target="#wordcount">Wordcount</a></li>
+  <li><a href="#additional-charts" id="toc-additional-charts" class="nav-link" data-scroll-target="#additional-charts">Additional charts</a></li>
+  <li><a href="#use-of-large-language-models-and-generative-ai" id="toc-use-of-large-language-models-and-generative-ai" class="nav-link" data-scroll-target="#use-of-large-language-models-and-generative-ai">Use of Large Language Models and Generative AI</a></li>
+  </ul></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="index.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -136,9 +177,10 @@ div.csl-indent {
 </section>
 <section id="introduction" class="level1">
 <h1>Introduction</h1>
+<p>Disturbance by humans has widespread impacts on the movements of animals, as <span class="citation" data-cites="doherty2021human">Doherty, Hays, and Driscoll (<a href="#ref-doherty2021human" role="doc-biblioref">2021</a>)</span> found in a large-scale meta study. Human activities, such as recreation and hunting, have stronger impacts on animal movement than habitat modification, such as logging and agriculture.</p>
 <p>Research questions:</p>
 <ol type="1">
-<li>Home Range Implications: Do animals exhibit smaller home ranges in high human-impact areas? Similar to <span class="citation" data-cites="doherty2021human">Doherty, Hays, and Driscoll (<a href="#ref-doherty2021human" role="doc-biblioref">2021</a>)</span> (TBD download via ZHAW)</li>
+<li>Home Range Implications: Do animals exhibit smaller home ranges in high human impact areas? We analyse this for the red fox (vulpes vulpes) by comparing home ranges based on data from low and high human impact areas.</li>
 <li>Temporal Shifts in Activity Patterns: Do animals become more nocturnal in high human-impact areas to avoid direct human encounters?</li>
 <li>Habitat Selection in Human-Dominated Landscapes: How do animals select habitats (e.g., forests, agriculture) under varying levels of human influence?</li>
 </ol>
@@ -146,12 +188,12 @@ div.csl-indent {
 </section>
 <section id="material-and-methods" class="level1">
 <h1>Material and Methods</h1>
-<p>This section describes the data sets, the steps taken to prepare and process the different data sets in use, and the methodological approach that was employed.</p>
+<p>This section describes the data sets, the steps taken to prepare and process the different data sets in use, and the methodological approach.</p>
 <section id="data-sets" class="level2">
 <h2 class="anchored" data-anchor-id="data-sets">Data sets</h2>
 <p>The Movebank database by <span class="citation" data-cites="kays2022movebank">Kays et al. (<a href="#ref-kays2022movebank" role="doc-biblioref">2022</a>)</span> provides means for researchers to publish animal tracking data for public use, e.g.&nbsp;under Creative Commons licenses. The following data was selected:</p>
 <ul>
-<li>Red fox data from <span class="citation" data-cites="porteus2024movement">Porteus et al. (<a href="#ref-porteus2024movement" role="doc-biblioref">2024</a>)</span> for the outskirt areas of villages in Wiltshire, UK and from <span class="citation" data-cites="lai2022red">Lai et al. (<a href="#ref-lai2022red" role="doc-biblioref">2022</a>)</span> for the highly remote uninhabitated islands Bylot and Herschel, Canada, and</li>
+<li>Red fox data from <span class="citation" data-cites="porteus2024movement">Porteus et al. (<a href="#ref-porteus2024movement" role="doc-biblioref">2024</a>)</span> for the outskirt areas of villages in Wiltshire, UK and from <span class="citation" data-cites="lai2022red">Lai et al. (<a href="#ref-lai2022red" role="doc-biblioref">2022</a>)</span> for the highly remote uninhabited islands Bylot and Herschel, Canada, and</li>
 <li>Bobcat and coyote data from <span class="citation" data-cites="prugh2023fear">Prugh et al. (<a href="#ref-prugh2023fear" role="doc-biblioref">2023</a>)</span> for remote areas with some rural structures in northern Washington, US.</li>
 </ul>
 <p>For the human footprint data, the global 100 meter resolution terrestrial human footprint data (HFP-100) by <span class="citation" data-cites="gassert2023operational">Gassert et al. (<a href="#ref-gassert2023operational" role="doc-biblioref">2023</a>)</span> is chosen. For land use, the ESA WorldCover data described in <span class="citation" data-cites="zanaga2022esa">Zanaga et al. (<a href="#ref-zanaga2022esa" role="doc-biblioref">2022</a>)</span> is employed.</p>
@@ -161,15 +203,15 @@ div.csl-indent {
 <section id="sec-movebank" class="level3">
 <h3 class="anchored" data-anchor-id="sec-movebank">Movebank</h3>
 <p>All Movebank data sets have the same schema. This simplifies data handling, enables code re-use, and requires the data contributors do perform preprocessing and data cleaning on their side to provide the data in an appropriate format. A library for data processing and trajectory handling in R is provided by <span class="citation" data-cites="kranstauber2024move2">Kranstauber, Safi, and Scharf (<a href="#ref-kranstauber2024move2" role="doc-biblioref">2024</a>)</span>.</p>
-<p>The R code for data download, preprocessing, and serialization of relevant data and charts can be found the the following linked documents: <a href="https://elkeelke.github.io/MovebankProject/preprocessing_uk_wader_nesting_season_home_range.html">Red fox: UK wader nesting season home range</a>, <a href="https://elkeelke.github.io/MovebankProject/preprocessing_monthly_home_ranges.html">Red fox: montly home ranges</a>.</p>
+<p>The R code for data download, preprocessing, and serialization of relevant data and charts can be found in the following linked documents: <a href="https://elkeelke.github.io/MovebankProject/preprocessing_uk_wader_nesting_season_home_range.html">Red fox: UK wader nesting season home range</a>, <a href="https://elkeelke.github.io/MovebankProject/preprocessing_monthly_home_ranges.html">Red fox: montly home ranges</a>.</p>
 </section>
-<section id="hrp-100" class="level3">
-<h3 class="anchored" data-anchor-id="hrp-100">HRP-100</h3>
-<p>This raster data set uses the Mollweide projection as described by <span class="citation" data-cites="lapaine2011mollweide">Lapaine (<a href="#ref-lapaine2011mollweide" role="doc-biblioref">2011</a>)</span>. The 2020 version of the data was used. Since the data set is very large, only the relevant areas were downloaded using a 200 km buffer around the tracking points.</p>
+<section id="hfp-100" class="level3">
+<h3 class="anchored" data-anchor-id="hfp-100">HFP-100</h3>
+<p>The global 100 meter resolution terrestrial human footprint data (HFP-100) is a raster data set that uses the Mollweide projection as described by <span class="citation" data-cites="lapaine2011mollweide">Lapaine (<a href="#ref-lapaine2011mollweide" role="doc-biblioref">2011</a>)</span>. The 2020 version of the data was used. Since the data set is very large, only the relevant areas were downloaded using a 200 km buffer around the tracking points in the following linked document: <a href="https://elkeelke.github.io/MovebankProject/preprocessing_HFP_subsetting.html">HFP-100 download</a></p>
 </section>
 <section id="esa-worldcover" class="level3">
 <h3 class="anchored" data-anchor-id="esa-worldcover">ESA WorldCover</h3>
-<p>The ESA WorldCover 2021 data at 10m resolution was downloaded via the Microsoft Planetary Computer <a href="https://planetarycomputer.microsoft.com/docs/quickstarts/reading-stac/">STAC API</a> for simple programmatic access in R.</p>
+<p>The relevant ESA WorldCover 2021 data at 10m resolution was downloaded via the Microsoft Planetary Computer <a href="https://planetarycomputer.microsoft.com/docs/quickstarts/reading-stac/">STAC API</a> for simple programmatic access in R in the following linked document: <a href="https://elkeelke.github.io/MovebankProject/preprocessing_ESA_world_cover.html">ESA download</a></p>
 </section>
 </section>
 <section id="data-exploration-and-analysis" class="level2">
@@ -231,7 +273,7 @@ Figure&nbsp;4: Data points per month
 </section>
 <section id="home-range-assessment" class="level3">
 <h3 class="anchored" data-anchor-id="home-range-assessment">Home Range Assessment</h3>
-<p>The red fox data is used for home range assessment present for a rural and a remote location. Home range sizes are calculated using minimum convex polygons. This provides estimates of the area used by each individual animal.</p>
+<p>The red fox data is used for home range assessment present for a rural and a remote location. Home range sizes are calculated using minimum convex polygons. This provides estimates of the area used by each individual animal that are easy to compare to each other.</p>
 <p>As discussed in <a href="#sec-redfoxdata" class="quarto-xref">Section&nbsp;3.3.1</a>, the data for the two locations have different temporal scale. <span class="citation" data-cites="laube2011">Laube and Purves (<a href="#ref-laube2011" role="doc-biblioref">2011</a>)</span> have found that the choice of temporal scale has considerable effects on movement parameter calculations, in turn affecting home range results.</p>
 <p>How to make this data comparable? Problem #1 is that the sampling intervals are different. Problem #2 is that the data coverage varies by time of the year. Problem #3 is that there are highly different amounts of data. Selecting the means and parameters for the comparison involves complex choices that will influence the results.</p>
 <p>For #1, a possible approach to achieve similar sampling intervals would be to sample a random afternoon data point for each 24 hour window. However, this would include the implicit assumption that foxes will follow similar daily patterns in the different environments. For #2, a possible approach would be to compare the data for the same time of the year. But since the geographical locations are different, the seasonal weather conditions will differ for the same day of the year, likely leading to different animal behavior. For #3, aggregated comparisons can solve the issue, assuming there is enough data for the smaller data source.</p>
@@ -251,8 +293,8 @@ Figure&nbsp;4: Data points per month
 </section>
 <section id="results" class="level1">
 <h1>Results</h1>
-<p>The resulting home ranges for the UK wader nesting season time frame are shown in <a href="#fig-home-ranges-bylot" class="quarto-xref">Figure&nbsp;5</a> and <a href="#fig-home-ranges-wiltshire" class="quarto-xref">Figure&nbsp;6</a>. The median home range size for the foxes in Bylot (75.3 km<sup>2</sup>) is more than 65 times bigger compared to the foxes in Wiltshire (1.1 km<sup>2</sup>).</p>
-<p>The home ranges for the sub-sampled Wiltshire data are shown in <a href="#fig-home-ranges-wiltshire-sampled24h" class="quarto-xref">Figure&nbsp;7</a>. The median home range size is 0.56 km<sup>2</sup> for the sampled data, which is roughly half as much as for the full data. This shows that the Wiltshire fox home ranges are overestimated in comparison to Bylot fox home ranges, because of the higher amount of data points available. This demonstrates that the influence of sampling intervals is definitely present. However, it is secondary in comparison to the difference in fox behavior.</p>
+<p>The resulting home ranges for the UK wader nesting season time frame are shown in <a href="#fig-home-ranges-bylot" class="quarto-xref">Figure&nbsp;5</a> and <a href="#fig-home-ranges-wiltshire" class="quarto-xref">Figure&nbsp;6</a>. The median home range size for the foxes in Bylot (75.3 km<sup>2</sup>) is more than 65 times bigger compared to the foxes in Wiltshire (1.1 km<sup>2</sup>). Note that there is one fox with an extraordinarily large home range in <a href="#fig-home-ranges-wiltshire" class="quarto-xref">Figure&nbsp;6</a>. <span class="citation" data-cites="kobryn2023foxes">Kobryn et al. (<a href="#ref-kobryn2023foxes" role="doc-biblioref">2023</a>)</span> report similar patterns with a small number of foxes covering much larger areas than others. They conclude that potential for extensive movement patterns in urban foxes exists, and that in some studies such outlier data is either removed or not trackable, therefore underestimating home ranges.</p>
+<p>The home ranges for the sub-sampled Wiltshire data are shown in <a href="#fig-home-ranges-wiltshire-sampled24h" class="quarto-xref">Figure&nbsp;7</a>. The median home range size is 0.56 km<sup>2</sup> for the sampled data, which is roughly half as much as for the full data. This shows that the Wiltshire fox home ranges are overestimated in comparison to Bylot fox home ranges, because of the higher amount of data points available. It also demonstrates that the influence of sampling intervals is definitely present. However, it is secondary in comparison to the difference in fox behavior.</p>
 <p>Similar differences in order of magnitude between remote and rural fox home ranges can also be observed for the monthly home range results shown as a boxplot in <a href="#fig-home-ranges-boxplot" class="quarto-xref">Figure&nbsp;8</a>. It is interesting to see that the fox home ranges for Bylot and Herschel are similar even if the islands are different in size with Bylot being a hundred times larger. Note that outliers are removed, in particular the irregular data for Herschel (as seen in <a href="#fig-herschel-map" class="quarto-xref">Figure&nbsp;2</a>). The accompanying monthly home range plots can be found in the Appendix in <a href="#fig-monthly-home-ranges-wiltshire" class="quarto-xref">Figure&nbsp;9</a>, <a href="#fig-monthly-home-ranges-bylot" class="quarto-xref">Figure&nbsp;10</a>, and <a href="#fig-monthly-home-ranges-herschel" class="quarto-xref">Figure&nbsp;11</a>.</p>
 <div id="fig-home-ranges-bylot" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -334,23 +376,23 @@ Figure&nbsp;8: Box plot comparing monthly home ranges (outliers removed)
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Word count</td>
-<td style="text-align: left;">551</td>
-<td style="text-align: left;">543</td>
+<td style="text-align: left;">632</td>
+<td style="text-align: left;">623</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Character count</td>
-<td style="text-align: left;">3602</td>
-<td style="text-align: left;">3602</td>
+<td style="text-align: left;">4123</td>
+<td style="text-align: left;">4123</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Sentence count</td>
-<td style="text-align: left;">36</td>
+<td style="text-align: left;">40</td>
 <td style="text-align: left;">Not available</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Reading time</td>
-<td style="text-align: left;">2.8 minutes</td>
-<td style="text-align: left;">2.7 minutes</td>
+<td style="text-align: left;">3.2 minutes</td>
+<td style="text-align: left;">3.1 minutes</td>
 </tr>
 </tbody>
 </table>
@@ -414,6 +456,9 @@ Gassert, Francis, Oscar Venter, James EM Watson, Steven P Brumby, Joseph C Mazza
 </div>
 <div id="ref-kays2022movebank" class="csl-entry" role="listitem">
 Kays, Roland, Sarah C Davidson, Matthias Berger, Gil Bohrer, Wolfgang Fiedler, Andrea Flack, Julian Hirt, et al. 2022. <span>“The Movebank System for Studying Global Animal Movement and Demography.”</span> <em>Methods in Ecology and Evolution</em> 13 (2): 419–31.
+</div>
+<div id="ref-kobryn2023foxes" class="csl-entry" role="listitem">
+Kobryn, Halina T, Edward J Swinhoe, Philip W Bateman, Peter J Adams, Jill M Shephard, and Patricia A Fleming. 2023. <span>“Foxes at Your Front Door? Habitat Selection and Home Range Estimation of Suburban Red Foxes (Vulpes Vulpes).”</span> <em>Urban Ecosystems</em> 26 (1): 1–17.
 </div>
 <div id="ref-kranstauber2024move2" class="csl-entry" role="listitem">
 Kranstauber, Bart, Kamran Safi, and Anne K Scharf. 2024. <span>“Move2: R Package for Processing Movement Data.”</span> <em>Methods in Ecology and Evolution</em> 15 (9): 1561–67.
