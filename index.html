@@ -99,49 +99,8 @@ div.csl-indent {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#abstract" id="toc-abstract" class="nav-link active" data-scroll-target="#abstract">Abstract</a></li>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#material-and-methods" id="toc-material-and-methods" class="nav-link" data-scroll-target="#material-and-methods">Material and Methods</a>
-  <ul class="collapse">
-  <li><a href="#data-sets" id="toc-data-sets" class="nav-link" data-scroll-target="#data-sets">Data sets</a></li>
-  <li><a href="#data-preparation-and-processing" id="toc-data-preparation-and-processing" class="nav-link" data-scroll-target="#data-preparation-and-processing">Data preparation and processing</a>
-  <ul class="collapse">
-  <li><a href="#sec-movebank" id="toc-sec-movebank" class="nav-link" data-scroll-target="#sec-movebank">Movebank</a></li>
-  <li><a href="#hfp-100" id="toc-hfp-100" class="nav-link" data-scroll-target="#hfp-100">HFP-100</a></li>
-  <li><a href="#esa-worldcover" id="toc-esa-worldcover" class="nav-link" data-scroll-target="#esa-worldcover">ESA WorldCover</a></li>
-  </ul></li>
-  <li><a href="#data-exploration-and-analysis" id="toc-data-exploration-and-analysis" class="nav-link" data-scroll-target="#data-exploration-and-analysis">Data exploration and analysis</a>
-  <ul class="collapse">
-  <li><a href="#sec-redfoxdata" id="toc-sec-redfoxdata" class="nav-link" data-scroll-target="#sec-redfoxdata">Red fox data</a></li>
-  </ul></li>
-  <li><a href="#sec-methodology" id="toc-sec-methodology" class="nav-link" data-scroll-target="#sec-methodology">Methodology</a>
-  <ul class="collapse">
-  <li><a href="#trajectory-analysis" id="toc-trajectory-analysis" class="nav-link" data-scroll-target="#trajectory-analysis">Trajectory Analysis</a></li>
-  <li><a href="#home-range-assessment" id="toc-home-range-assessment" class="nav-link" data-scroll-target="#home-range-assessment">Home Range Assessment</a></li>
-  <li><a href="#temporal-activity-patterns" id="toc-temporal-activity-patterns" class="nav-link" data-scroll-target="#temporal-activity-patterns">Temporal Activity Patterns</a></li>
-  <li><a href="#habitat-selection" id="toc-habitat-selection" class="nav-link" data-scroll-target="#habitat-selection">Habitat Selection</a></li>
-  </ul></li>
-  </ul></li>
-  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a>
-  <ul class="collapse">
-  <li><a href="#model-validation" id="toc-model-validation" class="nav-link" data-scroll-target="#model-validation">Model validation</a></li>
-  </ul></li>
-  <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion">Discussion</a></li>
-  <li><a href="#appendix" id="toc-appendix" class="nav-link" data-scroll-target="#appendix">Appendix</a>
-  <ul class="collapse">
-  <li><a href="#dont-do" id="toc-dont-do" class="nav-link" data-scroll-target="#dont-do">Don’t do</a></li>
-  <li><a href="#wordcount" id="toc-wordcount" class="nav-link" data-scroll-target="#wordcount">Wordcount</a></li>
-  <li><a href="#additional-charts" id="toc-additional-charts" class="nav-link" data-scroll-target="#additional-charts">Additional charts</a></li>
-  <li><a href="#use-of-large-language-models-and-generative-ai" id="toc-use-of-large-language-models-and-generative-ai" class="nav-link" data-scroll-target="#use-of-large-language-models-and-generative-ai">Use of Large Language Models and Generative AI</a></li>
-  </ul></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
-  </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="index.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
-    </div>
+        
+    <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="index.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -207,11 +166,31 @@ div.csl-indent {
 </section>
 <section id="hfp-100" class="level3">
 <h3 class="anchored" data-anchor-id="hfp-100">HFP-100</h3>
-<p>The global 100 meter resolution terrestrial human footprint data (HFP-100) is a raster data set that uses the Mollweide projection as described by <span class="citation" data-cites="lapaine2011mollweide">Lapaine (<a href="#ref-lapaine2011mollweide" role="doc-biblioref">2011</a>)</span>. The 2020 version of the data was used. Since the data set is very large, only the relevant areas were downloaded using a 200 km buffer around the tracking points in the following linked document: <a href="https://elkeelke.github.io/MovebankProject/preprocessing_HFP_subsetting.html">HFP-100 download</a></p>
+<p>The global 100 meter resolution terrestrial human footprint data (HFP-100) is a raster data set that uses the Mollweide projection as described by <span class="citation" data-cites="lapaine2011mollweide">Lapaine (<a href="#ref-lapaine2011mollweide" role="doc-biblioref">2011</a>)</span>. The 2020 version of the data was used. Since the data set is very large, only the relevant areas were downloaded using a 200 km buffer around the tracking points in the following linked document: <a href="https://elkeelke.github.io/MovebankProject/preprocessing_HFP_subsetting.html">HFP-100 download</a>. <a href="#fig-hfp" class="quarto-xref">Figure&nbsp;1</a> shows a plot of the extracted data.</p>
+<div id="fig-hfp" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-hfp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/hfp_plot_output.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-hfp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Relevant HFP-100 data
+</figcaption>
+</figure>
+</div>
 </section>
 <section id="esa-worldcover" class="level3">
 <h3 class="anchored" data-anchor-id="esa-worldcover">ESA WorldCover</h3>
-<p>The relevant ESA WorldCover 2021 data at 10m resolution was downloaded via the Microsoft Planetary Computer <a href="https://planetarycomputer.microsoft.com/docs/quickstarts/reading-stac/">STAC API</a> for simple programmatic access in R in the following linked document: <a href="https://elkeelke.github.io/MovebankProject/preprocessing_ESA_world_cover.html">ESA download</a></p>
+<p>The relevant ESA WorldCover 2021 data at 10m resolution was downloaded via the Microsoft Planetary Computer <a href="https://planetarycomputer.microsoft.com/docs/quickstarts/reading-stac/">STAC API</a> for simple programmatic access in R in the following linked document: <a href="https://elkeelke.github.io/MovebankProject/preprocessing_ESA_world_cover.html">ESA download</a>. <a href="#fig-esa" class="quarto-xref">Figure&nbsp;2</a> shows a plot of the extracted data.</p>
+<div id="fig-esa" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-esa-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/esa_landcover.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-esa-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Relevant ESA WorldCover data
+</figcaption>
+</figure>
+</div>
 </section>
 </section>
 <section id="data-exploration-and-analysis" class="level2">
@@ -226,7 +205,7 @@ div.csl-indent {
 </iframe>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-bylot-map-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Interactive map of Bylot Island (11.067 km<sup>2</sup>) with high level view of GPS tracks (unfiltered).
+Figure&nbsp;3: Interactive map of Bylot Island (11.067 km<sup>2</sup>) with high level view of GPS tracks (unfiltered).
 </figcaption>
 </figure>
 </div>
@@ -237,29 +216,29 @@ Figure&nbsp;1: Interactive map of Bylot Island (11.067 km<sup>2</sup>) with high
 </iframe>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-herschel-map-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: Interactive map of Herschel Island (116 km<sup>2</sup>) with high level view of GPS tracks (unfiltered), some of them irregular.
+Figure&nbsp;4: Interactive map of Herschel Island (116 km<sup>2</sup>) with high level view of GPS tracks (unfiltered), some of them irregular.
 </figcaption>
 </figure>
 </div>
-<p>The Bylot (see <a href="#fig-bylot-map" class="quarto-xref">Figure&nbsp;1</a>) and Herschel (see <a href="#fig-herschel-map" class="quarto-xref">Figure&nbsp;2</a>) Canadian data was collected all year round, at a much lower sampling rate of once per day, at random afternoon times of the day. The collection period was June 2009 to Feb 2010 for Herschel and from 2011 to 2015 for Bylot, for two foxes per island. <a href="#fig-datapoints-year" class="quarto-xref">Figure&nbsp;3</a> provides an overview of the amount of data points available per year. There is much more data from Wiltshire because of the higher number of foxes and the higher sampling rate.</p>
+<p>The Bylot (see <a href="#fig-bylot-map" class="quarto-xref">Figure&nbsp;3</a>) and Herschel (see <a href="#fig-herschel-map" class="quarto-xref">Figure&nbsp;4</a>) Canadian data was collected all year round, at a much lower sampling rate of once per day, at random afternoon times of the day. The collection period was June 2009 to Feb 2010 for Herschel and from 2011 to 2015 for Bylot, for two foxes per island. <a href="#fig-datapoints-year" class="quarto-xref">Figure&nbsp;5</a> provides an overview of the amount of data points available per year. There is much more data from Wiltshire because of the higher number of foxes and the higher sampling rate.</p>
 <div id="fig-datapoints-year" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-datapoints-year-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/year_count.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-datapoints-year-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3: Data points per year
+Figure&nbsp;5: Data points per year
 </figcaption>
 </figure>
 </div>
-<p>Looking at the breakdowns by month as shown in <a href="#fig-datapoints-month" class="quarto-xref">Figure&nbsp;4</a> reveals seasonal differences in the amount of data available.</p>
+<p>Looking at the breakdowns by month as shown in <a href="#fig-datapoints-month" class="quarto-xref">Figure&nbsp;6</a> reveals seasonal differences in the amount of data available.</p>
 <div id="fig-datapoints-month" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-datapoints-month-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/month_count.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-datapoints-month-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4: Data points per month
+Figure&nbsp;6: Data points per month
 </figcaption>
 </figure>
 </div>
@@ -277,7 +256,7 @@ Figure&nbsp;4: Data points per month
 <p>As discussed in <a href="#sec-redfoxdata" class="quarto-xref">Section&nbsp;3.3.1</a>, the data for the two locations have different temporal scale. <span class="citation" data-cites="laube2011">Laube and Purves (<a href="#ref-laube2011" role="doc-biblioref">2011</a>)</span> have found that the choice of temporal scale has considerable effects on movement parameter calculations, in turn affecting home range results.</p>
 <p>How to make this data comparable? Problem #1 is that the sampling intervals are different. Problem #2 is that the data coverage varies by time of the year. Problem #3 is that there are highly different amounts of data. Selecting the means and parameters for the comparison involves complex choices that will influence the results.</p>
 <p>For #1, a possible approach to achieve similar sampling intervals would be to sample a random afternoon data point for each 24 hour window. However, this would include the implicit assumption that foxes will follow similar daily patterns in the different environments. For #2, a possible approach would be to compare the data for the same time of the year. But since the geographical locations are different, the seasonal weather conditions will differ for the same day of the year, likely leading to different animal behavior. For #3, aggregated comparisons can solve the issue, assuming there is enough data for the smaller data source.</p>
-<p>For data exploration the simplest possible imperfect approach is employed, which is to ignore the different sampling intervals for problem #1, to compare the data for the same time of the year for problem #2 even if animal behavior might be different, and to use exploratory data analysis to find out if a representative answer can be found given the amount of data present for problem #3. Note that this approach has obvious limits. Among them is that the Herschel data is not applicable, since it has minimal overlaps with the Wiltshire data (see <a href="#fig-datapoints-month" class="quarto-xref">Figure&nbsp;4</a>).</p>
+<p>For data exploration the simplest possible imperfect approach is employed, which is to ignore the different sampling intervals for problem #1, to compare the data for the same time of the year for problem #2 even if animal behavior might be different, and to use exploratory data analysis to find out if a representative answer can be found given the amount of data present for problem #3. Note that this approach has obvious limits. Among them is that the Herschel data is not applicable, since it has minimal overlaps with the Wiltshire data (see <a href="#fig-datapoints-month" class="quarto-xref">Figure&nbsp;6</a>).</p>
 <p>To explore the impact of sampling intervals for problem #1, the home ranges for the Wiltshire data are additionally calculated on downsampled data, where a random data point from every 24 hour period is selected.</p>
 <p>Finally, an analysis of monthly home ranges is conducted on all three data sets as an alternative solution to address problem #2.</p>
 </section>
@@ -293,16 +272,16 @@ Figure&nbsp;4: Data points per month
 </section>
 <section id="results" class="level1">
 <h1>Results</h1>
-<p>The resulting home ranges for the UK wader nesting season time frame are shown in <a href="#fig-home-ranges-bylot" class="quarto-xref">Figure&nbsp;5</a> and <a href="#fig-home-ranges-wiltshire" class="quarto-xref">Figure&nbsp;6</a>. The median home range size for the foxes in Bylot (75.3 km<sup>2</sup>) is more than 65 times bigger compared to the foxes in Wiltshire (1.1 km<sup>2</sup>). Note that there is one fox with an extraordinarily large home range in <a href="#fig-home-ranges-wiltshire" class="quarto-xref">Figure&nbsp;6</a>. <span class="citation" data-cites="kobryn2023foxes">Kobryn et al. (<a href="#ref-kobryn2023foxes" role="doc-biblioref">2023</a>)</span> report similar patterns with a small number of foxes covering much larger areas than others. They conclude that potential for extensive movement patterns in urban foxes exists, and that in some studies such outlier data is either removed or not trackable, therefore underestimating home ranges.</p>
-<p>The home ranges for the sub-sampled Wiltshire data are shown in <a href="#fig-home-ranges-wiltshire-sampled24h" class="quarto-xref">Figure&nbsp;7</a>. The median home range size is 0.56 km<sup>2</sup> for the sampled data, which is roughly half as much as for the full data. This shows that the Wiltshire fox home ranges are overestimated in comparison to Bylot fox home ranges, because of the higher amount of data points available. It also demonstrates that the influence of sampling intervals is definitely present. However, it is secondary in comparison to the difference in fox behavior.</p>
-<p>Similar differences in order of magnitude between remote and rural fox home ranges can also be observed for the monthly home range results shown as a boxplot in <a href="#fig-home-ranges-boxplot" class="quarto-xref">Figure&nbsp;8</a>. It is interesting to see that the fox home ranges for Bylot and Herschel are similar even if the islands are different in size with Bylot being a hundred times larger. Note that outliers are removed, in particular the irregular data for Herschel (as seen in <a href="#fig-herschel-map" class="quarto-xref">Figure&nbsp;2</a>). The accompanying monthly home range plots can be found in the Appendix in <a href="#fig-monthly-home-ranges-wiltshire" class="quarto-xref">Figure&nbsp;9</a>, <a href="#fig-monthly-home-ranges-bylot" class="quarto-xref">Figure&nbsp;10</a>, and <a href="#fig-monthly-home-ranges-herschel" class="quarto-xref">Figure&nbsp;11</a>.</p>
+<p>The resulting home ranges for the UK wader nesting season time frame are shown in <a href="#fig-home-ranges-bylot" class="quarto-xref">Figure&nbsp;7</a> and <a href="#fig-home-ranges-wiltshire" class="quarto-xref">Figure&nbsp;8</a>. The median home range size for the foxes in Bylot (75.3 km<sup>2</sup>) is more than 65 times bigger compared to the foxes in Wiltshire (1.1 km<sup>2</sup>). Note that there is one fox with an extraordinarily large home range in <a href="#fig-home-ranges-wiltshire" class="quarto-xref">Figure&nbsp;8</a>. <span class="citation" data-cites="kobryn2023foxes">Kobryn et al. (<a href="#ref-kobryn2023foxes" role="doc-biblioref">2023</a>)</span> report similar patterns with a small number of foxes covering much larger areas than others. They conclude that potential for extensive movement patterns in urban foxes exists, and that in some studies such outlier data is either removed or not trackable, therefore underestimating home ranges.</p>
+<p>The home ranges for the sub-sampled Wiltshire data are shown in <a href="#fig-home-ranges-wiltshire-sampled24h" class="quarto-xref">Figure&nbsp;9</a>. The median home range size is 0.56 km<sup>2</sup> for the sampled data, which is roughly half as much as for the full data. This shows that the Wiltshire fox home ranges are overestimated in comparison to Bylot fox home ranges, because of the higher amount of data points available. It also demonstrates that the influence of sampling intervals is definitely present. However, it is secondary in comparison to the difference in fox behavior.</p>
+<p>Similar differences in order of magnitude between remote and rural fox home ranges can also be observed for the monthly home range results shown as a boxplot in <a href="#fig-home-ranges-boxplot" class="quarto-xref">Figure&nbsp;10</a>. It is interesting to see that the fox home ranges for Bylot and Herschel are similar even if the islands are different in size with Bylot being a hundred times larger. Note that outliers are removed, in particular the irregular data for Herschel (as seen in <a href="#fig-herschel-map" class="quarto-xref">Figure&nbsp;4</a>). The accompanying monthly home range plots can be found in the Appendix in <a href="#fig-monthly-home-ranges-wiltshire" class="quarto-xref">Figure&nbsp;11</a>, <a href="#fig-monthly-home-ranges-bylot" class="quarto-xref">Figure&nbsp;12</a>, and <a href="#fig-monthly-home-ranges-herschel" class="quarto-xref">Figure&nbsp;13</a>.</p>
 <div id="fig-home-ranges-bylot" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-home-ranges-bylot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/home_range_bylot_wader.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-home-ranges-bylot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5: Home ranges for Bylot foxes (March 15th to June 15th, 2012)
+Figure&nbsp;7: Home ranges for Bylot foxes (March 15th to June 15th, 2012)
 </figcaption>
 </figure>
 </div>
@@ -312,7 +291,7 @@ Figure&nbsp;5: Home ranges for Bylot foxes (March 15th to June 15th, 2012)
 <img src="img/home_range_wiltshire_wader.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-home-ranges-wiltshire-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6: Home ranges for Wiltshire foxes (March 15th to June 15th, 2019)
+Figure&nbsp;8: Home ranges for Wiltshire foxes (March 15th to June 15th, 2019)
 </figcaption>
 </figure>
 </div>
@@ -322,7 +301,7 @@ Figure&nbsp;6: Home ranges for Wiltshire foxes (March 15th to June 15th, 2019)
 <img src="img/home_range_wiltshire_wader_sampled.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-home-ranges-wiltshire-sampled24h-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;7: Home ranges for Wiltshire foxes (March 15th to June 15th, 2019, 24 hour sampling interval)
+Figure&nbsp;9: Home ranges for Wiltshire foxes (March 15th to June 15th, 2019, 24 hour sampling interval)
 </figcaption>
 </figure>
 </div>
@@ -334,7 +313,7 @@ Figure&nbsp;7: Home ranges for Wiltshire foxes (March 15th to June 15th, 2019, 2
 <img src="index_files/figure-html/fig-home-ranges-boxplot-1.png" class="img-fluid figure-img" width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-home-ranges-boxplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;8: Box plot comparing monthly home ranges (outliers removed)
+Figure&nbsp;10: Box plot comparing monthly home ranges (outliers removed)
 </figcaption>
 </figure>
 </div>
@@ -376,23 +355,23 @@ Figure&nbsp;8: Box plot comparing monthly home ranges (outliers removed)
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Word count</td>
-<td style="text-align: left;">632</td>
-<td style="text-align: left;">623</td>
+<td style="text-align: left;">648</td>
+<td style="text-align: left;">641</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Character count</td>
-<td style="text-align: left;">4123</td>
-<td style="text-align: left;">4123</td>
+<td style="text-align: left;">4217</td>
+<td style="text-align: left;">4217</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Sentence count</td>
-<td style="text-align: left;">40</td>
+<td style="text-align: left;">44</td>
 <td style="text-align: left;">Not available</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Reading time</td>
 <td style="text-align: left;">3.2 minutes</td>
-<td style="text-align: left;">3.1 minutes</td>
+<td style="text-align: left;">3.2 minutes</td>
 </tr>
 </tbody>
 </table>
@@ -407,7 +386,7 @@ Figure&nbsp;8: Box plot comparing monthly home ranges (outliers removed)
 <img src="img/wiltshire_monthly.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-monthly-home-ranges-wiltshire-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;9: Monthly home ranges for Wiltshire foxes
+Figure&nbsp;11: Monthly home ranges for Wiltshire foxes
 </figcaption>
 </figure>
 </div>
@@ -417,7 +396,7 @@ Figure&nbsp;9: Monthly home ranges for Wiltshire foxes
 <img src="img/bylot_monthly.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-monthly-home-ranges-bylot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;10: Monthly home ranges for Bylot foxes
+Figure&nbsp;12: Monthly home ranges for Bylot foxes
 </figcaption>
 </figure>
 </div>
@@ -427,7 +406,7 @@ Figure&nbsp;10: Monthly home ranges for Bylot foxes
 <img src="img/herschel_monthly.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-monthly-home-ranges-herschel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;11: Monthly home ranges for Herschel foxes
+Figure&nbsp;13: Monthly home ranges for Herschel foxes
 </figcaption>
 </figure>
 </div>
