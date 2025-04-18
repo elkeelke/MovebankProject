@@ -187,7 +187,7 @@ dttm (1): timestamp
 <span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Get list of all HFP tiles (ca. 20 GB of data)</span></span>
 <span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Download as a tgz from https://datadryad.org/downloads/file_stream/2679334 </span></span>
 <span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a><span class="co"># and extract to the given directory</span></span>
-<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>tif_files <span class="ot">&lt;-</span> <span class="fu">list.files</span>(<span class="st">"data/input_HFP-100m-2020/"</span>, <span class="at">pattern =</span> <span class="st">"</span><span class="sc">\\</span><span class="st">.tif$"</span>, <span class="at">full.names =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>tif_files <span class="ot">&lt;-</span> <span class="fu">list.files</span>(<span class="st">"data/hfp-100m-2020/"</span>, <span class="at">pattern =</span> <span class="st">"</span><span class="sc">\\</span><span class="st">.tif$"</span>, <span class="at">full.names =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a><span class="co"># Find tiles intersecting our buffer</span></span>
 <span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>overlap_results <span class="ot">&lt;-</span> <span class="fu">sapply</span>(tif_files, check_overlap, <span class="at">boundary =</span> tracking_buffer)</span>
@@ -202,42 +202,58 @@ dttm (1): timestamp
 =========================================
                                           </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>human_footprint <span class="ot">&lt;-</span> <span class="fu">crop</span>(merged_relevant_files, tracking_buffer)</span>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>hfp_combined <span class="ot">&lt;-</span> <span class="fu">crop</span>(merged_relevant_files, tracking_buffer)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Save the final cropped HFP raster</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">writeRaster</span>(</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  human_footprint,</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">"data/output_HFP_washington_mollweide.tif"</span>,</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">overwrite =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">datatype =</span> <span class="st">"FLT4S"</span>,          <span class="co"># Maintain decimal precision for HFP values</span></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">gdal =</span> <span class="fu">c</span>(<span class="st">"COMPRESS=LZW"</span>)     <span class="co"># Reduce file size</span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="co"># 6. VISUAL CHECK --------------------------------------------------------------</span></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>  tidyterra<span class="sc">::</span><span class="fu">geom_spatraster</span>(</span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> human_footprint,</span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">maxcell =</span> <span class="fl">1e6</span></span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(</span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> animal_sf,</span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"black"</span>,</span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">size =</span> <span class="dv">1</span>,</span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">alpha =</span> <span class="fl">0.7</span></span>
-<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(</span>
-<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> tracking_buffer,</span>
-<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"red"</span>,</span>
-<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">size =</span> <span class="dv">1</span>,</span>
-<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">alpha =</span> <span class="dv">0</span></span>
-<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span>  </span>
-<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Animal tracks (in black) over human footprint"</span>,</span>
-<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">"Human footprint"</span></span>
-<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Project to WGS 84</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Length of 1 degree longitude at latitude φ ≈ 111,320 × cos(φ) meters</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># cos(48°) ≈ 0.6691</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co"># So 1° longitude ≈ 111,320 × 0.6691 ≈ 74,500 meters</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 1° latitude is still ≈ 111,000 meters</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Divide 100 by 111,000 and 74,500 to match resolution</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>hfp_wgs84 <span class="ot">&lt;-</span> <span class="fu">project</span>(</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  hfp_combined, <span class="st">"EPSG:4326"</span>,</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">method =</span> <span class="st">"near"</span>, <span class="co"># Using nearest neighbor method for data integrity</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">res =</span> <span class="fu">c</span>(<span class="fl">0.00134</span>, <span class="fl">0.0009</span>)) <span class="co"># (x, y) = (long, lat)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+|---------|---------|---------|---------|
+=========================================
+                                          </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Save the final cropped HFP raster</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">writeRaster</span>(</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  hfp_wgs84,</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"data/output_HFP_washington_mollweide.tif"</span>,</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">overwrite =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">datatype =</span> <span class="st">"FLT4S"</span>,          <span class="co"># Maintain decimal precision for HFP values</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">gdal =</span> <span class="fu">c</span>(<span class="st">"COMPRESS=LZW"</span>)     <span class="co"># Reduce file size</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="co"># 6. VISUAL CHECK --------------------------------------------------------------</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>  tidyterra<span class="sc">::</span><span class="fu">geom_spatraster</span>(</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> hfp_wgs84,</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">maxcell =</span> <span class="fl">1e6</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> animal_sf,</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"black"</span>,</span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">size =</span> <span class="dv">1</span>,</span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">alpha =</span> <span class="fl">0.7</span></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(</span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> tracking_buffer,</span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"red"</span>,</span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">size =</span> <span class="dv">1</span>,</span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">alpha =</span> <span class="dv">0</span></span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span>  </span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Animal tracks (in black) over human footprint"</span>,</span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">"Human footprint"</span></span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>&lt;SpatRaster&gt; resampled to 1000372 cells.</code></pre>
+<pre><code>&lt;SpatRaster&gt; resampled to 1001560 cells.</code></pre>
 </div>
 <div class="cell-output-display">
 <div>
@@ -246,7 +262,7 @@ dttm (1): timestamp
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">"img/hfp.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">"img/hfp.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Saving 7 x 5 in image</code></pre>
 </div>

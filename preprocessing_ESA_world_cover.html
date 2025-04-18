@@ -215,7 +215,7 @@ dttm (1): timestamp
 <div class="cell-output cell-output-stdout">
 <pre><code>
 |---------|---------|---------|---------|
-=======================================
+=========================================
                                           </code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>esa_cropped <span class="ot">&lt;-</span> <span class="fu">crop</span>(combined, <span class="fu">vect</span>(study_area))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -247,7 +247,7 @@ dttm (1): timestamp
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Save the final cropped/merged land cover</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">writeRaster</span>(</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  land_cover,</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"data/output_ESA_land_cover_washington.tif"</span>,  <span class="co"># Output filename</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"data/ESA_study_area.tif"</span>,  <span class="co"># Output filename</span></span>
 <span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">overwrite =</span> <span class="cn">TRUE</span>,            <span class="co"># Overwrite if exists</span></span>
 <span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">datatype =</span> <span class="st">"INT1U"</span>,          <span class="co"># Optimize for categorical data</span></span>
 <span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">gdal =</span> <span class="fu">c</span>(<span class="st">"COMPRESS=LZW"</span>)     <span class="co"># Reduce file size</span></span>
@@ -313,7 +313,7 @@ Adding another scale for fill, which will replace the existing scale.</code></pr
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">"img/esa_landcover.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">"img/esa_landcover_study_area.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Saving 7 x 5 in image</code></pre>
 </div>
