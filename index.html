@@ -132,46 +132,39 @@ div.csl-indent {
 
 <section id="abstract" class="level1">
 <h1>Abstract</h1>
-<p>We investigate how human activity influences the movement patterns of wild animals. Using tracking data from red foxes, bobcats, and coyotes across rural and remote areas in England, Canada, and the US, we analyze home range sizes, temporal activity shifts, and habitat selection in relation to human footprint and land cover data.</p>
+<p>We investigate how human activity influences the movement patterns of wild animals. Using tracking data from red foxes, bobcats, and coyotes across rural and remote areas in England, Canada, and the US, we analyze home range sizes and habitat selection in relation to human footprint and land cover data.</p>
 </section>
 <section id="introduction" class="level1">
 <h1>Introduction</h1>
-<p>Disturbance by humans has widespread impacts on the movements of animals, as <span class="citation" data-cites="doherty2021human">Doherty, Hays, and Driscoll (<a href="#ref-doherty2021human" role="doc-biblioref">2021</a>)</span> found in a large-scale meta study. Human activities, such as recreation and hunting, have stronger impacts on animal movement than habitat modification, such as logging and agriculture.</p>
-<p>Research questions:</p>
+<p>Disturbance by humans has widespread impacts on the movements of animals, as confirmed by a large-scale meta study by <span class="citation" data-cites="doherty2021human">Doherty, Hays, and Driscoll (<a href="#ref-doherty2021human" role="doc-biblioref">2021</a>)</span>. In this paper, two related research questions will be addressed:</p>
 <ol type="1">
-<li>Home Range Implications: Do animals exhibit smaller home ranges in high human impact areas? We analyse this for the red fox (vulpes vulpes) by comparing home ranges based on data from low and high human impact areas.</li>
-<li>Temporal Shifts in Activity Patterns: Do animals become more nocturnal in high human-impact areas to avoid direct human encounters?</li>
-<li>Habitat Selection in Human-Dominated Landscapes: How do animals select habitats (e.g., forests, agriculture) under varying levels of human influence?</li>
+<li>Home Range Implications: Do animals exhibit smaller home ranges in high human impact areas? This will be analysed by comparing red fox (vulpes vulpes) home ranges in low and high human impact areas.</li>
+<li>Habitat Selection in Human-Dominated Landscapes: How do animals select habitats (e.g., forests, agriculture) under varying levels of human influence? This will be analysed by TBD.</li>
 </ol>
-<p>Different data sets are used for each research question. Relying on Movebank data, as described in <a href="#sec-movebank" class="quarto-xref">Section&nbsp;3.2.1</a>, presents additional challenges stemming from the facts that (1) the data is used for purposes it was not originally collected for and (2) data from different studies that was collected in different manners is compared, and (3) subsets from existing data sets are employed, i.e.&nbsp;only some of the animals from the existing studies are considered.</p>
+<p>Different data sets are used for each research question. Relying on Movebank data, as described in <a href="#sec-movebank" class="quarto-xref">Section&nbsp;3.2.1</a>, presents additional challenges stemming from the facts that (1) the data is used for purposes it was not originally collected for and (2) data from different studies that was collected in different manners is compared, and (3) TBD subsets from existing data sets are employed, i.e.&nbsp;only some of the animals from the existing studies are considered.</p>
 </section>
 <section id="material-and-methods" class="level1">
 <h1>Material and Methods</h1>
 <p>This section describes the data sets, the steps taken to prepare and process the different data sets in use, and the methodological approach.</p>
 <section id="data-sets" class="level2">
 <h2 class="anchored" data-anchor-id="data-sets">Data sets</h2>
-<p>The Movebank database by <span class="citation" data-cites="kays2022movebank">Kays et al. (<a href="#ref-kays2022movebank" role="doc-biblioref">2022</a>)</span> provides means for researchers to publish animal tracking data for public use, e.g.&nbsp;under Creative Commons licenses. The following data is selected:</p>
-<ul>
-<li>Red fox data from <span class="citation" data-cites="porteus2024movement">Porteus et al. (<a href="#ref-porteus2024movement" role="doc-biblioref">2024</a>)</span> for the outskirt areas of villages in Wiltshire, UK and from <span class="citation" data-cites="lai2022red">Lai et al. (<a href="#ref-lai2022red" role="doc-biblioref">2022</a>)</span> for the remote uninhabited islands Bylot and Herschel in Canada, and</li>
-<li>Bobcat and coyote data from <span class="citation" data-cites="prugh2023fear">Prugh et al. (<a href="#ref-prugh2023fear" role="doc-biblioref">2023</a>)</span> for remote areas with some rural structures in northern Washington, US.</li>
-</ul>
-<p>For the human footprint data, the global 100 meter resolution terrestrial human footprint data (HFP-100) by <span class="citation" data-cites="gassert2023operational">Gassert et al. (<a href="#ref-gassert2023operational" role="doc-biblioref">2023</a>)</span> is chosen. For land cover, the ESA WorldCover data described in <span class="citation" data-cites="zanaga2022esa">Zanaga et al. (<a href="#ref-zanaga2022esa" role="doc-biblioref">2022</a>)</span> is employed.</p>
+<p>The Movebank database by <span class="citation" data-cites="kays2022movebank">Kays et al. (<a href="#ref-kays2022movebank" role="doc-biblioref">2022</a>)</span> provides means for researchers to publish animal tracking data for public use, e.g.&nbsp;under Creative Commons licenses. The following data is selected: Red fox data from <span class="citation" data-cites="porteus2024movement">Porteus et al. (<a href="#ref-porteus2024movement" role="doc-biblioref">2024</a>)</span> for the outskirt areas of villages in Wiltshire, UK and from <span class="citation" data-cites="lai2022red">Lai et al. (<a href="#ref-lai2022red" role="doc-biblioref">2022</a>)</span> for the remote uninhabited islands Bylot and Herschel in Canada, and Bobcat and coyote data from <span class="citation" data-cites="prugh2023fear">Prugh et al. (<a href="#ref-prugh2023fear" role="doc-biblioref">2023</a>)</span> for remote areas with some rural structures in northern Washington, US. For the human footprint data, the global 100 meter resolution terrestrial human footprint data (HFP-100) by <span class="citation" data-cites="gassert2023operational">Gassert et al. (<a href="#ref-gassert2023operational" role="doc-biblioref">2023</a>)</span> is chosen. For land cover, the ESA WorldCover data described in <span class="citation" data-cites="zanaga2022esa">Zanaga et al. (<a href="#ref-zanaga2022esa" role="doc-biblioref">2022</a>)</span> is employed.</p>
 </section>
 <section id="data-preparation-and-processing" class="level2">
 <h2 class="anchored" data-anchor-id="data-preparation-and-processing">Data preparation and processing</h2>
+<p>This section describes data preparation and processing for all the datasets employed.</p>
 <section id="sec-movebank" class="level3">
 <h3 class="anchored" data-anchor-id="sec-movebank">Movebank data</h3>
 <p>All Movebank data sets have the same schema. This simplifies data handling, enables code re-use, and requires the data contributors do perform preprocessing and data cleaning on their side to provide the data in an appropriate format. A library for data processing and trajectory handling in R is provided by <span class="citation" data-cites="kranstauber2024move2">Kranstauber, Safi, and Scharf (<a href="#ref-kranstauber2024move2" role="doc-biblioref">2024</a>)</span>.</p>
-<p>The R code for data download, preprocessing, and serialization of relevant data and charts can be found in: <a href="https://elkeelke.github.io/MovebankProject/preprocessing_uk_wader_nesting_season_home_range.html">Red fox: UK wader nesting season home range</a>, <a href="https://elkeelke.github.io/MovebankProject/preprocessing_monthly_home_ranges.html">Red fox: montly home ranges</a>.</p>
-<p>TBD Add bobcat/coyote processing, e.g.&nbsp;resampling to 4 hours.</p>
+<p>The R code for data download, preprocessing, and serialization of relevant data and charts can be found in: <a href="https://elkeelke.github.io/MovebankProject/preprocessing_uk_wader_nesting_season_home_range.html">Red fox: UK wader nesting season home range</a>, <a href="https://elkeelke.github.io/MovebankProject/preprocessing_monthly_home_ranges.html">Red fox: montly home ranges</a>, TBD Bobcat/coyote.</p>
 </section>
 <section id="human-footprint-data" class="level3">
 <h3 class="anchored" data-anchor-id="human-footprint-data">Human footprint data</h3>
-<p>The global 100 meter resolution terrestrial human footprint data (HFP-100) is a raster data set that uses the Mollweide projection as described by <span class="citation" data-cites="lapaine2011mollweide">Lapaine (<a href="#ref-lapaine2011mollweide" role="doc-biblioref">2011</a>)</span>. The 2020 version of the data was used. Since the data set is very large, only the relevant areas were downloaded using a 200 km buffer around the tracking points, and projected to the WGS84 geographic coordinate system (EPSG:4326): <a href="https://elkeelke.github.io/MovebankProject/preprocessing_HFP_subsetting.html">HFP-100 download</a>.</p>
+<p>The global 100 meter resolution terrestrial human footprint data (HFP-100) is a raster data set using Mollweide projection as described by <span class="citation" data-cites="lapaine2011mollweide">Lapaine (<a href="#ref-lapaine2011mollweide" role="doc-biblioref">2011</a>)</span>. The 2020 version of the data was used. Only the relevant areas were downloaded using a 200 km buffer around the tracking points, and projected to the WGS84 coordinate system: <a href="https://elkeelke.github.io/MovebankProject/preprocessing_HFP_subsetting.html">HFP-100 download</a>.</p>
 </section>
 <section id="land-cover-data" class="level3">
 <h3 class="anchored" data-anchor-id="land-cover-data">Land cover data</h3>
-<p>The relevant ESA WorldCover 2021 data at 10m resolution was downloaded via the Microsoft Planetary Computer <a href="https://planetarycomputer.microsoft.com/docs/quickstarts/reading-stac/">STAC API</a> for simple programmatic access in R: <a href="https://elkeelke.github.io/MovebankProject/preprocessing_ESA_world_cover.html">ESA download</a>.</p>
+<p>The relevant ESA WorldCover 2021 data at 10 m resolution was downloaded via the Microsoft Planetary Computer <a href="https://planetarycomputer.microsoft.com/docs/quickstarts/reading-stac/">STAC API</a> for simple programmatic access in R: <a href="https://elkeelke.github.io/MovebankProject/preprocessing_ESA_world_cover.html">ESA download</a>.</p>
 </section>
 </section>
 <section id="data-exploration-and-analysis" class="level2">
@@ -226,7 +219,7 @@ Figure&nbsp;4: Data points per month
 </section>
 <section id="bobcat-and-coyote-data" class="level3">
 <h3 class="anchored" data-anchor-id="bobcat-and-coyote-data">Bobcat and coyote data</h3>
-<p>The bobcat (Lynx rufus) and coyote (Canis latrans) data from <span class="citation" data-cites="prugh2023fear">Prugh et al. (<a href="#ref-prugh2023fear" role="doc-biblioref">2023</a>)</span> for remote areas with some rural structures in northern Washington, US contains data for 29 coyotes and 30 bobcats collected between June 2018 and June 2022. They reside on two separated geographical areas and have species-interspersed home ranges. <a href="#fig-esa" class="quarto-xref">Figure&nbsp;5</a> shows a plot of the bobcat and coyote locations in the context of the extracted land cover data. <a href="#fig-hfp" class="quarto-xref">Figure&nbsp;6</a> reveals the human footprint in the area, which is generally low except for some settlements and country roads.</p>
+<p>The bobcat (Lynx rufus) and coyote (Canis latrans) data from <span class="citation" data-cites="prugh2023fear">Prugh et al. (<a href="#ref-prugh2023fear" role="doc-biblioref">2023</a>)</span> contains data for 29 coyotes and 30 bobcats collected between June 2018 and June 2022. They reside in two separated geographical areas and have species-interspersed home ranges. <a href="#fig-esa" class="quarto-xref">Figure&nbsp;5</a> shows a plot of the bobcat and coyote locations in the context of the extracted land cover data. <a href="#fig-hfp" class="quarto-xref">Figure&nbsp;6</a> reveals the human footprint in the area, which is generally low except for some settlements and country roads.</p>
 <div id="fig-esa" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-esa-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -247,7 +240,7 @@ Figure&nbsp;6: HFP-100 data with bobcat and coyote tracks shown in black and rel
 </figcaption>
 </figure>
 </div>
-<p>The data sampling intervals different for the two species, as shown in <a href="#fig-bobcat-coyote-mean-sampling" class="quarto-xref">Figure&nbsp;7</a>. The coyote data is better suited as SSF input since it has a higher sampling rate.</p>
+<p>The mean (TBD?) data sampling intervals differ for the two species, as shown in <a href="#fig-bobcat-coyote-mean-sampling" class="quarto-xref">Figure&nbsp;7</a>.</p>
 <div id="fig-bobcat-coyote-mean-sampling" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-bobcat-coyote-mean-sampling-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -262,10 +255,6 @@ Figure&nbsp;7: Mean sampling rates for bobcat and coyote data
 </section>
 <section id="sec-methodology" class="level2">
 <h2 class="anchored" data-anchor-id="sec-methodology">Methodology</h2>
-<section id="trajectory-analysis" class="level3">
-<h3 class="anchored" data-anchor-id="trajectory-analysis">Trajectory Analysis</h3>
-<p>Movement paths are analyzed to identify patterns in speed, direction, and habitat use. Step lengths and turning angles help infer behavioral states. Step-selection functions as described by <span class="citation" data-cites="fortin2005wolves">Fortin et al. (<a href="#ref-fortin2005wolves" role="doc-biblioref">2005</a>)</span> are employed as a statistical model for habitat preferences relative to movement patterns, allowing to quantify how animals respond to environmental covariates such as human footprint and land cover.</p>
-</section>
 <section id="home-range-assessment" class="level3">
 <h3 class="anchored" data-anchor-id="home-range-assessment">Home Range Assessment</h3>
 <p>The red fox data is used for home range assessment present for a rural and a remote location. Home range sizes are calculated using minimum convex polygons. This provides estimates of the area used by each individual animal that are easy to compare to each other.</p>
@@ -276,14 +265,10 @@ Figure&nbsp;7: Mean sampling rates for bobcat and coyote data
 <p>To explore the impact of sampling intervals for problem #1, the home ranges for the Wiltshire data are additionally calculated on downsampled data, where a random data point from every 24 hour period is selected.</p>
 <p>Finally, an analysis of monthly home ranges is conducted on all three data sets as an alternative solution to address problem #2.</p>
 </section>
-<section id="temporal-activity-patterns" class="level3">
-<h3 class="anchored" data-anchor-id="temporal-activity-patterns">Temporal Activity Patterns</h3>
-<p>Movement rates are used to quantify diel activity shifts. We test whether animals in high human-impact areas exhibit increased nocturnality, potentially as a strategy to avoid direct human encounters. This analysis reveals how temporal behavior adapts to human presence.</p>
-</section>
-<section id="habitat-selection" class="level3">
-<h3 class="anchored" data-anchor-id="habitat-selection">Habitat Selection</h3>
-<p>Step-selection functions quantify selection for human-modified habitats (e.g., agricultural areas, urban edges) relative to natural habitats. By comparing selection patterns across species and regions, we will assess how habitat preferences vary with human influence.</p>
-<p>Each animal location was joined with the accompanying land cover and human footprint index value.</p>
+<section id="trajectory-analysis-and-habitat-selection" class="level3">
+<h3 class="anchored" data-anchor-id="trajectory-analysis-and-habitat-selection">Trajectory Analysis and Habitat Selection</h3>
+<p>Movement paths are analyzed to identify patterns in speed, direction, and habitat use. Step lengths and turning angles help infer behavioral states. Step-selection functions (SSFs) as described by <span class="citation" data-cites="fortin2005wolves">Fortin et al. (<a href="#ref-fortin2005wolves" role="doc-biblioref">2005</a>)</span> are employed as a statistical model for habitat preferences relative to movement patterns, allowing to quantify how animals respond to environmental covariates such as human footprint and land cover. Selection patterns across species and regions are compared to assess how habitat preferences vary with human influence.</p>
+<p>Since SSFs requires a regular sampling rate, the animals tracks were re-sampled using the amt library’s track_resample() function, which only keeps relocations that are approximately 4 hours apart with a specified tolerance window of 10 minutes. These tracks are translated into animals steps with certain step lengths and turning angles. The control group is comprised of randomly generated steps. Each animal location within its is joined with the relevant covariates, which are the accompanying land cover category, and the human footprint index value.</p>
 </section>
 </section>
 </section>
@@ -291,7 +276,7 @@ Figure&nbsp;7: Mean sampling rates for bobcat and coyote data
 <h1>Results</h1>
 <p>The resulting home ranges for the UK wader nesting season time frame are shown in <a href="#fig-home-ranges-bylot" class="quarto-xref">Figure&nbsp;8</a> and <a href="#fig-home-ranges-wiltshire" class="quarto-xref">Figure&nbsp;9</a>. The median home range size for the foxes in Bylot (75.3 km<sup>2</sup>) is more than 65 times bigger compared to the foxes in Wiltshire (1.1 km<sup>2</sup>). Note that there is one fox with an extraordinarily large home range in <a href="#fig-home-ranges-wiltshire" class="quarto-xref">Figure&nbsp;9</a>. <span class="citation" data-cites="kobryn2023foxes">Kobryn et al. (<a href="#ref-kobryn2023foxes" role="doc-biblioref">2023</a>)</span> report similar patterns with a small number of foxes covering much larger areas than others. They conclude that potential for extensive movement patterns in urban foxes exists, and that in some studies such outlier data is either removed or not trackable, therefore underestimating home ranges.</p>
 <p>The home ranges for the sub-sampled Wiltshire data are shown in <a href="#fig-home-ranges-wiltshire-sampled24h" class="quarto-xref">Figure&nbsp;10</a>. The median home range size is 0.56 km<sup>2</sup> for the sampled data, which is roughly half as much as for the full data. This shows that the Wiltshire fox home ranges are overestimated in comparison to Bylot fox home ranges, because of the higher amount of data points available. It also demonstrates that the influence of sampling intervals is definitely present. However, it is secondary in comparison to the difference in fox behavior.</p>
-<p>Similar differences in order of magnitude between remote and rural fox home ranges can also be observed for the monthly home range results shown as a boxplot in <a href="#fig-home-ranges-boxplot" class="quarto-xref">Figure&nbsp;11</a>. It is interesting to see that the fox home ranges for Bylot and Herschel are similar even if the islands are different in size with Bylot being a hundred times larger. Note that outliers are removed, in particular the irregular data for Herschel (as seen in <a href="#fig-herschel-map" class="quarto-xref">Figure&nbsp;2</a>). The accompanying monthly home range plots can be found in the Appendix in <a href="#fig-monthly-home-ranges-wiltshire" class="quarto-xref">Figure&nbsp;12</a>, <a href="#fig-monthly-home-ranges-bylot" class="quarto-xref">Figure&nbsp;13</a>, and <a href="#fig-monthly-home-ranges-herschel" class="quarto-xref">Figure&nbsp;14</a>.</p>
+<p>Similar differences in order of magnitude between remote and rural fox home ranges can also be observed for the monthly home range results shown as a boxplot in <a href="#fig-home-ranges-boxplot" class="quarto-xref">Figure&nbsp;11</a>. It is interesting to see that the fox home ranges for Bylot and Herschel are similar, even if the islands are different in size with Bylot being a hundred times larger. Note that outliers are removed, in particular the irregular data for Herschel (as seen in <a href="#fig-herschel-map" class="quarto-xref">Figure&nbsp;2</a>). The accompanying monthly home range plots can be found in the Appendix in <a href="#fig-monthly-home-ranges-wiltshire" class="quarto-xref">Figure&nbsp;12</a>, <a href="#fig-monthly-home-ranges-bylot" class="quarto-xref">Figure&nbsp;13</a>, and <a href="#fig-monthly-home-ranges-herschel" class="quarto-xref">Figure&nbsp;14</a>.</p>
 <div id="fig-home-ranges-bylot" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-home-ranges-bylot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -341,6 +326,7 @@ Figure&nbsp;11: Box plot comparing monthly home ranges (outliers removed)
 <p>According to <span class="citation" data-cites="rykiel1996testing">Rykiel Jr (<a href="#ref-rykiel1996testing" role="doc-biblioref">1996</a>)</span>, model validation means demonstrating that a model is acceptable for its intended use. The purpose, criteria, and context of the model must be specified.</p>
 <p>For the purpose of home range comparison, two models were defined comprised of data, home range calculation based on minimum convex hulls, and median selection. The validation criteria required the amount of difference between the results to be significantly larger (i.e., by a factor of more than 10 times) than the effects on the results introduced by data properties.</p>
 <p>Since the geographic location context was diverse, to exclude distortions in the coordinate system as a potential unwanted influence, the results for Bylot island were spot checked for three applicable coordinate systems: WGS84 geographic coordinate system (EPSG:4326), NAD 83 / Statistics Canada Lambert projection (EPSG:3347), and Universal Transverse Mercator (UTM) zone 17N (EPSG:2958). These were identified using the <a href="https://crs-explorer.proj.org/">CRS Explorer</a>. The differences in the median home rage size results (UK wader season) for the foxes in Bylot were minor: 75.3 km<sup>2</sup> for WGS84, 73.3 km<sup>2</sup> for EPSG:3347, and 75.8 km<sup>2</sup> for EPSG:2958.</p>
+<p>For the habitat selection TBD</p>
 </section>
 </section>
 <section id="discussion" class="level1">
@@ -349,52 +335,6 @@ Figure&nbsp;11: Box plot comparing monthly home ranges (outliers removed)
 </section>
 <section id="appendix" class="level1">
 <h1>Appendix</h1>
-<section id="dont-do" class="level2">
-<h2 class="anchored" data-anchor-id="dont-do">Don’t do</h2>
-<ul>
-<li>There are several ways to calculate home range, we could compare (and could focus on only that)</li>
-<li>Do home range for foxes first, for bobcat and coyote data later, potentially even cross-species analysis</li>
-<li>Use kernel density estimation (KDE)</li>
-</ul>
-</section>
-<section id="wordcount" class="level2">
-<h2 class="anchored" data-anchor-id="wordcount">Wordcount</h2>
-<div class="cell">
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<thead>
-<tr class="header">
-<th style="text-align: left;">Method</th>
-<th style="text-align: left;">koRpus</th>
-<th style="text-align: left;">stringi</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Word count</td>
-<td style="text-align: left;">642</td>
-<td style="text-align: left;">631</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Character count</td>
-<td style="text-align: left;">4175</td>
-<td style="text-align: left;">4175</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Sentence count</td>
-<td style="text-align: left;">45</td>
-<td style="text-align: left;">Not available</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Reading time</td>
-<td style="text-align: left;">3.2 minutes</td>
-<td style="text-align: left;">3.2 minutes</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</section>
 <section id="additional-charts" class="level2">
 <h2 class="anchored" data-anchor-id="additional-charts">Additional charts</h2>
 <div id="fig-monthly-home-ranges-wiltshire" class="quarto-float quarto-figure quarto-figure-center anchored">
