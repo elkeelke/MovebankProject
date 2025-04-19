@@ -139,16 +139,16 @@ div.csl-indent {
 <p>Disturbance by humans has widespread impacts on the movements of animals, as confirmed by a large-scale meta study by <span class="citation" data-cites="doherty2021human">Doherty, Hays, and Driscoll (<a href="#ref-doherty2021human" role="doc-biblioref">2021</a>)</span>. In this paper, two related research questions will be addressed:</p>
 <ol type="1">
 <li>Home Range Implications: Do animals exhibit smaller home ranges in high human impact areas? This will be analysed by comparing red fox (vulpes vulpes) home ranges in low and high human impact areas.</li>
-<li>Habitat Selection in Human-Dominated Landscapes: How do animals select habitats (e.g., forests, agriculture) under varying levels of human influence? This will be analysed by TBD.</li>
+<li>Habitat Selection in Human-Dominated Landscapes: How do animals select habitats under varying levels of human influence? This will be analysed based on bobcat (lynx rufus) and coyote (canis latrans) data from a national park area.</li>
 </ol>
-<p>Different data sets are used for each research question. Relying on Movebank data, as described in <a href="#sec-movebank" class="quarto-xref">Section&nbsp;3.2.1</a>, presents additional challenges stemming from the facts that (1) the data is used for purposes it was not originally collected for and (2) data from different studies that was collected in different manners is compared, and (3) TBD subsets from existing data sets are employed, i.e.&nbsp;only some of the animals from the existing studies are considered.</p>
+<p>Different data sets are used for each research question. Relying on Movebank data, as described in <a href="#sec-movebank" class="quarto-xref">Section&nbsp;3.2.1</a>, presents additional challenges stemming from the facts that data is used for purposes it was not originally collected for, and that data from different studies is compared.</p>
 </section>
 <section id="material-and-methods" class="level1">
 <h1>Material and Methods</h1>
 <p>This section describes the data sets, the steps taken to prepare and process the different data sets in use, and the methodological approach.</p>
 <section id="data-sets" class="level2">
 <h2 class="anchored" data-anchor-id="data-sets">Data sets</h2>
-<p>The Movebank database by <span class="citation" data-cites="kays2022movebank">Kays et al. (<a href="#ref-kays2022movebank" role="doc-biblioref">2022</a>)</span> provides means for researchers to publish animal tracking data for public use, e.g.&nbsp;under Creative Commons licenses. The following data is selected: Red fox data from <span class="citation" data-cites="porteus2024movement">Porteus et al. (<a href="#ref-porteus2024movement" role="doc-biblioref">2024</a>)</span> for the outskirt areas of villages in Wiltshire, UK and from <span class="citation" data-cites="lai2022red">Lai et al. (<a href="#ref-lai2022red" role="doc-biblioref">2022</a>)</span> for the remote uninhabited islands Bylot and Herschel in Canada, and Bobcat and coyote data from <span class="citation" data-cites="prugh2023fear">Prugh et al. (<a href="#ref-prugh2023fear" role="doc-biblioref">2023</a>)</span> for remote areas with some rural structures in northern Washington, US. For the human footprint data, the global 100 meter resolution terrestrial human footprint data (HFP-100) by <span class="citation" data-cites="gassert2023operational">Gassert et al. (<a href="#ref-gassert2023operational" role="doc-biblioref">2023</a>)</span> is chosen. For land cover, the ESA WorldCover data described in <span class="citation" data-cites="zanaga2022esa">Zanaga et al. (<a href="#ref-zanaga2022esa" role="doc-biblioref">2022</a>)</span> is employed.</p>
+<p>The Movebank database by <span class="citation" data-cites="kays2022movebank">Kays et al. (<a href="#ref-kays2022movebank" role="doc-biblioref">2022</a>)</span> provides means for researchers to publish animal tracking data for public use, e.g.&nbsp;under Creative Commons licenses. The following data is selected: Red fox data from <span class="citation" data-cites="porteus2024movement">Porteus et al. (<a href="#ref-porteus2024movement" role="doc-biblioref">2024</a>)</span> for the outskirt areas of villages in Wiltshire, UK and from <span class="citation" data-cites="lai2022red">Lai et al. (<a href="#ref-lai2022red" role="doc-biblioref">2022</a>)</span> for the remote uninhabited islands Bylot and Herschel in Canada, and bobcat and coyote data from <span class="citation" data-cites="prugh2023fear">Prugh et al. (<a href="#ref-prugh2023fear" role="doc-biblioref">2023</a>)</span> for remote areas with some rural structures in northern Washington, US. For the human footprint data, the global terrestrial human footprint data by <span class="citation" data-cites="gassert2023operational">Gassert et al. (<a href="#ref-gassert2023operational" role="doc-biblioref">2023</a>)</span> is chosen. For land cover, satellite data described in <span class="citation" data-cites="zanaga2022esa">Zanaga et al. (<a href="#ref-zanaga2022esa" role="doc-biblioref">2022</a>)</span> is employed.</p>
 </section>
 <section id="data-preparation-and-processing" class="level2">
 <h2 class="anchored" data-anchor-id="data-preparation-and-processing">Data preparation and processing</h2>
@@ -164,7 +164,7 @@ div.csl-indent {
 </section>
 <section id="land-cover-data" class="level3">
 <h3 class="anchored" data-anchor-id="land-cover-data">Land cover data</h3>
-<p>The relevant ESA WorldCover 2021 data at 10 m resolution was downloaded via the Microsoft Planetary Computer <a href="https://planetarycomputer.microsoft.com/docs/quickstarts/reading-stac/">STAC API</a> for simple programmatic access in R: <a href="https://elkeelke.github.io/MovebankProject/preprocessing_ESA_world_cover.html">ESA download</a>.</p>
+<p>The relevant European Space Agency (ESA) WorldCover 2021 data at 10 m resolution was downloaded via the Microsoft Planetary Computer <a href="https://planetarycomputer.microsoft.com/docs/quickstarts/reading-stac/">STAC API</a> for simple programmatic access in R: <a href="https://elkeelke.github.io/MovebankProject/preprocessing_ESA_world_cover.html">ESA download</a>.</p>
 </section>
 </section>
 <section id="data-exploration-and-analysis" class="level2">
@@ -219,7 +219,7 @@ Figure&nbsp;4: Data points per month
 </section>
 <section id="bobcat-and-coyote-data" class="level3">
 <h3 class="anchored" data-anchor-id="bobcat-and-coyote-data">Bobcat and coyote data</h3>
-<p>The bobcat (Lynx rufus) and coyote (Canis latrans) data from <span class="citation" data-cites="prugh2023fear">Prugh et al. (<a href="#ref-prugh2023fear" role="doc-biblioref">2023</a>)</span> contains data for 29 coyotes and 30 bobcats collected between June 2018 and June 2022. They reside in two separated geographical areas and have species-interspersed home ranges. <a href="#fig-esa" class="quarto-xref">Figure&nbsp;5</a> shows a plot of the bobcat and coyote locations in the context of the extracted land cover data. <a href="#fig-hfp" class="quarto-xref">Figure&nbsp;6</a> reveals the human footprint in the area, which is generally low except for some settlements and country roads.</p>
+<p>The bobcat and coyote data from <span class="citation" data-cites="prugh2023fear">Prugh et al. (<a href="#ref-prugh2023fear" role="doc-biblioref">2023</a>)</span> contains data for 29 coyotes and 30 bobcats collected between June 2018 and June 2022. They reside in two separated geographical areas and have species-interspersed home ranges. <a href="#fig-esa" class="quarto-xref">Figure&nbsp;5</a> shows a plot of the bobcat and coyote locations in the context of the extracted land cover data. <a href="#fig-hfp" class="quarto-xref">Figure&nbsp;6</a> reveals the human footprint in the area, which is generally low except for some settlements and country roads.</p>
 <div id="fig-esa" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-esa-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -274,9 +274,7 @@ Figure&nbsp;7: Mean sampling rates for bobcat and coyote data
 </section>
 <section id="results" class="level1">
 <h1>Results</h1>
-<p>The resulting home ranges for the UK wader nesting season time frame are shown in <a href="#fig-home-ranges-bylot" class="quarto-xref">Figure&nbsp;8</a> and <a href="#fig-home-ranges-wiltshire" class="quarto-xref">Figure&nbsp;9</a>. The median home range size for the foxes in Bylot (75.3 km<sup>2</sup>) is more than 65 times bigger compared to the foxes in Wiltshire (1.1 km<sup>2</sup>). Note that there is one fox with an extraordinarily large home range in <a href="#fig-home-ranges-wiltshire" class="quarto-xref">Figure&nbsp;9</a>. <span class="citation" data-cites="kobryn2023foxes">Kobryn et al. (<a href="#ref-kobryn2023foxes" role="doc-biblioref">2023</a>)</span> report similar patterns with a small number of foxes covering much larger areas than others. They conclude that potential for extensive movement patterns in urban foxes exists, and that in some studies such outlier data is either removed or not trackable, therefore underestimating home ranges.</p>
-<p>The home ranges for the sub-sampled Wiltshire data are shown in <a href="#fig-home-ranges-wiltshire-sampled24h" class="quarto-xref">Figure&nbsp;10</a>. The median home range size is 0.56 km<sup>2</sup> for the sampled data, which is roughly half as much as for the full data. This shows that the Wiltshire fox home ranges are overestimated in comparison to Bylot fox home ranges, because of the higher amount of data points available. It also demonstrates that the influence of sampling intervals is definitely present. However, it is secondary in comparison to the difference in fox behavior.</p>
-<p>Similar differences in order of magnitude between remote and rural fox home ranges can also be observed for the monthly home range results shown as a boxplot in <a href="#fig-home-ranges-boxplot" class="quarto-xref">Figure&nbsp;11</a>. It is interesting to see that the fox home ranges for Bylot and Herschel are similar, even if the islands are different in size with Bylot being a hundred times larger. Note that outliers are removed, in particular the irregular data for Herschel (as seen in <a href="#fig-herschel-map" class="quarto-xref">Figure&nbsp;2</a>). The accompanying monthly home range plots can be found in the Appendix in <a href="#fig-monthly-home-ranges-wiltshire" class="quarto-xref">Figure&nbsp;12</a>, <a href="#fig-monthly-home-ranges-bylot" class="quarto-xref">Figure&nbsp;13</a>, and <a href="#fig-monthly-home-ranges-herschel" class="quarto-xref">Figure&nbsp;14</a>.</p>
+<p>The resulting home ranges for the UK wader nesting season time frame are shown in <a href="#fig-home-ranges-bylot" class="quarto-xref">Figure&nbsp;8</a> and <a href="#fig-home-ranges-wiltshire" class="quarto-xref">Figure&nbsp;9 (a)</a>. The median home range size for the foxes in Bylot (75.3 km<sup>2</sup>) is more than 65 times bigger compared to the foxes in Wiltshire (1.1 km<sup>2</sup>). The home ranges for the sub-sampled Wiltshire data are shown in <a href="#fig-home-ranges-wiltshire-sampled24h" class="quarto-xref">Figure&nbsp;9 (b)</a>. The median home range size is 0.56 km<sup>2</sup> for the sampled data, which is roughly half as much as for the full data.</p>
 <div id="fig-home-ranges-bylot" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-home-ranges-bylot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -287,26 +285,42 @@ Figure&nbsp;8: Home ranges for Bylot foxes (March 15th to June 15th, 2012)
 </figcaption>
 </figure>
 </div>
+<div id="fig-banners" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-banners-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-banners" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div id="fig-home-ranges-wiltshire" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
+<figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-home-ranges-wiltshire-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/home_range_wiltshire_wader.png" class="img-fluid figure-img">
+<img src="img/home_range_wiltshire_wader.png" class="img-fluid figure-img" data-ref-parent="fig-banners">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-home-ranges-wiltshire-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;9: Home ranges for Wiltshire foxes (March 15th to June 15th, 2019)
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-home-ranges-wiltshire-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Home ranges for Wiltshire foxes (March 15th to June 15th, 2019)
 </figcaption>
 </figure>
 </div>
+</div>
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-banners" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div id="fig-home-ranges-wiltshire-sampled24h" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
+<figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-home-ranges-wiltshire-sampled24h-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/home_range_wiltshire_wader_sampled.png" class="img-fluid figure-img">
+<img src="img/home_range_wiltshire_wader_sampled.png" class="img-fluid figure-img" data-ref-parent="fig-banners">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-home-ranges-wiltshire-sampled24h-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;10: Home ranges for Wiltshire foxes (March 15th to June 15th, 2019, 24 hour sampling interval)
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-home-ranges-wiltshire-sampled24h-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Home ranges for Wiltshire foxes (March 15th to June 15th, 2019, 24 hour sampling interval)
 </figcaption>
 </figure>
 </div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-banners-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9
+</figcaption>
+</figure>
+</div>
+<p>Similar differences in order of magnitude between remote and rural fox home ranges can also be observed for the monthly home range results shown as a boxplot in <a href="#fig-home-ranges-boxplot" class="quarto-xref">Figure&nbsp;10</a>. Note that outliers are removed, in particular the irregular data for Herschel (as seen in <a href="#fig-herschel-map" class="quarto-xref">Figure&nbsp;2</a>). The accompanying monthly home range plots can be found in the Appendix in <a href="#fig-monthly-home-ranges-wiltshire" class="quarto-xref">Figure&nbsp;11</a>, <a href="#fig-monthly-home-ranges-bylot" class="quarto-xref">Figure&nbsp;12</a>, and <a href="#fig-monthly-home-ranges-herschel" class="quarto-xref">Figure&nbsp;13</a>.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-home-ranges-boxplot" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -315,12 +329,18 @@ Figure&nbsp;10: Home ranges for Wiltshire foxes (March 15th to June 15th, 2019, 
 <img src="index_files/figure-html/fig-home-ranges-boxplot-1.png" class="img-fluid figure-img" width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-home-ranges-boxplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;11: Box plot comparing monthly home ranges (outliers removed)
+Figure&nbsp;10: Box plot comparing monthly home ranges (outliers removed)
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
+</section>
+<section id="discussion" class="level1">
+<h1>Discussion</h1>
+<p>The fox home range results differ enormously between rural and remote areas. We conclude that human presence impacts fox movement behavior significantly, with availability of anthropogenic food sources likely being relevant. The influence of technical aspects, like sampling intervals, on home range calculation results is significant. Wiltshire fox home ranges are overestimated in comparison to Bylot fox home ranges, because of the higher amount of data points available. It also demonstrates that the influence of sampling intervals is definitely present. However, it plays a secondary role in comparison to the difference in fox behavior, which enables the chosen approach of comparing data from heterogeneous sources.</p>
+<p>It is interesting to see that the fox home ranges for Bylot and Herschel are similar, even if the islands are different in size with Bylot being a hundred times larger. Note that there is one fox with an extraordinarily large home range in <a href="#fig-home-ranges-wiltshire" class="quarto-xref">Figure&nbsp;9 (a)</a>. <span class="citation" data-cites="kobryn2023foxes">Kobryn et al. (<a href="#ref-kobryn2023foxes" role="doc-biblioref">2023</a>)</span> report similar patterns with a small number of foxes covering much larger areas than others. They conclude that potential for extensive movement patterns in urban foxes exists, and that in some studies such outlier data is either removed or not trackable, therefore underestimating home ranges.</p>
+<p>Habitat selection TBD</p>
 <section id="model-validation" class="level2">
 <h2 class="anchored" data-anchor-id="model-validation">Model validation</h2>
 <p>According to <span class="citation" data-cites="rykiel1996testing">Rykiel Jr (<a href="#ref-rykiel1996testing" role="doc-biblioref">1996</a>)</span>, model validation means demonstrating that a model is acceptable for its intended use. The purpose, criteria, and context of the model must be specified.</p>
@@ -328,10 +348,6 @@ Figure&nbsp;11: Box plot comparing monthly home ranges (outliers removed)
 <p>Since the geographic location context was diverse, to exclude distortions in the coordinate system as a potential unwanted influence, the results for Bylot island were spot checked for three applicable coordinate systems: WGS84 geographic coordinate system (EPSG:4326), NAD 83 / Statistics Canada Lambert projection (EPSG:3347), and Universal Transverse Mercator (UTM) zone 17N (EPSG:2958). These were identified using the <a href="https://crs-explorer.proj.org/">CRS Explorer</a>. The differences in the median home rage size results (UK wader season) for the foxes in Bylot were minor: 75.3 km<sup>2</sup> for WGS84, 73.3 km<sup>2</sup> for EPSG:3347, and 75.8 km<sup>2</sup> for EPSG:2958.</p>
 <p>For the habitat selection TBD</p>
 </section>
-</section>
-<section id="discussion" class="level1">
-<h1>Discussion</h1>
-<p>The fox home range results differ enormously between rural and remote areas. We conclude that human presence impacts fox movement behavior significantly, with availability of anthropogenic food sources likely being relevant. The influence of technical aspects, like sampling intervals, on home range calculation results is significant. However, it plays a secondary role in comparison to the difference in fox behavior, which enables the chosen approach of comparing data from heterogeneous sources.</p>
 </section>
 <section id="appendix" class="level1">
 <h1>Appendix</h1>
@@ -343,7 +359,7 @@ Figure&nbsp;11: Box plot comparing monthly home ranges (outliers removed)
 <img src="img/wiltshire_monthly.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-monthly-home-ranges-wiltshire-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;12: Monthly home ranges for Wiltshire foxes
+Figure&nbsp;11: Monthly home ranges for Wiltshire foxes
 </figcaption>
 </figure>
 </div>
@@ -353,7 +369,7 @@ Figure&nbsp;12: Monthly home ranges for Wiltshire foxes
 <img src="img/bylot_monthly.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-monthly-home-ranges-bylot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;13: Monthly home ranges for Bylot foxes
+Figure&nbsp;12: Monthly home ranges for Bylot foxes
 </figcaption>
 </figure>
 </div>
@@ -363,7 +379,7 @@ Figure&nbsp;13: Monthly home ranges for Bylot foxes
 <img src="img/herschel_monthly.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-monthly-home-ranges-herschel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;14: Monthly home ranges for Herschel foxes
+Figure&nbsp;13: Monthly home ranges for Herschel foxes
 </figcaption>
 </figure>
 </div>
