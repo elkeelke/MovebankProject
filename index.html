@@ -156,7 +156,7 @@ div.csl-indent {
 <section id="sec-movebank" class="level3">
 <h3 class="anchored" data-anchor-id="sec-movebank">Movebank data</h3>
 <p>All Movebank data sets have the same schema. This simplifies data handling, enables code re-use, and requires the data contributors do perform preprocessing and data cleaning on their side to provide the data in an appropriate format. Libraries for data processing and trajectory handling in R are provided by <span class="citation" data-cites="kranstauber2024move2">Kranstauber, Safi, and Scharf (<a href="#ref-kranstauber2024move2" role="doc-biblioref">2024</a>)</span> and <span class="citation" data-cites="signer2019animal">Signer, Fieberg, and Avgar (<a href="#ref-signer2019animal" role="doc-biblioref">2019</a>)</span>.</p>
-<p>The R code for data download, preprocessing, and serialization of relevant data and charts can be found in: <a href="https://elkeelke.github.io/MovebankProject/preprocessing_uk_wader_nesting_season_home_range.html">Red fox: UK wader nesting season home ranges</a>, <a href="https://elkeelke.github.io/MovebankProject/preprocessing_monthly_home_ranges.html">Red fox: montly home ranges</a>, TBD Bobcat/coyote.</p>
+<p>The R code for data download, preprocessing, and serialization of relevant data and charts can be found in: <a href="https://elkeelke.github.io/MovebankProject/preprocessing_uk_wader_nesting_season_home_range.html">Red fox: UK wader nesting season home ranges</a>, <a href="https://elkeelke.github.io/MovebankProject/preprocessing_monthly_home_ranges.html">Red fox: montly home ranges</a>, <a href="https://elkeelke.github.io/MovebankProject/preprocessing_bobcat_coyote.html">Bobcat/coyote: data preparation</a>. The R code for statistical modelling can be found in <a href="https://elkeelke.github.io/MovebankProject/preprocessing_ssf.html">Bobcat/coyote: modelling</a>.</p>
 </section>
 <section id="human-footprint-data" class="level3">
 <h3 class="anchored" data-anchor-id="human-footprint-data">Human footprint data</h3>
@@ -257,7 +257,8 @@ Figure&nbsp;3: Amount of data per year and month
 </section>
 <section id="bobcat-and-coyote-data" class="level3">
 <h3 class="anchored" data-anchor-id="bobcat-and-coyote-data">Bobcat and coyote data</h3>
-<p><span class="citation" data-cites="prugh2023fear">Prugh et al. (<a href="#ref-prugh2023fear" role="doc-biblioref">2023</a>)</span> provide data for 29 coyotes and 30 bobcats collected between June 2018 and June 2022. The species reside in two separated geographical areas and have interspersed home ranges as shown in <a href="#fig-esa" class="quarto-xref">Figure&nbsp;4</a>, which features a plot of the bobcat and coyote locations in the context of the extracted land cover data. <a href="#fig-hfp" class="quarto-xref">Figure&nbsp;5</a> reveals the human footprint in the area, which is generally low except for some settlements and country roads.</p>
+<p><span class="citation" data-cites="prugh2023fear">Prugh et al. (<a href="#ref-prugh2023fear" role="doc-biblioref">2023</a>)</span> provide data for 29 coyotes and 30 bobcats collected between June 2018 and June 2022. Two animals from each dataset were completely excluded from the analysis because of data sparsity issues. There was partly faulty data for one bobcat, which was also excluded. The majority of the data was usable.</p>
+<p><a href="#fig-esa" class="quarto-xref">Figure&nbsp;4</a> shows that the two species reside in two separated geographical areas and have interspersed home ranges. It also features a plot of the animal locations in the context of the extracted land cover data. <a href="#fig-hfp" class="quarto-xref">Figure&nbsp;5</a> reveals the human footprint in the area, which is generally low except for some settlements and country roads.</p>
 <div id="fig-esa" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-esa-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -278,7 +279,7 @@ Figure&nbsp;5: HFP-100 data with bobcat and coyote tracks shown in black and rel
 </figcaption>
 </figure>
 </div>
-<p>The data sampling intervals are intended to be four hours, however they are irregular with many outliers (see <a href="#fig-bobcat-coyote-sampling-outliers" class="quarto-xref">Figure&nbsp;6 (a)</a>). In addition, the bobcat intervals are less dense and less regular in comparison. <a href="#fig-bobcat-coyote-sampling" class="quarto-xref">Figure&nbsp;6 (b)</a> shows a box plot for the sampling intervals with outliers removed for readability.</p>
+<p>The data sampling intervals are intended to be four hours, however they are irregular with many outliers (see <a href="#fig-sampling-rates" class="quarto-xref">Figure&nbsp;6</a>). In addition, the bobcat intervals are less dense and less regular in comparison.</p>
 <div id="fig-sampling-rates" class="quarto-layout-panel">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-sampling-rates-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -320,19 +321,15 @@ Figure&nbsp;6: Box plots of sampling rates for bobcat and coyote data
 <h2 class="anchored" data-anchor-id="sec-methodology">Methodology</h2>
 <section id="home-range-size-assessment" class="level3">
 <h3 class="anchored" data-anchor-id="home-range-size-assessment">Home range size assessment</h3>
-<p>The red fox data is used for home range size assessment for rural and remote locations. Home range sizes are calculated using minimum convex polygons. This provides estimates of the area used by each individual animal that are easy to compare to each other.</p>
-<p>As discussed in <a href="#sec-redfoxdata" class="quarto-xref">Section&nbsp;3.3.1</a>, the data for the two locations have different temporal scale. <span class="citation" data-cites="laube2011">Laube and Purves (<a href="#ref-laube2011" role="doc-biblioref">2011</a>)</span> have found that the choice of temporal scale has considerable effects on movement parameter calculations, in turn affecting home range results.</p>
-<p>How to make this data comparable? Problem #1 is that the sampling intervals are different. Problem #2 is that the data coverage varies by time of the year. Problem #3 is that there are highly different amounts of data. Selecting the means and parameters for the comparison involves complex choices that will influence the results.</p>
-<p>For #1, a possible approach to achieve similar sampling intervals would be to sample a random afternoon data point for each 24 hour window. However, this would include the implicit assumption that foxes will follow similar daily patterns in the different environments. For #2, a possible approach would be to compare the data for the same time of the year. But since the geographical locations are different, the seasonal weather conditions will differ for the same day of the year, likely leading to different animal behavior. For #3, aggregated comparisons can solve the issue, assuming there is enough data for the smaller data source.</p>
-<p>For data exploration the simplest possible imperfect approach is employed, which is to ignore the different sampling intervals for problem #1, to compare the data for the same time of the year for problem #2 even if animal behavior might be different, and to use exploratory data analysis to find out if a representative answer can be found given the amount of data present for problem #3. Note that this approach has obvious limits. Among them is that the Herschel data is not applicable, since it has minimal overlaps with the Wiltshire data (see <a href="#fig-datapoints-month" class="quarto-xref">Figure&nbsp;3 (b)</a>).</p>
-<p>To explore the impact of sampling intervals for problem #1, the home ranges for the Wiltshire data are additionally calculated on downsampled data, where a random data point from every 24 hour period is selected.</p>
-<p>Finally, an analysis of monthly home ranges is conducted on all three data sets as an alternative solution to address problem #2.</p>
+<p>The red fox data is used for home range size assessment for rural and remote locations. Home range sizes are calculated using minimum convex polygons, which provides easily comparable estimates of the area used by each individual animal. As discussed in <a href="#sec-redfoxdata" class="quarto-xref">Section&nbsp;3.3.1</a>, the data for the two locations have different temporal scale. <span class="citation" data-cites="laube2011">Laube and Purves (<a href="#ref-laube2011" role="doc-biblioref">2011</a>)</span> have found that the choice of temporal scale has considerable effects on movement parameter calculations, in turn affecting home range results.</p>
+<p>How to make this data comparable? Problem #1 is that the sampling intervals are different. Problem #2 is that the data coverage varies by time of the year. Problem #3 is that there are highly different amounts of data. Selecting the means and parameters for the comparison involves complex choices that will influence the results. For #1, a possible approach to achieve similar sampling intervals would be to sample a random afternoon data point for each 24 hour window. However, this would include the implicit assumption that foxes will follow similar daily patterns in the different environments. For #2, a possible approach would be to compare the data for the same time of the year. But since the geographical locations are different, the seasonal weather conditions will differ for the same day of the year, likely leading to different animal behavior. For #3, aggregated comparisons can solve the issue, assuming there is enough data for the smaller data source.</p>
+<p>For data exploration the simplest possible imperfect approach is employed, which is to ignore the different sampling intervals for problem #1, to compare the data for the same time of the year for problem #2 even if animal behavior might be different, and to use exploratory data analysis to find out if a representative answer can be found given the amount of data present for problem #3. Note that this approach has obvious limits. Among them is that the Herschel data is not applicable, since it has minimal overlaps with the Wiltshire data (see <a href="#fig-datapoints-month" class="quarto-xref">Figure&nbsp;3 (b)</a>). To explore the impact of sampling intervals for problem #1, the home ranges for the Wiltshire data are additionally calculated on downsampled data, where a random data point from every 24 hour period is selected. Finally, an analysis of monthly home ranges is conducted on all three data sets as an alternative solution to address problem #2.</p>
 </section>
 <section id="trajectory-analysis-and-habitat-selection" class="level3">
 <h3 class="anchored" data-anchor-id="trajectory-analysis-and-habitat-selection">Trajectory analysis and habitat selection</h3>
 <p>Movement paths are analyzed to identify patterns in speed, direction, and habitat use. Step lengths and turning angles help infer behavioral states. Step-selection functions (SSFs) as described by <span class="citation" data-cites="fortin2005wolves">Fortin et al. (<a href="#ref-fortin2005wolves" role="doc-biblioref">2005</a>)</span> are employed to detect habitat preferences relative to movement patterns. This allows to quantify how animals respond to environmental covariates, such as human footprint and land cover. Selection patterns across species and regions are then compared to assess how habitat preferences vary with human influence.</p>
 <p>Since SSFs require a regular sampling rate which the original data does not provide (see <a href="#fig-bobcat-coyote-sampling" class="quarto-xref">Figure&nbsp;6 (b)</a>), the animals tracks were re-sampled to a four hour window for coyotes and an eight hour window for bobcats. The amt library’s track_resample() function by <span class="citation" data-cites="signer2019animal">Signer, Fieberg, and Avgar (<a href="#ref-signer2019animal" role="doc-biblioref">2019</a>)</span> was used, with a specified tolerance window of 10 minutes. The re-sampled tracks are translated into animal steps with certain step lengths and turning angles as the main input to the SSF. The control group for statistical analysis is comprised of randomly generated steps.</p>
-<p>To compare land cover choices, which translate into habitat characteristics, several statistical approaches are possible. The classical approach is to use conditional logistic regression to compare between observed and random steps (clogit, see <span class="citation" data-cites="manly2007resource">Manly et al. (<a href="#ref-manly2007resource" role="doc-biblioref">2007</a>)</span>). However, for datasets containing several animals, a Poisson-based approach with stratum-specific fixed intercepts as introduced by <span class="citation" data-cites="muff2020accounting">Muff, Signer, and Fieberg (<a href="#ref-muff2020accounting" role="doc-biblioref">2020</a>)</span> is likelihood-equivalent and often returns better results. Interpreting the intercepts as random effects allows implementation as a generalized linear mixed model (GLMM, see <span class="citation" data-cites="bolker2009generalized">Bolker et al. (<a href="#ref-bolker2009generalized" role="doc-biblioref">2009</a>)</span>), which in turn enables introducing random slopes per individual animal.</p>
+<p>To compare land cover choices, which translate into habitat characteristics, several statistical approaches are possible. The classical approach is to use conditional logistic regression to compare between observed and random steps (clogit, see <span class="citation" data-cites="manly2007resource">Manly et al. (<a href="#ref-manly2007resource" role="doc-biblioref">2007</a>)</span>). However, for datasets containing several animals such as the given data, a Poisson-based approach with stratum-specific fixed intercepts as introduced by <span class="citation" data-cites="muff2020accounting">Muff, Signer, and Fieberg (<a href="#ref-muff2020accounting" role="doc-biblioref">2020</a>)</span> is likelihood-equivalent and in this case returns better results. Interpreting the intercepts as random effects allows implementation as a generalized linear mixed model (GLMM, see <span class="citation" data-cites="bolker2009generalized">Bolker et al. (<a href="#ref-bolker2009generalized" role="doc-biblioref">2009</a>)</span>), which in turn enables introducing random slopes per individual animal.</p>
 </section>
 </section>
 </section>
@@ -342,7 +339,7 @@ Figure&nbsp;6: Box plots of sampling rates for bobcat and coyote data
 <div id="fig-home-ranges-bylot" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-home-ranges-bylot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/home_range_bylot_wader.png" class="img-fluid figure-img" style="width:75.0%">
+<img src="img/home_range_bylot_wader.png" class="img-fluid figure-img" style="width:60.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-home-ranges-bylot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;7: Home ranges for Bylot foxes (March 15th to June 15th, 2012)
@@ -399,33 +396,34 @@ Figure&nbsp;9: Box plot comparing monthly home ranges (outliers removed)
 </div>
 </div>
 </div>
-<p>TBD For habitat selection, the results are as follows …</p>
+<p>TBD For habitat selection, deriving statistically significant results from the bobcat data was not possible. The results for the coyote data are shown in</p>
 </section>
 <section id="model-validation" class="level1">
 <h1>Model validation</h1>
 <p>According to <span class="citation" data-cites="rykiel1996testing">Rykiel Jr (<a href="#ref-rykiel1996testing" role="doc-biblioref">1996</a>)</span>, model validation means demonstrating that a model is acceptable for its intended use. The purpose, criteria, and context of the model must be specified.</p>
 <p>For home range size comparison, two models were defined comprised of data, home range calculation based on minimum convex polygons, and median selection. The validation criteria required the amount of difference between the results to be significantly larger (i.e., by a factor of more than 10 times) than the effects on the results introduced by data properties. For that order of magnitude, <span class="citation" data-cites="nilsen2008can">Nilsen, Pedersen, and Linnell (<a href="#ref-nilsen2008can" role="doc-biblioref">2008</a>)</span> found that the choice of home range estimator has a secondary impact compared to range size differences. Since the geographic location context was diverse, to exclude distortions in the coordinate system as a potential unwanted influence, the results for Bylot island were spot checked for three applicable coordinate systems: WGS84 geographic coordinate system (EPSG:4326), NAD 83 / Statistics Canada Lambert projection (EPSG:3347), and Universal Transverse Mercator (UTM) zone 17N (EPSG:2958). These were identified using the <a href="https://crs-explorer.proj.org/">CRS Explorer</a>. The differences in the median home rage size results (UK wader season) for the foxes in Bylot were minor: 75.3 km<sup>2</sup> for WGS84, 73.3 km<sup>2</sup> for EPSG:3347, and 75.8 km<sup>2</sup> for EPSG:2958.</p>
-<p>For the habitat selection, statistical modelling was employed to learn about the likelihood of the given results happening by chance, and statistical model validation was performed to ensure a good fit. TBD add a plot.</p>
+<p>For the habitat selection, statistical modelling was employed to assess the likelihood of the given results happening by chance, and statistical model validation was performed to ensure a good fit. TBD add a plot.</p>
 </section>
 <section id="discussion" class="level1">
 <h1>Discussion</h1>
-<p>The fox home range size results show enormous differences between rural and remote areas. We conclude that human presence changes fox movement behavior patterns fundamentally. Opportunity to move undisturbed and availability of anthropogenic food sources are likely relevant factors. It is interesting to see that the fox home ranges for Bylot and Herschel are similar, even if the islands are different in size with Bylot being a hundred times larger.</p>
-<p>Note that there is one fox with an extraordinarily large home range in <a href="#fig-home-ranges-wiltshire" class="quarto-xref">Figure&nbsp;8 (a)</a>. <span class="citation" data-cites="kobryn2023foxes">Kobryn et al. (<a href="#ref-kobryn2023foxes" role="doc-biblioref">2023</a>)</span> report similar patterns with a small number of foxes covering much larger areas than others. They conclude that potential for extensive movement patterns in urban foxes exists, and that in some studies such outlier data is either removed or not trackable to begin with because of hardware setup restrictions, therefore underestimating home ranges. In this case there are no such issues, however for most of the foxes a small home range can be observed.</p>
+<p>The fox home range size results show enormous differences between rural and remote areas. We conclude that human presence changes fox movement behavior patterns fundamentally. The opportunity to move undisturbed, and the availability of anthropogenic food sources are likely the most relevant factors but more data would be needed to have proof for the underlying reasons. One thing that is interesting to see is that the fox home range sizes for Bylot and Herschel foxes are similar, even if the island sizes differ by a factor of 100.</p>
+<p>Note that there is one fox with an extraordinarily large home range in <a href="#fig-home-ranges-wiltshire" class="quarto-xref">Figure&nbsp;8 (a)</a>, and the additional charts in <a href="#sec-additional-charts" class="quarto-xref">Section&nbsp;8.1</a> show several instances of large fox movements within a single month. <span class="citation" data-cites="kobryn2023foxes">Kobryn et al. (<a href="#ref-kobryn2023foxes" role="doc-biblioref">2023</a>)</span> report similar patterns with a small number of foxes covering much larger areas than others. They conclude that the data is genuine and demonstrates potential for extensive movement patterns in urban foxes, and state that in some studies such outliers are either removed or cannot be tracked because of hardware setup restrictions, therefore underestimating home ranges.</p>
 <p>While technical aspects such as sampling intervals and home range estimator have significant influence on the calculation results, they play a secondary role in comparison to the difference in fox behavior, which enables the chosen approach of comparing data from heterogeneous sources.</p>
-<p>TBD For the habitat selection, …</p>
+<p>Another instance of data aspects having large effects on the results was observed for the statistical modelling. While we could fit a model for coyote data, this was not possible for the bobcat data. We suspect that the required re-sampling because of the initially irregular sampling rates as shown in <a href="#fig-sampling-rates" class="quarto-xref">Figure&nbsp;6</a> played a role.</p>
+<p>TBD habitats</p>
 </section>
 <section id="conclusion" class="level1">
 <h1>Conclusion</h1>
-<p>We have presented two examples demonstrating that human activity influences home range sizes and habitat selection significantly. These insights have been created based on externally contributed publicly available data.</p>
+<p>We have presented two examples demonstrating that human activity influences animal home range sizes and habitat selection significantly. These insights have been created based on externally contributed publicly available data.</p>
 </section>
 <section id="appendix" class="level1">
 <h1>Appendix</h1>
-<section id="additional-charts" class="level2">
-<h2 class="anchored" data-anchor-id="additional-charts">Additional charts</h2>
+<section id="sec-additional-charts" class="level2">
+<h2 class="anchored" data-anchor-id="sec-additional-charts">Additional charts</h2>
 <div id="fig-monthly-home-ranges-wiltshire" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-monthly-home-ranges-wiltshire-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/wiltshire_monthly.png" class="img-fluid figure-img">
+<img src="img/wiltshire_monthly.png" class="img-fluid figure-img" style="width:60.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-monthly-home-ranges-wiltshire-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;10: Monthly home ranges for Wiltshire foxes
@@ -435,7 +433,7 @@ Figure&nbsp;10: Monthly home ranges for Wiltshire foxes
 <div id="fig-monthly-home-ranges-bylot" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-monthly-home-ranges-bylot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/bylot_monthly.png" class="img-fluid figure-img">
+<img src="img/bylot_monthly.png" class="img-fluid figure-img" style="width:60.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-monthly-home-ranges-bylot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;11: Monthly home ranges for Bylot foxes
@@ -445,7 +443,7 @@ Figure&nbsp;11: Monthly home ranges for Bylot foxes
 <div id="fig-monthly-home-ranges-herschel" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-monthly-home-ranges-herschel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/herschel_monthly.png" class="img-fluid figure-img">
+<img src="img/herschel_monthly.png" class="img-fluid figure-img" style="width:60.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-monthly-home-ranges-herschel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;12: Monthly home ranges for Herschel foxes

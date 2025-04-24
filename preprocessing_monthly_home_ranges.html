@@ -250,27 +250,6 @@ Attaching package: 'lubridate'</code></pre>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>results_bylot <span class="ot">&lt;-</span> <span class="fu">calculate_monthly_home_ranges</span>(<span class="fu">as.POSIXct</span>(<span class="st">"2011-07-01 00:00:00"</span>), <span class="dv">44</span>, <span class="dv">1371322147</span>, <span class="st">'9559cb1b1cca51e9f3fd69812e5e22dc'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1
-&lt;error/move2_error_movebank_api_general_error&gt;
-Error in `movebank_retrieve()`:
-! There is an unknown download error
-The status message was: 200
-The full error message can be printed with `message(rlang::last_error()$error)`
-The requested url can be retrieved with: `rlang::last_error()$url`
----
-Backtrace:
-     ▆
-  1. └─global calculate_monthly_home_ranges(...)
-  2.   ├─base::tryCatch(...)
-  3.   │ └─base (local) tryCatchList(expr, classes, parentenv, handlers)
-  4.   │   └─base (local) tryCatchOne(expr, names, parentenv, handlers[[1L]])
-  5.   │     └─base (local) doTryCatch(return(expr), name, parentenv, handler)
-  6.   └─move2::movebank_download_study(...)
-  7.     ├─dplyr::select(...)
-  8.     ├─dplyr::select(...)
-  9.     ├─rlang::exec("movebank_download_study_info", id = study_id, !!!dots)
- 10.     └─move2::movebank_download_study_info(...)
- 11.       ├─base::do.call(...)
- 12.       └─move2::movebank_retrieve(...)
 [1] 2
 [1] 3
 [1] 4
@@ -446,18 +425,6 @@ Backtrace:
  6.   └─move2::movebank_download_study(...)
 [1] 3
 [1] 4
-&lt;error/move2_error_movebank_api_multiple_rows_of_study_info&gt;
-Error in `movebank_download_study()`:
-! Unexpected event, more then one row of study info
----
-Backtrace:
-    ▆
- 1. └─global calculate_monthly_home_ranges(...)
- 2.   ├─base::tryCatch(...)
- 3.   │ └─base (local) tryCatchList(expr, classes, parentenv, handlers)
- 4.   │   └─base (local) tryCatchOne(expr, names, parentenv, handlers[[1L]])
- 5.   │     └─base (local) doTryCatch(return(expr), name, parentenv, handler)
- 6.   └─move2::movebank_download_study(...)
 [1] 5
 [1] 6
 [1] 7
