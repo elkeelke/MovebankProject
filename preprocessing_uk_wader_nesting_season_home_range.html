@@ -186,8 +186,8 @@ Attaching package: 'dplyr'</code></pre>
   `deployment_id` was `NA`).</code></pre>
 </div>
 </div>
-<section id="check-if-the-data-is-looks-correct-i.e.-positioned-on-the-correct-island" class="level3">
-<h3 class="anchored" data-anchor-id="check-if-the-data-is-looks-correct-i.e.-positioned-on-the-correct-island">Check if the data is looks correct (i.e., positioned on the correct island)</h3>
+<section id="check-if-the-data-looks-correct-i.e.-positioned-on-the-correct-island" class="level3">
+<h3 class="anchored" data-anchor-id="check-if-the-data-looks-correct-i.e.-positioned-on-the-correct-island">Check if the data looks correct (i.e., positioned on the correct island)</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"sf"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
@@ -274,8 +274,8 @@ remotes::install_github('r-tmap/tmap')</code></pre>
 </div>
 </section>
 </section>
-<section id="counts" class="level2">
-<h2 class="anchored" data-anchor-id="counts">Counts</h2>
+<section id="produce-the-counts-for-data-per-month-and-per-year-breakdowns" class="level2">
+<h2 class="anchored" data-anchor-id="produce-the-counts-for-data-per-month-and-per-year-breakdowns">Produce the counts for data per month and per year breakdowns</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"lubridate"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
@@ -52645,7 +52645,7 @@ Attaching package: 'lubridate'</code></pre>
 <span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(year_count, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">factor</span>(year), <span class="at">y =</span> count, <span class="at">color =</span> source, <span class="at">fill =</span> source)) <span class="sc">+</span></span>
 <span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">width =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
 <span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> <span class="fu">ifelse</span>(source <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Bylot"</span>, <span class="st">"Herschel"</span>), <span class="st">"Bylot/Herschel"</span>, <span class="st">"Wiltshire"</span>), <span class="at">scales =</span> <span class="st">"free_y"</span>) <span class="sc">+</span></span>
-<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Year"</span>, <span class="at">y =</span> <span class="st">"Number of data points"</span>) <span class="sc">+</span></span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Year"</span>, <span class="at">y =</span> <span class="st">"Number of data points"</span>, <span class="at">fill =</span> <span class="st">"Source"</span>, <span class="at">color =</span> <span class="st">"Source"</span>) <span class="sc">+</span></span>
 <span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
 <span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>)) <span class="sc">+</span></span>
 <span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">6</span>)) <span class="sc">+</span></span>
@@ -52669,7 +52669,7 @@ Attaching package: 'lubridate'</code></pre>
 <span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
 <span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>() <span class="sc">+</span></span>
 <span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> <span class="fu">ifelse</span>(source <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Bylot"</span>, <span class="st">"Herschel"</span>), <span class="st">"Bylot/Herschel"</span>, <span class="st">"Wiltshire"</span>), <span class="at">scales =</span> <span class="st">"free_y"</span>) <span class="sc">+</span></span>
-<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Month"</span>, <span class="at">y =</span> <span class="st">"Number of data points"</span>) <span class="sc">+</span></span>
+<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Month"</span>, <span class="at">y =</span> <span class="st">"Number of data points"</span>, <span class="at">fill =</span> <span class="st">"Source"</span>, <span class="at">color =</span> <span class="st">"Source"</span>) <span class="sc">+</span></span>
 <span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
 <span id="cb45-8"><a href="#cb45-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>)) <span class="sc">+</span></span>
 <span id="cb45-9"><a href="#cb45-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">6</span>)) <span class="sc">+</span></span>
@@ -52688,8 +52688,8 @@ Attaching package: 'lubridate'</code></pre>
 </div>
 </div>
 </section>
-<section id="filtered-data-uk-wader-nesting-season" class="level2">
-<h2 class="anchored" data-anchor-id="filtered-data-uk-wader-nesting-season">Filtered data (UK wader nesting season)</h2>
+<section id="download-filtered-data-for-the-uk-wader-nesting-season" class="level2">
+<h2 class="anchored" data-anchor-id="download-filtered-data-for-the-uk-wader-nesting-season">Download filtered data for the UK wader nesting season</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>foxes_wiltshire_filtered <span class="ot">&lt;-</span> <span class="fu">movebank_download_study</span>(</span>
 <span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">study_id =</span> <span class="dv">3179890710</span>,</span>
@@ -52705,6 +52705,9 @@ Attaching package: 'lubridate'</code></pre>
 <span id="cb48-12"><a href="#cb48-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">timestamp_end =</span> <span class="fu">as.POSIXct</span>(<span class="st">"2012-06-15 23:59:00"</span>)</span>
 <span id="cb48-13"><a href="#cb48-13" aria-hidden="true" tabindex="-1"></a>)  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</section>
+<section id="produce-home-range-plots-and-medians" class="level2">
+<h2 class="anchored" data-anchor-id="produce-home-range-plots-and-medians">Produce home range plots and medians</h2>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-home-ranges-bylot" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -52733,40 +52736,43 @@ Figure&nbsp;2: Home ranges for Wiltshire foxes (March 15th to June 15th, 2019)
 </div>
 </div>
 </div>
-<section id="check-if-there-is-distortion-in-the-coordinate-system-bylot-is-high-up-north" class="level3">
-<h3 class="anchored" data-anchor-id="check-if-there-is-distortion-in-the-coordinate-system-bylot-is-high-up-north">Check if there is distortion in the coordinate system (Bylot is high up North)</h3>
+</section>
+<section id="check-if-there-is-coordinate-system-related-distortion-in-the-results-for-bylot-islands-which-is-high-up-north" class="level2">
+<h2 class="anchored" data-anchor-id="check-if-there-is-coordinate-system-related-distortion-in-the-results-for-bylot-islands-which-is-high-up-north">Check if there is coordinate system related distortion in the results for Bylot islands, which is high up north</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co"># EPSG:3154 NAD83(CSRS) / UTM zone 7N Herschel Island, also known as Qikiqtaruk,  69°35'23" N, 139°05'57" W</span></span>
-<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a><span class="co"># c1 is Bylot island, which is 11.067 km^2 and split over two UTM zones:</span></span>
-<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a><span class="co"># EPSG:2958 NAD83(CSRS) / UTM zone 17N</span></span>
-<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a><span class="co"># EPSG:2959 NAD83(CSRS) / UTM zone 18N</span></span>
-<span id="cb49-6"><a href="#cb49-6" aria-hidden="true" tabindex="-1"></a><span class="co"># This coordinate system covers them both: EPSG:3347 NAD83 / Statistics Canada Lambert</span></span>
-<span id="cb49-7"><a href="#cb49-7" aria-hidden="true" tabindex="-1"></a>convert_m2_to_km2 <span class="ot">&lt;-</span> <span class="cf">function</span>(area) {</span>
-<span id="cb49-8"><a href="#cb49-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(area <span class="sc">*</span> <span class="fl">0.000001</span>)</span>
-<span id="cb49-9"><a href="#cb49-9" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb49-10"><a href="#cb49-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-11"><a href="#cb49-11" aria-hidden="true" tabindex="-1"></a>c1_mcp_3347 <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(c1_mcp, <span class="dv">3347</span>)</span>
-<span id="cb49-12"><a href="#cb49-12" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">convert_m2_to_km2</span>(<span class="fu">median</span>(<span class="fu">st_area</span>(c1_mcp_3347))))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>convert_m2_to_km2 <span class="ot">&lt;-</span> <span class="cf">function</span>(area) {</span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(area <span class="sc">*</span> <span class="fl">0.000001</span>)</span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a><span class="co"># EPSG:3154 NAD83(CSRS) / UTM zone 7N Herschel Island, also known as Qikiqtaruk,  69°35'23" N, 139°05'57" W</span></span>
+<span id="cb49-6"><a href="#cb49-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-7"><a href="#cb49-7" aria-hidden="true" tabindex="-1"></a><span class="co"># This coordinate system covers them both: EPSG:3347 NAD83 / Statistics Canada Lambert</span></span>
+<span id="cb49-8"><a href="#cb49-8" aria-hidden="true" tabindex="-1"></a>bylot_mcp_3347 <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(bylot_mcp, <span class="dv">3347</span>)</span>
+<span id="cb49-9"><a href="#cb49-9" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">convert_m2_to_km2</span>(<span class="fu">median</span>(<span class="fu">st_area</span>(bylot_mcp_3347))))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>73.31395 [m^2]</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co"># See what happens if we use the partial coordinate systems</span></span>
-<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>c1_mcp_2958 <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(c1_mcp, <span class="dv">2958</span>)</span>
-<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">convert_m2_to_km2</span>(<span class="fu">median</span>(<span class="fu">st_area</span>(c1_mcp_2958))))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Bylot island is 11.067 km^2 large and split over two UTM zones:</span></span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="co"># EPSG:2958 NAD83(CSRS) / UTM zone 17N</span></span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a><span class="co"># EPSG:2959 NAD83(CSRS) / UTM zone 18N</span></span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a><span class="co"># See what happens if we use the partial coordinate systems</span></span>
+<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a>bylot_mcp_2958 <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(bylot_mcp, <span class="dv">2958</span>)</span>
+<span id="cb51-6"><a href="#cb51-6" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">convert_m2_to_km2</span>(<span class="fu">median</span>(<span class="fu">st_area</span>(bylot_mcp_2958))))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>75.79706 [m^2]</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>c1_mcp_2959 <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(c1_mcp, <span class="dv">2959</span>)</span>
-<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">convert_m2_to_km2</span>(<span class="fu">median</span>(<span class="fu">st_area</span>(c1_mcp_2959))))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>bylot_mcp_2959 <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(bylot_mcp, <span class="dv">2959</span>)</span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">convert_m2_to_km2</span>(<span class="fu">median</span>(<span class="fu">st_area</span>(bylot_mcp_2959))))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>75.84235 [m^2]</code></pre>
 </div>
 </div>
 </section>
+<section id="download-sampled-filtered-data-for-uk-wader-nesting-season" class="level2">
+<h2 class="anchored" data-anchor-id="download-sampled-filtered-data-for-uk-wader-nesting-season">Download sampled filtered data for UK wader nesting season</h2>
 </section>
-<section id="sampled-filtered-data-for-uk-wader-nesting-season" class="level2">
-<h2 class="anchored" data-anchor-id="sampled-filtered-data-for-uk-wader-nesting-season">Sampled filtered data for UK wader nesting season</h2>
+<section id="produce-home-range-plots-and-medians-1" class="level2">
+<h2 class="anchored" data-anchor-id="produce-home-range-plots-and-medians-1">Produce home range plots and medians</h2>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-home-ranges-wiltshire-sampled24h" class="quarto-float quarto-figure quarto-figure-center anchored">
