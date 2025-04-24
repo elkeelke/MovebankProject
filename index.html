@@ -136,12 +136,12 @@ div.csl-indent {
 </section>
 <section id="introduction" class="level1">
 <h1>Introduction</h1>
-<p>Disturbance by humans has widespread impacts on the movements of animals, as confirmed by a large-scale meta study by <span class="citation" data-cites="doherty2021human">Doherty, Hays, and Driscoll (<a href="#ref-doherty2021human" role="doc-biblioref">2021</a>)</span>. In this paper, two related research questions will be addressed:</p>
+<p>Disturbance by humans has widespread impacts on the movements of animals, as confirmed by a large-scale meta study by <span class="citation" data-cites="doherty2021human">Doherty, Hays, and Driscoll (<a href="#ref-doherty2021human" role="doc-biblioref">2021</a>)</span>. In this paper, two related research questions are addressed:</p>
 <ol type="1">
-<li>Home Range Implications: Do animals exhibit smaller home ranges in high human impact areas? This will be analysed by comparing red fox (vulpes vulpes) home ranges in low and high human impact areas.</li>
-<li>Habitat Selection in Human-Dominated Landscapes: How do animals select habitats under varying levels of human influence? This will be analysed based on bobcat (lynx rufus) and coyote (canis latrans) data from a national park area.</li>
+<li>Home range size implications: Do animals exhibit smaller home ranges in high human impact areas? This is examined by comparing red fox (vulpes vulpes) home ranges in low and high human impact areas.</li>
+<li>Habitat selection in human-influenced landscapes: How do animals select habitats under varying levels of human presence? This is analysed based on bobcat (lynx rufus) and coyote (canis latrans) data from a national park area.</li>
 </ol>
-<p>Different data sets are used for each research question. Relying on Movebank data, as described in <a href="#sec-movebank" class="quarto-xref">Section&nbsp;3.2.1</a>, presents additional challenges stemming from the facts that data is used for purposes it was not originally collected for, and that data from different studies is compared.</p>
+<p>Different data sets are used for each research question. Relying on Movebank data, as described in <a href="#sec-movebank" class="quarto-xref">Section&nbsp;3.2.1</a>, presents additional challenges because data is used for purposes it was not originally collected for, and compared between different studies.</p>
 </section>
 <section id="material-and-methods" class="level1">
 <h1>Material and Methods</h1>
@@ -155,8 +155,8 @@ div.csl-indent {
 <p>This section describes data preparation and processing for all the datasets employed.</p>
 <section id="sec-movebank" class="level3">
 <h3 class="anchored" data-anchor-id="sec-movebank">Movebank data</h3>
-<p>All Movebank data sets have the same schema. This simplifies data handling, enables code re-use, and requires the data contributors do perform preprocessing and data cleaning on their side to provide the data in an appropriate format. A library for data processing and trajectory handling in R is provided by <span class="citation" data-cites="kranstauber2024move2">Kranstauber, Safi, and Scharf (<a href="#ref-kranstauber2024move2" role="doc-biblioref">2024</a>)</span>.</p>
-<p>The R code for data download, preprocessing, and serialization of relevant data and charts can be found in: <a href="https://elkeelke.github.io/MovebankProject/preprocessing_uk_wader_nesting_season_home_range.html">Red fox: UK wader nesting season home range</a>, <a href="https://elkeelke.github.io/MovebankProject/preprocessing_monthly_home_ranges.html">Red fox: montly home ranges</a>, TBD Bobcat/coyote.</p>
+<p>All Movebank data sets have the same schema. This simplifies data handling, enables code re-use, and requires the data contributors do perform preprocessing and data cleaning on their side to provide the data in an appropriate format. Libraries for data processing and trajectory handling in R are provided by <span class="citation" data-cites="kranstauber2024move2">Kranstauber, Safi, and Scharf (<a href="#ref-kranstauber2024move2" role="doc-biblioref">2024</a>)</span> and <span class="citation" data-cites="signer2019animal">Signer, Fieberg, and Avgar (<a href="#ref-signer2019animal" role="doc-biblioref">2019</a>)</span>.</p>
+<p>The R code for data download, preprocessing, and serialization of relevant data and charts can be found in: <a href="https://elkeelke.github.io/MovebankProject/preprocessing_uk_wader_nesting_season_home_range.html">Red fox: UK wader nesting season home ranges</a>, <a href="https://elkeelke.github.io/MovebankProject/preprocessing_monthly_home_ranges.html">Red fox: montly home ranges</a>, TBD Bobcat/coyote.</p>
 </section>
 <section id="human-footprint-data" class="level3">
 <h3 class="anchored" data-anchor-id="human-footprint-data">Human footprint data</h3>
@@ -171,7 +171,7 @@ div.csl-indent {
 <h2 class="anchored" data-anchor-id="data-exploration-and-analysis">Data exploration and analysis</h2>
 <section id="sec-redfoxdata" class="level3">
 <h3 class="anchored" data-anchor-id="sec-redfoxdata">Red fox data</h3>
-<p>The Wiltshire data (see <a href="#fig-wiltshire-map" class="quarto-xref">Figure&nbsp;1</a>) was collected between 2016 to 2019 during the UK wader nesting season, which was defined to be March 15th to June 15th, for 35 foxes in total. It was sampled at 10 or 60 minute rates. The research team controlled the sampling rate remotely to save battery at times the data was considered less interesting.</p>
+<p>Wiltshire data (see <a href="#fig-wiltshire-map" class="quarto-xref">Figure&nbsp;1</a>) was collected between 2016 to 2019 during the UK wader nesting season, which was defined to be March 15th to June 15th, for 35 foxes in total. It was sampled at 10 and 60 minute rates. The research team controlled the sampling rate remotely to save battery at times the data was considered less interesting.</p>
 <div id="fig-wiltshire-map" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-wiltshire-map-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -217,7 +217,7 @@ Figure&nbsp;2: Maps of Bylot and Herschel island, with high level view of animal
 </figcaption>
 </figure>
 </div>
-<p>The Bylot (see <a href="#fig-bylot-map" class="quarto-xref">Figure&nbsp;2 (a)</a>) and Herschel (see <a href="#fig-herschel-map" class="quarto-xref">Figure&nbsp;2 (b)</a>) data was collected all year round, at a much lower sampling rate of once per day, at random afternoon times of the day. The collection period was June 2009 to Feb 2010 for Herschel and from 2011 to 2015 for Bylot, for two foxes per island. <a href="#fig-datapoints-year" class="quarto-xref">Figure&nbsp;3 (a)</a> provides an overview of the amount of data points available per year. There is much more data from Wiltshire because of the higher number of foxes and the higher sampling rate. Looking at the breakdowns by month as shown in <a href="#fig-datapoints-month" class="quarto-xref">Figure&nbsp;3 (b)</a> reveals seasonal differences in the amount of data available.</p>
+<p>Bylot (see <a href="#fig-bylot-map" class="quarto-xref">Figure&nbsp;2 (a)</a>) and Herschel (see <a href="#fig-herschel-map" class="quarto-xref">Figure&nbsp;2 (b)</a>) data was collected all year round, at a much lower sampling rate of once per day, at random afternoon times of the day. The collection period was June 2009 to Feb 2010 for Herschel and from 2011 to 2015 for Bylot, for two foxes per island. <a href="#fig-datapoints-year" class="quarto-xref">Figure&nbsp;3 (a)</a> provides an overview of the amount of data points available per year. There is much more data from Wiltshire because of the higher number of foxes and the higher sampling rate. Looking at the breakdowns by month as shown in <a href="#fig-datapoints-month" class="quarto-xref">Figure&nbsp;3 (b)</a> reveals seasonal differences in the amount of data available.</p>
 <div id="fig-data-points" class="quarto-layout-panel">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-data-points-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -278,7 +278,7 @@ Figure&nbsp;5: HFP-100 data with bobcat and coyote tracks shown in black and rel
 </figcaption>
 </figure>
 </div>
-<p>The data sampling intervals are intended to be four hours. In practice, the intervals are irregular with many outliers and they differ for the two species. <a href="#fig-bobcat-coyote-sampling" class="quarto-xref">Figure&nbsp;6</a> shows a boxplot for the sampling intervals, with outliers removed since the chart would be unreadable otherwise. Since the coyote sampling interval is more regular compared to the bobcat data, the analysis was performed on coyote data only.</p>
+<p>The data sampling intervals are intended to be four hours. In practice, they are irregular with many outliers, and differ between the two species. The bobcat intervals are less dense and less regular in comparison. <a href="#fig-bobcat-coyote-sampling" class="quarto-xref">Figure&nbsp;6</a> shows a boxplot for the sampling intervals. Outliers are removed for readability.</p>
 <div id="fig-bobcat-coyote-sampling" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-bobcat-coyote-sampling-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -295,7 +295,7 @@ Figure&nbsp;6: Boxplot of sampling rates for bobcat and coyote data, with outlie
 <h2 class="anchored" data-anchor-id="sec-methodology">Methodology</h2>
 <section id="home-range-assessment" class="level3">
 <h3 class="anchored" data-anchor-id="home-range-assessment">Home Range Assessment</h3>
-<p>The red fox data is used for home range assessment present for a rural and a remote location. Home range sizes are calculated using minimum convex polygons. This provides estimates of the area used by each individual animal that are easy to compare to each other.</p>
+<p>The red fox data is used for home range assessment for rural and remote locations. Home range sizes are calculated using minimum convex polygons. This provides estimates of the area used by each individual animal that are easy to compare to each other.</p>
 <p>As discussed in <a href="#sec-redfoxdata" class="quarto-xref">Section&nbsp;3.3.1</a>, the data for the two locations have different temporal scale. <span class="citation" data-cites="laube2011">Laube and Purves (<a href="#ref-laube2011" role="doc-biblioref">2011</a>)</span> have found that the choice of temporal scale has considerable effects on movement parameter calculations, in turn affecting home range results.</p>
 <p>How to make this data comparable? Problem #1 is that the sampling intervals are different. Problem #2 is that the data coverage varies by time of the year. Problem #3 is that there are highly different amounts of data. Selecting the means and parameters for the comparison involves complex choices that will influence the results.</p>
 <p>For #1, a possible approach to achieve similar sampling intervals would be to sample a random afternoon data point for each 24 hour window. However, this would include the implicit assumption that foxes will follow similar daily patterns in the different environments. For #2, a possible approach would be to compare the data for the same time of the year. But since the geographical locations are different, the seasonal weather conditions will differ for the same day of the year, likely leading to different animal behavior. For #3, aggregated comparisons can solve the issue, assuming there is enough data for the smaller data source.</p>
@@ -305,9 +305,9 @@ Figure&nbsp;6: Boxplot of sampling rates for bobcat and coyote data, with outlie
 </section>
 <section id="trajectory-analysis-and-habitat-selection" class="level3">
 <h3 class="anchored" data-anchor-id="trajectory-analysis-and-habitat-selection">Trajectory Analysis and Habitat Selection</h3>
-<p>Movement paths are analyzed to identify patterns in speed, direction, and habitat use. Step lengths and turning angles help infer behavioral states. Step-selection functions (SSFs) as described by <span class="citation" data-cites="fortin2005wolves">Fortin et al. (<a href="#ref-fortin2005wolves" role="doc-biblioref">2005</a>)</span> are employed to detect habitat preferences relative to movement patterns. This allows to quantify how animals respond to environmental covariates, such as human footprint and land cover.</p>
-<p>TBD Selection patterns across species and regions are compared to assess how habitat preferences vary with human influence.</p>
-<p>Since SSFs requires a regular sampling rate which the original data does not provide (see <a href="#fig-bobcat-coyote-sampling" class="quarto-xref">Figure&nbsp;6</a>), the animals tracks were re-sampled to a four hour window. The amt library’s track_resample() function by <span class="citation" data-cites="signer2019animal">Signer, Fieberg, and Avgar (<a href="#ref-signer2019animal" role="doc-biblioref">2019</a>)</span> was used, with a specified tolerance window of 10 minutes. The re-sampled tracks are translated into animal steps with certain step lengths and turning angles as the main input to the SSF. The control group for the statistical analysis is comprised of randomly generated steps. To compare land cover choices, which translate into habitat characteristics, a conditional logistic regression is performed using the amt library’s fit_clogit function comparing between observed and random steps.</p>
+<p>Movement paths are analyzed to identify patterns in speed, direction, and habitat use. Step lengths and turning angles help infer behavioral states. Step-selection functions (SSFs) as described by <span class="citation" data-cites="fortin2005wolves">Fortin et al. (<a href="#ref-fortin2005wolves" role="doc-biblioref">2005</a>)</span> are employed to detect habitat preferences relative to movement patterns. This allows to quantify how animals respond to environmental covariates, such as human footprint and land cover. Selection patterns across species and regions are then compared to assess how habitat preferences vary with human influence.</p>
+<p>Since SSFs require a regular sampling rate which the original data does not provide (see <a href="#fig-bobcat-coyote-sampling" class="quarto-xref">Figure&nbsp;6</a>), the animals tracks were re-sampled to a four hour window for coyotes and an eight hour window for bobcats. The amt library’s track_resample() function by <span class="citation" data-cites="signer2019animal">Signer, Fieberg, and Avgar (<a href="#ref-signer2019animal" role="doc-biblioref">2019</a>)</span> was used, with a specified tolerance window of 10 minutes. The re-sampled tracks are translated into animal steps with certain step lengths and turning angles as the main input to the SSF. The control group for statistical analysis is comprised of randomly generated steps.</p>
+<p>To compare land cover choices, which translate into habitat characteristics, several statistical approaches are possible. The classical approach is to use conditional logistic regression to compare between observed and random steps (clogit, see <span class="citation" data-cites="manly2007resource">Manly et al. (<a href="#ref-manly2007resource" role="doc-biblioref">2007</a>)</span>). However, for datasets containing several animals, a Poisson-based approach with stratum-specific fixed intercepts as introduced by <span class="citation" data-cites="muff2020accounting">Muff, Signer, and Fieberg (<a href="#ref-muff2020accounting" role="doc-biblioref">2020</a>)</span> is likelihood-equivalent and often returns better results. Interpreting the intercepts as random effects allows implementation as a generalized linear mixed model (GLMM, see <span class="citation" data-cites="bolker2009generalized">Bolker et al. (<a href="#ref-bolker2009generalized" role="doc-biblioref">2009</a>)</span>), which in turn enables introducing random slopes per individual animal.</p>
 </section>
 </section>
 </section>
@@ -426,7 +426,7 @@ Figure&nbsp;12: Monthly home ranges for Herschel foxes
 </section>
 <section id="use-of-large-language-models-and-generative-ai" class="level2">
 <h2 class="anchored" data-anchor-id="use-of-large-language-models-and-generative-ai">Use of Large Language Models and Generative AI</h2>
-<p>Elke used <span class="citation" data-cites="notebooklm">NotebookLM (<a href="#ref-notebooklm" role="doc-biblioref">2025</a>)</span> for querying the papers cited in the references.</p>
+<p>Elke used <span class="citation" data-cites="notebooklm">NotebookLM (<a href="#ref-notebooklm" role="doc-biblioref">2025</a>)</span> for querying the papers cited in the references and <span class="citation" data-cites="openai2025chatgpt">OpenAI (<a href="#ref-openai2025chatgpt" role="doc-biblioref">2025</a>)</span> for ggplot related queries.</p>
 </section>
 </section>
 <section id="references" class="level1">
@@ -437,6 +437,9 @@ Figure&nbsp;12: Monthly home ranges for Herschel foxes
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-bolker2009generalized" class="csl-entry" role="listitem">
+Bolker, Benjamin M, Mollie E Brooks, Connie J Clark, Shane W Geange, John R Poulsen, M Henry H Stevens, and Jada-Simone S White. 2009. <span>“Generalized Linear Mixed Models: A Practical Guide for Ecology and Evolution.”</span> <em>Trends in Ecology &amp; Evolution</em> 24 (3): 127–35.
+</div>
 <div id="ref-doherty2021human" class="csl-entry" role="listitem">
 Doherty, Tim S, Graeme C Hays, and Don A Driscoll. 2021. <span>“Human Disturbance Causes Widespread Disruption of Animal Movement.”</span> <em>Nature Ecology &amp; Evolution</em> 5 (4): 513–19.
 </div>
@@ -464,8 +467,17 @@ Lapaine, Miljenko. 2011. <span>“Mollweide Map Projection.”</span> <em>KoG</e
 <div id="ref-laube2011" class="csl-entry" role="listitem">
 Laube, Patrick, and Ross S Purves. 2011. <span>“How Fast Is a Cow? Cross-Scale Analysis of Movement Data.”</span> <em>Transactions in GIS</em> 15 (3): 401–18.
 </div>
+<div id="ref-manly2007resource" class="csl-entry" role="listitem">
+Manly, BFL, Lyman McDonald, Dana L Thomas, Trent L McDonald, and Wallace P Erickson. 2007. <em>Resource Selection by Animals: Statistical Design and Analysis for Field Studies</em>. Springer Science &amp; Business Media.
+</div>
+<div id="ref-muff2020accounting" class="csl-entry" role="listitem">
+Muff, Stefanie, Johannes Signer, and John Fieberg. 2020. <span>“Accounting for Individual-Specific Variation in Habitat-Selection Studies: Efficient Estimation of Mixed-Effects Models Using Bayesian or Frequentist Computation.”</span> <em>Journal of Animal Ecology</em> 89 (1): 80–92.
+</div>
 <div id="ref-notebooklm" class="csl-entry" role="listitem">
 NotebookLM. 2025. <span>“NotebookLM.”</span> <a href="https://notebooklm.google/" class="uri">https://notebooklm.google/</a>.
+</div>
+<div id="ref-openai2025chatgpt" class="csl-entry" role="listitem">
+OpenAI. 2025. <span>“ChatGPT.”</span> <a href="https://openai.com/chatgpt">https://openai.com/chatgpt</a>.
 </div>
 <div id="ref-porteus2024movement" class="csl-entry" role="listitem">
 Porteus, Tom A, Mike J Short, Andrew N Hoodless, and Jonathan C Reynolds. 2024. <span>“Movement Ecology and Minimum Density Estimates of Red Foxes in Wet Grassland Habitats Used by Breeding Wading Birds.”</span> <em>European Journal of Wildlife Research</em> 70 (1): 8.
