@@ -1,1 +1,1 @@
-Sitemap: https://elkeelke.github.io/MovebankProject//sitemap.xml
+Sitemap: https://elkeelke.github.io/MovebankProject/sitemap.xml

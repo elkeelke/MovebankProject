@@ -156,7 +156,7 @@ div.csl-indent {
 <section id="sec-movebank" class="level3">
 <h3 class="anchored" data-anchor-id="sec-movebank">Movebank data</h3>
 <p>All Movebank datasets have the same schema. This simplifies data handling, enables code re-use, and requires the data contributors do perform preprocessing and data cleaning on their side to provide the data in an appropriate format. Libraries for data processing and trajectory handling in R are provided by <span class="citation" data-cites="kranstauber2024move2">Kranstauber, Safi, and Scharf (<a href="#ref-kranstauber2024move2" role="doc-biblioref">2024</a>)</span> and <span class="citation" data-cites="signer2019animal">Signer, Fieberg, and Avgar (<a href="#ref-signer2019animal" role="doc-biblioref">2019</a>)</span>.</p>
-<p>The R code for data download, preprocessing, and serialization of relevant data and charts can be found in: <a href="https://elkeelke.github.io/MovebankProject/preprocessing_uk_wader_nesting_season_home_range.html">Red fox: UK wader nesting season home ranges</a>, <a href="https://elkeelke.github.io/MovebankProject/preprocessing_monthly_home_ranges.html">Red fox: montly home ranges</a>, <a href="https://elkeelke.github.io/MovebankProject/preprocessing_bobcat_coyote.html">Bobcat/coyote: data preparation</a>.</p>
+<p>The R code for data download, preprocessing, and serialization of relevant data and charts can be found in: <a href="https://elkeelke.github.io/MovebankProject/preprocessing_uk_wader_nesting_season_home_range.html">Red fox: UK wader nesting season home ranges</a>, <a href="https://elkeelke.github.io/MovebankProject/preprocessing_monthly_home_ranges.html">Red fox: montly home ranges</a>, <a href="https://elkeelke.github.io/MovebankProject/preprocessing_bobcat_coyote.html">Bobcat/coyote: data preparation</a>. The R code for statistical modelling can be found in <a href="https://elkeelke.github.io/MovebankProject/preprocessing_ssf.html">Bobcat/coyote: modelling</a>.</p>
 </section>
 <section id="human-footprint-data" class="level3">
 <h3 class="anchored" data-anchor-id="human-footprint-data">Human footprint data</h3>
@@ -336,7 +336,7 @@ Figure&nbsp;6: Box plots of sampling rates for bobcat and coyote data
 </section>
 <section id="results" class="level1">
 <h1>Results</h1>
-<p>The resulting home ranges for the UK wader nesting season time frame are shown in <a href="#fig-home-ranges-bylot" class="quarto-xref">Figure&nbsp;7</a> and <a href="#fig-home-ranges-wiltshire" class="quarto-xref">Figure&nbsp;8 (a)</a>. The median home range size for the remote foxes in Bylot (75.3 km<sup>2</sup>) is more than 65 times larger compared to the rural foxes in Wiltshire (1.1 km<sup>2</sup>). The home ranges for the sub-sampled Wiltshire data are shown in <a href="#fig-home-ranges-wiltshire-sampled24h" class="quarto-xref">Figure&nbsp;8 (b)</a>. The median home range size is 0.56 km<sup>2</sup> for the sampled data, which is roughly half as much as for the full data.</p>
+<p>The resulting fox home ranges for the UK wader nesting season time frame are shown in <a href="#fig-home-ranges-bylot" class="quarto-xref">Figure&nbsp;7</a> and <a href="#fig-home-ranges-wiltshire" class="quarto-xref">Figure&nbsp;8 (a)</a>. The median home range size for the remote foxes in Bylot (75.3 km<sup>2</sup>) is more than 65 times larger compared to the rural foxes in Wiltshire (1.1 km<sup>2</sup>). The home ranges for the sub-sampled Wiltshire data are shown in <a href="#fig-home-ranges-wiltshire-sampled24h" class="quarto-xref">Figure&nbsp;8 (b)</a>. The median home range size is 0.56 km<sup>2</sup> for the sampled data, which is roughly half as much as for the full data.</p>
 <div id="fig-home-ranges-bylot" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-home-ranges-bylot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -415,7 +415,7 @@ Figure&nbsp;9: Box plot comparing monthly home ranges (outliers removed)
 </section>
 <section id="conclusion-and-outlook" class="level1">
 <h1>Conclusion and outlook</h1>
-<p>We have performed spatial data analysis and statistics on externally contributed publicly available data to demonstrate that human activity influences animal behavior significantly. We could show that fox home range sizes are much larger in remote areas, and that forests are preferred over built-up areas for habitat selection depending on human footprint.</p>
+<p>We have performed spatial data analysis and statistics on externally contributed publicly available data to demonstrate that human activity influences animal behavior significantly. We could show that (1) fox home range sizes are much larger in remote areas, and that (2) forests are preferred over built-up areas for habitat selection depending on human footprint.</p>
 </section>
 <section id="appendix" class="level1">
 <h1>Appendix</h1>
@@ -598,7 +598,7 @@ Zanaga, Daniele, Ruben Van De Kerchove, Dirk Daems, Wanda De Keersmaecker, Carst
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/elkeelke\.github\.io\/MovebankProject\/\/");
+        var filterRegex = new RegExp("https:\/\/elkeelke\.github\.io\/MovebankProject\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
