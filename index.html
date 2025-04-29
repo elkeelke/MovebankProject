@@ -156,7 +156,7 @@ div.csl-indent {
 <section id="sec-movebank" class="level3">
 <h3 class="anchored" data-anchor-id="sec-movebank">Movebank data</h3>
 <p>All Movebank datasets have the same schema. This simplifies data handling, enables code re-use, and requires the data contributors do perform preprocessing and data cleaning on their side to provide the data in an appropriate format. Libraries for data processing and trajectory handling in R are provided by <span class="citation" data-cites="kranstauber2024move2">Kranstauber, Safi, and Scharf (<a href="#ref-kranstauber2024move2" role="doc-biblioref">2024</a>)</span> and <span class="citation" data-cites="signer2019animal">Signer, Fieberg, and Avgar (<a href="#ref-signer2019animal" role="doc-biblioref">2019</a>)</span>.</p>
-<p>The R code for data download, preprocessing, and serialization of relevant data and charts can be found in: <a href="https://elkeelke.github.io/MovebankProject/preprocessing_uk_wader_nesting_season_home_range.html">Red fox: UK wader nesting season home ranges</a>, <a href="https://elkeelke.github.io/MovebankProject/preprocessing_monthly_home_ranges.html">Red fox: montly home ranges</a>, <a href="https://elkeelke.github.io/MovebankProject/preprocessing_bobcat_coyote.html">Bobcat/coyote: data preparation</a>. The R code for statistical modelling can be found in <a href="https://elkeelke.github.io/MovebankProject/preprocessing_ssf.html">Bobcat/coyote: modelling</a>.</p>
+<p>The R code for data download, preprocessing, and serialization of relevant data and charts can be found in: <a href="https://elkeelke.github.io/MovebankProject/preprocessing_uk_wader_nesting_season_home_range.html">Red fox: UK wader nesting season home ranges</a>, <a href="https://elkeelke.github.io/MovebankProject/preprocessing_monthly_home_ranges.html">Red fox: montly home ranges</a>, <a href="https://elkeelke.github.io/MovebankProject/preprocessing_SSF_complete.html">Bobcat/coyote: data preparation and statistical modelling</a>.</p>
 </section>
 <section id="human-footprint-data" class="level3">
 <h3 class="anchored" data-anchor-id="human-footprint-data">Human footprint data</h3>
@@ -262,7 +262,7 @@ Figure&nbsp;3: Amount of data per year and month
 <div id="fig-esa" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-esa-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/esa_landcover_study_area_with_animals.png" class="img-fluid figure-img" style="width:85.0%">
+<img src="img/esa_landcover_study_area_with_animals.png" class="img-fluid figure-img" style="width:75.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-esa-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;4: Bobcat and coyote locations in the context of the land cover data
@@ -272,7 +272,7 @@ Figure&nbsp;4: Bobcat and coyote locations in the context of the land cover data
 <div id="fig-hfp" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-hfp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/hfp.png" class="img-fluid figure-img" style="width:85.0%">
+<img src="img/hfp.png" class="img-fluid figure-img" style="width:75.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-hfp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;5: HFP-100 data with bobcat and coyote tracks
@@ -340,7 +340,7 @@ Figure&nbsp;6: Box plots of sampling rates for bobcat and coyote data
 <div id="fig-home-ranges-bylot" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-home-ranges-bylot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/home_range_bylot_wader.png" class="img-fluid figure-img" style="width:60.0%">
+<img src="img/home_range_bylot_wader.png" class="img-fluid figure-img" style="width:50.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-home-ranges-bylot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;7: Home ranges for Bylot foxes (March 15th to June 15th, 2012)
@@ -415,7 +415,7 @@ Figure&nbsp;9: Box plot comparing monthly home ranges (outliers removed)
 </section>
 <section id="conclusion-and-outlook" class="level1">
 <h1>Conclusion and outlook</h1>
-<p>We have performed spatial data analysis and statistics on externally contributed publicly available data to demonstrate that human activity influences animal behavior significantly. We could show that (1) fox home range sizes are much larger in remote areas, and that (2) forests are preferred over built-up areas for habitat selection depending on human footprint.</p>
+<p>We have performed spatial data analysis and statistics on externally contributed publicly available data to demonstrate that human activity influences animal behavior significantly. We could show that (1) fox home range sizes are much larger in remote areas, and that (2) bobcats prefer forests over built-up areas for habitat selection depending on human footprint.</p>
 </section>
 <section id="appendix" class="level1">
 <h1>Appendix</h1>
@@ -454,7 +454,7 @@ Figure&nbsp;12: Monthly home ranges for Herschel foxes
 </section>
 <section id="use-of-large-language-models-and-generative-ai" class="level2">
 <h2 class="anchored" data-anchor-id="use-of-large-language-models-and-generative-ai">Use of Large Language Models and Generative AI</h2>
-<p>Elke used <span class="citation" data-cites="notebooklm">NotebookLM (<a href="#ref-notebooklm" role="doc-biblioref">2025</a>)</span> for querying the papers cited in the references and <span class="citation" data-cites="openai2025chatgpt">OpenAI (<a href="#ref-openai2025chatgpt" role="doc-biblioref">2025</a>)</span> for ggplot related queries.</p>
+<p>Elke used <span class="citation" data-cites="notebooklm">NotebookLM (<a href="#ref-notebooklm" role="doc-biblioref">2025</a>)</span> for querying the papers cited in the references, and <span class="citation" data-cites="openai2025chatgpt">OpenAI (<a href="#ref-openai2025chatgpt" role="doc-biblioref">2025</a>)</span> for ggplot related queries.</p>
 </section>
 </section>
 <section id="references" class="level1">
