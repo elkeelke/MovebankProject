@@ -88,6 +88,35 @@ div.csl-indent {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -144,8 +173,8 @@ div.csl-indent {
 <p>Different datasets are used for each research question. Relying on Movebank data, as described in <a href="#sec-movebank" class="quarto-xref">Section&nbsp;3.2.1</a>, presents additional challenges because data is used for purposes it was not originally collected for, and compared between different studies.</p>
 <p>Together, these analyses allow us to evaluate both large-scale home range adjustments and fine-scale habitat preferences in response to human activity.</p>
 </section>
-<section id="material-and-methods" class="level1">
-<h1>Material and methods</h1>
+<section id="data-and-methods" class="level1">
+<h1>Data and methods</h1>
 <p>This section describes the datasets, the steps taken to prepare and process the different datasets in use, and the methodological approach.</p>
 <section id="datasets" class="level2">
 <h2 class="anchored" data-anchor-id="datasets">Datasets</h2>
@@ -258,12 +287,13 @@ Figure&nbsp;3: Amount of data per year and month
 </section>
 <section id="bobcat-and-coyote-data" class="level3">
 <h3 class="anchored" data-anchor-id="bobcat-and-coyote-data">Bobcat and coyote data</h3>
-<p><span class="citation" data-cites="prugh2023fear">Prugh et al. (<a href="#ref-prugh2023fear" role="doc-biblioref">2023</a>)</span> provide data for 29 coyotes and 30 bobcats collected between June 2018 and June 2022. Two animals from each dataset were completely excluded from the analysis because of data sparsity issues. There was partly faulty data for one bobcat, which was also excluded. The majority of the data was usable.</p>
+<p><span class="citation" data-cites="prugh2023fear">Prugh et al. (<a href="#ref-prugh2023fear" role="doc-biblioref">2023</a>)</span> provide data for 29 coyotes and 30 bobcats collected between June 2018 and June 2022.</p>
+<p>Two animals from each dataset were completely excluded from the analysis because of data sparsity issues. There was partly faulty data for one bobcat, which was also excluded. The majority of the data was usable.</p>
 <p><a href="#fig-esa" class="quarto-xref">Figure&nbsp;4</a> shows that the two species reside in two separated geographical areas and have interspersed home ranges. It also features a plot of the animal locations in the context of the extracted land cover data. <a href="#fig-hfp" class="quarto-xref">Figure&nbsp;5</a> reveals the human footprint in the area, which is generally low except for some settlements and country roads.</p>
 <div id="fig-esa" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-esa-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/esa_landcover_study_area_with_animals_adj.png" class="img-fluid figure-img" style="width:75.0%">
+<img src="img/land_cover.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-esa-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;4: Bobcat and coyote locations in the context of the land cover data
@@ -273,14 +303,14 @@ Figure&nbsp;4: Bobcat and coyote locations in the context of the land cover data
 <div id="fig-hfp" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-hfp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/hfp_adj_rw.png" class="img-fluid figure-img" style="width:75.0%">
+<img src="img/hfp.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-hfp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;5: HFP-100 data with bobcat and coyote tracks
 </figcaption>
 </figure>
 </div>
-<p>The data sampling intervals are intended to be four hours, however they are irregular with many outliers (see <a href="#fig-sampling-rates" class="quarto-xref">Figure&nbsp;6</a>). In addition, the bobcat intervals are less dense and less regular in comparison.</p>
+<p>Although all GPS collars were programmed to record locations at four-hour intervals, the actual sampling was irregular and included numerous outliers (see <a href="#fig-sampling-rates" class="quarto-xref">Figure&nbsp;6</a>). Sampling intervals for bobcats were particularly sparse and inconsistent compared to those of coyotes.</p>
 <div id="fig-sampling-rates" class="quarto-layout-panel">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-sampling-rates-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -320,34 +350,134 @@ Figure&nbsp;6: Box plots of sampling rates for bobcat and coyote data
 </section>
 <section id="sec-methodology" class="level2">
 <h2 class="anchored" data-anchor-id="sec-methodology">Methodology</h2>
-<p>In this section, the methodologies selected to tackle the research questions are presented in detail.</p>
+<p>We applied two main analytical approaches: (1) home range estimation for red foxes and (2) habitat selection modeling using step-selection functions (SSFs) for coyotes.</p>
 <section id="home-range-size-assessment" class="level3">
 <h3 class="anchored" data-anchor-id="home-range-size-assessment">Home range size assessment</h3>
 <p>The red fox data is used for home range size assessment for rural and remote locations. Home range sizes are calculated using minimum convex polygons, which provides easily comparable estimates of the area used by each individual animal. As discussed in <a href="#sec-redfoxdata" class="quarto-xref">Section&nbsp;3.3.1</a>, the datasets for the two locations have different temporal scale.</p>
 <p><span class="citation" data-cites="laube2011">Laube and Purves (<a href="#ref-laube2011" role="doc-biblioref">2011</a>)</span> have found that the choice of temporal scale has considerable effects on movement parameter calculations, in turn affecting home range results. How to make this data comparable? Problem #1 is that the sampling intervals are different. Problem #2 is that the data coverage varies by time of the year. Problem #3 is that there are highly different amounts of data. Selecting the means and parameters for the comparison involves complex choices that will influence the results. For #1, a possible approach to achieve similar sampling intervals would be to sample a random afternoon data point for each 24 hour window. However, this would include the implicit assumption that foxes will follow similar daily patterns in the different environments. For #2, a possible approach would be to compare the data for the same time of the year. But since the geographical locations are different, the seasonal weather conditions will differ for the same day of the year, likely leading to different animal behavior. For #3, aggregated comparisons can solve the issue, assuming there is enough data for the smaller data source.</p>
 <p>For data exploration the simplest possible imperfect approach is employed, which is to ignore the different sampling intervals for problem #1, to compare the data for the same time of the year for problem #2 even if animal behavior might be different, and to use exploratory data analysis to find out if a representative answer can be found given the amount of data present for problem #3. Note that this approach has obvious limits. Among them is that the Herschel data is not applicable, since it has minimal overlaps with the Wiltshire data (see <a href="#fig-datapoints-month" class="quarto-xref">Figure&nbsp;3 (b)</a>). To explore the impact of sampling intervals for problem #1, the home ranges for the Wiltshire data are additionally calculated on downsampled data, where a random data point from every 24 hour period is selected. Finally, an analysis of monthly home ranges is conducted on all three datasets as an alternative solution to address problem #2.</p>
 </section>
-<section id="trajectory-analysis-and-habitat-selection" class="level3">
-<h3 class="anchored" data-anchor-id="trajectory-analysis-and-habitat-selection">Trajectory analysis and habitat selection</h3>
-<p>Movement paths are analyzed to identify patterns in speed, direction, and habitat use. Step lengths and turning angles help infer behavioral states. Step-selection functions (SSFs) as described by <span class="citation" data-cites="fortin2005wolves">Fortin et al. (<a href="#ref-fortin2005wolves" role="doc-biblioref">2005</a>)</span> are employed to detect habitat preferences relative to movement patterns. This allows to quantify how animals respond to environmental covariates, such as human footprint and land cover. Selection patterns across species and regions are then compared to assess how habitat preferences vary with human influence.</p>
-<p>Since SSFs require a regular sampling rate which the original data does not provide (see <a href="#fig-bobcat-coyote-sampling" class="quarto-xref">Figure&nbsp;6 (b)</a>), the animals tracks were re-sampled to a four hour window for coyotes and an eight hour window for bobcats. The amt library’s track_resample() function by <span class="citation" data-cites="signer2019animal">Signer, Fieberg, and Avgar (<a href="#ref-signer2019animal" role="doc-biblioref">2019</a>)</span> was used, with a specified tolerance window of 10 minutes. The re-sampled tracks are translated into animal steps with certain step lengths and turning angles as the main input to the SSF. The control group for statistical analysis is comprised of randomly generated steps.</p>
-<p>To compare land cover choices, which translate into habitat characteristics, several statistical approaches are possible. The classical approach is to use conditional logistic regression to compare between observed and random steps (clogit, see <span class="citation" data-cites="manly2007resource">Manly et al. (<a href="#ref-manly2007resource" role="doc-biblioref">2007</a>)</span>). However, for datasets containing several animals such as the given data, a Poisson-based approach with stratum-specific fixed intercepts as introduced by <span class="citation" data-cites="muff2020accounting">Muff, Signer, and Fieberg (<a href="#ref-muff2020accounting" role="doc-biblioref">2020</a>)</span> is likelihood-equivalent and in this case returns better results. Interpreting the intercepts as random effects allows implementation as a generalized linear mixed model (GLMM, see <span class="citation" data-cites="bolker2009generalized">Bolker et al. (<a href="#ref-bolker2009generalized" role="doc-biblioref">2009</a>)</span>), which in turn enables introducing random slopes per individual animal.</p>
+<section id="habitat-selection-modeling" class="level3">
+<h3 class="anchored" data-anchor-id="habitat-selection-modeling">Habitat selection modeling</h3>
+<p>To model fine-scale habitat preferences, we used step-selection functions (SSFs) as described by <span class="citation" data-cites="fortin2005wolves">Fortin et al. (<a href="#ref-fortin2005wolves" role="doc-biblioref">2005</a>)</span>. These compare environmental attributes at “used” locations to those at randomly sampled “available” locations along the animal’s movement path. This allows to quantify how animals respond to environmental covariates, such as human footprint and land cover. Selection patterns are then compared to assess how habitat preferences vary with human influence.</p>
+<section id="step-generation-and-covariates" class="level4">
+<h4 class="anchored" data-anchor-id="step-generation-and-covariates">Step Generation and Covariates</h4>
+<p>Coyote and bobcat GPS tracks from [Prugh et al.&nbsp;(2023)] were irregularly spaced (see <a href="#fig-bobcat-coyote-sampling" class="quarto-xref">Figure&nbsp;6 (b)</a>) and were resampled for temporal consistency — coyotes to 4-hour intervals and bobcats to 8-hour intervals, both with a 10-minute tolerance - using the track_resample() function from the amt package by <span class="citation" data-cites="signer2019animal">Signer, Fieberg, and Avgar (<a href="#ref-signer2019animal" role="doc-biblioref">2019</a>)</span>. Steps were then generated using the amt steps_by_burst() and random_steps() functions. For each used step, ten random available steps were generated based on empirical step length (gamma distribution) and turning angle (von Mises distribution). Log-transformed step lengths were calculated for modeling to account for potential bias in the availability distribution.</p>
+<p>Each observed step and its corresponding random steps were grouped into strata using a unique step ID, following a matched case-control design. Habitat covariates (land cover and standardized human footprint) were extracted for each step endpoint.</p>
+<p>Human footprint index (HFP) values were standardized across the dataset for modeling. Land cover was reclassified into five ecologically meaningful categories to improve interpretability and model convergence:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 11%">
+<col style="width: 47%">
+<col style="width: 41%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>New Class</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Used Original Classes</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>TreeCover</td>
+<td>Areas dominated by trees with a cover of 10% or more</td>
+<td>Tree cover</td>
+</tr>
+<tr class="even">
+<td>Open</td>
+<td>Open natural habitats or low-intensity agricultural areas</td>
+<td>Grassland, Bare/sparse vegetation, Moss and lichen</td>
+</tr>
+<tr class="odd">
+<td>Cropland</td>
+<td>Areas used for intensive agricultural production</td>
+<td>Cropland</td>
+</tr>
+<tr class="even">
+<td>BuiltUp</td>
+<td>Urban and developed areas with infrastructure</td>
+<td>Built-up</td>
+</tr>
+<tr class="odd">
+<td>Water</td>
+<td>Aquatic and semi-aquatic environments</td>
+<td>Permanent water bodies, Herbaceous wetland</td>
+</tr>
+</tbody>
+</table>
+<p>Refer to the <a href="https://worldcover2021.esa.int/data/docs/WorldCover_PUM_V2.0.pdf">ESA WorldCover user manual</a> for detailed original class definitions.</p>
+<p>To assess the distribution of human footprint across land cover types, we visualized the HFP values at used locations using a ridgeline density plot (see <a href="#fig-coy-eda-ridge" class="quarto-xref">Figure&nbsp;7</a>). The figure illustrates that forested areas (TreeCover) were generally associated with lower human footprint, while BuiltUp and Cropland had higher HFP values, supporting the relevance of the interaction terms in our model. As a complementary visualization to the ridgeline plot, we include a boxplot in the Appendix showing the spread of human footprint values across land cover types (see <a href="#fig-coy-eda-box" class="quarto-xref">Figure&nbsp;9</a>).</p>
+<div id="fig-coy-eda-ridge" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-coy-eda-ridge-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/coyote_EDA_ridgeline.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-coy-eda-ridge-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7: Human footprint distribution by land cover type
+</figcaption>
+</figure>
+</div>
+<p>To explore the relationship between movement behavior and human disturbance, we visualized the joint distribution of the Human Footprint Index (HFP) and log-transformed step length using a hexbin density plot (see <strong>?@fig-step-hfp-density</strong>). Most steps occurred under conditions of low human footprint and were characterized by short to moderate movement distances. By including log-transformed step length as a covariate, the model accounts for underlying variation in movement intensity that could otherwise confound habitat selection estimates.</p>
+<div id="fig-coy-eda-hex" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-coy-eda-hex-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/coyote_EDA_hexbin.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-coy-eda-hex-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8: Relationship between movement and human footprint
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="statistical-model" class="level4">
+<h4 class="anchored" data-anchor-id="statistical-model">Statistical model</h4>
+<p>Step selection functions (SSFs) are commonly modeled using conditional logistic regression, which compares observed and available steps within matched strata (e.g., <code>survival::clogit</code>; see <span class="citation" data-cites="manly2007resource">Manly et al. (<a href="#ref-manly2007resource" role="doc-biblioref">2007</a>)</span>). However, for datasets involving multiple individuals, this approach can be limiting in terms of flexibility. Muff et al.&nbsp;(2020) demonstrated that conditional logistic regression is likelihood-equivalent to a Poisson regression model with stratum-specific fixed intercepts. By treating these intercepts as random effects with a large fixed variance, the model can be reformulated as a generalized linear mixed-effects model (GLMM), allowing for the inclusion of random slopes to account for individual variation in habitat selection.</p>
+<p>Following this framework, we modeled habitat selection in relation to human impact using a Poisson GLMM with a log link, implemented via <code>glmmTMB::glmmTMB</code>. Stratum-specific intercepts (one per <code>step_id_</code>) were modeled as random effects with a fixed, large variance to approximate the <code>clogit</code> structure, enabling the inclusion of individual-level random slopes and better capturing heterogeneity in selection behavior.</p>
+<p>The fixed effects included a two-way interaction between land cover class and both the linear and quadratic terms of standardized human footprint, as well as the natural logarithm of step length (<code>log_sl_</code>) to control for movement bias. Human footprint index (HFP) values were standardized before modeling.</p>
+<p>The model can be expressed as:</p>
+<p><span class="math display">\[
+\log(\lambda_{ij}) =
+\beta_1 \cdot \text{LandUse}_{ij} +
+\beta_2 \cdot \text{HFP}_{ij} +
+\beta_3 \cdot \text{HFP}_{ij}^2 +
+\beta_4 \cdot \log(\text{StepLength}_{ij}) +
+b_{0,step(i,j)} +
+u_{i}
+\]</span></p>
+<p>where: - ( <em>{ij} ) is the expected relative selection strength for step ( j ) of individual ( i ), - ( </em>{ij} ) is the land cover class, - ( <em>{ij} ) is the standardized human footprint value, - ( b</em>{0,step(i,j)} ) is a random intercept for each stratum (<code>step_id_</code>), - ( u_i ) represents individual-level random slopes.</p>
+<p>Interaction terms between land use and human footprint (both linear and quadratic) were also included but are omitted here for clarity.</p>
+<p>Following model fitting, we used average marginal effects and relative selection strength (RSS) to visualize how habitat selection varied across the gradient of human footprint (HFP). These metrics were computed from the fitted model to provide an interpretable scale of selection intensity.</p>
+</section>
+<section id="bobcat-data-exclusion" class="level4">
+<h4 class="anchored" data-anchor-id="bobcat-data-exclusion">Bobcat data exclusion</h4>
+<p>We initially attempted SSF modeling for bobcats, but excluded them from the final analysis due to insufficient sample sizes across land cover types and irregular sampling intervals. These issues led to poor model convergence and biologically implausible estimates. Only two land cover classes remained after filtering, limiting ecological interpretability. As a result, SSF analysis was conducted only for coyotes.</p>
+<div id="fig-coy-eda-box" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-coy-eda-box-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/coyote_EDA_boxplot.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-coy-eda-box-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9: Variation in human footprint across and cover types
+</figcaption>
+</figure>
+</div>
+</section>
 </section>
 </section>
 </section>
 <section id="results" class="level1">
 <h1>Results</h1>
-<p>This section describes the results.</p>
 <section id="fox-home-ranges" class="level2">
 <h2 class="anchored" data-anchor-id="fox-home-ranges">Fox home ranges</h2>
-<p>The resulting fox home ranges for the UK wader nesting season time frame are shown in <a href="#fig-home-ranges-bylot" class="quarto-xref">Figure&nbsp;7</a> and <a href="#fig-home-ranges-wiltshire" class="quarto-xref">Figure&nbsp;8 (a)</a>. The median home range size for the remote foxes in Bylot (75.3 km<sup>2</sup>) is more than 65 times larger compared to the rural foxes in Wiltshire (1.1 km<sup>2</sup>). The home ranges for the sub-sampled Wiltshire data are shown in <a href="#fig-home-ranges-wiltshire-sampled24h" class="quarto-xref">Figure&nbsp;8 (b)</a>. The median home range size is 0.56 km<sup>2</sup> for the sampled data, which is roughly half as much as for the full data.</p>
+<p>The resulting fox home ranges for the UK wader nesting season time frame are shown in <a href="#fig-home-ranges-bylot" class="quarto-xref">Figure&nbsp;10</a> and <a href="#fig-home-ranges-wiltshire" class="quarto-xref">Figure&nbsp;11 (a)</a>. The median home range size for the remote foxes in Bylot (75.3 km<sup>2</sup>) is more than 65 times larger compared to the rural foxes in Wiltshire (1.1 km<sup>2</sup>). The home ranges for the sub-sampled Wiltshire data are shown in <a href="#fig-home-ranges-wiltshire-sampled24h" class="quarto-xref">Figure&nbsp;11 (b)</a>. The median home range size is 0.56 km<sup>2</sup> for the sampled data, which is roughly half as much as for the full data.</p>
 <div id="fig-home-ranges-bylot" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-home-ranges-bylot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/home_range_bylot_wader.png" class="img-fluid figure-img" style="width:50.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-home-ranges-bylot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;7: Home ranges for Bylot foxes (March 15th to June 15th, 2012)
+Figure&nbsp;10: Home ranges for Bylot foxes (March 15th to June 15th, 2012)
 </figcaption>
 </figure>
 </div>
@@ -382,28 +512,29 @@ Figure&nbsp;7: Home ranges for Bylot foxes (March 15th to June 15th, 2012)
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sampling-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;8: Home ranges for Wiltshire foxes (March 15th to June 15th, 2019)
+Figure&nbsp;11: Home ranges for Wiltshire foxes (March 15th to June 15th, 2019)
 </figcaption>
 </figure>
 </div>
-<p>Similar differences in order of magnitude between remote and rural fox home ranges can also be observed for the monthly home range results shown as a box plot in <a href="#fig-home-ranges-boxplot" class="quarto-xref">Figure&nbsp;9</a>. Note that outliers are removed, in particular the irregular data for Herschel (as seen in <a href="#fig-herschel-map" class="quarto-xref">Figure&nbsp;2 (b)</a>). The accompanying monthly home range plots can be found in the Appendix in <a href="#fig-monthly-home-ranges-wiltshire" class="quarto-xref">Figure&nbsp;10</a>, <a href="#fig-monthly-home-ranges-bylot" class="quarto-xref">Figure&nbsp;11</a>, and <a href="#fig-monthly-home-ranges-herschel" class="quarto-xref">Figure&nbsp;12</a>.</p>
+<p>Similar differences in order of magnitude between remote and rural fox home ranges can also be observed for the monthly home range results shown as a box plot in <a href="#fig-home-ranges-boxplot" class="quarto-xref">Figure&nbsp;12</a>. Note that outliers are removed, in particular the irregular data for Herschel (as seen in <a href="#fig-herschel-map" class="quarto-xref">Figure&nbsp;2 (b)</a>). The accompanying monthly home range plots can be found in the Appendix in <a href="#fig-monthly-home-ranges-wiltshire" class="quarto-xref">Figure&nbsp;13</a>, <a href="#fig-monthly-home-ranges-bylot" class="quarto-xref">Figure&nbsp;14</a>, and <a href="#fig-monthly-home-ranges-herschel" class="quarto-xref">Figure&nbsp;15</a>.</p>
 <div id="fig-home-ranges-boxplot" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-home-ranges-boxplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/boxplot_monthly.png" class="img-fluid figure-img" style="width:55.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-home-ranges-boxplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;9: Box plot comparing monthly home ranges (outliers removed)
+Figure&nbsp;12: Box plot comparing monthly home ranges (outliers removed)
 </figcaption>
 </figure>
 </div>
 </section>
 <section id="habitat-selection-by-coyotes" class="level2">
 <h2 class="anchored" data-anchor-id="habitat-selection-by-coyotes">Habitat selection by coyotes</h2>
-<p>We fitted a step-selection model (Poisson GLMM) with 666,248 steps from 29 coyotes. Fixed effects included land cover group, standardized human footprint (HFP), its quadratic term, and log step length. Random slopes were modeled per individual. Model validation indicated no overdispersion, plausible predictions, and acceptable collinearity among main effects (see Model Validation section).</p>
+<p>We fitted a step-selection model (Poisson GLMM) with 666,248 steps from 29 coyotes. Fixed effects included land cover group, standardized human footprint (HFP), its quadratic term, and log step length. Random slopes were modeled per individual. Model validation indicated no overdispersion, plausible predictions, and acceptable collinearity among main effects (see Model Validation section). The full model took the form:</p>
 <p>(Full model equasion)</p>
 <p>The fixed effects table is shown in Table X. The main effect of human footprint was positive, but its quadratic term was negative, suggesting a hump-shaped selection pattern. Interactions between land cover and HFP indicated that selection response varied strongly among habitat types. Table Y summarizes the estimated marginal trends in both linear and quadratic form per land use group.</p>
 <p>Figure X shows the estimated average effect of human footprint on relative use (log scale) by land cover class. In forest and open habitats, coyotes showed a unimodal response to HFP, with strongest selection at intermediate levels. Relative selection strength (RSS) curves, shown in Figure Y, confirmed this pattern. Coyotes avoided high human footprint in most land cover types, with the steepest drop in selection in tree-covered areas.</p>
+<p><img src="img/avg_effect.png" id="fig-avg-effect" class="img-fluid" alt="Average marginal effects across human footprint gradient"> <img src="img/rss.png" id="fig-rss" class="img-fluid" alt="Coyote habitat selection across the human footprint gradient"></p>
 </section>
 </section>
 <section id="model-validation" class="level1">
@@ -415,13 +546,13 @@ Figure&nbsp;9: Box plot comparing monthly home ranges (outliers removed)
 </section>
 <section id="coyote-habitat-selection-model" class="level2">
 <h2 class="anchored" data-anchor-id="coyote-habitat-selection-model">Coyote habitat selection model</h2>
-<p>For the habitat selection, model validity was assessed by inspecting fixed and random effect estimates, checking for overdispersion, evaluating collinearity among predictors, and plotting predicted values against observed use categories. No overdispersion was detected (dispersion ratio = 0.91; p = 1). Multicollinearity was low among main effects (VIF &lt; 5); high variance inflation for interaction terms was expected due to model structure. Predicted relative use values were higher for used steps compared to available steps, indicating biologically plausible model behavior. Standard residual-based diagnostics were not feasible due to the conditional logistic nature of the step selection framework.</p>
+<p>For the habitat selection, model validity was assessed by inspecting fixed and random effect estimates, checking for overdispersion, evaluating collinearity among predictors, and plotting predicted values against observed use categories. No overdispersion was detected (dispersion ratio = 0.91; <em>p</em> = 1). Multicollinearity was low among main effects (VIF &lt; 5); high variance inflation for interaction terms was expected due to model structure. Predicted relative use values were higher for used steps compared to available steps, indicating biologically plausible model behavior. Standard residual-based diagnostics were not feasible due to the conditional logistic nature of the step selection framework.</p>
 </section>
 </section>
 <section id="discussion" class="level1">
 <h1>Discussion</h1>
 <p>The fox home range size results show enormous differences between rural and remote areas. We conclude that human presence changes fox movement behavior patterns fundamentally. The opportunity to move undisturbed, and the availability of anthropogenic food sources are likely the most relevant factors but more data would be needed to have proof for the underlying reasons. One thing that is interesting to see is that the fox home range sizes for Bylot and Herschel foxes are similar, even if the island sizes differ by a factor of 100.</p>
-<p>Note that there is one fox with an extraordinarily large home range in <a href="#fig-home-ranges-wiltshire" class="quarto-xref">Figure&nbsp;8 (a)</a>, and the additional charts in <a href="#sec-additional-charts" class="quarto-xref">Section&nbsp;8.1</a> show several instances of large fox movements within a single month. <span class="citation" data-cites="kobryn2023foxes">Kobryn et al. (<a href="#ref-kobryn2023foxes" role="doc-biblioref">2023</a>)</span> report similar patterns with a small number of foxes covering much larger areas than others. They conclude that the data is genuine and demonstrates potential for extensive movement patterns in urban foxes, and state that in some studies such outliers are either removed or cannot be tracked because of hardware setup restrictions, therefore underestimating home ranges.</p>
+<p>Note that there is one fox with an extraordinarily large home range in <a href="#fig-home-ranges-wiltshire" class="quarto-xref">Figure&nbsp;11 (a)</a>, and the additional charts in <a href="#sec-additional-charts" class="quarto-xref">Section&nbsp;8.1</a> show several instances of large fox movements within a single month. <span class="citation" data-cites="kobryn2023foxes">Kobryn et al. (<a href="#ref-kobryn2023foxes" role="doc-biblioref">2023</a>)</span> report similar patterns with a small number of foxes covering much larger areas than others. They conclude that the data is genuine and demonstrates potential for extensive movement patterns in urban foxes, and state that in some studies such outliers are either removed or cannot be tracked because of hardware setup restrictions, therefore underestimating home ranges.</p>
 <p>While technical aspects such as sampling intervals and home range estimator have significant influence on the calculation results, they play a secondary role in comparison to the difference in fox behavior, which enables the chosen approach of comparing data from heterogeneous sources.</p>
 <p>Another instance of data aspects having large effects on the results was observed for the statistical modelling. While we could fit a model for coyote data, this was not possible for the bobcat data. We suspect that the re-sampling required due to irregular sampling rates as shown in <a href="#fig-sampling-rates" class="quarto-xref">Figure&nbsp;6</a> played a role.</p>
 <p>TBD habitats</p>
@@ -440,7 +571,7 @@ Figure&nbsp;9: Box plot comparing monthly home ranges (outliers removed)
 <img src="img/wiltshire_monthly.png" class="img-fluid figure-img" style="width:60.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-monthly-home-ranges-wiltshire-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;10: Monthly home ranges for Wiltshire foxes
+Figure&nbsp;13: Monthly home ranges for Wiltshire foxes
 </figcaption>
 </figure>
 </div>
@@ -450,7 +581,7 @@ Figure&nbsp;10: Monthly home ranges for Wiltshire foxes
 <img src="img/bylot_monthly.png" class="img-fluid figure-img" style="width:60.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-monthly-home-ranges-bylot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;11: Monthly home ranges for Bylot foxes
+Figure&nbsp;14: Monthly home ranges for Bylot foxes
 </figcaption>
 </figure>
 </div>
@@ -460,14 +591,14 @@ Figure&nbsp;11: Monthly home ranges for Bylot foxes
 <img src="img/herschel_monthly.png" class="img-fluid figure-img" style="width:60.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-monthly-home-ranges-herschel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;12: Monthly home ranges for Herschel foxes
+Figure&nbsp;15: Monthly home ranges for Herschel foxes
 </figcaption>
 </figure>
 </div>
 </section>
 <section id="use-of-large-language-models-and-generative-ai" class="level2">
 <h2 class="anchored" data-anchor-id="use-of-large-language-models-and-generative-ai">Use of Large Language Models and Generative AI</h2>
-<p>Elke used <span class="citation" data-cites="notebooklm">NotebookLM (<a href="#ref-notebooklm" role="doc-biblioref">2025</a>)</span> for querying the papers cited in the references, and <span class="citation" data-cites="openai2025chatgpt">OpenAI (<a href="#ref-openai2025chatgpt" role="doc-biblioref">2025</a>)</span> for ggplot related queries.</p>
+<p>Elke used <span class="citation" data-cites="notebooklm">NotebookLM (<a href="#ref-notebooklm" role="doc-biblioref">2025</a>)</span> for querying the papers cited in the references, and <span class="citation" data-cites="openai2025chatgpt">OpenAI (<a href="#ref-openai2025chatgpt" role="doc-biblioref">2025</a>)</span> for ggplot related queries. Jannis utilized GitHub Copilot (2025) for debugging and for assisting in the creation of plots.</p>
 </section>
 </section>
 <section id="references" class="level1">
@@ -478,9 +609,6 @@ Figure&nbsp;12: Monthly home ranges for Herschel foxes
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-bolker2009generalized" class="csl-entry" role="listitem">
-Bolker, Benjamin M, Mollie E Brooks, Connie J Clark, Shane W Geange, John R Poulsen, M Henry H Stevens, and Jada-Simone S White. 2009. <span>“Generalized Linear Mixed Models: A Practical Guide for Ecology and Evolution.”</span> <em>Trends in Ecology &amp; Evolution</em> 24 (3): 127–35.
-</div>
 <div id="ref-doherty2021human" class="csl-entry" role="listitem">
 Doherty, Tim S, Graeme C Hays, and Don A Driscoll. 2021. <span>“Human Disturbance Causes Widespread Disruption of Animal Movement.”</span> <em>Nature Ecology &amp; Evolution</em> 5 (4): 513–19.
 </div>
@@ -510,9 +638,6 @@ Laube, Patrick, and Ross S Purves. 2011. <span>“How Fast Is a Cow? Cross-Scale
 </div>
 <div id="ref-manly2007resource" class="csl-entry" role="listitem">
 Manly, BFL, Lyman McDonald, Dana L Thomas, Trent L McDonald, and Wallace P Erickson. 2007. <em>Resource Selection by Animals: Statistical Design and Analysis for Field Studies</em>. Springer Science &amp; Business Media.
-</div>
-<div id="ref-muff2020accounting" class="csl-entry" role="listitem">
-Muff, Stefanie, Johannes Signer, and John Fieberg. 2020. <span>“Accounting for Individual-Specific Variation in Habitat-Selection Studies: Efficient Estimation of Mixed-Effects Models Using Bayesian or Frequentist Computation.”</span> <em>Journal of Animal Ecology</em> 89 (1): 80–92.
 </div>
 <div id="ref-nilsen2008can" class="csl-entry" role="listitem">
 Nilsen, Erlend B, Simen Pedersen, and John DC Linnell. 2008. <span>“Can Minimum Convex Polygon Home Ranges Be Used to Draw Biologically Meaningful Conclusions?”</span> <em>Ecological Research</em> 23: 635–39.
