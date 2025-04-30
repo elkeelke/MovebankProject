@@ -179,7 +179,7 @@
     "href": "index.html#use-of-generative-ai",
     "title": "How does human activity affect the movement patterns of wild animals?",
     "section": "Use of generative AI",
-    "text": "Use of generative AI\nElke used NotebookLM (2025) for querying the papers cited, and OpenAI (2025) for ggplot related queries. Jannis utilized GitHub Copilot (2025) for debugging and assisting in the creation of plots."
+    "text": "Use of generative AI\nElke used NotebookLM (2025) for querying the papers cited, and OpenAI (2025) for ggplot related queries. Jannis utilized GitHub Copilot (2025) for debugging and assisting in plot creation."
   },
   {
     "objectID": "Readme.html",
