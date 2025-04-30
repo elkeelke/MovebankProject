@@ -177,31 +177,30 @@ window.Quarto = {
 <p>This section describes the datasets, the steps taken to prepare and process the different datasets in use, and the methodological approach.</p>
 <section id="datasets" class="level2">
 <h2 class="anchored" data-anchor-id="datasets">Datasets</h2>
-<p>The Movebank database <span class="citation" data-cites="kays2022movebank"><a href="#ref-kays2022movebank" role="doc-biblioref">[2]</a></span> allows researchers to publish animal tracking data for public use. Different Movebank datasets are used for each research question. Relying on externally contributed data presents additional challenges because data is used for purposes it was not originally collected for, and compared between different studies.</p>
-<p>The following data is selected: Red fox data for the outskirt areas of villages in Wiltshire, UK <span class="citation" data-cites="porteus2024movement"><a href="#ref-porteus2024movement" role="doc-biblioref">[3]</a></span> and for the remote uninhabited islands Bylot and Herschel in Canada <span class="citation" data-cites="lai2022red"><a href="#ref-lai2022red" role="doc-biblioref">[4]</a></span>, and bobcat and coyote data for remote areas with some rural structures in northeastern Washington, US <span class="citation" data-cites="prugh2023fear"><a href="#ref-prugh2023fear" role="doc-biblioref">[5]</a></span>. For the human footprint data, the global terrestrial human footprint <span class="citation" data-cites="gassert2023operational"><a href="#ref-gassert2023operational" role="doc-biblioref">[6]</a></span> is chosen. For land cover, satellite data <span class="citation" data-cites="zanaga2022esa"><a href="#ref-zanaga2022esa" role="doc-biblioref">[7]</a></span> is employed.</p>
+<p>The Movebank database <span class="citation" data-cites="kays2022movebank"><a href="#ref-kays2022movebank" role="doc-biblioref">[2]</a></span> allows researchers to publish animal tracking data for public use. Relying on externally contributed data presents challenges because data is used for purposes it was not originally collected for, and compared between studies. We selected red fox data for outskirt areas in Wiltshire, UK <span class="citation" data-cites="porteus2024movement"><a href="#ref-porteus2024movement" role="doc-biblioref">[3]</a></span> and for the uninhabited islands Bylot and Herschel in Canada <span class="citation" data-cites="lai2022red"><a href="#ref-lai2022red" role="doc-biblioref">[4]</a></span>, and bobcat and coyote data for remote areas in northeastern Washington, US <span class="citation" data-cites="prugh2023fear"><a href="#ref-prugh2023fear" role="doc-biblioref">[5]</a></span>. Additional, the global terrestrial human footprint <span class="citation" data-cites="gassert2023operational"><a href="#ref-gassert2023operational" role="doc-biblioref">[6]</a></span> and satellite land cover data <span class="citation" data-cites="zanaga2022esa"><a href="#ref-zanaga2022esa" role="doc-biblioref">[7]</a></span> are employed.</p>
 </section>
 <section id="data-preparation-and-processing" class="level2">
 <h2 class="anchored" data-anchor-id="data-preparation-and-processing">Data preparation and processing</h2>
 <p>This section describes data preparation and processing for all the datasets employed.</p>
 <section id="sec-movebank" class="level3">
-<h3 class="anchored" data-anchor-id="sec-movebank">Movebank data</h3>
-<p>All Movebank datasets have the same schema. This simplifies data handling, enables code re-use, and requires the data contributors do perform preprocessing and data cleaning on their side to provide the data in an appropriate format. Libraries for data processing and trajectory handling in R are provided <span class="citation" data-cites="kranstauber2024move2"><a href="#ref-kranstauber2024move2" role="doc-biblioref">[8]</a></span> <span class="citation" data-cites="signer2019animal"><a href="#ref-signer2019animal" role="doc-biblioref">[9]</a></span>.</p>
-<p>The R code for data download, preprocessing, and serialization of relevant data and charts can be found in: <a href="https://elkeelke.github.io/MovebankProject/preprocessing_uk_wader_nesting_season_home_range.html">Red fox: UK wader nesting season home ranges</a>, <a href="https://elkeelke.github.io/MovebankProject/preprocessing_monthly_home_ranges.html">Red fox: montly home ranges</a>, <a href="https://elkeelke.github.io/MovebankProject/preprocessing_SSF_complete.html">Bobcat/coyote: data preparation and statistical modelling</a>.</p>
+<h3 class="anchored" data-anchor-id="sec-movebank">Movebank</h3>
+<p>All Movebank datasets have the same schema. This simplifies enables code re-use, and requires data contributors do perform preprocessing on their side to provide the data in an appropriate format. Libraries for data processing and trajectory handling in R are provided <span class="citation" data-cites="kranstauber2024move2"><a href="#ref-kranstauber2024move2" role="doc-biblioref">[8]</a></span> <span class="citation" data-cites="signer2019animal"><a href="#ref-signer2019animal" role="doc-biblioref">[9]</a></span>.</p>
+<p>The R code for data download, preprocessing, and serialization of data and charts can be found in: <a href="https://elkeelke.github.io/MovebankProject/preprocessing_uk_wader_nesting_season_home_range.html">Red fox: UK wader nesting season home ranges</a>, <a href="https://elkeelke.github.io/MovebankProject/preprocessing_monthly_home_ranges.html">Red fox: montly home ranges</a>, <a href="https://elkeelke.github.io/MovebankProject/preprocessing_SSF_complete.html">Bobcat/coyote: data preparation and statistical modelling</a>.</p>
 </section>
-<section id="human-footprint-data" class="level3">
-<h3 class="anchored" data-anchor-id="human-footprint-data">Human footprint data</h3>
-<p>The global 100 meter resolution terrestrial human footprint data (HFP-100) is a raster dataset using Mollweide projection <span class="citation" data-cites="lapaine2011mollweide"><a href="#ref-lapaine2011mollweide" role="doc-biblioref">[10]</a></span>. The 2020 version of the data was used. The relevant areas were downloaded using a 125 km buffer around the tracking points, and projected to the WGS84 coordinate system: <a href="https://elkeelke.github.io/MovebankProject/preprocessing_HFP_subsetting.html">HFP-100 download</a>.</p>
+<section id="human-footprint" class="level3">
+<h3 class="anchored" data-anchor-id="human-footprint">Human footprint</h3>
+<p>The global 100 meter resolution terrestrial human footprint data (HFP-100) is raster data using Mollweide projection <span class="citation" data-cites="lapaine2011mollweide"><a href="#ref-lapaine2011mollweide" role="doc-biblioref">[10]</a></span>. The 2020 version of the data was downloaded for Washington, and projected to the WGS84 coordinate system: <a href="https://elkeelke.github.io/MovebankProject/preprocessing_HFP_subsetting.html">HFP-100 download</a>.</p>
 </section>
-<section id="land-cover-data" class="level3">
-<h3 class="anchored" data-anchor-id="land-cover-data">Land cover data</h3>
-<p>The relevant European Space Agency (ESA) WorldCover 2021 data at 10 m resolution was downloaded via the Microsoft Planetary Computer <a href="https://planetarycomputer.microsoft.com/docs/quickstarts/reading-stac/">STAC API</a> for simple programmatic access in R: <a href="https://elkeelke.github.io/MovebankProject/preprocessing_ESA_world_cover.html">ESA download</a>.</p>
+<section id="land-cover" class="level3">
+<h3 class="anchored" data-anchor-id="land-cover">Land cover</h3>
+<p>The relevant European Space Agency (ESA) WorldCover 2021 data at 10 m resolution was downloaded via the Microsoft Planetary Computer <a href="https://planetarycomputer.microsoft.com/docs/quickstarts/reading-stac/">STAC API</a>: <a href="https://elkeelke.github.io/MovebankProject/preprocessing_ESA_world_cover.html">ESA download</a>.</p>
 </section>
 </section>
 <section id="data-exploration-and-analysis" class="level2">
 <h2 class="anchored" data-anchor-id="data-exploration-and-analysis">Data exploration and analysis</h2>
-<p>This section describes the data exploration steps taken for red fox data, and for bobcat and coyote data.</p>
+<p>This section describes the data exploration steps taken.</p>
 <section id="sec-redfoxdata" class="level3">
-<h3 class="anchored" data-anchor-id="sec-redfoxdata">Red fox data</h3>
+<h3 class="anchored" data-anchor-id="sec-redfoxdata">Red fox</h3>
 <p>Data from Wiltshire (see <a href="#fig-wiltshire-map" class="quarto-xref">Figure&nbsp;1</a>) was collected between 2016 to 2019 during the UK wader nesting season, which was defined to be March 15th to June 15th, for 35 foxes in total. It was sampled at 10 and 60 minute rates. The research team controlled the sampling rate remotely to save battery at times the data was considered less interesting.</p>
 <div id="fig-wiltshire-map" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -285,8 +284,8 @@ Figure&nbsp;3: Amount of data per year and month
 </figure>
 </div>
 </section>
-<section id="bobcat-and-coyote-data" class="level3">
-<h3 class="anchored" data-anchor-id="bobcat-and-coyote-data">Bobcat and coyote data</h3>
+<section id="bobcat-and-coyote" class="level3">
+<h3 class="anchored" data-anchor-id="bobcat-and-coyote">Bobcat and coyote</h3>
 <p><a href="#fig-esa" class="quarto-xref">Figure&nbsp;4</a> shows that the two species reside in two separated geographical areas and have interspersed home ranges. It also features a plot of the animal locations in the context of the extracted land cover data. <a href="#fig-hfp" class="quarto-xref">Figure&nbsp;5</a> reveals the human footprint in the area, which is generally low except for some settlements and country roads.</p>
 <div id="fig-esa" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
