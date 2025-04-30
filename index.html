@@ -56,10 +56,10 @@ div.csl-indent {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-a5cd134f9b40a21b85be3e62cd27a8fe.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b4406b7675125bc2ba204020e191172.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-b8b51be298a0d98e3f54337f338b7547.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-ecab3d01edc22a8b07c778f864461f49.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -362,7 +362,7 @@ Figure&nbsp;6: Box plots of sampling rates for bobcat and coyote data
 <p>To model fine-scale habitat preferences, we used step-selection functions (SSFs) as described by <span class="citation" data-cites="fortin2005wolves">Fortin et al. (<a href="#ref-fortin2005wolves" role="doc-biblioref">2005</a>)</span>. These compare environmental attributes at “used” locations to those at randomly sampled “available” locations along the animal’s movement path. This allows to quantify how animals respond to environmental covariates, such as human footprint and land cover. Selection patterns are then compared to assess how habitat preferences vary with human influence.</p>
 <section id="step-generation-and-covariates" class="level4">
 <h4 class="anchored" data-anchor-id="step-generation-and-covariates">Step Generation and Covariates</h4>
-<p>Coyote and bobcat GPS tracks from [Prugh et al.&nbsp;(2023)] were irregularly spaced (see <a href="#fig-bobcat-coyote-sampling" class="quarto-xref">Figure&nbsp;6 (b)</a>) and were resampled for temporal consistency — coyotes to 4-hour intervals and bobcats to 8-hour intervals, both with a 10-minute tolerance - using the track_resample() function from the amt package by <span class="citation" data-cites="signer2019animal">Signer, Fieberg, and Avgar (<a href="#ref-signer2019animal" role="doc-biblioref">2019</a>)</span>. Steps were then generated using the amt steps_by_burst() and random_steps() functions. For each used step, ten random available steps were generated based on empirical step length (gamma distribution) and turning angle (von Mises distribution). Log-transformed step lengths were calculated for modeling to account for potential bias in the availability distribution.</p>
+<p>Coyote and bobcat GPS tracks from <span class="citation" data-cites="prugh2023fear">Prugh et al. (<a href="#ref-prugh2023fear" role="doc-biblioref">2023</a>)</span> were irregularly spaced (see <a href="#fig-bobcat-coyote-sampling" class="quarto-xref">Figure&nbsp;6 (b)</a>) and were resampled for temporal consistency — coyotes to 4-hour intervals and bobcats to 8-hour intervals, both with a 10-minute tolerance - using the track_resample() function from the amt package by <span class="citation" data-cites="signer2019animal">Signer, Fieberg, and Avgar (<a href="#ref-signer2019animal" role="doc-biblioref">2019</a>)</span>. Steps were then generated using the amt steps_by_burst() and random_steps() functions. For each used step, ten random available steps were generated based on empirical step length (gamma distribution) and turning angle (von Mises distribution). Log-transformed step lengths were calculated for modeling to account for potential bias in the availability distribution.</p>
 <p>Each observed step and its corresponding random steps were grouped into strata using a unique step ID, following a matched case-control design. Habitat covariates (land cover and standardized human footprint) were extracted for each step endpoint.</p>
 <p>Human footprint index (HFP) values were standardized across the dataset for modeling. Land cover was reclassified into five ecologically meaningful categories to improve interpretability and model convergence:</p>
 <table class="caption-top table">
