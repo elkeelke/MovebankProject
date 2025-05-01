@@ -45,6 +45,7 @@ div.csl-indent {
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="site_libs/quarto-search/fuse.min.js"></script>
@@ -55,10 +56,10 @@ div.csl-indent {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -120,21 +121,60 @@ window.Quarto = {
 <link rel="stylesheet" href="custom.css">
 </head>
 
-<body class="floating">
+<body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">How does human activity affect the movement patterns of wild animals?</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <nav id="TOC" role="doc-toc" class="toc-active">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">How does human activity affect the movement patterns of wild animals?</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">How does human activity affect the movement patterns of wild animals?</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Navigation</h2>
    
   <ul>
   <li><a href="#abstract" id="toc-abstract" class="nav-link active" data-scroll-target="#abstract">Abstract</a></li>
   <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
   <li><a href="#data-and-methods" id="toc-data-and-methods" class="nav-link" data-scroll-target="#data-and-methods">Data and methods</a>
-  <ul class="collapse">
+  <ul>
   <li><a href="#datasets" id="toc-datasets" class="nav-link" data-scroll-target="#datasets">Datasets</a></li>
   <li><a href="#data-preparation-and-processing" id="toc-data-preparation-and-processing" class="nav-link" data-scroll-target="#data-preparation-and-processing">Data preparation and processing</a>
   <ul class="collapse">
@@ -150,11 +190,16 @@ window.Quarto = {
   <li><a href="#sec-methodology" id="toc-sec-methodology" class="nav-link" data-scroll-target="#sec-methodology">Analytical methods</a>
   <ul class="collapse">
   <li><a href="#home-range-size-assessment" id="toc-home-range-size-assessment" class="nav-link" data-scroll-target="#home-range-size-assessment">Home range size assessment</a></li>
-  <li><a href="#habitat-selection-modeling" id="toc-habitat-selection-modeling" class="nav-link" data-scroll-target="#habitat-selection-modeling">Habitat selection modeling</a></li>
+  <li><a href="#habitat-selection-modeling" id="toc-habitat-selection-modeling" class="nav-link" data-scroll-target="#habitat-selection-modeling">Habitat selection modeling</a>
+  <ul class="collapse">
+  <li><a href="#step-generation-and-covariates" id="toc-step-generation-and-covariates" class="nav-link" data-scroll-target="#step-generation-and-covariates">Step Generation and Covariates</a></li>
+  <li><a href="#statistical-model" id="toc-statistical-model" class="nav-link" data-scroll-target="#statistical-model">Statistical model</a></li>
+  <li><a href="#bobcat-data-exclusion" id="toc-bobcat-data-exclusion" class="nav-link" data-scroll-target="#bobcat-data-exclusion">Bobcat data exclusion</a></li>
+  </ul></li>
   </ul></li>
   </ul></li>
   <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a>
-  <ul class="collapse">
+  <ul>
   <li><a href="#fox-home-ranges" id="toc-fox-home-ranges" class="nav-link" data-scroll-target="#fox-home-ranges">Fox home ranges</a></li>
   <li><a href="#coyote-habitat-selection" id="toc-coyote-habitat-selection" class="nav-link" data-scroll-target="#coyote-habitat-selection">Coyote habitat selection</a></li>
   <li><a href="#model-validation" id="toc-model-validation" class="nav-link" data-scroll-target="#model-validation">Model validation</a>
@@ -164,23 +209,19 @@ window.Quarto = {
   </ul></li>
   </ul></li>
   <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion">Discussion</a>
-  <ul class="collapse">
+  <ul>
   <li><a href="#home-range-size-assessment-1" id="toc-home-range-size-assessment-1" class="nav-link" data-scroll-target="#home-range-size-assessment-1">Home range size assessment</a></li>
   <li><a href="#habitat-selection" id="toc-habitat-selection" class="nav-link" data-scroll-target="#habitat-selection">Habitat selection</a></li>
   </ul></li>
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
   <li><a href="#appendix" id="toc-appendix" class="nav-link" data-scroll-target="#appendix">Appendix</a>
-  <ul class="collapse">
+  <ul>
   <li><a href="#sec-additional-charts" id="toc-sec-additional-charts" class="nav-link" data-scroll-target="#sec-additional-charts">Additional charts</a></li>
   <li><a href="#use-of-generative-ai" id="toc-use-of-generative-ai" class="nav-link" data-scroll-target="#use-of-generative-ai">Use of generative AI</a></li>
   </ul></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="index.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
-<!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -599,7 +640,7 @@ Figure&nbsp;11: Box plot comparing monthly home ranges (outliers removed)
 <div id="tbl-emtrends" class="quarto-layout-panel anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-emtrends-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;2: Estimated marginal trends of human footprint on coyote habitat selection by land cover type. Includes linear (a) and quadratic (b) trends, with standard errors, 95% confidence intervals, <em>z</em>-ratios, and <em>p</em>-values.
+Table&nbsp;2: Estimated marginal trends of human footprint on coyote habitat selection by land cover type.
 </figcaption>
 <div aria-describedby="tbl-emtrends-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row">
@@ -752,148 +793,6 @@ Table&nbsp;2: Estimated marginal trends of human footprint on coyote habitat sel
 </div>
 </div>
 </div>
-</div>
-</figure>
-</div>
-<div id="tbl-coyote-linear" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-coyote-linear-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;3: Estimated marginal <strong>linear</strong> trends of human footprint on coyote habitat selection by land cover type. Includes standard errors, 95% confidence intervals, <em>z</em>-ratios, and <em>p</em>-values.
-</figcaption>
-<div aria-describedby="tbl-coyote-linear-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="caption-top table">
-<colgroup>
-<col style="width: 19%">
-<col style="width: 25%">
-<col style="width: 9%">
-<col style="width: 27%">
-<col style="width: 9%">
-<col style="width: 9%">
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>Land Cover</strong></th>
-<th><strong>Linear Trend (<span class="math inline">\(\beta_1\)</span>)</strong></th>
-<th><strong>SE</strong></th>
-<th><strong>95% CI</strong></th>
-<th><strong><em>z</em></strong></th>
-<th><strong><em>p</em></strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>TreeCover</td>
-<td>+0.263</td>
-<td>0.068</td>
-<td>0.130 – 0.397</td>
-<td>3.87</td>
-<td>0.0001</td>
-</tr>
-<tr class="even">
-<td>Open</td>
-<td>+0.139</td>
-<td>0.068</td>
-<td>0.005 – 0.273</td>
-<td>2.04</td>
-<td>0.042</td>
-</tr>
-<tr class="odd">
-<td>Cropland</td>
-<td>-0.063</td>
-<td>0.113</td>
-<td>-0.283 – 0.158</td>
-<td>-0.56</td>
-<td>0.577</td>
-</tr>
-<tr class="even">
-<td>BuiltUp</td>
-<td>-0.062</td>
-<td>0.309</td>
-<td>-0.667 – 0.544</td>
-<td>-0.20</td>
-<td>0.842</td>
-</tr>
-<tr class="odd">
-<td>Water</td>
-<td>-0.550</td>
-<td>0.263</td>
-<td>-1.065 – -0.035</td>
-<td>-2.09</td>
-<td>0.036</td>
-</tr>
-</tbody>
-</table>
-</div>
-</figure>
-</div>
-<div id="tbl-coyote-quadratic" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-coyote-quadratic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;4: Estimated marginal <strong>quadratic</strong> trends of human footprint on coyote habitat selection by land cover type. Includes standard errors, 95% confidence intervals, <em>z</em>-ratios, and <em>p</em>-values.
-</figcaption>
-<div aria-describedby="tbl-coyote-quadratic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="caption-top table">
-<colgroup>
-<col style="width: 18%">
-<col style="width: 28%">
-<col style="width: 8%">
-<col style="width: 26%">
-<col style="width: 8%">
-<col style="width: 8%">
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>Land Cover</strong></th>
-<th><strong>Quadratic Trend (<span class="math inline">\(\beta_2\)</span>)</strong></th>
-<th><strong>SE</strong></th>
-<th><strong>95% CI</strong></th>
-<th><strong><em>z</em></strong></th>
-<th><strong><em>p</em></strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>TreeCover</td>
-<td>-0.183</td>
-<td>0.039</td>
-<td>-0.260 – -0.106</td>
-<td>-4.68</td>
-<td>&lt;.0001</td>
-</tr>
-<tr class="even">
-<td>Open</td>
-<td>-0.181</td>
-<td>0.039</td>
-<td>-0.257 – -0.104</td>
-<td>-4.62</td>
-<td>&lt;.0001</td>
-</tr>
-<tr class="odd">
-<td>Cropland</td>
-<td>-0.153</td>
-<td>0.046</td>
-<td>-0.243 – -0.064</td>
-<td>-3.35</td>
-<td>0.0008</td>
-</tr>
-<tr class="even">
-<td>BuiltUp</td>
-<td>-0.161</td>
-<td>0.077</td>
-<td>-0.312 – -0.011</td>
-<td>-2.11</td>
-<td>0.0351</td>
-</tr>
-<tr class="odd">
-<td>Water</td>
-<td>-0.013</td>
-<td>0.081</td>
-<td>-0.172 – 0.146</td>
-<td>-0.16</td>
-<td>0.870</td>
-</tr>
-</tbody>
-</table>
 </div>
 </figure>
 </div>

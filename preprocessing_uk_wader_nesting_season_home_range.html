@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Preprocessing: UK wader nesting season home range</title>
+<title>Preprocessing: UK wader nesting season home range – How does human activity affect the movement patterns of wild animals?</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -58,6 +58,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="site_libs/quarto-search/fuse.min.js"></script>
@@ -68,10 +69,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -101,16 +102,78 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
 
+<link rel="stylesheet" href="custom.css">
 </head>
 
-<body class="fullcontent">
+<body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
+      How does human activity affect the movement patterns of wild animals?
+      </li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">How does human activity affect the movement patterns of wild animals?</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">How does human activity affect the movement patterns of wild animals?</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Navigation</h2>
+   
+  <ul>
+  <li><a href="#eda-over-all-the-study-data" id="toc-eda-over-all-the-study-data" class="nav-link active" data-scroll-target="#eda-over-all-the-study-data">EDA over all the study data</a>
+  <ul>
+  <li><a href="#check-if-the-data-looks-correct-i.e.-positioned-on-the-correct-island" id="toc-check-if-the-data-looks-correct-i.e.-positioned-on-the-correct-island" class="nav-link" data-scroll-target="#check-if-the-data-looks-correct-i.e.-positioned-on-the-correct-island">Check if the data looks correct (i.e., positioned on the correct island)</a></li>
+  </ul></li>
+  <li><a href="#updated-maps" id="toc-updated-maps" class="nav-link" data-scroll-target="#updated-maps">Updated maps</a>
+  <ul>
+  <li><a href="#produce-the-counts-for-data-per-month-and-per-year-breakdowns" id="toc-produce-the-counts-for-data-per-month-and-per-year-breakdowns" class="nav-link" data-scroll-target="#produce-the-counts-for-data-per-month-and-per-year-breakdowns">Produce the counts for data per month and per year breakdowns</a></li>
+  <li><a href="#count-visualization" id="toc-count-visualization" class="nav-link" data-scroll-target="#count-visualization">Count visualization</a></li>
+  <li><a href="#download-filtered-data-for-the-uk-wader-nesting-season" id="toc-download-filtered-data-for-the-uk-wader-nesting-season" class="nav-link" data-scroll-target="#download-filtered-data-for-the-uk-wader-nesting-season">Download filtered data for the UK wader nesting season</a></li>
+  <li><a href="#produce-home-range-plots-and-medians" id="toc-produce-home-range-plots-and-medians" class="nav-link" data-scroll-target="#produce-home-range-plots-and-medians">Produce home range plots and medians</a></li>
+  <li><a href="#check-if-there-is-coordinate-system-related-distortion-in-the-results-for-bylot-islands-which-is-high-up-north" id="toc-check-if-there-is-coordinate-system-related-distortion-in-the-results-for-bylot-islands-which-is-high-up-north" class="nav-link" data-scroll-target="#check-if-there-is-coordinate-system-related-distortion-in-the-results-for-bylot-islands-which-is-high-up-north">Check if there is coordinate system related distortion in the results for Bylot islands, which is high up north</a></li>
+  <li><a href="#download-sampled-filtered-data-for-uk-wader-nesting-season" id="toc-download-sampled-filtered-data-for-uk-wader-nesting-season" class="nav-link" data-scroll-target="#download-sampled-filtered-data-for-uk-wader-nesting-season">Download sampled filtered data for UK wader nesting season</a></li>
+  <li><a href="#produce-home-range-plots-and-medians-1" id="toc-produce-home-range-plots-and-medians-1" class="nav-link" data-scroll-target="#produce-home-range-plots-and-medians-1">Produce home range plots and medians</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
