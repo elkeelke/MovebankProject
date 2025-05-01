@@ -253,11 +253,11 @@ Attaching package: 'lubridate'</code></pre>
 <span id="cb14-67"><a href="#cb14-67" aria-hidden="true" tabindex="-1"></a>      <span class="at">legend.position =</span> <span class="st">"right"</span>,</span>
 <span id="cb14-68"><a href="#cb14-68" aria-hidden="true" tabindex="-1"></a>      <span class="at">text            =</span> <span class="fu">element_text</span>(<span class="at">colour =</span> <span class="st">"white"</span>),</span>
 <span id="cb14-69"><a href="#cb14-69" aria-hidden="true" tabindex="-1"></a>      <span class="at">axis.text       =</span> <span class="fu">element_text</span>(<span class="at">colour =</span> <span class="st">"white"</span>),</span>
-<span id="cb14-70"><a href="#cb14-70" aria-hidden="true" tabindex="-1"></a>      <span class="at">panel.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"#2D2D2D"</span>, <span class="at">colour =</span> <span class="cn">NA</span>),</span>
-<span id="cb14-71"><a href="#cb14-71" aria-hidden="true" tabindex="-1"></a>      <span class="at">plot.background  =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"#2D2D2D"</span>, <span class="at">colour =</span> <span class="cn">NA</span>),</span>
+<span id="cb14-70"><a href="#cb14-70" aria-hidden="true" tabindex="-1"></a>      <span class="at">panel.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"#222222"</span>, <span class="at">colour =</span> <span class="cn">NA</span>),</span>
+<span id="cb14-71"><a href="#cb14-71" aria-hidden="true" tabindex="-1"></a>      <span class="at">plot.background  =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"#222222"</span>, <span class="at">colour =</span> <span class="st">"#424242"</span>, <span class="at">linewidth =</span> <span class="fl">0.75</span>),</span>
 <span id="cb14-72"><a href="#cb14-72" aria-hidden="true" tabindex="-1"></a>      <span class="at">panel.grid       =</span> <span class="fu">element_line</span>(<span class="at">colour =</span> <span class="st">"#424242"</span>),</span>
-<span id="cb14-73"><a href="#cb14-73" aria-hidden="true" tabindex="-1"></a>      <span class="at">legend.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"#2D2D2D"</span>, <span class="at">colour =</span> <span class="cn">NA</span>),</span>
-<span id="cb14-74"><a href="#cb14-74" aria-hidden="true" tabindex="-1"></a>      <span class="at">legend.key        =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"#2D2D2D"</span>, <span class="at">colour =</span> <span class="cn">NA</span>),</span>
+<span id="cb14-73"><a href="#cb14-73" aria-hidden="true" tabindex="-1"></a>      <span class="at">legend.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"#222222"</span>, <span class="at">colour =</span> <span class="cn">NA</span>),</span>
+<span id="cb14-74"><a href="#cb14-74" aria-hidden="true" tabindex="-1"></a>      <span class="at">legend.key        =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"#222222"</span>, <span class="at">colour =</span> <span class="cn">NA</span>),</span>
 <span id="cb14-75"><a href="#cb14-75" aria-hidden="true" tabindex="-1"></a>      <span class="at">strip.text        =</span> <span class="fu">element_text</span>(<span class="at">colour =</span> <span class="st">"white"</span>, <span class="at">size =</span> <span class="dv">10</span>),</span>
 <span id="cb14-76"><a href="#cb14-76" aria-hidden="true" tabindex="-1"></a>      <span class="at">plot.title        =</span> <span class="fu">element_text</span>(<span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">b =</span> <span class="dv">15</span>)),</span>
 <span id="cb14-77"><a href="#cb14-77" aria-hidden="true" tabindex="-1"></a>      <span class="at">axis.title.x      =</span> <span class="fu">element_text</span>(<span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="dv">15</span>)),</span>
@@ -399,7 +399,7 @@ Attaching package: 'lubridate'</code></pre>
 <pre><code>ℹ In total 3 records were omitted as they were not deployed (the
   `deployment_id` was `NA`).</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">"img/bylot_monthly.png"</span>, results_bylot<span class="sc">$</span>gg, <span class="at">width =</span> <span class="dv">8</span>, <span class="at">height =</span> <span class="dv">5</span>, <span class="at">dpi =</span> <span class="dv">300</span>)</span>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">"img/bylot_monthly.png"</span>, results_bylot<span class="sc">$</span>gg, <span class="at">width =</span> <span class="dv">10</span>, <span class="at">height =</span> <span class="fl">5.5</span>, <span class="at">dpi =</span> <span class="dv">300</span>)</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(<span class="fu">data.frame</span>(<span class="at">areas =</span> results_bylot<span class="sc">$</span>areas), <span class="st">"data/output_bylot.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -449,7 +449,7 @@ Backtrace:
  5.   │     └─base (local) doTryCatch(return(expr), name, parentenv, handler)
  6.   └─move2::movebank_download_study(...)</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">"img/herschel_monthly.png"</span>, results_herschel<span class="sc">$</span>gg, <span class="at">width =</span> <span class="dv">8</span>, <span class="at">height =</span> <span class="dv">3</span>, <span class="at">dpi =</span> <span class="dv">300</span>)</span>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">"img/herschel_monthly.png"</span>, results_herschel<span class="sc">$</span>gg, <span class="at">width =</span> <span class="dv">10</span>, <span class="at">height =</span> <span class="dv">4</span>, <span class="at">dpi =</span> <span class="dv">300</span>)</span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(<span class="fu">data.frame</span>(<span class="at">areas =</span> results_herschel<span class="sc">$</span>areas), <span class="st">"data/output_herschel.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -494,23 +494,39 @@ Backtrace:
  6.   └─move2::movebank_download_study(...)
 [1] 3
 [1] 4
+&lt;curl_error_operation_timedout in curl::curl_fetch_memory(url, handle = handle): Timeout was reached [www.movebank.org]: Connection timed out after 10001 milliseconds&gt;
 [1] 5
+&lt;curl_error_operation_timedout in curl::curl_fetch_memory(url, handle = handle): Timeout was reached [www.movebank.org]: Connection timed out after 10002 milliseconds&gt;
 [1] 6
+&lt;curl_error_operation_timedout in curl::curl_fetch_memory(url, handle = handle): Timeout was reached [www.movebank.org]: Connection timed out after 10002 milliseconds&gt;
 [1] 7
-&lt;error/move2_error_no_data_found&gt;
-Error in `movebank_download_study()`:
-! The request did not result in any data, this might be caused by trying
-  to retrieve a none existant individual. Or no data is available for download
-  in this study for your user account.
+&lt;error/rlang_error&gt;
+Error in `path_to_connection()`:
+! 
+  'individual_id,deployment_id,tag_id,study_id,sensor_type_id,individual_local_identifier,tag_local_identifier,individual_taxon_canonical_name,activity_x,activity_y,comments,external_temperature,gps_fix_type_raw,gps_hdop,gps_satellite_count,gps_time_to_fix,height_above_msl,location_lat,location_long,manually_marked_outlier,tag_voltage,timestamp,event_id,visible
+  ' does not exist in current working directory
+  ('/Users/elkemichlmayr/Documents/ZHAW/Patterns and Trends in Environmental
+  Data/MovebankProject2').
 ---
 Backtrace:
-    ▆
- 1. └─global calculate_monthly_home_ranges(...)
- 2.   ├─base::tryCatch(...)
- 3.   │ └─base (local) tryCatchList(expr, classes, parentenv, handlers)
- 4.   │   └─base (local) tryCatchOne(expr, names, parentenv, handlers[[1L]])
- 5.   │     └─base (local) doTryCatch(return(expr), name, parentenv, handler)
- 6.   └─move2::movebank_download_study(...)
+     ▆
+  1. └─global calculate_monthly_home_ranges(...)
+  2.   ├─base::tryCatch(...)
+  3.   │ └─base (local) tryCatchList(expr, classes, parentenv, handlers)
+  4.   │   └─base (local) tryCatchOne(expr, names, parentenv, handlers[[1L]])
+  5.   │     └─base (local) doTryCatch(return(expr), name, parentenv, handler)
+  6.   └─move2::movebank_download_study(...)
+  7.     └─move2::movebank_retrieve(...)
+  8.       ├─base::gsub(...)
+  9.       │ └─base::is.factor(x)
+ 10.       ├─xml2::xml_text(xml2::read_html(gsub("&lt;br&gt;", "\n", rawToChar(error_return$content))))
+ 11.       ├─xml2::read_html(gsub("&lt;br&gt;", "\n", rawToChar(error_return$content)))
+ 12.       └─xml2:::read_html.default(gsub("&lt;br&gt;", "\n", rawToChar(error_return$content)))
+ 13.         ├─base::suppressWarnings(...)
+ 14.         │ └─base::withCallingHandlers(...)
+ 15.         ├─xml2::read_xml(x, encoding = encoding, ..., as_html = TRUE, options = options)
+ 16.         └─xml2:::read_xml.character(...)
+ 17.           └─xml2:::path_to_connection(x)
 [1] 8
 &lt;error/move2_error_no_data_found&gt;
 Error in `movebank_download_study()`:
@@ -618,243 +634,61 @@ Backtrace:
  6.   └─move2::movebank_download_study(...)
 [1] 15
 [1] 16
+&lt;curl_error_operation_timedout in curl::curl_fetch_memory(url, handle = handle): Timeout was reached [www.movebank.org]: Connection timed out after 10002 milliseconds&gt;
 [1] 17
+&lt;curl_error_operation_timedout in curl::curl_fetch_memory(url, handle = handle): Timeout was reached [www.movebank.org]: Connection timed out after 10003 milliseconds&gt;
 [1] 18
+&lt;curl_error_operation_timedout in curl::curl_fetch_memory(url, handle = handle): Timeout was reached [www.movebank.org]: Connection timed out after 10002 milliseconds&gt;
 [1] 19
-&lt;error/move2_error_no_data_found&gt;
-Error in `movebank_download_study()`:
-! The request did not result in any data, this might be caused by trying
-  to retrieve a none existant individual. Or no data is available for download
-  in this study for your user account.
----
-Backtrace:
-    ▆
- 1. └─global calculate_monthly_home_ranges(...)
- 2.   ├─base::tryCatch(...)
- 3.   │ └─base (local) tryCatchList(expr, classes, parentenv, handlers)
- 4.   │   └─base (local) tryCatchOne(expr, names, parentenv, handlers[[1L]])
- 5.   │     └─base (local) doTryCatch(return(expr), name, parentenv, handler)
- 6.   └─move2::movebank_download_study(...)
+&lt;curl_error_operation_timedout in curl::curl_fetch_memory(url, handle = handle): Timeout was reached [www.movebank.org]: Connection timed out after 10002 milliseconds&gt;
 [1] 20
-&lt;error/move2_error_no_data_found&gt;
-Error in `movebank_download_study()`:
-! The request did not result in any data, this might be caused by trying
-  to retrieve a none existant individual. Or no data is available for download
-  in this study for your user account.
----
-Backtrace:
-    ▆
- 1. └─global calculate_monthly_home_ranges(...)
- 2.   ├─base::tryCatch(...)
- 3.   │ └─base (local) tryCatchList(expr, classes, parentenv, handlers)
- 4.   │   └─base (local) tryCatchOne(expr, names, parentenv, handlers[[1L]])
- 5.   │     └─base (local) doTryCatch(return(expr), name, parentenv, handler)
- 6.   └─move2::movebank_download_study(...)
+&lt;curl_error_operation_timedout in curl::curl_fetch_memory(url, handle = handle): Timeout was reached [www.movebank.org]: Connection timed out after 10001 milliseconds&gt;
 [1] 21
-&lt;error/move2_error_no_data_found&gt;
-Error in `movebank_download_study()`:
-! The request did not result in any data, this might be caused by trying
-  to retrieve a none existant individual. Or no data is available for download
-  in this study for your user account.
----
-Backtrace:
-    ▆
- 1. └─global calculate_monthly_home_ranges(...)
- 2.   ├─base::tryCatch(...)
- 3.   │ └─base (local) tryCatchList(expr, classes, parentenv, handlers)
- 4.   │   └─base (local) tryCatchOne(expr, names, parentenv, handlers[[1L]])
- 5.   │     └─base (local) doTryCatch(return(expr), name, parentenv, handler)
- 6.   └─move2::movebank_download_study(...)
+&lt;curl_error_operation_timedout in curl::curl_fetch_memory(url, handle = handle): Timeout was reached [www.movebank.org]: Connection timed out after 10002 milliseconds&gt;
 [1] 22
-&lt;error/move2_error_no_data_found&gt;
-Error in `movebank_download_study()`:
-! The request did not result in any data, this might be caused by trying
-  to retrieve a none existant individual. Or no data is available for download
-  in this study for your user account.
----
-Backtrace:
-    ▆
- 1. └─global calculate_monthly_home_ranges(...)
- 2.   ├─base::tryCatch(...)
- 3.   │ └─base (local) tryCatchList(expr, classes, parentenv, handlers)
- 4.   │   └─base (local) tryCatchOne(expr, names, parentenv, handlers[[1L]])
- 5.   │     └─base (local) doTryCatch(return(expr), name, parentenv, handler)
- 6.   └─move2::movebank_download_study(...)
+&lt;curl_error_operation_timedout in curl::curl_fetch_memory(url, handle = handle): Timeout was reached [www.movebank.org]: Connection timed out after 10002 milliseconds&gt;
 [1] 23
-&lt;error/move2_error_no_data_found&gt;
-Error in `movebank_download_study()`:
-! The request did not result in any data, this might be caused by trying
-  to retrieve a none existant individual. Or no data is available for download
-  in this study for your user account.
----
-Backtrace:
-    ▆
- 1. └─global calculate_monthly_home_ranges(...)
- 2.   ├─base::tryCatch(...)
- 3.   │ └─base (local) tryCatchList(expr, classes, parentenv, handlers)
- 4.   │   └─base (local) tryCatchOne(expr, names, parentenv, handlers[[1L]])
- 5.   │     └─base (local) doTryCatch(return(expr), name, parentenv, handler)
- 6.   └─move2::movebank_download_study(...)
+&lt;curl_error_peer_failed_verification in curl::curl_fetch_memory(url, handle = handle): SSL peer certificate or SSH remote key was not OK [www.movebank.org]: SSL: no alternative certificate subject name matches target hostname 'www.movebank.org'&gt;
 [1] 24
-&lt;error/move2_error_no_data_found&gt;
-Error in `movebank_download_study()`:
-! The request did not result in any data, this might be caused by trying
-  to retrieve a none existant individual. Or no data is available for download
-  in this study for your user account.
----
-Backtrace:
-    ▆
- 1. └─global calculate_monthly_home_ranges(...)
- 2.   ├─base::tryCatch(...)
- 3.   │ └─base (local) tryCatchList(expr, classes, parentenv, handlers)
- 4.   │   └─base (local) tryCatchOne(expr, names, parentenv, handlers[[1L]])
- 5.   │     └─base (local) doTryCatch(return(expr), name, parentenv, handler)
- 6.   └─move2::movebank_download_study(...)
+&lt;curl_error_peer_failed_verification in curl::curl_fetch_memory(url, handle = handle): SSL peer certificate or SSH remote key was not OK [www.movebank.org]: SSL: no alternative certificate subject name matches target hostname 'www.movebank.org'&gt;
 [1] 25
-&lt;error/move2_error_no_data_found&gt;
-Error in `movebank_download_study()`:
-! The request did not result in any data, this might be caused by trying
-  to retrieve a none existant individual. Or no data is available for download
-  in this study for your user account.
----
-Backtrace:
-    ▆
- 1. └─global calculate_monthly_home_ranges(...)
- 2.   ├─base::tryCatch(...)
- 3.   │ └─base (local) tryCatchList(expr, classes, parentenv, handlers)
- 4.   │   └─base (local) tryCatchOne(expr, names, parentenv, handlers[[1L]])
- 5.   │     └─base (local) doTryCatch(return(expr), name, parentenv, handler)
- 6.   └─move2::movebank_download_study(...)
+&lt;curl_error_peer_failed_verification in curl::curl_fetch_memory(url, handle = handle): SSL peer certificate or SSH remote key was not OK [www.movebank.org]: SSL: no alternative certificate subject name matches target hostname 'www.movebank.org'&gt;
 [1] 26
+&lt;curl_error_peer_failed_verification in curl::curl_fetch_memory(url, handle = handle): SSL peer certificate or SSH remote key was not OK [www.movebank.org]: SSL: no alternative certificate subject name matches target hostname 'www.movebank.org'&gt;
 [1] 27
+&lt;curl_error_peer_failed_verification in curl::curl_fetch_memory(url, handle = handle): SSL peer certificate or SSH remote key was not OK [www.movebank.org]: SSL: no alternative certificate subject name matches target hostname 'www.movebank.org'&gt;
 [1] 28
+&lt;curl_error_peer_failed_verification in curl::curl_fetch_memory(url, handle = handle): SSL peer certificate or SSH remote key was not OK [www.movebank.org]: SSL: no alternative certificate subject name matches target hostname 'www.movebank.org'&gt;
 [1] 29
+&lt;curl_error_peer_failed_verification in curl::curl_fetch_memory(url, handle = handle): SSL peer certificate or SSH remote key was not OK [www.movebank.org]: SSL: no alternative certificate subject name matches target hostname 'www.movebank.org'&gt;
 [1] 30
+&lt;curl_error_peer_failed_verification in curl::curl_fetch_memory(url, handle = handle): SSL peer certificate or SSH remote key was not OK [www.movebank.org]: SSL: no alternative certificate subject name matches target hostname 'www.movebank.org'&gt;
 [1] 31
+&lt;curl_error_peer_failed_verification in curl::curl_fetch_memory(url, handle = handle): SSL peer certificate or SSH remote key was not OK [www.movebank.org]: SSL: no alternative certificate subject name matches target hostname 'www.movebank.org'&gt;
 [1] 32
-&lt;error/move2_error_no_data_found&gt;
-Error in `movebank_download_study()`:
-! The request did not result in any data, this might be caused by trying
-  to retrieve a none existant individual. Or no data is available for download
-  in this study for your user account.
----
-Backtrace:
-    ▆
- 1. └─global calculate_monthly_home_ranges(...)
- 2.   ├─base::tryCatch(...)
- 3.   │ └─base (local) tryCatchList(expr, classes, parentenv, handlers)
- 4.   │   └─base (local) tryCatchOne(expr, names, parentenv, handlers[[1L]])
- 5.   │     └─base (local) doTryCatch(return(expr), name, parentenv, handler)
- 6.   └─move2::movebank_download_study(...)
+&lt;curl_error_peer_failed_verification in curl::curl_fetch_memory(url, handle = handle): SSL peer certificate or SSH remote key was not OK [www.movebank.org]: SSL: no alternative certificate subject name matches target hostname 'www.movebank.org'&gt;
 [1] 33
-&lt;error/move2_error_no_data_found&gt;
-Error in `movebank_download_study()`:
-! The request did not result in any data, this might be caused by trying
-  to retrieve a none existant individual. Or no data is available for download
-  in this study for your user account.
----
-Backtrace:
-    ▆
- 1. └─global calculate_monthly_home_ranges(...)
- 2.   ├─base::tryCatch(...)
- 3.   │ └─base (local) tryCatchList(expr, classes, parentenv, handlers)
- 4.   │   └─base (local) tryCatchOne(expr, names, parentenv, handlers[[1L]])
- 5.   │     └─base (local) doTryCatch(return(expr), name, parentenv, handler)
- 6.   └─move2::movebank_download_study(...)
+&lt;curl_error_peer_failed_verification in curl::curl_fetch_memory(url, handle = handle): SSL peer certificate or SSH remote key was not OK [www.movebank.org]: SSL: no alternative certificate subject name matches target hostname 'www.movebank.org'&gt;
 [1] 34
-&lt;error/move2_error_no_data_found&gt;
-Error in `movebank_download_study()`:
-! The request did not result in any data, this might be caused by trying
-  to retrieve a none existant individual. Or no data is available for download
-  in this study for your user account.
----
-Backtrace:
-    ▆
- 1. └─global calculate_monthly_home_ranges(...)
- 2.   ├─base::tryCatch(...)
- 3.   │ └─base (local) tryCatchList(expr, classes, parentenv, handlers)
- 4.   │   └─base (local) tryCatchOne(expr, names, parentenv, handlers[[1L]])
- 5.   │     └─base (local) doTryCatch(return(expr), name, parentenv, handler)
- 6.   └─move2::movebank_download_study(...)
+&lt;curl_error_peer_failed_verification in curl::curl_fetch_memory(url, handle = handle): SSL peer certificate or SSH remote key was not OK [www.movebank.org]: SSL: no alternative certificate subject name matches target hostname 'www.movebank.org'&gt;
 [1] 35
-&lt;error/move2_error_no_data_found&gt;
-Error in `movebank_download_study()`:
-! The request did not result in any data, this might be caused by trying
-  to retrieve a none existant individual. Or no data is available for download
-  in this study for your user account.
----
-Backtrace:
-    ▆
- 1. └─global calculate_monthly_home_ranges(...)
- 2.   ├─base::tryCatch(...)
- 3.   │ └─base (local) tryCatchList(expr, classes, parentenv, handlers)
- 4.   │   └─base (local) tryCatchOne(expr, names, parentenv, handlers[[1L]])
- 5.   │     └─base (local) doTryCatch(return(expr), name, parentenv, handler)
- 6.   └─move2::movebank_download_study(...)
+&lt;curl_error_peer_failed_verification in curl::curl_fetch_memory(url, handle = handle): SSL peer certificate or SSH remote key was not OK [www.movebank.org]: SSL: no alternative certificate subject name matches target hostname 'www.movebank.org'&gt;
 [1] 36
-&lt;error/move2_error_no_data_found&gt;
-Error in `movebank_download_study()`:
-! The request did not result in any data, this might be caused by trying
-  to retrieve a none existant individual. Or no data is available for download
-  in this study for your user account.
----
-Backtrace:
-    ▆
- 1. └─global calculate_monthly_home_ranges(...)
- 2.   ├─base::tryCatch(...)
- 3.   │ └─base (local) tryCatchList(expr, classes, parentenv, handlers)
- 4.   │   └─base (local) tryCatchOne(expr, names, parentenv, handlers[[1L]])
- 5.   │     └─base (local) doTryCatch(return(expr), name, parentenv, handler)
- 6.   └─move2::movebank_download_study(...)
+&lt;curl_error_peer_failed_verification in curl::curl_fetch_memory(url, handle = handle): SSL peer certificate or SSH remote key was not OK [www.movebank.org]: SSL: no alternative certificate subject name matches target hostname 'www.movebank.org'&gt;
 [1] 37
-&lt;error/move2_error_no_data_found&gt;
-Error in `movebank_download_study()`:
-! The request did not result in any data, this might be caused by trying
-  to retrieve a none existant individual. Or no data is available for download
-  in this study for your user account.
----
-Backtrace:
-    ▆
- 1. └─global calculate_monthly_home_ranges(...)
- 2.   ├─base::tryCatch(...)
- 3.   │ └─base (local) tryCatchList(expr, classes, parentenv, handlers)
- 4.   │   └─base (local) tryCatchOne(expr, names, parentenv, handlers[[1L]])
- 5.   │     └─base (local) doTryCatch(return(expr), name, parentenv, handler)
- 6.   └─move2::movebank_download_study(...)
+&lt;curl_error_peer_failed_verification in curl::curl_fetch_memory(url, handle = handle): SSL peer certificate or SSH remote key was not OK [www.movebank.org]: SSL: no alternative certificate subject name matches target hostname 'www.movebank.org'&gt;
 [1] 38
-&lt;error/move2_error_no_data_found&gt;
-Error in `movebank_download_study()`:
-! The request did not result in any data, this might be caused by trying
-  to retrieve a none existant individual. Or no data is available for download
-  in this study for your user account.
----
-Backtrace:
-    ▆
- 1. └─global calculate_monthly_home_ranges(...)
- 2.   ├─base::tryCatch(...)
- 3.   │ └─base (local) tryCatchList(expr, classes, parentenv, handlers)
- 4.   │   └─base (local) tryCatchOne(expr, names, parentenv, handlers[[1L]])
- 5.   │     └─base (local) doTryCatch(return(expr), name, parentenv, handler)
- 6.   └─move2::movebank_download_study(...)
+&lt;curl_error_peer_failed_verification in curl::curl_fetch_memory(url, handle = handle): SSL peer certificate or SSH remote key was not OK [www.movebank.org]: SSL: no alternative certificate subject name matches target hostname 'www.movebank.org'&gt;
 [1] 39
-&lt;error/move2_error_no_data_found&gt;
-Error in `movebank_download_study()`:
-! The request did not result in any data, this might be caused by trying
-  to retrieve a none existant individual. Or no data is available for download
-  in this study for your user account.
----
-Backtrace:
-    ▆
- 1. └─global calculate_monthly_home_ranges(...)
- 2.   ├─base::tryCatch(...)
- 3.   │ └─base (local) tryCatchList(expr, classes, parentenv, handlers)
- 4.   │   └─base (local) tryCatchOne(expr, names, parentenv, handlers[[1L]])
- 5.   │     └─base (local) doTryCatch(return(expr), name, parentenv, handler)
- 6.   └─move2::movebank_download_study(...)
+&lt;curl_error_peer_failed_verification in curl::curl_fetch_memory(url, handle = handle): SSL peer certificate or SSH remote key was not OK [www.movebank.org]: SSL: no alternative certificate subject name matches target hostname 'www.movebank.org'&gt;
 [1] 40
+&lt;curl_error_peer_failed_verification in curl::curl_fetch_memory(url, handle = handle): SSL peer certificate or SSH remote key was not OK [www.movebank.org]: SSL: no alternative certificate subject name matches target hostname 'www.movebank.org'&gt;
 [1] 41
+&lt;curl_error_peer_failed_verification in curl::curl_fetch_memory(url, handle = handle): SSL peer certificate or SSH remote key was not OK [www.movebank.org]: SSL: no alternative certificate subject name matches target hostname 'www.movebank.org'&gt;
 [1] 42
-[1] 43</code></pre>
+&lt;curl_error_peer_failed_verification in curl::curl_fetch_memory(url, handle = handle): SSL peer certificate or SSH remote key was not OK [www.movebank.org]: SSL: no alternative certificate subject name matches target hostname 'www.movebank.org'&gt;
+[1] 43
+&lt;curl_error_peer_failed_verification in curl::curl_fetch_memory(url, handle = handle): SSL peer certificate or SSH remote key was not OK [www.movebank.org]: SSL: no alternative certificate subject name matches target hostname 'www.movebank.org'&gt;</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">"img/wiltshire_monthly.png"</span>, results_wiltshire<span class="sc">$</span>gg, <span class="at">width =</span> <span class="dv">10</span>, <span class="at">height =</span> <span class="dv">7</span>, <span class="at">dpi =</span> <span class="dv">300</span>)</span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -955,7 +789,7 @@ Figure&nbsp;1: Box plot comparing monthly home ranges (outliers removed)
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/elkeelke\.github\.io\/MovebankProject\/");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

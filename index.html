@@ -347,7 +347,7 @@ Figure&nbsp;6: Box plots of sampling rates for bobcat and coyote data
 </section>
 <section id="sec-methodology" class="level2">
 <h2 class="anchored" data-anchor-id="sec-methodology">Methodology</h2>
-<p>We applied two main analytical approaches: (1) home range estimation for red foxes and (2) habitat selection modeling using step-selection functions (SSFs) for coyotes.</p>
+<p>We applied two analytical approaches: (1) home range estimation for red foxes and (2) habitat selection modeling using step-selection functions for coyotes.</p>
 <section id="home-range-size-assessment" class="level3">
 <h3 class="anchored" data-anchor-id="home-range-size-assessment">Home range size assessment</h3>
 <p>Home range sizes are calculated using minimum convex polygons, which provides easily comparable estimates of the area used by each individual animal. As discussed in <a href="#sec-redfoxdata" class="quarto-xref">Section&nbsp;3.3.1</a>, the datasets for the two locations have different temporal scale.</p>
@@ -416,10 +416,10 @@ Figure&nbsp;7: Human footprint distribution by land cover type
 </figure>
 </div>
 <p>To explore the relationship between movement behavior and human disturbance, we visualized the joint distribution of the Human Footprint Index (HFP) and log-transformed step length using a hexbin density plot (see <a href="#fig-coy-eda-hex" class="quarto-xref">Figure&nbsp;8</a>). Most steps occurred under conditions of low human footprint and were characterized by short to moderate movement distances. By including log-transformed step length as a covariate, the model accounts for underlying variation in movement intensity that could otherwise confound habitat selection estimates.</p>
-<div id="fig-coy-eda-hex" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-coy-eda-hex" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-coy-eda-hex-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/coyote_EDA_hexbin.png" class="img-fluid figure-img">
+<img src="img/coyote_EDA_hexbin.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:75.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-coy-eda-hex-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;8: Relationship between movement and human footprint
@@ -501,7 +501,7 @@ Figure&nbsp;10: Home ranges for Bylot foxes (March 15th to June 15th, 2012)
 <img src="img/home_range_wiltshire_wader_sampled.png" class="img-fluid figure-img" data-ref-parent="fig-sampling">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-home-ranges-wiltshire-sampled24h-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-(b) 24 hour sampling interval)
+(b) 24 hour sampling interval
 </figcaption>
 </figure>
 </div>
@@ -548,7 +548,7 @@ Figure&nbsp;12: Box plot comparing monthly home ranges (outliers removed)
 </section>
 <section id="discussion" class="level1">
 <h1>Discussion</h1>
-<p>The fox home range size results show enormous differences between rural and remote areas. We conclude that human presence changes fox movement behavior patterns fundamentally. The opportunity to move undisturbed, and the availability of anthropogenic food sources are likely the most relevant factors but more data would be needed to have proof for the underlying reasons. One thing that is interesting to see is that the fox home range sizes for Bylot and Herschel foxes are similar, even if the island sizes differ by a factor of 100.</p>
+<p>The fox home range size results show enormous differences between rural and remote areas. We conclude that human presence changes fox movement behavior patterns fundamentally. The opportunity to move undisturbed, and the availability of anthropogenic food sources are likely the most relevant factors, but more data would be needed to have proof for the underlying reasons. One thing that is interesting to see is that the fox home range sizes for Bylot and Herschel foxes are similar, even if the island sizes differ by a factor of 100.</p>
 <p>Note that there is one fox with an extraordinarily large home range in <a href="#fig-home-ranges-wiltshire" class="quarto-xref">Figure&nbsp;11 (a)</a>, and the additional charts in <a href="#sec-additional-charts" class="quarto-xref">Section&nbsp;8.1</a> show several instances of large fox movements within a single month. Similar patterns with a small number of foxes covering much larger areas than others were found in <span class="citation" data-cites="kobryn2023foxes"><a href="#ref-kobryn2023foxes" role="doc-biblioref">[16]</a></span>, concluding that the data is genuine and demonstrates potential for extensive movement patterns in urban foxes.</p>
 <p>While technical aspects such as sampling intervals and home range estimator have significant influence on the calculation results, they play a secondary role in comparison to the difference in fox behavior, which enables the chosen approach of comparing data from heterogeneous sources. Another instance of data aspects having large effects on the results was observed in statistical modelling. While we could fit a model for coyote data, it was not feasible for the bobcat data. We suspect that the re-sampling required due to irregular sampling rates as shown in <a href="#fig-sampling-rates" class="quarto-xref">Figure&nbsp;6</a> played a role.</p>
 <p>TBD habitats</p>
@@ -726,7 +726,7 @@ Figure&nbsp;15: Monthly home ranges for Herschel foxes
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/elkeelke\.github\.io\/MovebankProject\/");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
