@@ -494,39 +494,23 @@ Backtrace:
  6.   └─move2::movebank_download_study(...)
 [1] 3
 [1] 4
-&lt;curl_error_operation_timedout in curl::curl_fetch_memory(url, handle = handle): Timeout was reached [www.movebank.org]: Connection timed out after 10001 milliseconds&gt;
 [1] 5
-&lt;curl_error_operation_timedout in curl::curl_fetch_memory(url, handle = handle): Timeout was reached [www.movebank.org]: Connection timed out after 10002 milliseconds&gt;
 [1] 6
-&lt;curl_error_operation_timedout in curl::curl_fetch_memory(url, handle = handle): Timeout was reached [www.movebank.org]: Connection timed out after 10002 milliseconds&gt;
 [1] 7
-&lt;error/rlang_error&gt;
-Error in `path_to_connection()`:
-! 
-  'individual_id,deployment_id,tag_id,study_id,sensor_type_id,individual_local_identifier,tag_local_identifier,individual_taxon_canonical_name,activity_x,activity_y,comments,external_temperature,gps_fix_type_raw,gps_hdop,gps_satellite_count,gps_time_to_fix,height_above_msl,location_lat,location_long,manually_marked_outlier,tag_voltage,timestamp,event_id,visible
-  ' does not exist in current working directory
-  ('/Users/elkemichlmayr/Documents/ZHAW/Patterns and Trends in Environmental
-  Data/MovebankProject2').
+&lt;error/move2_error_no_data_found&gt;
+Error in `movebank_download_study()`:
+! The request did not result in any data, this might be caused by trying
+  to retrieve a none existant individual. Or no data is available for download
+  in this study for your user account.
 ---
 Backtrace:
-     ▆
-  1. └─global calculate_monthly_home_ranges(...)
-  2.   ├─base::tryCatch(...)
-  3.   │ └─base (local) tryCatchList(expr, classes, parentenv, handlers)
-  4.   │   └─base (local) tryCatchOne(expr, names, parentenv, handlers[[1L]])
-  5.   │     └─base (local) doTryCatch(return(expr), name, parentenv, handler)
-  6.   └─move2::movebank_download_study(...)
-  7.     └─move2::movebank_retrieve(...)
-  8.       ├─base::gsub(...)
-  9.       │ └─base::is.factor(x)
- 10.       ├─xml2::xml_text(xml2::read_html(gsub("&lt;br&gt;", "\n", rawToChar(error_return$content))))
- 11.       ├─xml2::read_html(gsub("&lt;br&gt;", "\n", rawToChar(error_return$content)))
- 12.       └─xml2:::read_html.default(gsub("&lt;br&gt;", "\n", rawToChar(error_return$content)))
- 13.         ├─base::suppressWarnings(...)
- 14.         │ └─base::withCallingHandlers(...)
- 15.         ├─xml2::read_xml(x, encoding = encoding, ..., as_html = TRUE, options = options)
- 16.         └─xml2:::read_xml.character(...)
- 17.           └─xml2:::path_to_connection(x)
+    ▆
+ 1. └─global calculate_monthly_home_ranges(...)
+ 2.   ├─base::tryCatch(...)
+ 3.   │ └─base (local) tryCatchList(expr, classes, parentenv, handlers)
+ 4.   │   └─base (local) tryCatchOne(expr, names, parentenv, handlers[[1L]])
+ 5.   │     └─base (local) doTryCatch(return(expr), name, parentenv, handler)
+ 6.   └─move2::movebank_download_study(...)
 [1] 8
 &lt;error/move2_error_no_data_found&gt;
 Error in `movebank_download_study()`:
@@ -634,61 +618,243 @@ Backtrace:
  6.   └─move2::movebank_download_study(...)
 [1] 15
 [1] 16
-&lt;curl_error_operation_timedout in curl::curl_fetch_memory(url, handle = handle): Timeout was reached [www.movebank.org]: Connection timed out after 10002 milliseconds&gt;
 [1] 17
-&lt;curl_error_operation_timedout in curl::curl_fetch_memory(url, handle = handle): Timeout was reached [www.movebank.org]: Connection timed out after 10003 milliseconds&gt;
 [1] 18
-&lt;curl_error_operation_timedout in curl::curl_fetch_memory(url, handle = handle): Timeout was reached [www.movebank.org]: Connection timed out after 10002 milliseconds&gt;
 [1] 19
-&lt;curl_error_operation_timedout in curl::curl_fetch_memory(url, handle = handle): Timeout was reached [www.movebank.org]: Connection timed out after 10002 milliseconds&gt;
+&lt;error/move2_error_no_data_found&gt;
+Error in `movebank_download_study()`:
+! The request did not result in any data, this might be caused by trying
+  to retrieve a none existant individual. Or no data is available for download
+  in this study for your user account.
+---
+Backtrace:
+    ▆
+ 1. └─global calculate_monthly_home_ranges(...)
+ 2.   ├─base::tryCatch(...)
+ 3.   │ └─base (local) tryCatchList(expr, classes, parentenv, handlers)
+ 4.   │   └─base (local) tryCatchOne(expr, names, parentenv, handlers[[1L]])
+ 5.   │     └─base (local) doTryCatch(return(expr), name, parentenv, handler)
+ 6.   └─move2::movebank_download_study(...)
 [1] 20
-&lt;curl_error_operation_timedout in curl::curl_fetch_memory(url, handle = handle): Timeout was reached [www.movebank.org]: Connection timed out after 10001 milliseconds&gt;
+&lt;error/move2_error_no_data_found&gt;
+Error in `movebank_download_study()`:
+! The request did not result in any data, this might be caused by trying
+  to retrieve a none existant individual. Or no data is available for download
+  in this study for your user account.
+---
+Backtrace:
+    ▆
+ 1. └─global calculate_monthly_home_ranges(...)
+ 2.   ├─base::tryCatch(...)
+ 3.   │ └─base (local) tryCatchList(expr, classes, parentenv, handlers)
+ 4.   │   └─base (local) tryCatchOne(expr, names, parentenv, handlers[[1L]])
+ 5.   │     └─base (local) doTryCatch(return(expr), name, parentenv, handler)
+ 6.   └─move2::movebank_download_study(...)
 [1] 21
-&lt;curl_error_operation_timedout in curl::curl_fetch_memory(url, handle = handle): Timeout was reached [www.movebank.org]: Connection timed out after 10002 milliseconds&gt;
+&lt;error/move2_error_no_data_found&gt;
+Error in `movebank_download_study()`:
+! The request did not result in any data, this might be caused by trying
+  to retrieve a none existant individual. Or no data is available for download
+  in this study for your user account.
+---
+Backtrace:
+    ▆
+ 1. └─global calculate_monthly_home_ranges(...)
+ 2.   ├─base::tryCatch(...)
+ 3.   │ └─base (local) tryCatchList(expr, classes, parentenv, handlers)
+ 4.   │   └─base (local) tryCatchOne(expr, names, parentenv, handlers[[1L]])
+ 5.   │     └─base (local) doTryCatch(return(expr), name, parentenv, handler)
+ 6.   └─move2::movebank_download_study(...)
 [1] 22
-&lt;curl_error_operation_timedout in curl::curl_fetch_memory(url, handle = handle): Timeout was reached [www.movebank.org]: Connection timed out after 10002 milliseconds&gt;
+&lt;error/move2_error_no_data_found&gt;
+Error in `movebank_download_study()`:
+! The request did not result in any data, this might be caused by trying
+  to retrieve a none existant individual. Or no data is available for download
+  in this study for your user account.
+---
+Backtrace:
+    ▆
+ 1. └─global calculate_monthly_home_ranges(...)
+ 2.   ├─base::tryCatch(...)
+ 3.   │ └─base (local) tryCatchList(expr, classes, parentenv, handlers)
+ 4.   │   └─base (local) tryCatchOne(expr, names, parentenv, handlers[[1L]])
+ 5.   │     └─base (local) doTryCatch(return(expr), name, parentenv, handler)
+ 6.   └─move2::movebank_download_study(...)
 [1] 23
-&lt;curl_error_peer_failed_verification in curl::curl_fetch_memory(url, handle = handle): SSL peer certificate or SSH remote key was not OK [www.movebank.org]: SSL: no alternative certificate subject name matches target hostname 'www.movebank.org'&gt;
+&lt;error/move2_error_no_data_found&gt;
+Error in `movebank_download_study()`:
+! The request did not result in any data, this might be caused by trying
+  to retrieve a none existant individual. Or no data is available for download
+  in this study for your user account.
+---
+Backtrace:
+    ▆
+ 1. └─global calculate_monthly_home_ranges(...)
+ 2.   ├─base::tryCatch(...)
+ 3.   │ └─base (local) tryCatchList(expr, classes, parentenv, handlers)
+ 4.   │   └─base (local) tryCatchOne(expr, names, parentenv, handlers[[1L]])
+ 5.   │     └─base (local) doTryCatch(return(expr), name, parentenv, handler)
+ 6.   └─move2::movebank_download_study(...)
 [1] 24
-&lt;curl_error_peer_failed_verification in curl::curl_fetch_memory(url, handle = handle): SSL peer certificate or SSH remote key was not OK [www.movebank.org]: SSL: no alternative certificate subject name matches target hostname 'www.movebank.org'&gt;
+&lt;error/move2_error_no_data_found&gt;
+Error in `movebank_download_study()`:
+! The request did not result in any data, this might be caused by trying
+  to retrieve a none existant individual. Or no data is available for download
+  in this study for your user account.
+---
+Backtrace:
+    ▆
+ 1. └─global calculate_monthly_home_ranges(...)
+ 2.   ├─base::tryCatch(...)
+ 3.   │ └─base (local) tryCatchList(expr, classes, parentenv, handlers)
+ 4.   │   └─base (local) tryCatchOne(expr, names, parentenv, handlers[[1L]])
+ 5.   │     └─base (local) doTryCatch(return(expr), name, parentenv, handler)
+ 6.   └─move2::movebank_download_study(...)
 [1] 25
-&lt;curl_error_peer_failed_verification in curl::curl_fetch_memory(url, handle = handle): SSL peer certificate or SSH remote key was not OK [www.movebank.org]: SSL: no alternative certificate subject name matches target hostname 'www.movebank.org'&gt;
+&lt;error/move2_error_no_data_found&gt;
+Error in `movebank_download_study()`:
+! The request did not result in any data, this might be caused by trying
+  to retrieve a none existant individual. Or no data is available for download
+  in this study for your user account.
+---
+Backtrace:
+    ▆
+ 1. └─global calculate_monthly_home_ranges(...)
+ 2.   ├─base::tryCatch(...)
+ 3.   │ └─base (local) tryCatchList(expr, classes, parentenv, handlers)
+ 4.   │   └─base (local) tryCatchOne(expr, names, parentenv, handlers[[1L]])
+ 5.   │     └─base (local) doTryCatch(return(expr), name, parentenv, handler)
+ 6.   └─move2::movebank_download_study(...)
 [1] 26
-&lt;curl_error_peer_failed_verification in curl::curl_fetch_memory(url, handle = handle): SSL peer certificate or SSH remote key was not OK [www.movebank.org]: SSL: no alternative certificate subject name matches target hostname 'www.movebank.org'&gt;
 [1] 27
-&lt;curl_error_peer_failed_verification in curl::curl_fetch_memory(url, handle = handle): SSL peer certificate or SSH remote key was not OK [www.movebank.org]: SSL: no alternative certificate subject name matches target hostname 'www.movebank.org'&gt;
 [1] 28
-&lt;curl_error_peer_failed_verification in curl::curl_fetch_memory(url, handle = handle): SSL peer certificate or SSH remote key was not OK [www.movebank.org]: SSL: no alternative certificate subject name matches target hostname 'www.movebank.org'&gt;
 [1] 29
-&lt;curl_error_peer_failed_verification in curl::curl_fetch_memory(url, handle = handle): SSL peer certificate or SSH remote key was not OK [www.movebank.org]: SSL: no alternative certificate subject name matches target hostname 'www.movebank.org'&gt;
 [1] 30
-&lt;curl_error_peer_failed_verification in curl::curl_fetch_memory(url, handle = handle): SSL peer certificate or SSH remote key was not OK [www.movebank.org]: SSL: no alternative certificate subject name matches target hostname 'www.movebank.org'&gt;
 [1] 31
-&lt;curl_error_peer_failed_verification in curl::curl_fetch_memory(url, handle = handle): SSL peer certificate or SSH remote key was not OK [www.movebank.org]: SSL: no alternative certificate subject name matches target hostname 'www.movebank.org'&gt;
 [1] 32
-&lt;curl_error_peer_failed_verification in curl::curl_fetch_memory(url, handle = handle): SSL peer certificate or SSH remote key was not OK [www.movebank.org]: SSL: no alternative certificate subject name matches target hostname 'www.movebank.org'&gt;
+&lt;error/move2_error_no_data_found&gt;
+Error in `movebank_download_study()`:
+! The request did not result in any data, this might be caused by trying
+  to retrieve a none existant individual. Or no data is available for download
+  in this study for your user account.
+---
+Backtrace:
+    ▆
+ 1. └─global calculate_monthly_home_ranges(...)
+ 2.   ├─base::tryCatch(...)
+ 3.   │ └─base (local) tryCatchList(expr, classes, parentenv, handlers)
+ 4.   │   └─base (local) tryCatchOne(expr, names, parentenv, handlers[[1L]])
+ 5.   │     └─base (local) doTryCatch(return(expr), name, parentenv, handler)
+ 6.   └─move2::movebank_download_study(...)
 [1] 33
-&lt;curl_error_peer_failed_verification in curl::curl_fetch_memory(url, handle = handle): SSL peer certificate or SSH remote key was not OK [www.movebank.org]: SSL: no alternative certificate subject name matches target hostname 'www.movebank.org'&gt;
+&lt;error/move2_error_no_data_found&gt;
+Error in `movebank_download_study()`:
+! The request did not result in any data, this might be caused by trying
+  to retrieve a none existant individual. Or no data is available for download
+  in this study for your user account.
+---
+Backtrace:
+    ▆
+ 1. └─global calculate_monthly_home_ranges(...)
+ 2.   ├─base::tryCatch(...)
+ 3.   │ └─base (local) tryCatchList(expr, classes, parentenv, handlers)
+ 4.   │   └─base (local) tryCatchOne(expr, names, parentenv, handlers[[1L]])
+ 5.   │     └─base (local) doTryCatch(return(expr), name, parentenv, handler)
+ 6.   └─move2::movebank_download_study(...)
 [1] 34
-&lt;curl_error_peer_failed_verification in curl::curl_fetch_memory(url, handle = handle): SSL peer certificate or SSH remote key was not OK [www.movebank.org]: SSL: no alternative certificate subject name matches target hostname 'www.movebank.org'&gt;
+&lt;error/move2_error_no_data_found&gt;
+Error in `movebank_download_study()`:
+! The request did not result in any data, this might be caused by trying
+  to retrieve a none existant individual. Or no data is available for download
+  in this study for your user account.
+---
+Backtrace:
+    ▆
+ 1. └─global calculate_monthly_home_ranges(...)
+ 2.   ├─base::tryCatch(...)
+ 3.   │ └─base (local) tryCatchList(expr, classes, parentenv, handlers)
+ 4.   │   └─base (local) tryCatchOne(expr, names, parentenv, handlers[[1L]])
+ 5.   │     └─base (local) doTryCatch(return(expr), name, parentenv, handler)
+ 6.   └─move2::movebank_download_study(...)
 [1] 35
-&lt;curl_error_peer_failed_verification in curl::curl_fetch_memory(url, handle = handle): SSL peer certificate or SSH remote key was not OK [www.movebank.org]: SSL: no alternative certificate subject name matches target hostname 'www.movebank.org'&gt;
+&lt;error/move2_error_no_data_found&gt;
+Error in `movebank_download_study()`:
+! The request did not result in any data, this might be caused by trying
+  to retrieve a none existant individual. Or no data is available for download
+  in this study for your user account.
+---
+Backtrace:
+    ▆
+ 1. └─global calculate_monthly_home_ranges(...)
+ 2.   ├─base::tryCatch(...)
+ 3.   │ └─base (local) tryCatchList(expr, classes, parentenv, handlers)
+ 4.   │   └─base (local) tryCatchOne(expr, names, parentenv, handlers[[1L]])
+ 5.   │     └─base (local) doTryCatch(return(expr), name, parentenv, handler)
+ 6.   └─move2::movebank_download_study(...)
 [1] 36
-&lt;curl_error_peer_failed_verification in curl::curl_fetch_memory(url, handle = handle): SSL peer certificate or SSH remote key was not OK [www.movebank.org]: SSL: no alternative certificate subject name matches target hostname 'www.movebank.org'&gt;
+&lt;error/move2_error_no_data_found&gt;
+Error in `movebank_download_study()`:
+! The request did not result in any data, this might be caused by trying
+  to retrieve a none existant individual. Or no data is available for download
+  in this study for your user account.
+---
+Backtrace:
+    ▆
+ 1. └─global calculate_monthly_home_ranges(...)
+ 2.   ├─base::tryCatch(...)
+ 3.   │ └─base (local) tryCatchList(expr, classes, parentenv, handlers)
+ 4.   │   └─base (local) tryCatchOne(expr, names, parentenv, handlers[[1L]])
+ 5.   │     └─base (local) doTryCatch(return(expr), name, parentenv, handler)
+ 6.   └─move2::movebank_download_study(...)
 [1] 37
-&lt;curl_error_peer_failed_verification in curl::curl_fetch_memory(url, handle = handle): SSL peer certificate or SSH remote key was not OK [www.movebank.org]: SSL: no alternative certificate subject name matches target hostname 'www.movebank.org'&gt;
+&lt;error/move2_error_no_data_found&gt;
+Error in `movebank_download_study()`:
+! The request did not result in any data, this might be caused by trying
+  to retrieve a none existant individual. Or no data is available for download
+  in this study for your user account.
+---
+Backtrace:
+    ▆
+ 1. └─global calculate_monthly_home_ranges(...)
+ 2.   ├─base::tryCatch(...)
+ 3.   │ └─base (local) tryCatchList(expr, classes, parentenv, handlers)
+ 4.   │   └─base (local) tryCatchOne(expr, names, parentenv, handlers[[1L]])
+ 5.   │     └─base (local) doTryCatch(return(expr), name, parentenv, handler)
+ 6.   └─move2::movebank_download_study(...)
 [1] 38
-&lt;curl_error_peer_failed_verification in curl::curl_fetch_memory(url, handle = handle): SSL peer certificate or SSH remote key was not OK [www.movebank.org]: SSL: no alternative certificate subject name matches target hostname 'www.movebank.org'&gt;
+&lt;error/move2_error_no_data_found&gt;
+Error in `movebank_download_study()`:
+! The request did not result in any data, this might be caused by trying
+  to retrieve a none existant individual. Or no data is available for download
+  in this study for your user account.
+---
+Backtrace:
+    ▆
+ 1. └─global calculate_monthly_home_ranges(...)
+ 2.   ├─base::tryCatch(...)
+ 3.   │ └─base (local) tryCatchList(expr, classes, parentenv, handlers)
+ 4.   │   └─base (local) tryCatchOne(expr, names, parentenv, handlers[[1L]])
+ 5.   │     └─base (local) doTryCatch(return(expr), name, parentenv, handler)
+ 6.   └─move2::movebank_download_study(...)
 [1] 39
-&lt;curl_error_peer_failed_verification in curl::curl_fetch_memory(url, handle = handle): SSL peer certificate or SSH remote key was not OK [www.movebank.org]: SSL: no alternative certificate subject name matches target hostname 'www.movebank.org'&gt;
+&lt;error/move2_error_no_data_found&gt;
+Error in `movebank_download_study()`:
+! The request did not result in any data, this might be caused by trying
+  to retrieve a none existant individual. Or no data is available for download
+  in this study for your user account.
+---
+Backtrace:
+    ▆
+ 1. └─global calculate_monthly_home_ranges(...)
+ 2.   ├─base::tryCatch(...)
+ 3.   │ └─base (local) tryCatchList(expr, classes, parentenv, handlers)
+ 4.   │   └─base (local) tryCatchOne(expr, names, parentenv, handlers[[1L]])
+ 5.   │     └─base (local) doTryCatch(return(expr), name, parentenv, handler)
+ 6.   └─move2::movebank_download_study(...)
 [1] 40
-&lt;curl_error_peer_failed_verification in curl::curl_fetch_memory(url, handle = handle): SSL peer certificate or SSH remote key was not OK [www.movebank.org]: SSL: no alternative certificate subject name matches target hostname 'www.movebank.org'&gt;
 [1] 41
-&lt;curl_error_peer_failed_verification in curl::curl_fetch_memory(url, handle = handle): SSL peer certificate or SSH remote key was not OK [www.movebank.org]: SSL: no alternative certificate subject name matches target hostname 'www.movebank.org'&gt;
 [1] 42
-&lt;curl_error_peer_failed_verification in curl::curl_fetch_memory(url, handle = handle): SSL peer certificate or SSH remote key was not OK [www.movebank.org]: SSL: no alternative certificate subject name matches target hostname 'www.movebank.org'&gt;
-[1] 43
-&lt;curl_error_peer_failed_verification in curl::curl_fetch_memory(url, handle = handle): SSL peer certificate or SSH remote key was not OK [www.movebank.org]: SSL: no alternative certificate subject name matches target hostname 'www.movebank.org'&gt;</code></pre>
+[1] 43</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">"img/wiltshire_monthly.png"</span>, results_wiltshire<span class="sc">$</span>gg, <span class="at">width =</span> <span class="dv">10</span>, <span class="at">height =</span> <span class="dv">7</span>, <span class="at">dpi =</span> <span class="dv">300</span>)</span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a></span>
