@@ -1,8 +1,7 @@
-/* Force inline code styling */
+/* Inline code styling */
 body code {
   background-color: #424242 !important;
   color: #FFFFFF !important;
-  border-radius: 4px;
 }
 
 /* All links: normal state */
