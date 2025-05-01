@@ -492,11 +492,11 @@ Caused by warning in `random_steps.bursted_steps_xyt()`:
 <span id="cb13-99"><a href="#cb13-99" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density_ridges</span>(<span class="at">scale =</span> <span class="fl">1.2</span>) <span class="sc">+</span></span>
 <span id="cb13-100"><a href="#cb13-100" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> landuse_colors_sec) <span class="sc">+</span> </span>
 <span id="cb13-101"><a href="#cb13-101" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> landuse_colors) <span class="sc">+</span></span>
-<span id="cb13-102"><a href="#cb13-102" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Human Footprint Index (0–50)"</span>, <span class="at">y =</span> <span class="st">"Land Cover Type"</span>) <span class="sc">+</span></span>
+<span id="cb13-102"><a href="#cb13-102" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Human Footprint Index (0–50)"</span>, <span class="at">y =</span> <span class="st">"Land cover type"</span>) <span class="sc">+</span></span>
 <span id="cb13-103"><a href="#cb13-103" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_publication_dark</span>(<span class="at">legend_position =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
 <span id="cb13-104"><a href="#cb13-104" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">panel.grid.major.y =</span> <span class="fu">element_blank</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Picking joint bandwidth of 0.414</code></pre>
+<pre><code>Picking joint bandwidth of 0.422</code></pre>
 </div>
 <div class="cell-output-display">
 <div>
@@ -508,7 +508,7 @@ Caused by warning in `random_steps.bursted_steps_xyt()`:
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Human Footprint Distribution by Land Cover Type</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">"img/coyote_EDA_ridgeline.png"</span>, <span class="at">width =</span> <span class="dv">10</span>, <span class="at">height =</span> <span class="fl">5.5</span>, <span class="at">dpi =</span> <span class="dv">300</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Picking joint bandwidth of 0.414</code></pre>
+<pre><code>Picking joint bandwidth of 0.422</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 2.2 Boxplot (HFP across land cover classes) -----------------------------</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(coyote_ssf_data,</span>
@@ -519,7 +519,7 @@ Caused by warning in `random_steps.bursted_steps_xyt()`:
 <span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>               <span class="at">width =</span> <span class="fl">0.7</span>, <span class="at">alpha =</span> <span class="dv">1</span>, <span class="at">linewidth =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
 <span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> landuse_colors_sec) <span class="sc">+</span> </span>
 <span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> landuse_colors) <span class="sc">+</span></span>
-<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Land Cover Type"</span>, <span class="at">y =</span> <span class="st">"Human Footprint Index (0–50)"</span>) <span class="sc">+</span></span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Land cover type"</span>, <span class="at">y =</span> <span class="st">"Human Footprint Index (0–50)"</span>) <span class="sc">+</span></span>
 <span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_publication_dark</span>(<span class="at">legend_position =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
 <span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">panel.grid.major.x =</span> <span class="fu">element_blank</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
@@ -543,7 +543,7 @@ Caused by warning in `random_steps.bursted_steps_xyt()`:
 <span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>                  <span class="at">colour =</span> <span class="st">"red"</span>, <span class="at">h =</span> <span class="dv">2</span>, <span class="at">linewidth =</span> <span class="fl">0.75</span>) <span class="sc">+</span></span>
 <span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">0</span>, <span class="at">colour =</span> <span class="st">"gray80"</span>, <span class="at">linewidth =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
 <span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">0</span>, <span class="at">colour =</span> <span class="st">"gray80"</span>, <span class="at">linewidth =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
-<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Human Footprint Index (0–50)"</span>, <span class="at">y =</span> <span class="st">"Log Step Length"</span>) <span class="sc">+</span></span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Human Footprint Index (0–50)"</span>, <span class="at">y =</span> <span class="st">"Log step length"</span>) <span class="sc">+</span></span>
 <span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_publication_dark</span>(<span class="at">legend_position =</span> <span class="st">"right"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
@@ -595,31 +595,31 @@ case_binary_ ~ -1 + land_use_grouped * (hfp_std + I(hfp_std^2)) +
 Data: coyote_ssf_data
 
       AIC       BIC    logLik  deviance  df.resid 
-1244897.9 1245171.8 -622425.0 1244849.9    666224 
+1244864.2 1245138.0 -622408.1 1244816.2    666224 
 
 Random effects:
 
 Conditional model:
- Groups   Name                      Variance                      
- id       land_use_groupedTreeCover       0.0581638268578769518369
-          land_use_groupedOpen            0.0000000494133825783778
-          land_use_groupedCropland        0.1046273265714607464405
-          land_use_groupedBuiltUp         0.3621459736249604821623
-          land_use_groupedWater           0.0000000000612382849616
-          hfp_std                         0.1278512708371664363671
-          I(hfp_std^2)                    0.0372790870527428194747
-          log_sl_                         0.0001545894612648713033
- step_id_ (Intercept)                999999.9999999995343387126923
- Std.Dev.               Corr                                               
-    0.24117177873432238                                                    
-    0.00022229121120363 0.0000000000                                       
-    0.32346147617832444 0.0000000000 0.0000000000                          
-    0.60178565421997265 0.0000000000 0.0000000000 0.0000000000             
-    0.00000782548943911 0.0000000000 0.0000000000 0.0000000000 0.0000000000
-    0.35756296066170840 0.0000000000 0.0000000000 0.0000000000 0.0000000000
-    0.19307792999911413 0.0000000000 0.0000000000 0.0000000000 0.0000000000
-    0.01243340103370238 0.0000000000 0.0000000000 0.0000000000 0.0000000000
-  999.99999999999977263                                                    
+ Groups   Name                      Variance                   
+ id       land_use_groupedTreeCover       0.0583081927483232940
+          land_use_groupedOpen            0.0000000357840229471
+          land_use_groupedCropland        0.0935660075160678617
+          land_use_groupedBuiltUp         0.2771906205678068003
+          land_use_groupedWater           0.0000000002579103285
+          hfp_std                         0.1318697023470461194
+          I(hfp_std^2)                    0.0468046574684478703
+          log_sl_                         0.0001647225985068972
+ step_id_ (Intercept)                999999.9999999995343387127
+ Std.Dev.              Corr                                               
+    0.2414708942053334                                                    
+    0.0001891666538984 0.0000000000                                       
+    0.3058856118160314 0.0000000000 0.0000000000                          
+    0.5264889557890144 0.0000000000 0.0000000000 0.0000000000             
+    0.0000160595868098 0.0000000000 0.0000000000 0.0000000000 0.0000000000
+    0.3631386819756966 0.0000000000 0.0000000000 0.0000000000 0.0000000000
+    0.2163438408377920 0.0000000000 0.0000000000 0.0000000000 0.0000000000
+    0.0128344301979830 0.0000000000 0.0000000000 0.0000000000 0.0000000000
+  999.9999999999997726                                                    
                                         
                                         
                                         
@@ -633,40 +633,40 @@ Conditional model:
 Number of obs: 666248, groups:  id, 29; step_id_, 60568
 
 Conditional model:
-                                                Estimate         Std. Error
-land_use_groupedTreeCover             -3.066534771479238  4.063586410937581
-land_use_groupedOpen                  -2.794407719621955  4.063333994749141
-land_use_groupedCropland              -2.804153876607591  4.064811363187596
-land_use_groupedBuiltUp               -3.472343331012505  4.071385642044405
-land_use_groupedWater                 -3.995136535241040  4.067316251469457
-hfp_std                                0.266534823012352  0.068411623313959
-I(hfp_std^2)                          -0.179185596054730  0.038136685460480
-log_sl_                                0.007872210433846  0.003455053774319
-land_use_groupedOpen:hfp_std          -0.128348977698896  0.013761240773848
-land_use_groupedCropland:hfp_std      -0.348721672085686  0.092634817283538
-land_use_groupedBuiltUp:hfp_std       -0.269338544197877  0.319755674890983
-land_use_groupedWater:hfp_std         -0.741386672722009  0.246642890136357
-land_use_groupedOpen:I(hfp_std^2)     -0.000111090089449  0.005645468394397
-land_use_groupedCropland:I(hfp_std^2)  0.036336584357960  0.024486956688448
-land_use_groupedBuiltUp:I(hfp_std^2)   0.004328229943467  0.072365433578603
-land_use_groupedWater:I(hfp_std^2)     0.147654088817468  0.062512515107116
+                                               Estimate        Std. Error
+land_use_groupedTreeCover             -3.06746400817819  4.06356571468051
+land_use_groupedOpen                  -2.78803037921557  4.06331259068609
+land_use_groupedCropland              -2.81370572722323  4.06472845762311
+land_use_groupedBuiltUp               -3.42827111634790  4.07049438072487
+land_use_groupedWater                 -4.00345302866235  4.06712600814578
+hfp_std                                0.26353577014704  0.06943635285539
+I(hfp_std^2)                          -0.18267600498334  0.04255542281766
+log_sl_                                0.00754107548336  0.00351311560317
+land_use_groupedOpen:hfp_std          -0.12373940388373  0.01379863094612
+land_use_groupedCropland:hfp_std      -0.32708434015030  0.09109752792690
+land_use_groupedBuiltUp:hfp_std       -0.33982835320500  0.31187983255272
+land_use_groupedWater:hfp_std         -0.71187130098560  0.23496098799933
+land_use_groupedOpen:I(hfp_std^2)     -0.00184022300330  0.00567050066969
+land_use_groupedCropland:I(hfp_std^2)  0.02701464377741  0.02424229719621
+land_use_groupedBuiltUp:I(hfp_std^2)   0.01692194984211  0.07146334026191
+land_use_groupedWater:I(hfp_std^2)     0.12946593367138  0.06172195566875
                                        z value               Pr(&gt;|z|)    
-land_use_groupedTreeCover             -0.75464              0.4504665    
-land_use_groupedOpen                  -0.68771              0.4916335    
-land_use_groupedCropland              -0.68986              0.4902818    
-land_use_groupedBuiltUp               -0.85287              0.3937340    
-land_use_groupedWater                 -0.98225              0.3259749    
-hfp_std                                3.89605           0.0000977759 ***
-I(hfp_std^2)                          -4.69851           0.0000026207 ***
-log_sl_                                2.27846              0.0226990 *  
-land_use_groupedOpen:hfp_std          -9.32685 &lt; 0.000000000000000222 ***
-land_use_groupedCropland:hfp_std      -3.76448              0.0001669 ***
-land_use_groupedBuiltUp:hfp_std       -0.84233              0.3996055    
-land_use_groupedWater:hfp_std         -3.00591              0.0026479 ** 
-land_use_groupedOpen:I(hfp_std^2)     -0.01968              0.9843004    
-land_use_groupedCropland:I(hfp_std^2)  1.48392              0.1378312    
-land_use_groupedBuiltUp:I(hfp_std^2)   0.05981              0.9523064    
-land_use_groupedWater:I(hfp_std^2)     2.36199              0.0181770 *  
+land_use_groupedTreeCover             -0.75487             0.45032696    
+land_use_groupedOpen                  -0.68615             0.49262032    
+land_use_groupedCropland              -0.69222             0.48879618    
+land_use_groupedBuiltUp               -0.84222             0.39966216    
+land_use_groupedWater                 -0.98434             0.32494617    
+hfp_std                                3.79536             0.00014743 ***
+I(hfp_std^2)                          -4.29266            0.000017654 ***
+log_sl_                                2.14655             0.03182919 *  
+land_use_groupedOpen:hfp_std          -8.96751 &lt; 0.000000000000000222 ***
+land_use_groupedCropland:hfp_std      -3.59049             0.00033006 ***
+land_use_groupedBuiltUp:hfp_std       -1.08961             0.27588361    
+land_use_groupedWater:hfp_std         -3.02974             0.00244762 ** 
+land_use_groupedOpen:I(hfp_std^2)     -0.32453             0.74554009    
+land_use_groupedCropland:I(hfp_std^2)  1.11436             0.26512482    
+land_use_groupedBuiltUp:I(hfp_std^2)   0.23679             0.81281813    
+land_use_groupedWater:I(hfp_std^2)     2.09757             0.03594342 *  
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
@@ -676,19 +676,19 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <div class="cell-output cell-output-stdout">
 <pre><code>degree = linear:
  land_use_grouped hfp_std.trend     SE  df asymp.LCL asymp.UCL z.ratio p.value
- TreeCover              0.26867 0.0684 Inf   0.13461    0.4027   3.928  0.0001
- Open                   0.14032 0.0687 Inf   0.00577    0.2749   2.044  0.0410
- Cropland              -0.08048 0.1140 Inf  -0.30354    0.1426  -0.707  0.4794
- BuiltUp               -0.00072 0.3270 Inf  -0.64219    0.6408  -0.002  0.9982
- Water                 -0.47448 0.2560 Inf  -0.97650    0.0275  -1.852  0.0640
+ TreeCover               0.2657 0.0694 Inf   0.12968   0.40181   3.828  0.0001
+ Open                    0.1420 0.0697 Inf   0.00547   0.27860   2.038  0.0415
+ Cropland               -0.0617 0.1130 Inf  -0.28355   0.16022  -0.545  0.5860
+ BuiltUp                -0.0743 0.3200 Inf  -0.70113   0.55257  -0.232  0.8163
+ Water                  -0.4477 0.2450 Inf  -0.92825   0.03287  -1.826  0.0679
 
 degree = quadratic:
  land_use_grouped hfp_std.trend     SE  df asymp.LCL asymp.UCL z.ratio p.value
- TreeCover             -0.17919 0.0381 Inf  -0.25393   -0.1044  -4.699  &lt;.0001
- Open                  -0.17930 0.0382 Inf  -0.25408   -0.1045  -4.699  &lt;.0001
- Cropland              -0.14285 0.0451 Inf  -0.23120   -0.0545  -3.169  0.0015
- BuiltUp               -0.17486 0.0817 Inf  -0.33490   -0.0148  -2.141  0.0322
- Water                 -0.03153 0.0730 Inf  -0.17458    0.1115  -0.432  0.6657
+ TreeCover              -0.1827 0.0426 Inf  -0.26608  -0.09927  -4.293  &lt;.0001
+ Open                   -0.1845 0.0426 Inf  -0.26796  -0.10107  -4.334  &lt;.0001
+ Cropland               -0.1557 0.0488 Inf  -0.25121  -0.06011  -3.193  0.0014
+ BuiltUp                -0.1658 0.0830 Inf  -0.32847  -0.00304  -1.997  0.0459
+ Water                  -0.0532 0.0747 Inf  -0.19965   0.09323  -0.712  0.4764
 
 Confidence level used: 0.95 </code></pre>
 </div>
@@ -698,7 +698,7 @@ Confidence level used: 0.95 </code></pre>
 <pre><code># Overdispersion test
 
        dispersion ratio =      0.908
-  Pearson's Chi-Squared = 604962.725
+  Pearson's Chi-Squared = 604957.747
                 p-value =          1</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
@@ -718,19 +718,19 @@ Model has interaction terms. VIFs might be inflated.
 Low Correlation
 
              Term  VIF       VIF 95% CI Increased SE Tolerance Tolerance 95% CI
- land_use_grouped 3.83 [  3.81,   3.85]         1.96      0.26     [0.26, 0.26]
+ land_use_grouped 3.69 [  3.68,   3.71]         1.92      0.27     [0.27, 0.27]
           hfp_std 1.01 [  1.01,   1.01]         1.00      0.99     [0.99, 0.99]
      I(hfp_std^2) 1.01 [  1.00,   1.01]         1.00      0.99     [0.99, 1.00]
-          log_sl_ 1.00 [  1.00,   1.16]         1.00      1.00     [0.87, 1.00]
+          log_sl_ 1.00 [  1.00,   1.14]         1.00      1.00     [0.88, 1.00]
 
 High Correlation
 
                           Term    VIF       VIF 95% CI Increased SE Tolerance
-      land_use_grouped:hfp_std 377.94 [376.13, 379.75]        19.44  2.65e-03
- land_use_grouped:I(hfp_std^2) 201.22 [200.26, 202.19]        14.19  4.97e-03
+      land_use_grouped:hfp_std 320.47 [318.94, 322.01]        17.90  3.12e-03
+ land_use_grouped:I(hfp_std^2) 171.38 [170.56, 172.20]        13.09  5.84e-03
  Tolerance 95% CI
      [0.00, 0.00]
-     [0.00, 0.00]</code></pre>
+     [0.01, 0.01]</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot predicted vs. observed use</span></span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>coyote_ssf_data<span class="sc">$</span>predicted <span class="ot">&lt;-</span> <span class="fu">predict</span>(ssf_coyote, <span class="at">type =</span> <span class="st">"response"</span>)</span>
@@ -738,7 +738,7 @@ High Correlation
 <span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">color =</span> <span class="cn">NA</span>) <span class="sc">+</span></span>
 <span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"1"</span> <span class="ot">=</span> <span class="st">"#5495CFFF"</span>, <span class="st">"0"</span> <span class="ot">=</span> <span class="st">"gray80"</span>), <span class="at">name =</span> <span class="st">"Used"</span>) <span class="sc">+</span></span>
 <span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_publication_dark</span>(<span class="at">legend_position =</span> <span class="st">"right"</span>) <span class="sc">+</span></span>
-<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Predicted Relative Use (exp(η))"</span>, <span class="at">y =</span> <span class="st">"Density"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Predicted relative use (exp(η))"</span>, <span class="at">y =</span> <span class="st">"Density"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -762,7 +762,7 @@ High Correlation
 <div class="cell-output cell-output-stdout">
 <pre><code>    land_use
 case TreeCover Shrubland  Open Cropland BuiltUp Snow and ice Water Mangroves
-   0     80924         0 22992      315      68            0   140         0
+   0     81287         0 22634      279      83            4   153         0
    1      8743         0  1693        6       1            0     1         0</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Dropping land use groups with too few used steps</span></span>
@@ -783,20 +783,9 @@ case TreeCover Shrubland  Open Cropland BuiltUp Snow and ice Water Mangroves
 <span id="cb32-16"><a href="#cb32-16" aria-hidden="true" tabindex="-1"></a>  <span class="at">map =</span> <span class="fu">list</span>(<span class="at">theta =</span> <span class="fu">factor</span>(<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="cn">NA</span>))),</span>
 <span id="cb32-17"><a href="#cb32-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">start =</span> <span class="fu">list</span>(<span class="at">theta =</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="dv">0</span>, <span class="at">times =</span> <span class="dv">5</span>),<span class="fu">log</span>(<span class="fl">1e3</span>))),</span>
 <span id="cb32-18"><a href="#cb32-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">control =</span> <span class="fu">glmmTMBControl</span>(<span class="at">parallel =</span> nt)</span>
-<span id="cb32-19"><a href="#cb32-19" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in finalizeTMB(TMBStruc, obj, fit, h, data.tmb.old): Model convergence
-problem; non-positive-definite Hessian matrix. See vignette('troubleshooting')</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in finalizeTMB(TMBStruc, obj, fit, h, data.tmb.old): Model convergence
-problem; false convergence (8). See vignette('troubleshooting'),
-help('diagnose')</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(ssf_bobcat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in sqrt(diag(vcovs)): NaNs produced</code></pre>
-</div>
+<span id="cb32-19"><a href="#cb32-19" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb32-20"><a href="#cb32-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-21"><a href="#cb32-21" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(ssf_bobcat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> Family: poisson  ( log )
 Formula:          
@@ -805,225 +794,225 @@ case_binary_ ~ -1 + land_use_grouped * (hfp_std + I(hfp_std^2)) +
     log_sl_ || id) + (1 | step_id_)
 Data: bobcat_ssf_filtered
 
-     AIC      BIC   logLik deviance df.resid 
-      NA       NA       NA       NA   114340 
+      AIC       BIC    logLik  deviance  df.resid 
+ 214534.0  214649.8 -107255.0  214510.0    114345 
 
 Random effects:
 
 Conditional model:
- Groups   Name                      Variance                       
- id       land_use_groupedTreeCover       0.00954253630689995760439
-          land_use_groupedOpen            0.22591756430153550616602
-          hfp_std                         0.01921205669521043601922
-          I(hfp_std^2)                    0.00734495872825993798699
-          log_sl_                         0.00000000000119430705024
- step_id_ (Intercept)                999999.99999999953433871269226
- Std.Dev.               Corr                                                
-    0.09768590638828079                                                     
-    0.47530786265486447 0.0000000000                                        
-    0.13860756362915566 0.0000000000 0.0000000000                           
-    0.08570273466033589 0.0000000000 0.0000000000 0.0000000000              
-    0.00000109284356165 0.0000000000 0.0000000000 0.0000000000 0.0000000000 
-  999.99999999999977263                                                     
-Number of obs: 114352, groups:  id, 26; step_id_, 10444
+ Groups   Name                      Variance                           
+ id       land_use_groupedTreeCover       0.097709872243584128259641375
+          land_use_groupedOpen            0.032149709357378278284933515
+          hfp_std                         0.023898166238830183261132589
+          I(hfp_std^2)                    0.003463893637784268980661651
+          log_sl_                         0.000000000000000257345578711
+ step_id_ (Intercept)                999999.999999999534338712692260742
+ Std.Dev.                 Corr                                                
+    0.3125857838155537971                                                     
+    0.1793034002950816275 0.0000000000                                        
+    0.1545903174161634974 0.0000000000 0.0000000000                           
+    0.0588548522875070104 0.0000000000 0.0000000000 0.0000000000              
+    0.0000000160419942249 0.0000000000 0.0000000000 0.0000000000 0.0000000000 
+  999.9999999999997726263                                                     
+Number of obs: 114357, groups:  id, 26; step_id_, 10444
 
 Conditional model:
                                             Estimate         Std. Error
-land_use_groupedTreeCover         -12.53952833462016                NaN
-land_use_groupedOpen              -12.94651678014600                NaN
-hfp_std                             0.03103367913764   0.03687692132471
-I(hfp_std^2)                       -0.06159921112573   0.02682704496252
-log_sl_                            -0.03401562205404   0.00832750371566
-land_use_groupedOpen:hfp_std       -0.02031135259854   0.03547559394378
-land_use_groupedOpen:I(hfp_std^2)  -0.03367171680679   0.02418257554992
-                                   z value    Pr(&gt;|z|)    
-land_use_groupedTreeCover              NaN         NaN    
-land_use_groupedOpen                   NaN         NaN    
-hfp_std                            0.84155    0.400041    
-I(hfp_std^2)                      -2.29616    0.021667 *  
-log_sl_                           -4.08473 0.000044128 ***
-land_use_groupedOpen:hfp_std      -0.57254    0.566953    
-land_use_groupedOpen:I(hfp_std^2) -1.39240    0.163803    
+land_use_groupedTreeCover         -18.21216365667181   2.59409658987696
+land_use_groupedOpen              -18.61056846736473   2.59383273377529
+hfp_std                             0.03348803093986   0.03931647436254
+I(hfp_std^2)                       -0.05697961010252   0.02299803588588
+log_sl_                            -0.03417694771338   0.00834485556466
+land_use_groupedOpen:hfp_std       -0.02377492434433   0.03482725787086
+land_use_groupedOpen:I(hfp_std^2)  -0.03528757764645   0.02384207749324
+                                   z value            Pr(&gt;|z|)    
+land_use_groupedTreeCover         -7.02062 0.00000000000220888 ***
+land_use_groupedOpen              -7.17493 0.00000000000072344 ***
+hfp_std                            0.85176            0.394350    
+I(hfp_std^2)                      -2.47759            0.013227 *  
+log_sl_                           -4.09557 0.00004211292959582 ***
+land_use_groupedOpen:hfp_std      -0.68265            0.494826    
+land_use_groupedOpen:I(hfp_std^2) -1.48005            0.138859    
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Bobcat model does not converge when trying to model random slopes for habitat covariates. </span></span>
-<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="co"># The model would have to be simplified to a point where it cannot follow the suggested method by Muff et al.</span></span>
-<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Dropping land groups with too few usable steps greatly reduces the ecological richness of the model.</span></span>
-<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a><span class="co"># The bobcat data cannot support a full, comparable SSF with interaction between habitat and human footprint.</span></span>
-<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Bobcats are excluded from the final SSF analysis.</span></span>
-<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. SSF Results Visualization --------------------------------------------</span></span>
-<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a><span class="co"># 4.1 Predict for average effect plots ------------------------------------</span></span>
-<span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">file.exists</span>(<span class="st">"data/coyote_ssf_pred.rds"</span>)) {</span>
-<span id="cb38-10"><a href="#cb38-10" aria-hidden="true" tabindex="-1"></a>  coyote_ssf_pred <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"data/coyote_ssf_pred.rds"</span>)</span>
-<span id="cb38-11"><a href="#cb38-11" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
-<span id="cb38-12"><a href="#cb38-12" aria-hidden="true" tabindex="-1"></a>  coyote_ssf_pred <span class="ot">&lt;-</span> coyote_ssf_data <span class="sc">|&gt;</span></span>
-<span id="cb38-13"><a href="#cb38-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(case_binary_ <span class="sc">==</span> <span class="dv">0</span>) <span class="sc">|&gt;</span> <span class="co"># remove ID for population-level prediction</span></span>
-<span id="cb38-14"><a href="#cb38-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">id =</span> <span class="cn">NA</span>)</span>
-<span id="cb38-15"><a href="#cb38-15" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb38-16"><a href="#cb38-16" aria-hidden="true" tabindex="-1"></a>  coy_pred <span class="ot">&lt;-</span> <span class="fu">predict</span>(ssf_coyote, coyote_ssf_pred, <span class="at">re.form =</span> <span class="cn">NA</span>, <span class="at">se.fit =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb38-17"><a href="#cb38-17" aria-hidden="true" tabindex="-1"></a>  coyote_ssf_pred<span class="sc">$</span>fit <span class="ot">&lt;-</span> coy_pred<span class="sc">$</span>fit</span>
-<span id="cb38-18"><a href="#cb38-18" aria-hidden="true" tabindex="-1"></a>  coyote_ssf_pred<span class="sc">$</span>se <span class="ot">&lt;-</span> coy_pred<span class="sc">$</span>se</span>
-<span id="cb38-19"><a href="#cb38-19" aria-hidden="true" tabindex="-1"></a>  coyote_ssf_pred <span class="ot">&lt;-</span> coyote_ssf_pred <span class="sc">|&gt;</span> <span class="fu">ungroup</span>()</span>
-<span id="cb38-20"><a href="#cb38-20" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb38-21"><a href="#cb38-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">saveRDS</span>(coyote_ssf_pred, <span class="st">"data/coyote_ssf_pred.rds"</span>)</span>
-<span id="cb38-22"><a href="#cb38-22" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb38-23"><a href="#cb38-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-24"><a href="#cb38-24" aria-hidden="true" tabindex="-1"></a><span class="co"># 4.2 Average-effect plot function ----------------------------------------</span></span>
-<span id="cb38-25"><a href="#cb38-25" aria-hidden="true" tabindex="-1"></a>avg_eff_plot_hfp_landuse <span class="ot">&lt;-</span> <span class="cf">function</span>(fittedResponse,</span>
-<span id="cb38-26"><a href="#cb38-26" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">nsim =</span> <span class="dv">10</span>, <span class="at">k =</span> <span class="dv">10</span>,</span>
-<span id="cb38-27"><a href="#cb38-27" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">showPeakValue =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb38-28"><a href="#cb38-28" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">save_path =</span> <span class="cn">NULL</span>,</span>
-<span id="cb38-29"><a href="#cb38-29" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">width =</span> <span class="dv">10</span>, <span class="at">height =</span> <span class="fl">5.5</span>, <span class="at">dpi =</span> <span class="dv">300</span>) {</span>
-<span id="cb38-30"><a href="#cb38-30" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb38-31"><a href="#cb38-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb38-32"><a href="#cb38-32" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb38-33"><a href="#cb38-33" aria-hidden="true" tabindex="-1"></a>  fit_sample_matrix <span class="ot">&lt;-</span> <span class="fu">replicate</span>(nsim, {</span>
-<span id="cb38-34"><a href="#cb38-34" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="fu">nrow</span>(fittedResponse), <span class="at">mean =</span> fittedResponse<span class="sc">$</span>fit, <span class="at">sd =</span> fittedResponse<span class="sc">$</span>se)</span>
-<span id="cb38-35"><a href="#cb38-35" aria-hidden="true" tabindex="-1"></a>  })</span>
-<span id="cb38-36"><a href="#cb38-36" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb38-37"><a href="#cb38-37" aria-hidden="true" tabindex="-1"></a>  smooth_list <span class="ot">&lt;-</span> purrr<span class="sc">::</span><span class="fu">map</span>(<span class="dv">1</span><span class="sc">:</span>nsim, <span class="cf">function</span>(j) {</span>
-<span id="cb38-38"><a href="#cb38-38" aria-hidden="true" tabindex="-1"></a>    mgcv<span class="sc">::</span><span class="fu">bam</span>(</span>
-<span id="cb38-39"><a href="#cb38-39" aria-hidden="true" tabindex="-1"></a>      fit_sample_matrix[, j] <span class="sc">~</span> <span class="fu">s</span>(human_footprint, <span class="at">by =</span> land_use_grouped,</span>
-<span id="cb38-40"><a href="#cb38-40" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">bs =</span> <span class="st">"ts"</span>, <span class="at">k =</span> k) <span class="sc">+</span> land_use_grouped,</span>
-<span id="cb38-41"><a href="#cb38-41" aria-hidden="true" tabindex="-1"></a>      <span class="at">data    =</span> fittedResponse,</span>
-<span id="cb38-42"><a href="#cb38-42" aria-hidden="true" tabindex="-1"></a>      <span class="at">select  =</span> <span class="cn">TRUE</span>, <span class="at">discrete =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb38-43"><a href="#cb38-43" aria-hidden="true" tabindex="-1"></a>      <span class="at">nthreads =</span> nt</span>
-<span id="cb38-44"><a href="#cb38-44" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">|&gt;</span></span>
-<span id="cb38-45"><a href="#cb38-45" aria-hidden="true" tabindex="-1"></a>      gratia<span class="sc">::</span><span class="fu">smooth_estimates</span>(<span class="at">overall_uncertainty =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span></span>
-<span id="cb38-46"><a href="#cb38-46" aria-hidden="true" tabindex="-1"></a>      gratia<span class="sc">::</span><span class="fu">add_confint</span>() <span class="sc">|&gt;</span></span>
-<span id="cb38-47"><a href="#cb38-47" aria-hidden="true" tabindex="-1"></a>      dplyr<span class="sc">::</span><span class="fu">rename</span>(<span class="at">hfp =</span> human_footprint)</span>
-<span id="cb38-48"><a href="#cb38-48" aria-hidden="true" tabindex="-1"></a>  })</span>
-<span id="cb38-49"><a href="#cb38-49" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb38-50"><a href="#cb38-50" aria-hidden="true" tabindex="-1"></a>  avg_smooth <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(smooth_list) <span class="sc">|&gt;</span></span>
-<span id="cb38-51"><a href="#cb38-51" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(.smooth, .by, land_use_grouped, hfp) <span class="sc">|&gt;</span></span>
-<span id="cb38-52"><a href="#cb38-52" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarise</span>(</span>
-<span id="cb38-53"><a href="#cb38-53" aria-hidden="true" tabindex="-1"></a>      <span class="at">est       =</span> <span class="fu">mean</span>(.estimate),</span>
-<span id="cb38-54"><a href="#cb38-54" aria-hidden="true" tabindex="-1"></a>      <span class="at">lower_ci  =</span> <span class="fu">mean</span>(.lower_ci),</span>
-<span id="cb38-55"><a href="#cb38-55" aria-hidden="true" tabindex="-1"></a>      <span class="at">upper_ci  =</span> <span class="fu">mean</span>(.upper_ci),</span>
-<span id="cb38-56"><a href="#cb38-56" aria-hidden="true" tabindex="-1"></a>      <span class="at">.groups   =</span> <span class="st">"drop"</span></span>
-<span id="cb38-57"><a href="#cb38-57" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">|&gt;</span></span>
-<span id="cb38-58"><a href="#cb38-58" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">land_use_grouped =</span> <span class="fu">factor</span>(</span>
-<span id="cb38-59"><a href="#cb38-59" aria-hidden="true" tabindex="-1"></a>      land_use_grouped,</span>
-<span id="cb38-60"><a href="#cb38-60" aria-hidden="true" tabindex="-1"></a>      <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"TreeCover"</span>, <span class="st">"Open"</span>, <span class="st">"Cropland"</span>, <span class="st">"BuiltUp"</span>, <span class="st">"Water"</span>))</span>
-<span id="cb38-61"><a href="#cb38-61" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb38-62"><a href="#cb38-62" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb38-63"><a href="#cb38-63" aria-hidden="true" tabindex="-1"></a>  p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(avg_smooth,</span>
-<span id="cb38-64"><a href="#cb38-64" aria-hidden="true" tabindex="-1"></a>              <span class="fu">aes</span>(<span class="at">x =</span> hfp, <span class="at">y =</span> est, <span class="at">colour =</span> land_use_grouped, <span class="at">fill =</span> land_use_grouped)) <span class="sc">+</span></span>
-<span id="cb38-65"><a href="#cb38-65" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">0</span>,  <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">colour =</span> <span class="st">"gray50"</span>) <span class="sc">+</span></span>
-<span id="cb38-66"><a href="#cb38-66" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">0</span>, <span class="at">linetype =</span> <span class="st">"dotted"</span>, <span class="at">colour =</span> <span class="st">"gray70"</span>) <span class="sc">+</span></span>
-<span id="cb38-67"><a href="#cb38-67" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_ribbon</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> lower_ci, <span class="at">ymax =</span> upper_ci), <span class="at">alpha =</span> <span class="fl">0.2</span>, <span class="at">colour =</span> <span class="cn">NA</span>) <span class="sc">+</span></span>
-<span id="cb38-68"><a href="#cb38-68" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>(<span class="at">linewidth =</span> <span class="fl">1.2</span>) <span class="sc">+</span></span>
-<span id="cb38-69"><a href="#cb38-69" aria-hidden="true" tabindex="-1"></a>    <span class="fu">facet_wrap</span>(<span class="sc">~</span>land_use_grouped, <span class="at">scales =</span> <span class="st">"fixed"</span>, <span class="at">nrow =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
-<span id="cb38-70"><a href="#cb38-70" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> landuse_colors) <span class="sc">+</span></span>
-<span id="cb38-71"><a href="#cb38-71" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_fill_manual</span>(<span class="at">values   =</span> landuse_colors) <span class="sc">+</span></span>
-<span id="cb38-72"><a href="#cb38-72" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(</span>
-<span id="cb38-73"><a href="#cb38-73" aria-hidden="true" tabindex="-1"></a>      <span class="at">x =</span> <span class="st">"Human Footprint Index (0–50)"</span>,</span>
-<span id="cb38-74"><a href="#cb38-74" aria-hidden="true" tabindex="-1"></a>      <span class="at">y =</span> <span class="st">"Estimated Relative Use (log)"</span>,</span>
-<span id="cb38-75"><a href="#cb38-75" aria-hidden="true" tabindex="-1"></a>      <span class="at">title =</span> <span class="st">"Average Marginal Effects across Human Footprint Gradient"</span></span>
-<span id="cb38-76"><a href="#cb38-76" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
-<span id="cb38-77"><a href="#cb38-77" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_publication_dark</span>(<span class="at">legend_position =</span> <span class="st">"none"</span>)</span>
-<span id="cb38-78"><a href="#cb38-78" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb38-79"><a href="#cb38-79" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (showPeakValue) {</span>
-<span id="cb38-80"><a href="#cb38-80" aria-hidden="true" tabindex="-1"></a>    peak_vals <span class="ot">&lt;-</span> avg_smooth <span class="sc">|&gt;</span></span>
-<span id="cb38-81"><a href="#cb38-81" aria-hidden="true" tabindex="-1"></a>      <span class="fu">group_by</span>(land_use_grouped) <span class="sc">|&gt;</span></span>
-<span id="cb38-82"><a href="#cb38-82" aria-hidden="true" tabindex="-1"></a>      <span class="fu">filter</span>(est <span class="sc">==</span> <span class="fu">max</span>(est)) <span class="sc">|&gt;</span></span>
-<span id="cb38-83"><a href="#cb38-83" aria-hidden="true" tabindex="-1"></a>      <span class="fu">slice</span>(<span class="fu">rep</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">n</span>(), <span class="at">each =</span> <span class="dv">2</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb38-84"><a href="#cb38-84" aria-hidden="true" tabindex="-1"></a>      <span class="fu">mutate</span>(<span class="at">est =</span> <span class="fu">ifelse</span>(<span class="fu">row_number</span>() <span class="sc">%%</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">1</span>, est, <span class="sc">-</span><span class="cn">Inf</span>))</span>
-<span id="cb38-85"><a href="#cb38-85" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb38-86"><a href="#cb38-86" aria-hidden="true" tabindex="-1"></a>    p <span class="ot">&lt;-</span> p <span class="sc">+</span> <span class="fu">geom_line</span>(</span>
-<span id="cb38-87"><a href="#cb38-87" aria-hidden="true" tabindex="-1"></a>      <span class="at">data =</span> peak_vals,</span>
-<span id="cb38-88"><a href="#cb38-88" aria-hidden="true" tabindex="-1"></a>      <span class="fu">aes</span>(<span class="at">x =</span> hfp, <span class="at">y =</span> est, <span class="at">group =</span> land_use_grouped, <span class="at">colour =</span> land_use_grouped),</span>
-<span id="cb38-89"><a href="#cb38-89" aria-hidden="true" tabindex="-1"></a>      <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">linewidth =</span> <span class="fl">0.8</span>, <span class="at">alpha =</span> <span class="fl">0.6</span>)</span>
-<span id="cb38-90"><a href="#cb38-90" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb38-91"><a href="#cb38-91" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb38-92"><a href="#cb38-92" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(save_path))</span>
-<span id="cb38-93"><a href="#cb38-93" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggsave</span>(save_path, p, <span class="at">width =</span> width, <span class="at">height =</span> height, <span class="at">dpi =</span> dpi)</span>
-<span id="cb38-94"><a href="#cb38-94" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb38-95"><a href="#cb38-95" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(p)</span>
-<span id="cb38-96"><a href="#cb38-96" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb38-97"><a href="#cb38-97" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-98"><a href="#cb38-98" aria-hidden="true" tabindex="-1"></a><span class="co"># 4.3 Relative-selection-strength (RSS) function --------------------------</span></span>
-<span id="cb38-99"><a href="#cb38-99" aria-hidden="true" tabindex="-1"></a>calc_rss_hfp_landuse <span class="ot">&lt;-</span> <span class="cf">function</span>(model, data,</span>
-<span id="cb38-100"><a href="#cb38-100" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">land_use_col =</span> <span class="st">"land_use_grouped"</span>,</span>
-<span id="cb38-101"><a href="#cb38-101" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">hfp_col      =</span> <span class="st">"hfp_std"</span>,</span>
-<span id="cb38-102"><a href="#cb38-102" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">n_points     =</span> <span class="dv">100</span>,</span>
-<span id="cb38-103"><a href="#cb38-103" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">ci_level     =</span> <span class="fl">0.95</span>,</span>
-<span id="cb38-104"><a href="#cb38-104" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">landuse_cols     =</span> landuse_colors,</span>
-<span id="cb38-105"><a href="#cb38-105" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">landuse_cols_sec =</span> landuse_colors,</span>
-<span id="cb38-106"><a href="#cb38-106" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">save_path =</span> <span class="cn">NULL</span>,</span>
-<span id="cb38-107"><a href="#cb38-107" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">width =</span> <span class="dv">10</span>, <span class="at">height =</span> <span class="fl">5.5</span>, <span class="at">dpi =</span> <span class="dv">300</span>) {</span>
-<span id="cb38-108"><a href="#cb38-108" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb38-109"><a href="#cb38-109" aria-hidden="true" tabindex="-1"></a>  rss_df <span class="ot">&lt;-</span> purrr<span class="sc">::</span><span class="fu">map_dfr</span>(<span class="fu">unique</span>(data[[land_use_col]]), <span class="cf">function</span>(lc) {</span>
-<span id="cb38-110"><a href="#cb38-110" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb38-111"><a href="#cb38-111" aria-hidden="true" tabindex="-1"></a>    dat_lc  <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">filter</span>(data, <span class="sc">!!</span>rlang<span class="sc">::</span><span class="fu">sym</span>(land_use_col) <span class="sc">==</span> lc)</span>
-<span id="cb38-112"><a href="#cb38-112" aria-hidden="true" tabindex="-1"></a>    hfp_seq <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fu">min</span>(dat_lc[[hfp_col]], <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb38-113"><a href="#cb38-113" aria-hidden="true" tabindex="-1"></a>                   <span class="fu">max</span>(dat_lc[[hfp_col]], <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb38-114"><a href="#cb38-114" aria-hidden="true" tabindex="-1"></a>                   <span class="at">length.out =</span> n_points)</span>
-<span id="cb38-115"><a href="#cb38-115" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb38-116"><a href="#cb38-116" aria-hidden="true" tabindex="-1"></a>    newdata <span class="ot">&lt;-</span> <span class="fu">expand.grid</span>(<span class="at">hfp_std =</span> hfp_seq, <span class="at">land_use_grouped =</span> lc) <span class="sc">|&gt;</span></span>
-<span id="cb38-117"><a href="#cb38-117" aria-hidden="true" tabindex="-1"></a>      dplyr<span class="sc">::</span><span class="fu">mutate</span>(</span>
-<span id="cb38-118"><a href="#cb38-118" aria-hidden="true" tabindex="-1"></a>        <span class="st">`</span><span class="at">I(hfp_std^2)</span><span class="st">`</span> <span class="ot">=</span> hfp_std<span class="sc">^</span><span class="dv">2</span>,</span>
-<span id="cb38-119"><a href="#cb38-119" aria-hidden="true" tabindex="-1"></a>        <span class="at">log_sl_        =</span> <span class="fu">mean</span>(data<span class="sc">$</span>log_sl_, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb38-120"><a href="#cb38-120" aria-hidden="true" tabindex="-1"></a>        <span class="at">step_id_ =</span> <span class="cn">NA</span>, <span class="at">id =</span> <span class="cn">NA</span>, <span class="at">case_binary_ =</span> <span class="dv">1</span></span>
-<span id="cb38-121"><a href="#cb38-121" aria-hidden="true" tabindex="-1"></a>      )</span>
-<span id="cb38-122"><a href="#cb38-122" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb38-123"><a href="#cb38-123" aria-hidden="true" tabindex="-1"></a>    baseline <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">filter</span>(newdata, hfp_std <span class="sc">==</span> <span class="fu">min</span>(hfp_std))</span>
-<span id="cb38-124"><a href="#cb38-124" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb38-125"><a href="#cb38-125" aria-hidden="true" tabindex="-1"></a>    x1_pred <span class="ot">&lt;-</span> <span class="fu">predict</span>(model, newdata,               <span class="at">re.form =</span> <span class="cn">NA</span>)</span>
-<span id="cb38-126"><a href="#cb38-126" aria-hidden="true" tabindex="-1"></a>    x2_pred <span class="ot">&lt;-</span> <span class="fu">predict</span>(model, baseline[<span class="fu">rep</span>(<span class="dv">1</span>, <span class="fu">nrow</span>(newdata)), ], <span class="at">re.form =</span> <span class="cn">NA</span>)</span>
-<span id="cb38-127"><a href="#cb38-127" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb38-128"><a href="#cb38-128" aria-hidden="true" tabindex="-1"></a>    mm_terms <span class="ot">&lt;-</span> <span class="fu">delete.response</span>(<span class="fu">terms</span>(model))</span>
-<span id="cb38-129"><a href="#cb38-129" aria-hidden="true" tabindex="-1"></a>    X1 <span class="ot">&lt;-</span> <span class="fu">model.matrix</span>(mm_terms, newdata)</span>
-<span id="cb38-130"><a href="#cb38-130" aria-hidden="true" tabindex="-1"></a>    X2 <span class="ot">&lt;-</span> <span class="fu">model.matrix</span>(mm_terms, baseline[<span class="fu">rep</span>(<span class="dv">1</span>, <span class="fu">nrow</span>(newdata)), ])</span>
-<span id="cb38-131"><a href="#cb38-131" aria-hidden="true" tabindex="-1"></a>    delta_X <span class="ot">&lt;-</span> X1 <span class="sc">-</span> X2</span>
-<span id="cb38-132"><a href="#cb38-132" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb38-133"><a href="#cb38-133" aria-hidden="true" tabindex="-1"></a>    vc        <span class="ot">&lt;-</span> <span class="fu">vcov</span>(model)<span class="sc">$</span>cond</span>
-<span id="cb38-134"><a href="#cb38-134" aria-hidden="true" tabindex="-1"></a>    keep_cols <span class="ot">&lt;-</span> <span class="fu">intersect</span>(<span class="fu">colnames</span>(delta_X), <span class="fu">colnames</span>(vc))</span>
-<span id="cb38-135"><a href="#cb38-135" aria-hidden="true" tabindex="-1"></a>    delta_X   <span class="ot">&lt;-</span> delta_X[, keep_cols, drop <span class="ot">=</span> <span class="cn">FALSE</span>]</span>
-<span id="cb38-136"><a href="#cb38-136" aria-hidden="true" tabindex="-1"></a>    vc        <span class="ot">&lt;-</span> vc[keep_cols, keep_cols, drop <span class="ot">=</span> <span class="cn">FALSE</span>]</span>
-<span id="cb38-137"><a href="#cb38-137" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb38-138"><a href="#cb38-138" aria-hidden="true" tabindex="-1"></a>    se_pred <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="fu">rowSums</span>((delta_X <span class="sc">%*%</span> vc) <span class="sc">*</span> delta_X))</span>
-<span id="cb38-139"><a href="#cb38-139" aria-hidden="true" tabindex="-1"></a>    z_val   <span class="ot">&lt;-</span> <span class="fu">qnorm</span>(<span class="dv">1</span> <span class="sc">-</span> (<span class="dv">1</span> <span class="sc">-</span> ci_level) <span class="sc">/</span> <span class="dv">2</span>)</span>
-<span id="cb38-140"><a href="#cb38-140" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb38-141"><a href="#cb38-141" aria-hidden="true" tabindex="-1"></a>    tibble<span class="sc">::</span><span class="fu">tibble</span>(</span>
-<span id="cb38-142"><a href="#cb38-142" aria-hidden="true" tabindex="-1"></a>      <span class="at">land_use_grouped =</span> lc,</span>
-<span id="cb38-143"><a href="#cb38-143" aria-hidden="true" tabindex="-1"></a>      <span class="at">hfp_std          =</span> hfp_seq,</span>
-<span id="cb38-144"><a href="#cb38-144" aria-hidden="true" tabindex="-1"></a>      <span class="at">human_footprint  =</span> hfp_seq <span class="sc">*</span> <span class="fu">sd</span>(data<span class="sc">$</span>human_footprint, <span class="at">na.rm =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
-<span id="cb38-145"><a href="#cb38-145" aria-hidden="true" tabindex="-1"></a>        <span class="fu">mean</span>(data<span class="sc">$</span>human_footprint, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb38-146"><a href="#cb38-146" aria-hidden="true" tabindex="-1"></a>      <span class="at">logRSS    =</span> x1_pred <span class="sc">-</span> x2_pred,</span>
-<span id="cb38-147"><a href="#cb38-147" aria-hidden="true" tabindex="-1"></a>      <span class="at">RSS       =</span> <span class="fu">exp</span>(logRSS),</span>
-<span id="cb38-148"><a href="#cb38-148" aria-hidden="true" tabindex="-1"></a>      <span class="at">RSS_lower =</span> <span class="fu">exp</span>(logRSS <span class="sc">-</span> z_val <span class="sc">*</span> se_pred),</span>
-<span id="cb38-149"><a href="#cb38-149" aria-hidden="true" tabindex="-1"></a>      <span class="at">RSS_upper =</span> <span class="fu">exp</span>(logRSS <span class="sc">+</span> z_val <span class="sc">*</span> se_pred)</span>
-<span id="cb38-150"><a href="#cb38-150" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb38-151"><a href="#cb38-151" aria-hidden="true" tabindex="-1"></a>  })</span>
-<span id="cb38-152"><a href="#cb38-152" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb38-153"><a href="#cb38-153" aria-hidden="true" tabindex="-1"></a>  p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(rss_df,</span>
-<span id="cb38-154"><a href="#cb38-154" aria-hidden="true" tabindex="-1"></a>              <span class="fu">aes</span>(<span class="at">x =</span> human_footprint, <span class="at">y =</span> RSS,</span>
-<span id="cb38-155"><a href="#cb38-155" aria-hidden="true" tabindex="-1"></a>                  <span class="at">colour =</span> land_use_grouped, <span class="at">fill =</span> land_use_grouped)) <span class="sc">+</span></span>
-<span id="cb38-156"><a href="#cb38-156" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">1</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">colour =</span> <span class="st">"grey50"</span>) <span class="sc">+</span></span>
-<span id="cb38-157"><a href="#cb38-157" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_ribbon</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> RSS_lower, <span class="at">ymax =</span> RSS_upper),</span>
-<span id="cb38-158"><a href="#cb38-158" aria-hidden="true" tabindex="-1"></a>                <span class="at">alpha =</span> <span class="fl">0.2</span>, <span class="at">colour =</span> <span class="cn">NA</span>) <span class="sc">+</span></span>
-<span id="cb38-159"><a href="#cb38-159" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>(<span class="at">linewidth =</span> <span class="fl">1.1</span>) <span class="sc">+</span></span>
-<span id="cb38-160"><a href="#cb38-160" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> landuse_cols) <span class="sc">+</span></span>
-<span id="cb38-161"><a href="#cb38-161" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_fill_manual</span>(<span class="at">values  =</span> landuse_cols_sec) <span class="sc">+</span></span>
-<span id="cb38-162"><a href="#cb38-162" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(</span>
-<span id="cb38-163"><a href="#cb38-163" aria-hidden="true" tabindex="-1"></a>      <span class="at">x =</span> <span class="st">"Human Footprint Index (0–50)"</span>,</span>
-<span id="cb38-164"><a href="#cb38-164" aria-hidden="true" tabindex="-1"></a>      <span class="at">y =</span> <span class="st">"Relative Selection Strength (RSS)"</span>,</span>
-<span id="cb38-165"><a href="#cb38-165" aria-hidden="true" tabindex="-1"></a>      <span class="at">title =</span> <span class="st">"Coyote Habitat Selection across the Human Footprint Gradient"</span>,</span>
-<span id="cb38-166"><a href="#cb38-166" aria-hidden="true" tabindex="-1"></a>      <span class="at">colour =</span> <span class="st">"Land-cover"</span>, <span class="at">fill =</span> <span class="st">"Land-cover"</span></span>
-<span id="cb38-167"><a href="#cb38-167" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
-<span id="cb38-168"><a href="#cb38-168" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_publication_dark</span>(<span class="at">legend_position =</span> <span class="st">"bottom"</span>)</span>
-<span id="cb38-169"><a href="#cb38-169" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb38-170"><a href="#cb38-170" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(save_path))</span>
-<span id="cb38-171"><a href="#cb38-171" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggsave</span>(save_path, p, <span class="at">width =</span> width, <span class="at">height =</span> height, <span class="at">dpi =</span> dpi)</span>
-<span id="cb38-172"><a href="#cb38-172" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb38-173"><a href="#cb38-173" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(p)</span>
-<span id="cb38-174"><a href="#cb38-174" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb38-175"><a href="#cb38-175" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-176"><a href="#cb38-176" aria-hidden="true" tabindex="-1"></a><span class="co"># 4.4 Generate and plot average effect ------------------------------------</span></span>
-<span id="cb38-177"><a href="#cb38-177" aria-hidden="true" tabindex="-1"></a>p_avg_effect <span class="ot">&lt;-</span> <span class="fu">avg_eff_plot_hfp_landuse</span>(coyote_ssf_pred, <span class="at">nsim =</span> <span class="dv">1000</span>, <span class="at">save_path =</span> <span class="st">"img/avg_effect.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Bobcat model does not converge when trying to model random slopes for habitat covariates. </span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="co"># The model would have to be simplified to a point where it cannot follow the suggested method by Muff et al.</span></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Dropping land groups with too few usable steps greatly reduces the ecological richness of the model.</span></span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a><span class="co"># The bobcat data cannot support a full, comparable SSF with interaction between habitat and human footprint.</span></span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Bobcats are excluded from the final SSF analysis.</span></span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. SSF Results Visualization --------------------------------------------</span></span>
+<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a><span class="co"># 4.1 Predict for average effect plots ------------------------------------</span></span>
+<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">file.exists</span>(<span class="st">"data/coyote_ssf_pred.rds"</span>)) {</span>
+<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a>  coyote_ssf_pred <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"data/coyote_ssf_pred.rds"</span>)</span>
+<span id="cb34-11"><a href="#cb34-11" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb34-12"><a href="#cb34-12" aria-hidden="true" tabindex="-1"></a>  coyote_ssf_pred <span class="ot">&lt;-</span> coyote_ssf_data <span class="sc">|&gt;</span></span>
+<span id="cb34-13"><a href="#cb34-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(case_binary_ <span class="sc">==</span> <span class="dv">0</span>) <span class="sc">|&gt;</span> <span class="co"># remove ID for population-level prediction</span></span>
+<span id="cb34-14"><a href="#cb34-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">id =</span> <span class="cn">NA</span>)</span>
+<span id="cb34-15"><a href="#cb34-15" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb34-16"><a href="#cb34-16" aria-hidden="true" tabindex="-1"></a>  coy_pred <span class="ot">&lt;-</span> <span class="fu">predict</span>(ssf_coyote, coyote_ssf_pred, <span class="at">re.form =</span> <span class="cn">NA</span>, <span class="at">se.fit =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb34-17"><a href="#cb34-17" aria-hidden="true" tabindex="-1"></a>  coyote_ssf_pred<span class="sc">$</span>fit <span class="ot">&lt;-</span> coy_pred<span class="sc">$</span>fit</span>
+<span id="cb34-18"><a href="#cb34-18" aria-hidden="true" tabindex="-1"></a>  coyote_ssf_pred<span class="sc">$</span>se <span class="ot">&lt;-</span> coy_pred<span class="sc">$</span>se</span>
+<span id="cb34-19"><a href="#cb34-19" aria-hidden="true" tabindex="-1"></a>  coyote_ssf_pred <span class="ot">&lt;-</span> coyote_ssf_pred <span class="sc">|&gt;</span> <span class="fu">ungroup</span>()</span>
+<span id="cb34-20"><a href="#cb34-20" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb34-21"><a href="#cb34-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">saveRDS</span>(coyote_ssf_pred, <span class="st">"data/coyote_ssf_pred.rds"</span>)</span>
+<span id="cb34-22"><a href="#cb34-22" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb34-23"><a href="#cb34-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-24"><a href="#cb34-24" aria-hidden="true" tabindex="-1"></a><span class="co"># 4.2 Average-effect plot function ----------------------------------------</span></span>
+<span id="cb34-25"><a href="#cb34-25" aria-hidden="true" tabindex="-1"></a>avg_eff_plot_hfp_landuse <span class="ot">&lt;-</span> <span class="cf">function</span>(fittedResponse,</span>
+<span id="cb34-26"><a href="#cb34-26" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">nsim =</span> <span class="dv">10</span>, <span class="at">k =</span> <span class="dv">10</span>,</span>
+<span id="cb34-27"><a href="#cb34-27" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">showPeakValue =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb34-28"><a href="#cb34-28" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">save_path =</span> <span class="cn">NULL</span>,</span>
+<span id="cb34-29"><a href="#cb34-29" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">width =</span> <span class="dv">10</span>, <span class="at">height =</span> <span class="fl">5.5</span>, <span class="at">dpi =</span> <span class="dv">300</span>) {</span>
+<span id="cb34-30"><a href="#cb34-30" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb34-31"><a href="#cb34-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb34-32"><a href="#cb34-32" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb34-33"><a href="#cb34-33" aria-hidden="true" tabindex="-1"></a>  fit_sample_matrix <span class="ot">&lt;-</span> <span class="fu">replicate</span>(nsim, {</span>
+<span id="cb34-34"><a href="#cb34-34" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="fu">nrow</span>(fittedResponse), <span class="at">mean =</span> fittedResponse<span class="sc">$</span>fit, <span class="at">sd =</span> fittedResponse<span class="sc">$</span>se)</span>
+<span id="cb34-35"><a href="#cb34-35" aria-hidden="true" tabindex="-1"></a>  })</span>
+<span id="cb34-36"><a href="#cb34-36" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb34-37"><a href="#cb34-37" aria-hidden="true" tabindex="-1"></a>  smooth_list <span class="ot">&lt;-</span> purrr<span class="sc">::</span><span class="fu">map</span>(<span class="dv">1</span><span class="sc">:</span>nsim, <span class="cf">function</span>(j) {</span>
+<span id="cb34-38"><a href="#cb34-38" aria-hidden="true" tabindex="-1"></a>    mgcv<span class="sc">::</span><span class="fu">bam</span>(</span>
+<span id="cb34-39"><a href="#cb34-39" aria-hidden="true" tabindex="-1"></a>      fit_sample_matrix[, j] <span class="sc">~</span> <span class="fu">s</span>(human_footprint, <span class="at">by =</span> land_use_grouped,</span>
+<span id="cb34-40"><a href="#cb34-40" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">bs =</span> <span class="st">"ts"</span>, <span class="at">k =</span> k) <span class="sc">+</span> land_use_grouped,</span>
+<span id="cb34-41"><a href="#cb34-41" aria-hidden="true" tabindex="-1"></a>      <span class="at">data    =</span> fittedResponse,</span>
+<span id="cb34-42"><a href="#cb34-42" aria-hidden="true" tabindex="-1"></a>      <span class="at">select  =</span> <span class="cn">TRUE</span>, <span class="at">discrete =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb34-43"><a href="#cb34-43" aria-hidden="true" tabindex="-1"></a>      <span class="at">nthreads =</span> nt</span>
+<span id="cb34-44"><a href="#cb34-44" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">|&gt;</span></span>
+<span id="cb34-45"><a href="#cb34-45" aria-hidden="true" tabindex="-1"></a>      gratia<span class="sc">::</span><span class="fu">smooth_estimates</span>(<span class="at">overall_uncertainty =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb34-46"><a href="#cb34-46" aria-hidden="true" tabindex="-1"></a>      gratia<span class="sc">::</span><span class="fu">add_confint</span>() <span class="sc">|&gt;</span></span>
+<span id="cb34-47"><a href="#cb34-47" aria-hidden="true" tabindex="-1"></a>      dplyr<span class="sc">::</span><span class="fu">rename</span>(<span class="at">hfp =</span> human_footprint)</span>
+<span id="cb34-48"><a href="#cb34-48" aria-hidden="true" tabindex="-1"></a>  })</span>
+<span id="cb34-49"><a href="#cb34-49" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb34-50"><a href="#cb34-50" aria-hidden="true" tabindex="-1"></a>  avg_smooth <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(smooth_list) <span class="sc">|&gt;</span></span>
+<span id="cb34-51"><a href="#cb34-51" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(.smooth, .by, land_use_grouped, hfp) <span class="sc">|&gt;</span></span>
+<span id="cb34-52"><a href="#cb34-52" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarise</span>(</span>
+<span id="cb34-53"><a href="#cb34-53" aria-hidden="true" tabindex="-1"></a>      <span class="at">est       =</span> <span class="fu">mean</span>(.estimate),</span>
+<span id="cb34-54"><a href="#cb34-54" aria-hidden="true" tabindex="-1"></a>      <span class="at">lower_ci  =</span> <span class="fu">mean</span>(.lower_ci),</span>
+<span id="cb34-55"><a href="#cb34-55" aria-hidden="true" tabindex="-1"></a>      <span class="at">upper_ci  =</span> <span class="fu">mean</span>(.upper_ci),</span>
+<span id="cb34-56"><a href="#cb34-56" aria-hidden="true" tabindex="-1"></a>      <span class="at">.groups   =</span> <span class="st">"drop"</span></span>
+<span id="cb34-57"><a href="#cb34-57" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">|&gt;</span></span>
+<span id="cb34-58"><a href="#cb34-58" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">land_use_grouped =</span> <span class="fu">factor</span>(</span>
+<span id="cb34-59"><a href="#cb34-59" aria-hidden="true" tabindex="-1"></a>      land_use_grouped,</span>
+<span id="cb34-60"><a href="#cb34-60" aria-hidden="true" tabindex="-1"></a>      <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"TreeCover"</span>, <span class="st">"Open"</span>, <span class="st">"Cropland"</span>, <span class="st">"BuiltUp"</span>, <span class="st">"Water"</span>))</span>
+<span id="cb34-61"><a href="#cb34-61" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb34-62"><a href="#cb34-62" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb34-63"><a href="#cb34-63" aria-hidden="true" tabindex="-1"></a>  p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(avg_smooth,</span>
+<span id="cb34-64"><a href="#cb34-64" aria-hidden="true" tabindex="-1"></a>              <span class="fu">aes</span>(<span class="at">x =</span> hfp, <span class="at">y =</span> est, <span class="at">colour =</span> land_use_grouped, <span class="at">fill =</span> land_use_grouped)) <span class="sc">+</span></span>
+<span id="cb34-65"><a href="#cb34-65" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">0</span>,  <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">colour =</span> <span class="st">"gray50"</span>) <span class="sc">+</span></span>
+<span id="cb34-66"><a href="#cb34-66" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">0</span>, <span class="at">linetype =</span> <span class="st">"dotted"</span>, <span class="at">colour =</span> <span class="st">"gray70"</span>) <span class="sc">+</span></span>
+<span id="cb34-67"><a href="#cb34-67" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_ribbon</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> lower_ci, <span class="at">ymax =</span> upper_ci), <span class="at">alpha =</span> <span class="fl">0.2</span>, <span class="at">colour =</span> <span class="cn">NA</span>) <span class="sc">+</span></span>
+<span id="cb34-68"><a href="#cb34-68" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>(<span class="at">linewidth =</span> <span class="fl">1.2</span>) <span class="sc">+</span></span>
+<span id="cb34-69"><a href="#cb34-69" aria-hidden="true" tabindex="-1"></a>    <span class="fu">facet_wrap</span>(<span class="sc">~</span>land_use_grouped, <span class="at">scales =</span> <span class="st">"fixed"</span>, <span class="at">nrow =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb34-70"><a href="#cb34-70" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> landuse_colors) <span class="sc">+</span></span>
+<span id="cb34-71"><a href="#cb34-71" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_fill_manual</span>(<span class="at">values   =</span> landuse_colors) <span class="sc">+</span></span>
+<span id="cb34-72"><a href="#cb34-72" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(</span>
+<span id="cb34-73"><a href="#cb34-73" aria-hidden="true" tabindex="-1"></a>      <span class="at">x =</span> <span class="st">"Human Footprint Index (0–50)"</span>,</span>
+<span id="cb34-74"><a href="#cb34-74" aria-hidden="true" tabindex="-1"></a>      <span class="at">y =</span> <span class="st">"Estimated relative use (log)"</span>,</span>
+<span id="cb34-75"><a href="#cb34-75" aria-hidden="true" tabindex="-1"></a>      <span class="at">title =</span> <span class="st">"Average marginal effects across human footprint gradient"</span></span>
+<span id="cb34-76"><a href="#cb34-76" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
+<span id="cb34-77"><a href="#cb34-77" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_publication_dark</span>(<span class="at">legend_position =</span> <span class="st">"none"</span>)</span>
+<span id="cb34-78"><a href="#cb34-78" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb34-79"><a href="#cb34-79" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (showPeakValue) {</span>
+<span id="cb34-80"><a href="#cb34-80" aria-hidden="true" tabindex="-1"></a>    peak_vals <span class="ot">&lt;-</span> avg_smooth <span class="sc">|&gt;</span></span>
+<span id="cb34-81"><a href="#cb34-81" aria-hidden="true" tabindex="-1"></a>      <span class="fu">group_by</span>(land_use_grouped) <span class="sc">|&gt;</span></span>
+<span id="cb34-82"><a href="#cb34-82" aria-hidden="true" tabindex="-1"></a>      <span class="fu">filter</span>(est <span class="sc">==</span> <span class="fu">max</span>(est)) <span class="sc">|&gt;</span></span>
+<span id="cb34-83"><a href="#cb34-83" aria-hidden="true" tabindex="-1"></a>      <span class="fu">slice</span>(<span class="fu">rep</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">n</span>(), <span class="at">each =</span> <span class="dv">2</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb34-84"><a href="#cb34-84" aria-hidden="true" tabindex="-1"></a>      <span class="fu">mutate</span>(<span class="at">est =</span> <span class="fu">ifelse</span>(<span class="fu">row_number</span>() <span class="sc">%%</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">1</span>, est, <span class="sc">-</span><span class="cn">Inf</span>))</span>
+<span id="cb34-85"><a href="#cb34-85" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb34-86"><a href="#cb34-86" aria-hidden="true" tabindex="-1"></a>    p <span class="ot">&lt;-</span> p <span class="sc">+</span> <span class="fu">geom_line</span>(</span>
+<span id="cb34-87"><a href="#cb34-87" aria-hidden="true" tabindex="-1"></a>      <span class="at">data =</span> peak_vals,</span>
+<span id="cb34-88"><a href="#cb34-88" aria-hidden="true" tabindex="-1"></a>      <span class="fu">aes</span>(<span class="at">x =</span> hfp, <span class="at">y =</span> est, <span class="at">group =</span> land_use_grouped, <span class="at">colour =</span> land_use_grouped),</span>
+<span id="cb34-89"><a href="#cb34-89" aria-hidden="true" tabindex="-1"></a>      <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">linewidth =</span> <span class="fl">0.8</span>, <span class="at">alpha =</span> <span class="fl">0.6</span>)</span>
+<span id="cb34-90"><a href="#cb34-90" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb34-91"><a href="#cb34-91" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb34-92"><a href="#cb34-92" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(save_path))</span>
+<span id="cb34-93"><a href="#cb34-93" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggsave</span>(save_path, p, <span class="at">width =</span> width, <span class="at">height =</span> height, <span class="at">dpi =</span> dpi)</span>
+<span id="cb34-94"><a href="#cb34-94" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb34-95"><a href="#cb34-95" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(p)</span>
+<span id="cb34-96"><a href="#cb34-96" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb34-97"><a href="#cb34-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-98"><a href="#cb34-98" aria-hidden="true" tabindex="-1"></a><span class="co"># 4.3 Relative-selection-strength (RSS) function --------------------------</span></span>
+<span id="cb34-99"><a href="#cb34-99" aria-hidden="true" tabindex="-1"></a>calc_rss_hfp_landuse <span class="ot">&lt;-</span> <span class="cf">function</span>(model, data,</span>
+<span id="cb34-100"><a href="#cb34-100" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">land_use_col =</span> <span class="st">"land_use_grouped"</span>,</span>
+<span id="cb34-101"><a href="#cb34-101" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">hfp_col      =</span> <span class="st">"hfp_std"</span>,</span>
+<span id="cb34-102"><a href="#cb34-102" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">n_points     =</span> <span class="dv">100</span>,</span>
+<span id="cb34-103"><a href="#cb34-103" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">ci_level     =</span> <span class="fl">0.95</span>,</span>
+<span id="cb34-104"><a href="#cb34-104" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">landuse_cols     =</span> landuse_colors,</span>
+<span id="cb34-105"><a href="#cb34-105" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">landuse_cols_sec =</span> landuse_colors,</span>
+<span id="cb34-106"><a href="#cb34-106" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">save_path =</span> <span class="cn">NULL</span>,</span>
+<span id="cb34-107"><a href="#cb34-107" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">width =</span> <span class="dv">10</span>, <span class="at">height =</span> <span class="fl">5.5</span>, <span class="at">dpi =</span> <span class="dv">300</span>) {</span>
+<span id="cb34-108"><a href="#cb34-108" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb34-109"><a href="#cb34-109" aria-hidden="true" tabindex="-1"></a>  rss_df <span class="ot">&lt;-</span> purrr<span class="sc">::</span><span class="fu">map_dfr</span>(<span class="fu">unique</span>(data[[land_use_col]]), <span class="cf">function</span>(lc) {</span>
+<span id="cb34-110"><a href="#cb34-110" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb34-111"><a href="#cb34-111" aria-hidden="true" tabindex="-1"></a>    dat_lc  <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">filter</span>(data, <span class="sc">!!</span>rlang<span class="sc">::</span><span class="fu">sym</span>(land_use_col) <span class="sc">==</span> lc)</span>
+<span id="cb34-112"><a href="#cb34-112" aria-hidden="true" tabindex="-1"></a>    hfp_seq <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fu">min</span>(dat_lc[[hfp_col]], <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb34-113"><a href="#cb34-113" aria-hidden="true" tabindex="-1"></a>                   <span class="fu">max</span>(dat_lc[[hfp_col]], <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb34-114"><a href="#cb34-114" aria-hidden="true" tabindex="-1"></a>                   <span class="at">length.out =</span> n_points)</span>
+<span id="cb34-115"><a href="#cb34-115" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb34-116"><a href="#cb34-116" aria-hidden="true" tabindex="-1"></a>    newdata <span class="ot">&lt;-</span> <span class="fu">expand.grid</span>(<span class="at">hfp_std =</span> hfp_seq, <span class="at">land_use_grouped =</span> lc) <span class="sc">|&gt;</span></span>
+<span id="cb34-117"><a href="#cb34-117" aria-hidden="true" tabindex="-1"></a>      dplyr<span class="sc">::</span><span class="fu">mutate</span>(</span>
+<span id="cb34-118"><a href="#cb34-118" aria-hidden="true" tabindex="-1"></a>        <span class="st">`</span><span class="at">I(hfp_std^2)</span><span class="st">`</span> <span class="ot">=</span> hfp_std<span class="sc">^</span><span class="dv">2</span>,</span>
+<span id="cb34-119"><a href="#cb34-119" aria-hidden="true" tabindex="-1"></a>        <span class="at">log_sl_        =</span> <span class="fu">mean</span>(data<span class="sc">$</span>log_sl_, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb34-120"><a href="#cb34-120" aria-hidden="true" tabindex="-1"></a>        <span class="at">step_id_ =</span> <span class="cn">NA</span>, <span class="at">id =</span> <span class="cn">NA</span>, <span class="at">case_binary_ =</span> <span class="dv">1</span></span>
+<span id="cb34-121"><a href="#cb34-121" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb34-122"><a href="#cb34-122" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb34-123"><a href="#cb34-123" aria-hidden="true" tabindex="-1"></a>    baseline <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">filter</span>(newdata, hfp_std <span class="sc">==</span> <span class="fu">min</span>(hfp_std))</span>
+<span id="cb34-124"><a href="#cb34-124" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb34-125"><a href="#cb34-125" aria-hidden="true" tabindex="-1"></a>    x1_pred <span class="ot">&lt;-</span> <span class="fu">predict</span>(model, newdata,               <span class="at">re.form =</span> <span class="cn">NA</span>)</span>
+<span id="cb34-126"><a href="#cb34-126" aria-hidden="true" tabindex="-1"></a>    x2_pred <span class="ot">&lt;-</span> <span class="fu">predict</span>(model, baseline[<span class="fu">rep</span>(<span class="dv">1</span>, <span class="fu">nrow</span>(newdata)), ], <span class="at">re.form =</span> <span class="cn">NA</span>)</span>
+<span id="cb34-127"><a href="#cb34-127" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb34-128"><a href="#cb34-128" aria-hidden="true" tabindex="-1"></a>    mm_terms <span class="ot">&lt;-</span> <span class="fu">delete.response</span>(<span class="fu">terms</span>(model))</span>
+<span id="cb34-129"><a href="#cb34-129" aria-hidden="true" tabindex="-1"></a>    X1 <span class="ot">&lt;-</span> <span class="fu">model.matrix</span>(mm_terms, newdata)</span>
+<span id="cb34-130"><a href="#cb34-130" aria-hidden="true" tabindex="-1"></a>    X2 <span class="ot">&lt;-</span> <span class="fu">model.matrix</span>(mm_terms, baseline[<span class="fu">rep</span>(<span class="dv">1</span>, <span class="fu">nrow</span>(newdata)), ])</span>
+<span id="cb34-131"><a href="#cb34-131" aria-hidden="true" tabindex="-1"></a>    delta_X <span class="ot">&lt;-</span> X1 <span class="sc">-</span> X2</span>
+<span id="cb34-132"><a href="#cb34-132" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb34-133"><a href="#cb34-133" aria-hidden="true" tabindex="-1"></a>    vc        <span class="ot">&lt;-</span> <span class="fu">vcov</span>(model)<span class="sc">$</span>cond</span>
+<span id="cb34-134"><a href="#cb34-134" aria-hidden="true" tabindex="-1"></a>    keep_cols <span class="ot">&lt;-</span> <span class="fu">intersect</span>(<span class="fu">colnames</span>(delta_X), <span class="fu">colnames</span>(vc))</span>
+<span id="cb34-135"><a href="#cb34-135" aria-hidden="true" tabindex="-1"></a>    delta_X   <span class="ot">&lt;-</span> delta_X[, keep_cols, drop <span class="ot">=</span> <span class="cn">FALSE</span>]</span>
+<span id="cb34-136"><a href="#cb34-136" aria-hidden="true" tabindex="-1"></a>    vc        <span class="ot">&lt;-</span> vc[keep_cols, keep_cols, drop <span class="ot">=</span> <span class="cn">FALSE</span>]</span>
+<span id="cb34-137"><a href="#cb34-137" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb34-138"><a href="#cb34-138" aria-hidden="true" tabindex="-1"></a>    se_pred <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="fu">rowSums</span>((delta_X <span class="sc">%*%</span> vc) <span class="sc">*</span> delta_X))</span>
+<span id="cb34-139"><a href="#cb34-139" aria-hidden="true" tabindex="-1"></a>    z_val   <span class="ot">&lt;-</span> <span class="fu">qnorm</span>(<span class="dv">1</span> <span class="sc">-</span> (<span class="dv">1</span> <span class="sc">-</span> ci_level) <span class="sc">/</span> <span class="dv">2</span>)</span>
+<span id="cb34-140"><a href="#cb34-140" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb34-141"><a href="#cb34-141" aria-hidden="true" tabindex="-1"></a>    tibble<span class="sc">::</span><span class="fu">tibble</span>(</span>
+<span id="cb34-142"><a href="#cb34-142" aria-hidden="true" tabindex="-1"></a>      <span class="at">land_use_grouped =</span> lc,</span>
+<span id="cb34-143"><a href="#cb34-143" aria-hidden="true" tabindex="-1"></a>      <span class="at">hfp_std          =</span> hfp_seq,</span>
+<span id="cb34-144"><a href="#cb34-144" aria-hidden="true" tabindex="-1"></a>      <span class="at">human_footprint  =</span> hfp_seq <span class="sc">*</span> <span class="fu">sd</span>(data<span class="sc">$</span>human_footprint, <span class="at">na.rm =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
+<span id="cb34-145"><a href="#cb34-145" aria-hidden="true" tabindex="-1"></a>        <span class="fu">mean</span>(data<span class="sc">$</span>human_footprint, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb34-146"><a href="#cb34-146" aria-hidden="true" tabindex="-1"></a>      <span class="at">logRSS    =</span> x1_pred <span class="sc">-</span> x2_pred,</span>
+<span id="cb34-147"><a href="#cb34-147" aria-hidden="true" tabindex="-1"></a>      <span class="at">RSS       =</span> <span class="fu">exp</span>(logRSS),</span>
+<span id="cb34-148"><a href="#cb34-148" aria-hidden="true" tabindex="-1"></a>      <span class="at">RSS_lower =</span> <span class="fu">exp</span>(logRSS <span class="sc">-</span> z_val <span class="sc">*</span> se_pred),</span>
+<span id="cb34-149"><a href="#cb34-149" aria-hidden="true" tabindex="-1"></a>      <span class="at">RSS_upper =</span> <span class="fu">exp</span>(logRSS <span class="sc">+</span> z_val <span class="sc">*</span> se_pred)</span>
+<span id="cb34-150"><a href="#cb34-150" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb34-151"><a href="#cb34-151" aria-hidden="true" tabindex="-1"></a>  })</span>
+<span id="cb34-152"><a href="#cb34-152" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb34-153"><a href="#cb34-153" aria-hidden="true" tabindex="-1"></a>  p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(rss_df,</span>
+<span id="cb34-154"><a href="#cb34-154" aria-hidden="true" tabindex="-1"></a>              <span class="fu">aes</span>(<span class="at">x =</span> human_footprint, <span class="at">y =</span> RSS,</span>
+<span id="cb34-155"><a href="#cb34-155" aria-hidden="true" tabindex="-1"></a>                  <span class="at">colour =</span> land_use_grouped, <span class="at">fill =</span> land_use_grouped)) <span class="sc">+</span></span>
+<span id="cb34-156"><a href="#cb34-156" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">1</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">colour =</span> <span class="st">"grey50"</span>) <span class="sc">+</span></span>
+<span id="cb34-157"><a href="#cb34-157" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_ribbon</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> RSS_lower, <span class="at">ymax =</span> RSS_upper),</span>
+<span id="cb34-158"><a href="#cb34-158" aria-hidden="true" tabindex="-1"></a>                <span class="at">alpha =</span> <span class="fl">0.2</span>, <span class="at">colour =</span> <span class="cn">NA</span>) <span class="sc">+</span></span>
+<span id="cb34-159"><a href="#cb34-159" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>(<span class="at">linewidth =</span> <span class="fl">1.1</span>) <span class="sc">+</span></span>
+<span id="cb34-160"><a href="#cb34-160" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> landuse_cols) <span class="sc">+</span></span>
+<span id="cb34-161"><a href="#cb34-161" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_fill_manual</span>(<span class="at">values  =</span> landuse_cols_sec) <span class="sc">+</span></span>
+<span id="cb34-162"><a href="#cb34-162" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(</span>
+<span id="cb34-163"><a href="#cb34-163" aria-hidden="true" tabindex="-1"></a>      <span class="at">x =</span> <span class="st">"Human Footprint Index (0–50)"</span>,</span>
+<span id="cb34-164"><a href="#cb34-164" aria-hidden="true" tabindex="-1"></a>      <span class="at">y =</span> <span class="st">"Relative selection strength (RSS)"</span>,</span>
+<span id="cb34-165"><a href="#cb34-165" aria-hidden="true" tabindex="-1"></a>      <span class="at">title =</span> <span class="st">"Coyote habitat selection across the human footprint gradient"</span>,</span>
+<span id="cb34-166"><a href="#cb34-166" aria-hidden="true" tabindex="-1"></a>      <span class="at">colour =</span> <span class="st">"Land-cover"</span>, <span class="at">fill =</span> <span class="st">"Land-cover"</span></span>
+<span id="cb34-167"><a href="#cb34-167" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
+<span id="cb34-168"><a href="#cb34-168" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_publication_dark</span>(<span class="at">legend_position =</span> <span class="st">"bottom"</span>)</span>
+<span id="cb34-169"><a href="#cb34-169" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb34-170"><a href="#cb34-170" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(save_path))</span>
+<span id="cb34-171"><a href="#cb34-171" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggsave</span>(save_path, p, <span class="at">width =</span> width, <span class="at">height =</span> height, <span class="at">dpi =</span> dpi)</span>
+<span id="cb34-172"><a href="#cb34-172" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb34-173"><a href="#cb34-173" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(p)</span>
+<span id="cb34-174"><a href="#cb34-174" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb34-175"><a href="#cb34-175" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-176"><a href="#cb34-176" aria-hidden="true" tabindex="-1"></a><span class="co"># 4.4 Generate and plot average effect ------------------------------------</span></span>
+<span id="cb34-177"><a href="#cb34-177" aria-hidden="true" tabindex="-1"></a>p_avg_effect <span class="ot">&lt;-</span> <span class="fu">avg_eff_plot_hfp_landuse</span>(coyote_ssf_pred, <span class="at">nsim =</span> <span class="dv">1000</span>, <span class="at">save_path =</span> <span class="st">"img/avg_effect.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning in mgcv::bam(fit_sample_matrix[, j] ~ s(human_footprint, by =
 land_use_grouped, : openMP not available: single threaded computation only</code></pre>
@@ -3028,7 +3017,7 @@ land_use_grouped, : openMP not available: single threaded computation only
 Warning in mgcv::bam(fit_sample_matrix[, j] ~ s(human_footprint, by =
 land_use_grouped, : openMP not available: single threaded computation only</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(p_avg_effect)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(p_avg_effect)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -3036,8 +3025,8 @@ land_use_grouped, : openMP not available: single threaded computation only</code
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Report peaks</span></span>
-<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>p_avg_effect<span class="sc">$</span>plot_env<span class="sc">$</span>peak_vals</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Report peaks</span></span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>p_avg_effect<span class="sc">$</span>plot_env<span class="sc">$</span>peak_vals</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 10 × 7
 # Groups:   land_use_grouped [5]
@@ -3054,9 +3043,9 @@ land_use_grouped, : openMP not available: single threaded computation only</code
  9 s(human_footprint):l… land… Water             0.133    3.20    2.13      4.27
 10 s(human_footprint):l… land… Water             0.133 -Inf       2.13      4.27</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 4.5 Generate and plot RSS -----------------------------------------------</span></span>
-<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>p_rss <span class="ot">&lt;-</span> <span class="fu">calc_rss_hfp_landuse</span>(ssf_coyote, coyote_ssf_data, <span class="at">save_path =</span> <span class="st">"img/rss.png"</span>)</span>
-<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(p_rss)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 4.5 Generate and plot RSS -----------------------------------------------</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>p_rss <span class="ot">&lt;-</span> <span class="fu">calc_rss_hfp_landuse</span>(ssf_coyote, coyote_ssf_data, <span class="at">save_path =</span> <span class="st">"img/rss.png"</span>)</span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(p_rss)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
