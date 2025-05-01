@@ -1,0 +1,30 @@
+/* Inline code */
+code {
+  background-color: #424242;
+  color: #FFFFFF;
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-family: monospace;
+}
+
+/* All links: normal state */
+a,
+a.crossref,
+a.citation {
+  color: #00A67D;
+  text-decoration: none;
+}
+
+/* All links: hover state -> darker color, no underline */
+a:hover,
+a.crossref:hover,
+a.citation:hover {
+  color: #00805F;
+  text-decoration: none;
+}
+
+/* Thin outline around all images */
+img {
+  border: 1px solid #424242;
+  border-radius: 4px;
+}
