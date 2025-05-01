@@ -2,9 +2,11 @@
 body code {
   background-color: #424242 !important;
   color: #FFFFFF !important;
-  padding: 4px 2px;
+  padding: 2px 4px;
   border-radius: 4px;
   font-family: monospace;
+  line-height: 1;
+  vertical-align: middle;
 }
 
 /* All links: normal state */
