@@ -476,8 +476,17 @@ Figure&nbsp;6: Box plots of sampling rates for bobcat and coyote data
 <p>We applied two analytical approaches: (1) home range estimation for red foxes and (2) habitat selection modeling using step-selection functions for coyotes.</p>
 <section id="home-range-size-assessment" class="level3">
 <h3 class="anchored" data-anchor-id="home-range-size-assessment">Home range size assessment</h3>
-<p>Home range sizes were calculated using minimum convex polygons, which provides easily comparable estimates of the area used by each individual animal. As discussed in <a href="#sec-redfoxdata" class="quarto-xref">Section&nbsp;3.2.1</a>, the datasets for the two locations have different temporal scale. The choice of temporal scale has considerable effects on movement parameter calculations <span class="citation" data-cites="laube2011"><a href="#ref-laube2011" role="doc-biblioref">[8]</a></span>, in turn affecting home range results. How to make this data comparable? Problem #1 is that the sampling intervals are different. Problem #2 is that the data coverage varies by time of the year. Problem #3 is that there are highly different amounts of data. Selecting the means and parameters for the comparison involves complex choices that will influence the results. For #1, a possible approach to achieve similar sampling intervals would be to sample a random afternoon data point for each 24 hour window. However, this would include the implicit assumption that foxes will follow similar daily patterns in the different environments. For #2, a possible approach would be to compare the data for the same time of the year. But since the geographical locations are different, the seasonal weather conditions will differ for the same day of the year, likely leading to different animal behavior. For #3, aggregated comparisons can solve the issue, assuming there is enough data for the smaller data source.</p>
-<p>For data exploration the simplest possible imperfect approach was employed, which was to ignore the different sampling intervals for problem #1, to compare the data for the same time of the year for problem #2 even if animal behavior might be different, and to use exploratory data analysis to find out if a representative answer can be found given the amount of data present for problem #3. Note that this approach has obvious limits. Among them is that the Herschel data is not applicable, since it has minimal overlaps with the Wiltshire data (<a href="#fig-datapoints-month" class="quarto-xref">Figure&nbsp;3 (b)</a>). To explore the impact of sampling intervals for problem #1, the home ranges for the Wiltshire data were additionally calculated on downsampled data, where a random data point from every 24 hour period was selected. Finally, an analysis of monthly home ranges was conducted on all three datasets as an alternative solution to address problem #2.</p>
+<p>We estimated home range sizes using minimum convex polygons (MCP), providing standardized, comparable measures of space use across individuals. However, differences in temporal scale between the datasets posed challenges for comparability. The Wiltshire data were sampled at 10–60 minute intervals, while the Bylot and Herschel datasets were sampled once daily. Additionally, data coverage varied across seasons and years, and sample sizes differed substantially.</p>
+<p>These discrepancies introduce potential biases in home range estimation <span class="citation" data-cites="laube2011"><a href="#ref-laube2011" role="doc-biblioref">[8]</a></span>. To mitigate these effects, we employed three strategies:</p>
+<ol type="1">
+<li><p>We limited analyses to the same seasonal period (March 15th – June 15th) across datasets to control for seasonal variation.</p></li>
+<li><p>We generated a downsampled Wiltshire dataset by selecting a random daily location per individual, matching the lower sampling frequency of the Arctic datasets.</p></li>
+<li><p>We computed monthly home ranges for all datasets to explore temporal variation.</p></li>
+</ol>
+<p>Due to limited data from Herschel Island (<a href="#fig-datapoints-month" class="quarto-xref">Figure&nbsp;3 (b)</a>), meaningful comparison with Wiltshire was not feasible. Therefore, we focused comparative analyses on the Wiltshire and Bylot datasets.</p>
+<!--Home range sizes were calculated using minimum convex polygons, which provides easily comparable estimates of the area used by each individual animal. As discussed in @sec-redfoxdata, the datasets for the two locations have different temporal scale. The choice of temporal scale has considerable effects on movement parameter calculations @laube2011, in turn affecting home range results. How to make this data comparable? Problem #1 is that the sampling intervals are different. Problem #2 is that the data coverage varies by time of the year. Problem #3 is that there are highly different amounts of data. Selecting the means and parameters for the comparison involves complex choices that will influence the results. For #1, a possible approach to achieve similar sampling intervals would be to sample a random afternoon data point for each 24 hour window. However, this would include the implicit assumption that foxes will follow similar daily patterns in the different environments. For #2, a possible approach would be to compare the data for the same time of the year. But since the geographical locations are different, the seasonal weather conditions will differ for the same day of the year, likely leading to different animal behavior. For #3, aggregated comparisons can solve the issue, assuming there is enough data for the smaller data source.
+
+For data exploration the simplest possible imperfect approach was employed, which was to ignore the different sampling intervals for problem #1, to compare the data for the same time of the year for problem #2 even if animal behavior might be different, and to use exploratory data analysis to find out if a representative answer can be found given the amount of data present for problem #3. Note that this approach has obvious limits. Among them is that the Herschel data is not applicable, since it has minimal overlaps with the Wiltshire data (@fig-datapoints-month). To explore the impact of sampling intervals for problem #1, the home ranges for the Wiltshire data were additionally calculated on downsampled data, where a random data point from every 24 hour period was selected. Finally, an analysis of monthly home ranges was conducted on all three datasets as an alternative solution to address problem #2.-->
 </section>
 <section id="habitat-selection-modeling" class="level3">
 <h3 class="anchored" data-anchor-id="habitat-selection-modeling">Habitat selection modeling</h3>
@@ -515,7 +524,7 @@ Table&nbsp;2: Reclassification of ESA WorldCover classes into five ecologically 
 <tr class="even">
 <td style="text-align: left;">Open</td>
 <td style="text-align: left;">Open natural or low-intensity land use</td>
-<td style="text-align: left;">Grassland, Bare/sparse vegetation, Moss and lichen</td>
+<td style="text-align: left;">Grassland, Bare/sparse vegetation, Moss &amp; lichen</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Cropland</td>
@@ -529,7 +538,7 @@ Table&nbsp;2: Reclassification of ESA WorldCover classes into five ecologically 
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Water</td>
-<td style="text-align: left;">Aquatic and semi-aquatic environments</td>
+<td style="text-align: left;">Aquatic &amp; semi-aquatic environments</td>
 <td style="text-align: left;">Permanent water bodies, Herbaceous wetland</td>
 </tr>
 </tbody>
@@ -1424,7 +1433,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","closeEffect":"zoom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"selector":".lightbox","openEffect":"zoom"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {
