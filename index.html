@@ -175,6 +175,7 @@ window.Quarto = {
   <li><a href="#appendix" id="toc-appendix" class="nav-link" data-scroll-target="#appendix">Appendix</a>
   <ul>
   <li><a href="#sec-additional-charts" id="toc-sec-additional-charts" class="nav-link" data-scroll-target="#sec-additional-charts">Additional charts</a></li>
+  <li><a href="#sec-sup-mat" id="toc-sec-sup-mat" class="nav-link" data-scroll-target="#sec-sup-mat">Supplementary Material</a></li>
   <li><a href="#use-of-generative-ai" id="toc-use-of-generative-ai" class="nav-link" data-scroll-target="#use-of-generative-ai">Use of generative AI</a></li>
   </ul></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
@@ -246,7 +247,7 @@ This is examined by comparing red fox (<em>vulpes vulpes</em>) home ranges in lo
 <th>Dataset</th>
 <th>Species</th>
 <th>Location</th>
-<th>Year(s)</th>
+<th>Years</th>
 <th>N animals</th>
 <th>Sampling interval</th>
 <th>Total fixes</th>
@@ -285,14 +286,23 @@ This is examined by comparing red fox (<em>vulpes vulpes</em>) home ranges in lo
 <td>Coyote</td>
 <td>NE Washington</td>
 <td>2014–2015</td>
-<td>34 (coyotes), 36 (bobcats)</td>
+<td>34</td>
 <td>4-hour programmed</td>
-<td>121706</td>
+<td>72893</td>
+</tr>
+<tr class="odd">
+<td>Washington</td>
+<td>Bobcat</td>
+<td>NE Washington</td>
+<td>2014–2015</td>
+<td>36</td>
+<td>4-hour programmed</td>
+<td>48813</td>
 </tr>
 </tbody>
 </table>
 <p>In addition to movement data, we used global covariate datasets: the 2020 global terrestrial Human Footprint Index (HFP-100) at 100 m resolution <span class="citation" data-cites="gassert2023operational"><a href="#ref-gassert2023operational" role="doc-biblioref">[6]</a></span>, and the ESA WorldCover 2021 land cover dataset at 10 m resolution <span class="citation" data-cites="zanaga2022esa"><a href="#ref-zanaga2022esa" role="doc-biblioref">[7]</a></span>.</p>
-<p>Detailed descriptions of data preprocessing, filtering, and acquisition procedures are provided in the Supplementary Material <strong>?@sec-sup-mat</strong>.</p>
+<p>Detailed descriptions of data preprocessing, filtering, and acquisition procedures are provided in the Supplementary Material <a href="#sec-sup-mat" class="quarto-xref">Section&nbsp;7.2</a>.</p>
 <!--## Data preparation and processing
 
 ### Movebank {#sec-movebank}
@@ -845,7 +855,7 @@ Figure&nbsp;13: Relative selection strength (± 95% confidence intervals) for co
 </section>
 <section id="coyote-habitat-selection-1" class="level3">
 <h3 class="anchored" data-anchor-id="coyote-habitat-selection-1">Coyote habitat selection</h3>
-<p>For the habitat selection, model validity was assessed by inspecting fixed and random effect estimates, checking for overdispersion, evaluating collinearity among predictors, and plotting predicted values against observed use categories (<strong>?@fig-pred-vs-used</strong>). No overdispersion was detected (dispersion ratio = 0.91; <em>p</em> = 1). Multicollinearity was low among main effects (VIF &lt; 5); high variance inflation for interaction terms was expected due to model structure. Predicted relative use values were higher for used steps compared to available steps, indicating biologically plausible model behavior. Standard residual-based diagnostics were not feasible due to the conditional logistic nature of the step selection framework.</p>
+<p>For the habitat selection, model validity was assessed by inspecting fixed and random effect estimates, checking for overdispersion, evaluating collinearity among predictors, and plotting predicted values against observed use categories (<a href="#fig-pred-vs-used" class="quarto-xref">Figure&nbsp;18</a>). No overdispersion was detected (dispersion ratio = 0.91; <em>p</em> = 1). Multicollinearity was low among main effects (VIF &lt; 5); high variance inflation for interaction terms was expected due to model structure. Predicted relative use values were higher for used steps compared to available steps, indicating biologically plausible model behavior. Standard residual-based diagnostics were not feasible due to the conditional logistic nature of the step selection framework.</p>
 </section>
 </section>
 </section>
@@ -910,14 +920,26 @@ Figure&nbsp;17: Variation in human footprint across and cover types
 </figcaption>
 </figure>
 </div>
-<p><a href="img/coyote_predicted_vs_used.png" class="lightbox" data-gallery="quarto-lightbox-gallery-22" title="Density plot showing predicted relative use from the SSF model for used and available steps"><img src="img/coyote_predicted_vs_used.png" id="fig-pred-vs-used" class="img-fluid" style="width:100.0%" alt="Density plot showing predicted relative use from the SSF model for used and available steps"></a> ## Supplementary Material {#sec-sup-mat}</p>
+<div id="fig-pred-vs-used" class="lightbox quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-pred-vs-used-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="img/coyote_predicted_vs_used.png" class="lightbox" data-gallery="quarto-lightbox-gallery-22" title="Figure&nbsp;18: Density plot showing predicted relative use from the SSF model for used and available steps"><img src="img/coyote_predicted_vs_used.png" class="img-fluid figure-img" style="width:100.0%"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pred-vs-used-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;18: Density plot showing predicted relative use from the SSF model for used and available steps
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="sec-sup-mat" class="level2">
+<h2 class="anchored" data-anchor-id="sec-sup-mat">Supplementary Material</h2>
 <p>All R code and preprocessing steps are publicly available:</p>
 <ul>
-<li>Red fox: UK wader nesting season home ranges: <a href="https://elkeelke.github.io/MovebankProject/preprocessing_uk_wader_nesting_season_home_range.html">link</a></li>
-<li>Red fox: monthly home ranges: <a href="https://elkeelke.github.io/MovebankProject/preprocessing_monthly_home_ranges.html">link</a></li>
-<li>Bobcat/coyote: data preparation and statistical modelling: <a href="https://elkeelke.github.io/MovebankProject/preprocessing_SSF_complete.html">link</a></li>
-<li>Human Footprint Index data preparation: <a href="https://elkeelke.github.io/MovebankProject/preprocessing_HFP_subsetting.html">link</a></li>
-<li>ESA WorldCover data preparation: <a href="https://elkeelke.github.io/MovebankProject/preprocessing_ESA_world_cover.html">link</a></li>
+<li><a href="https://elkeelke.github.io/MovebankProject/preprocessing_uk_wader_nesting_season_home_range.html">Red fox: UK wader nesting season home ranges</a></li>
+<li><a href="https://elkeelke.github.io/MovebankProject/preprocessing_monthly_home_ranges.html">Red fox: monthly home ranges</a></li>
+<li><a href="https://elkeelke.github.io/MovebankProject/preprocessing_SSF_complete.html">Bobcat/coyote: data preparation and statistical modelling</a></li>
+<li><a href="https://elkeelke.github.io/MovebankProject/preprocessing_HFP_subsetting.html">Human Footprint Index data preparation</a></li>
+<li><a href="https://elkeelke.github.io/MovebankProject/preprocessing_ESA_world_cover.html">ESA WorldCover data preparation</a></li>
 </ul>
 </section>
 <section id="use-of-generative-ai" class="level2">
@@ -1400,7 +1422,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","descPosition":"bottom","closeEffect":"zoom","loop":false,"selector":".lightbox"});
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","openEffect":"zoom","loop":false,"descPosition":"bottom","selector":".lightbox"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {
