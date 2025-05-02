@@ -140,13 +140,7 @@ window.Quarto = {
   <li><a href="#data-and-methods" id="toc-data-and-methods" class="nav-link" data-scroll-target="#data-and-methods">Data and methods</a>
   <ul>
   <li><a href="#datasets" id="toc-datasets" class="nav-link" data-scroll-target="#datasets">Datasets</a></li>
-  <li><a href="#data-preparation-and-processing" id="toc-data-preparation-and-processing" class="nav-link" data-scroll-target="#data-preparation-and-processing">Data preparation and processing</a>
-  <ul class="collapse">
-  <li><a href="#sec-movebank" id="toc-sec-movebank" class="nav-link" data-scroll-target="#sec-movebank">Movebank</a></li>
-  <li><a href="#human-footprint" id="toc-human-footprint" class="nav-link" data-scroll-target="#human-footprint">Human footprint</a></li>
-  <li><a href="#land-cover" id="toc-land-cover" class="nav-link" data-scroll-target="#land-cover">Land cover</a></li>
-  </ul></li>
-  <li><a href="#data-exploration-and-analysis" id="toc-data-exploration-and-analysis" class="nav-link" data-scroll-target="#data-exploration-and-analysis">Data exploration and analysis</a>
+  <li><a href="#exploratory-data-assessment" id="toc-exploratory-data-assessment" class="nav-link" data-scroll-target="#exploratory-data-assessment">Exploratory data assessment</a>
   <ul class="collapse">
   <li><a href="#sec-redfoxdata" id="toc-sec-redfoxdata" class="nav-link" data-scroll-target="#sec-redfoxdata">Red fox</a></li>
   <li><a href="#bobcat-and-coyote" id="toc-bobcat-and-coyote" class="nav-link" data-scroll-target="#bobcat-and-coyote">Bobcat and coyote</a></li>
@@ -232,29 +226,91 @@ This is examined by comparing red fox (<em>vulpes vulpes</em>) home ranges in lo
 </section>
 <section id="data-and-methods" class="level1">
 <h1>Data and methods</h1>
-<p>This section describes the datasets, the steps taken to prepare and process the different datasets in use, and the methodological approach.</p>
+<!--This section describes the datasets, the steps taken to prepare and process the different datasets in use, and the methodological approach.-->
 <section id="datasets" class="level2">
 <h2 class="anchored" data-anchor-id="datasets">Datasets</h2>
-<p>The Movebank database <span class="citation" data-cites="kays2022movebank"><a href="#ref-kays2022movebank" role="doc-biblioref">[2]</a></span> allows researchers to publish animal tracking data for public use. Relying on externally contributed data presents challenges because data is used for purposes it was not originally collected for, and compared between studies. We selected red fox data for outskirt areas in Wiltshire, UK <span class="citation" data-cites="porteus2024movement"><a href="#ref-porteus2024movement" role="doc-biblioref">[3]</a></span> and for uninhabited islands in Canada <span class="citation" data-cites="lai2022red"><a href="#ref-lai2022red" role="doc-biblioref">[4]</a></span>, and bobcat and coyote data for remote areas in northeastern Washington, US <span class="citation" data-cites="prugh2023fear"><a href="#ref-prugh2023fear" role="doc-biblioref">[5]</a></span>. Additional, the global terrestrial human footprint <span class="citation" data-cites="gassert2023operational"><a href="#ref-gassert2023operational" role="doc-biblioref">[6]</a></span> and satellite land cover data <span class="citation" data-cites="zanaga2022esa"><a href="#ref-zanaga2022esa" role="doc-biblioref">[7]</a></span> were employed.</p>
+<!--The Movebank database @kays2022movebank allows researchers to publish animal tracking data for public use. Relying on externally contributed data presents challenges because data is used for purposes it was not originally collected for, and compared between studies. We selected red fox data for outskirt areas in Wiltshire, UK @porteus2024movement and for uninhabited islands in Canada @lai2022red, and bobcat and coyote data for remote areas in northeastern Washington, US @prugh2023fear. Additional, the global terrestrial human footprint @gassert2023operational and satellite land cover data @zanaga2022esa were employed.-->
+<p>We analyzed four animal tracking datasets obtained from the Movebank database <span class="citation" data-cites="kays2022movebank"><a href="#ref-kays2022movebank" role="doc-biblioref">[2]</a></span>, including red fox (<em>Vulpes vulpes</em>) tracks from Wiltshire, UK <span class="citation" data-cites="porteus2024movement"><a href="#ref-porteus2024movement" role="doc-biblioref">[3]</a></span>, Bylot Island, Canada, and Herschel Island, Canada <span class="citation" data-cites="lai2022red"><a href="#ref-lai2022red" role="doc-biblioref">[4]</a></span>, as well as bobcat (<em>Lynx rufus</em>) and coyote (<em>Canis latrans</em>) tracks from northeastern Washington, USA <span class="citation" data-cites="prugh2023fear"><a href="#ref-prugh2023fear" role="doc-biblioref">[5]</a></span>. The tracking data varied in temporal resolution and geographic context, with sample sizes and data characteristics summarized in Table X.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 11%">
+<col style="width: 15%">
+<col style="width: 15%">
+<col style="width: 12%">
+<col style="width: 10%">
+<col style="width: 22%">
+<col style="width: 12%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Dataset</th>
+<th>Species</th>
+<th>Location</th>
+<th>Year(s)</th>
+<th>N animals</th>
+<th>Sampling interval</th>
+<th>Total fixes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Wiltshire</td>
+<td>Red fox</td>
+<td>Wiltshire, UK</td>
+<td>2016–2019</td>
+<td>35</td>
+<td>10–60 min</td>
+<td>146072</td>
+</tr>
+<tr class="even">
+<td>Bylot</td>
+<td>Red fox</td>
+<td>Bylot Island</td>
+<td>2011–2015</td>
+<td>2</td>
+<td>1/day (afternoon)</td>
+<td>2086</td>
+</tr>
+<tr class="odd">
+<td>Herschel</td>
+<td>Red fox</td>
+<td>Herschel Island</td>
+<td>2009–2010</td>
+<td>2</td>
+<td>1/day (afternoon)</td>
+<td>223</td>
+</tr>
+<tr class="even">
+<td>Washington</td>
+<td>Coyote</td>
+<td>NE Washington</td>
+<td>2014–2015</td>
+<td>34 (coyotes), 36 (bobcats)</td>
+<td>4-hour programmed</td>
+<td>121706</td>
+</tr>
+</tbody>
+</table>
+<p>In addition to movement data, we used global covariate datasets: the 2020 global terrestrial Human Footprint Index (HFP-100) at 100 m resolution <span class="citation" data-cites="gassert2023operational"><a href="#ref-gassert2023operational" role="doc-biblioref">[6]</a></span>, and the ESA WorldCover 2021 land cover dataset at 10 m resolution <span class="citation" data-cites="zanaga2022esa"><a href="#ref-zanaga2022esa" role="doc-biblioref">[7]</a></span>.</p>
+<p>Detailed descriptions of data preprocessing, filtering, and acquisition procedures are provided in the Supplementary Material <strong>?@sec-sup-mat</strong>.</p>
+<!--## Data preparation and processing
+
+### Movebank {#sec-movebank}
+
+All Movebank datasets have the same schema. This simplifies enables code re-use, and requires data contributors do perform preprocessing on their side to provide the data in an appropriate format. Libraries for data processing and trajectory handling in R are provided @kranstauber2024move2 @signer2019animal.
+
+The R code for data download, preprocessing, and serialization of data and charts can be found in: [Red fox: UK wader nesting season home ranges](https://elkeelke.github.io/MovebankProject/preprocessing_uk_wader_nesting_season_home_range.html), [Red fox: montly home ranges](https://elkeelke.github.io/MovebankProject/preprocessing_monthly_home_ranges.html), [Bobcat/coyote: data preparation and statistical modelling](https://elkeelke.github.io/MovebankProject/preprocessing_SSF_complete.html).
+
+### Human footprint
+
+The global 100 meter resolution terrestrial human footprint data (HFP-100) is raster data using Mollweide projection @lapaine2011mollweide. The 2020 version of the data was downloaded for Washington, and projected to the WGS84 coordinate system: [HFP-100 download](https://elkeelke.github.io/MovebankProject/preprocessing_HFP_subsetting.html).
+
+### Land cover
+
+The relevant European Space Agency (ESA) WorldCover 2021 data at 10 m resolution was downloaded via the Microsoft Planetary Computer [STAC API](https://planetarycomputer.microsoft.com/docs/quickstarts/reading-stac/): [ESA download](https://elkeelke.github.io/MovebankProject/preprocessing_ESA_world_cover.html).-->
 </section>
-<section id="data-preparation-and-processing" class="level2">
-<h2 class="anchored" data-anchor-id="data-preparation-and-processing">Data preparation and processing</h2>
-<section id="sec-movebank" class="level3">
-<h3 class="anchored" data-anchor-id="sec-movebank">Movebank</h3>
-<p>All Movebank datasets have the same schema. This simplifies enables code re-use, and requires data contributors do perform preprocessing on their side to provide the data in an appropriate format. Libraries for data processing and trajectory handling in R are provided <span class="citation" data-cites="kranstauber2024move2"><a href="#ref-kranstauber2024move2" role="doc-biblioref">[8]</a></span> <span class="citation" data-cites="signer2019animal"><a href="#ref-signer2019animal" role="doc-biblioref">[9]</a></span>.</p>
-<p>The R code for data download, preprocessing, and serialization of data and charts can be found in: <a href="https://elkeelke.github.io/MovebankProject/preprocessing_uk_wader_nesting_season_home_range.html">Red fox: UK wader nesting season home ranges</a>, <a href="https://elkeelke.github.io/MovebankProject/preprocessing_monthly_home_ranges.html">Red fox: montly home ranges</a>, <a href="https://elkeelke.github.io/MovebankProject/preprocessing_SSF_complete.html">Bobcat/coyote: data preparation and statistical modelling</a>.</p>
-</section>
-<section id="human-footprint" class="level3">
-<h3 class="anchored" data-anchor-id="human-footprint">Human footprint</h3>
-<p>The global 100 meter resolution terrestrial human footprint data (HFP-100) is raster data using Mollweide projection <span class="citation" data-cites="lapaine2011mollweide"><a href="#ref-lapaine2011mollweide" role="doc-biblioref">[10]</a></span>. The 2020 version of the data was downloaded for Washington, and projected to the WGS84 coordinate system: <a href="https://elkeelke.github.io/MovebankProject/preprocessing_HFP_subsetting.html">HFP-100 download</a>.</p>
-</section>
-<section id="land-cover" class="level3">
-<h3 class="anchored" data-anchor-id="land-cover">Land cover</h3>
-<p>The relevant European Space Agency (ESA) WorldCover 2021 data at 10 m resolution was downloaded via the Microsoft Planetary Computer <a href="https://planetarycomputer.microsoft.com/docs/quickstarts/reading-stac/">STAC API</a>: <a href="https://elkeelke.github.io/MovebankProject/preprocessing_ESA_world_cover.html">ESA download</a>.</p>
-</section>
-</section>
-<section id="data-exploration-and-analysis" class="level2">
-<h2 class="anchored" data-anchor-id="data-exploration-and-analysis">Data exploration and analysis</h2>
+<section id="exploratory-data-assessment" class="level2">
+<h2 class="anchored" data-anchor-id="exploratory-data-assessment">Exploratory data assessment</h2>
 <section id="sec-redfoxdata" class="level3">
 <h3 class="anchored" data-anchor-id="sec-redfoxdata">Red fox</h3>
 <p>Data from Wiltshire (<a href="#fig-wiltshire-map" class="quarto-xref">Figure&nbsp;1</a>) was collected between 2016 to 2019 during the UK wader nesting season, which was defined to be March 15th to June 15th, for 35 foxes in total. It was sampled at 10 and 60 minute rates. The research team controlled the sampling rate remotely to save battery at times the data was considered less interesting.</p>
@@ -408,15 +464,15 @@ Figure&nbsp;6: Box plots of sampling rates for bobcat and coyote data
 <p>We applied two analytical approaches: (1) home range estimation for red foxes and (2) habitat selection modeling using step-selection functions for coyotes.</p>
 <section id="home-range-size-assessment" class="level3">
 <h3 class="anchored" data-anchor-id="home-range-size-assessment">Home range size assessment</h3>
-<p>Home range sizes were calculated using minimum convex polygons, which provides easily comparable estimates of the area used by each individual animal. As discussed in <a href="#sec-redfoxdata" class="quarto-xref">Section&nbsp;3.3.1</a>, the datasets for the two locations have different temporal scale. The choice of temporal scale has considerable effects on movement parameter calculations <span class="citation" data-cites="laube2011"><a href="#ref-laube2011" role="doc-biblioref">[11]</a></span>, in turn affecting home range results. How to make this data comparable? Problem #1 is that the sampling intervals are different. Problem #2 is that the data coverage varies by time of the year. Problem #3 is that there are highly different amounts of data. Selecting the means and parameters for the comparison involves complex choices that will influence the results. For #1, a possible approach to achieve similar sampling intervals would be to sample a random afternoon data point for each 24 hour window. However, this would include the implicit assumption that foxes will follow similar daily patterns in the different environments. For #2, a possible approach would be to compare the data for the same time of the year. But since the geographical locations are different, the seasonal weather conditions will differ for the same day of the year, likely leading to different animal behavior. For #3, aggregated comparisons can solve the issue, assuming there is enough data for the smaller data source.</p>
+<p>Home range sizes were calculated using minimum convex polygons, which provides easily comparable estimates of the area used by each individual animal. As discussed in <a href="#sec-redfoxdata" class="quarto-xref">Section&nbsp;3.2.1</a>, the datasets for the two locations have different temporal scale. The choice of temporal scale has considerable effects on movement parameter calculations <span class="citation" data-cites="laube2011"><a href="#ref-laube2011" role="doc-biblioref">[8]</a></span>, in turn affecting home range results. How to make this data comparable? Problem #1 is that the sampling intervals are different. Problem #2 is that the data coverage varies by time of the year. Problem #3 is that there are highly different amounts of data. Selecting the means and parameters for the comparison involves complex choices that will influence the results. For #1, a possible approach to achieve similar sampling intervals would be to sample a random afternoon data point for each 24 hour window. However, this would include the implicit assumption that foxes will follow similar daily patterns in the different environments. For #2, a possible approach would be to compare the data for the same time of the year. But since the geographical locations are different, the seasonal weather conditions will differ for the same day of the year, likely leading to different animal behavior. For #3, aggregated comparisons can solve the issue, assuming there is enough data for the smaller data source.</p>
 <p>For data exploration the simplest possible imperfect approach was employed, which was to ignore the different sampling intervals for problem #1, to compare the data for the same time of the year for problem #2 even if animal behavior might be different, and to use exploratory data analysis to find out if a representative answer can be found given the amount of data present for problem #3. Note that this approach has obvious limits. Among them is that the Herschel data is not applicable, since it has minimal overlaps with the Wiltshire data (<a href="#fig-datapoints-month" class="quarto-xref">Figure&nbsp;3 (b)</a>). To explore the impact of sampling intervals for problem #1, the home ranges for the Wiltshire data were additionally calculated on downsampled data, where a random data point from every 24 hour period was selected. Finally, an analysis of monthly home ranges was conducted on all three datasets as an alternative solution to address problem #2.</p>
 </section>
 <section id="habitat-selection-modeling" class="level3">
 <h3 class="anchored" data-anchor-id="habitat-selection-modeling">Habitat selection modeling</h3>
-<p>To model fine-scale habitat preferences, we used step-selection functions (SSFs) <span class="citation" data-cites="fortin2005wolves"><a href="#ref-fortin2005wolves" role="doc-biblioref">[12]</a></span>. These compare environmental attributes at “used” locations to those at randomly sampled “available” locations along the animal’s movement path. This allows to quantify how animals respond to environmental covariates, such as human footprint and land cover. Selection patterns are then compared to assess how habitat preferences vary with human influence.</p>
+<p>To model fine-scale habitat preferences, we used step-selection functions (SSFs) <span class="citation" data-cites="fortin2005wolves"><a href="#ref-fortin2005wolves" role="doc-biblioref">[9]</a></span>. These compare environmental attributes at “used” locations to those at randomly sampled “available” locations along the animal’s movement path. This allows to quantify how animals respond to environmental covariates, such as human footprint and land cover. Selection patterns are then compared to assess how habitat preferences vary with human influence.</p>
 <section id="step-generation-and-covariates" class="level4">
 <h4 class="anchored" data-anchor-id="step-generation-and-covariates">Step Generation and Covariates</h4>
-<p>Coyote and bobcat GPS tracks <span class="citation" data-cites="prugh2023fear"><a href="#ref-prugh2023fear" role="doc-biblioref">[5]</a></span> were irregularly spaced (<a href="#fig-bobcat-coyote-sampling" class="quarto-xref">Figure&nbsp;6 (b)</a>) and were resampled for temporal consistency — coyotes to 4-hour intervals and bobcats to 8-hour intervals, both with a 10-minute tolerance - using the <code>amt::track_resample</code> function <span class="citation" data-cites="signer2019animal"><a href="#ref-signer2019animal" role="doc-biblioref">[9]</a></span>. Steps were then generated using the <code>amt::steps_by_burst</code> and <code>amt::random_steps</code> functions. For each used step, ten random available steps were generated based on empirical step length (gamma distribution) and turning angle (Von Mises distribution). Log-transformed step lengths were calculated for modeling to account for potential bias in the availability distribution.</p>
+<p>Coyote and bobcat GPS tracks <span class="citation" data-cites="prugh2023fear"><a href="#ref-prugh2023fear" role="doc-biblioref">[5]</a></span> were irregularly spaced (<a href="#fig-bobcat-coyote-sampling" class="quarto-xref">Figure&nbsp;6 (b)</a>) and were resampled for temporal consistency — coyotes to 4-hour intervals and bobcats to 8-hour intervals, both with a 10-minute tolerance - using the <code>amt::track_resample</code> function <span class="citation" data-cites="signer2019animal"><a href="#ref-signer2019animal" role="doc-biblioref">[10]</a></span>. Steps were then generated using the <code>amt::steps_by_burst</code> and <code>amt::random_steps</code> functions. For each used step, ten random available steps were generated based on empirical step length (gamma distribution) and turning angle (Von Mises distribution). Log-transformed step lengths were calculated for modeling to account for potential bias in the availability distribution.</p>
 <p>Each observed step and its corresponding random steps were grouped into strata using a unique step ID, following a matched case-control design <span class="citation" data-cites="prugh2023fear"><a href="#ref-prugh2023fear" role="doc-biblioref">[5]</a></span>. Habitat covariates (land cover and human footprint) were extracted for each step endpoint.</p>
 <p>Land cover was reclassified into five ecologically meaningful categories to improve interpretability and model convergence (<a href="#tbl-landcover-reclass" class="quarto-xref">Table&nbsp;1</a>). Human footprint index (HFP) values were standardized across the dataset for modeling.</p>
 <div id="tbl-landcover-reclass" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -495,7 +551,7 @@ Figure&nbsp;8: Relationship between movement and human footprint
 </section>
 <section id="statistical-model" class="level4">
 <h4 class="anchored" data-anchor-id="statistical-model">Statistical model</h4>
-<p>Step selection functions (SSFs) are commonly modeled using conditional logistic regression, which compares observed and available steps within matched strata (e.g., <code>survival::clogit</code>; <span class="citation" data-cites="manly2007resource"><a href="#ref-manly2007resource" role="doc-biblioref">[13]</a></span>). However, for datasets involving multiple individuals, this approach can be limiting in terms of flexibility. Since conditional logistic regression is likelihood-equivalent to a Poisson regression model with stratum-specific fixed intercepts, these can be treated as random effects with a large fixed variance <span class="citation" data-cites="muff2020accounting"><a href="#ref-muff2020accounting" role="doc-biblioref">[14]</a></span>. By treating these intercepts as random effects with a large fixed variance, the model can be reformulated as a generalized linear mixed-effects model (GLMM), allowing for the inclusion of random slopes to account for individual variation in habitat selection.</p>
+<p>Step selection functions (SSFs) are commonly modeled using conditional logistic regression, which compares observed and available steps within matched strata (e.g., <code>survival::clogit</code>; <span class="citation" data-cites="manly2007resource"><a href="#ref-manly2007resource" role="doc-biblioref">[11]</a></span>). However, for datasets involving multiple individuals, this approach can be limiting in terms of flexibility. Since conditional logistic regression is likelihood-equivalent to a Poisson regression model with stratum-specific fixed intercepts, these can be treated as random effects with a large fixed variance <span class="citation" data-cites="muff2020accounting"><a href="#ref-muff2020accounting" role="doc-biblioref">[12]</a></span>. By treating these intercepts as random effects with a large fixed variance, the model can be reformulated as a generalized linear mixed-effects model (GLMM), allowing for the inclusion of random slopes to account for individual variation in habitat selection.</p>
 <p>Following this framework, we modeled habitat selection in relation to human impact using a Poisson GLMM with a log link, implemented via <code>glmmTMB::glmmTMB</code>. Stratum-specific intercepts (one per <code>step_id_</code>) were modeled as random effects with a fixed, large variance to approximate the conditional logistic structure, enabling the inclusion of individual-level random slopes and better capturing heterogeneity in selection behavior.</p>
 <p>The fixed effects included a two-way interaction between land cover class and both the linear and quadratic terms of standardized human footprint, as well as the natural logarithm of step length (<code>log_sl_</code>) to control for movement bias. Human footprint index (HFP) values were standardized before modeling.</p>
 <p>The model can be expressed as:</p>
@@ -784,12 +840,12 @@ Figure&nbsp;13: Relative selection strength (± 95% confidence intervals) for co
 <!--Model validation means demonstrating that a model is acceptable for its intended use @rykiel1996testing. The purpose, criteria, and context of the model must be specified.-->
 <section id="fox-home-ranges-1" class="level3">
 <h3 class="anchored" data-anchor-id="fox-home-ranges-1">Fox home ranges</h3>
-<p>To validate the home range estimation, we evaluated the influence of coordinate system choice and data properties on the results. Specifically, we compared median home range sizes calculated using minimum convex polygons (MCP) across three coordinate systems: WGS84 (EPSG:4326), NAD83 (EPSG:3347), and UTM Zone 17N (EPSG:2958), identified using the CRS Explorer. The differences in median home range area were small (75.3 km² for WGS84, 73.3 km² for NAD83, and 75.8 km² for UTM Zone 17N), suggesting minimal distortion effects. Our validation criterion required that any coordinate system effect be an order of magnitude smaller than observed ecological differences (≥10x smaller) <span class="citation" data-cites="nilsen2008can"><a href="#ref-nilsen2008can" role="doc-biblioref">[15]</a></span>. Given this threshold was met, we considered the choice of coordinate system to have negligible impact on home range estimates.</p>
+<p>To validate the home range estimation, we evaluated the influence of coordinate system choice and data properties on the results. Specifically, we compared median home range sizes calculated using minimum convex polygons (MCP) across three coordinate systems: WGS84 (EPSG:4326), NAD83 (EPSG:3347), and UTM Zone 17N (EPSG:2958), identified using the CRS Explorer. The differences in median home range area were small (75.3 km² for WGS84, 73.3 km² for NAD83, and 75.8 km² for UTM Zone 17N), suggesting minimal distortion effects. Our validation criterion required that any coordinate system effect be an order of magnitude smaller than observed ecological differences (≥10x smaller) <span class="citation" data-cites="nilsen2008can"><a href="#ref-nilsen2008can" role="doc-biblioref">[13]</a></span>. Given this threshold was met, we considered the choice of coordinate system to have negligible impact on home range estimates.</p>
 <!--For home range sizes, two models comprised of data, home range calculation based on minimum convex polygons, and median selection were compared. The validation criteria required the difference between the results to be at least 10 times larger than the effects on the results introduced by data properties. For that order of magnitude, the choice of home range estimator has a secondary impact @nilsen2008can. Since geographic location contexts were diverse, to exclude distortions in the coordinate system as a potential influence, the results for Bylot island were spot checked for three applicable coordinate systems: WGS84 (EPSG:4326), NAD 83 (EPSG:3347), and UTM zone 17N (EPSG:2958). These were identified using the [CRS Explorer](https://crs-explorer.proj.org/). The differences in the median home range size results were minor: 75.3 km<sup>2</sup> for WGS84, 73.3 km<sup>2</sup> for NAD 83, and 75.8 km<sup>2</sup> for UTM zone 17N.-->
 </section>
 <section id="coyote-habitat-selection-1" class="level3">
 <h3 class="anchored" data-anchor-id="coyote-habitat-selection-1">Coyote habitat selection</h3>
-<p>For the habitat selection, model validity was assessed by inspecting fixed and random effect estimates, checking for overdispersion, evaluating collinearity among predictors, and plotting predicted values against observed use categories (<a href="#fig-pred-vs-used" class="quarto-xref">Figure&nbsp;18</a>). No overdispersion was detected (dispersion ratio = 0.91; <em>p</em> = 1). Multicollinearity was low among main effects (VIF &lt; 5); high variance inflation for interaction terms was expected due to model structure. Predicted relative use values were higher for used steps compared to available steps, indicating biologically plausible model behavior. Standard residual-based diagnostics were not feasible due to the conditional logistic nature of the step selection framework.</p>
+<p>For the habitat selection, model validity was assessed by inspecting fixed and random effect estimates, checking for overdispersion, evaluating collinearity among predictors, and plotting predicted values against observed use categories (<strong>?@fig-pred-vs-used</strong>). No overdispersion was detected (dispersion ratio = 0.91; <em>p</em> = 1). Multicollinearity was low among main effects (VIF &lt; 5); high variance inflation for interaction terms was expected due to model structure. Predicted relative use values were higher for used steps compared to available steps, indicating biologically plausible model behavior. Standard residual-based diagnostics were not feasible due to the conditional logistic nature of the step selection framework.</p>
 </section>
 </section>
 </section>
@@ -797,13 +853,13 @@ Figure&nbsp;13: Relative selection strength (± 95% confidence intervals) for co
 <h1>Discussion</h1>
 <section id="home-range-size-assessment-1" class="level2">
 <h2 class="anchored" data-anchor-id="home-range-size-assessment-1">Home range size assessment</h2>
-<p>The fox home range size results show enormous differences between rural and remote areas. We conclude that human presence changes fox movement behavior patterns fundamentally. The opportunity to move undisturbed, and the availability of anthropogenic food sources are likely the most relevant factors. Interestingly, home range sizes for Bylot and Herschel foxes are similar, even if the island sizes differ by a factor of 100. Note that there is one fox with an extraordinarily large home range in <a href="#fig-home-ranges-wiltshire" class="quarto-xref">Figure&nbsp;10 (a)</a>. The additional charts in <a href="#sec-additional-charts" class="quarto-xref">Section&nbsp;7.1</a> show several instances of large fox movements within a single month. Similar patterns with a small number of foxes covering much larger areas than others were found in <span class="citation" data-cites="kobryn2023foxes"><a href="#ref-kobryn2023foxes" role="doc-biblioref">[16]</a></span>, concluding that the data is genuine and demonstrates potential for extensive movement patterns in urban foxes.</p>
+<p>The fox home range size results show enormous differences between rural and remote areas. We conclude that human presence changes fox movement behavior patterns fundamentally. The opportunity to move undisturbed, and the availability of anthropogenic food sources are likely the most relevant factors. Interestingly, home range sizes for Bylot and Herschel foxes are similar, even if the island sizes differ by a factor of 100. Note that there is one fox with an extraordinarily large home range in <a href="#fig-home-ranges-wiltshire" class="quarto-xref">Figure&nbsp;10 (a)</a>. The additional charts in <a href="#sec-additional-charts" class="quarto-xref">Section&nbsp;7.1</a> show several instances of large fox movements within a single month. Similar patterns with a small number of foxes covering much larger areas than others were found in <span class="citation" data-cites="kobryn2023foxes"><a href="#ref-kobryn2023foxes" role="doc-biblioref">[14]</a></span>, concluding that the data is genuine and demonstrates potential for extensive movement patterns in urban foxes.</p>
 <p>While technical aspects such as sampling intervals and home range estimator have significant influence on the calculation results, they play a secondary role in comparison to the difference in fox behavior, which enables the chosen approach of comparing data from heterogeneous sources.</p>
 </section>
 <section id="habitat-selection" class="level2">
 <h2 class="anchored" data-anchor-id="habitat-selection">Habitat selection</h2>
 <p>Coyote habitat selection was driven by both land cover and the degree of human modification. Animals strongly favored forest and open habitats under low-to-moderate human footprint but reduced use of these habitats once disturbance exceeded an apparent threshold, indicating a trade-off between resource gain and risk. Cropland, built-up areas, and water were rarely selected, revealing broad avoidance of highly modified landscapes.</p>
-<p>Land-cover-specific relative selection strength (RSS) curves showed that human disturbance altered preferences differently among habitats—selection for forest declined more steeply with increasing footprint than did selection for open areas—echoing earlier work that forests function as crucial refuges in human-dominated settings (e.g., <span class="citation" data-cites="riley2003effects"><a href="#ref-riley2003effects" role="doc-biblioref">[17]</a></span>). Model diagnostics confirmed that the SSF was well specified, with no over-dispersion or problematic collinearity. A comparable analysis for bobcats was infeasible because of sparse, uneven data, underscoring the limitations of opportunistic tracking datasets.</p>
+<p>Land-cover-specific relative selection strength (RSS) curves showed that human disturbance altered preferences differently among habitats—selection for forest declined more steeply with increasing footprint than did selection for open areas—echoing earlier work that forests function as crucial refuges in human-dominated settings (e.g., <span class="citation" data-cites="riley2003effects"><a href="#ref-riley2003effects" role="doc-biblioref">[15]</a></span>). Model diagnostics confirmed that the SSF was well specified, with no over-dispersion or problematic collinearity. A comparable analysis for bobcats was infeasible because of sparse, uneven data, underscoring the limitations of opportunistic tracking datasets.</p>
 </section>
 </section>
 <section id="conclusion" class="level1">
@@ -854,16 +910,15 @@ Figure&nbsp;17: Variation in human footprint across and cover types
 </figcaption>
 </figure>
 </div>
-<div id="fig-pred-vs-used" class="lightbox quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-pred-vs-used-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="img/coyote_predicted_vs_used.png" class="lightbox" data-gallery="quarto-lightbox-gallery-22" title="Figure&nbsp;18: Density plot showing predicted relative use from the SSF model for used and available steps"><img src="img/coyote_predicted_vs_used.png" class="img-fluid figure-img" style="width:100.0%"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pred-vs-used-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;18: Density plot showing predicted relative use from the SSF model for used and available steps
-</figcaption>
-</figure>
-</div>
+<p><a href="img/coyote_predicted_vs_used.png" class="lightbox" data-gallery="quarto-lightbox-gallery-22" title="Density plot showing predicted relative use from the SSF model for used and available steps"><img src="img/coyote_predicted_vs_used.png" id="fig-pred-vs-used" class="img-fluid" style="width:100.0%" alt="Density plot showing predicted relative use from the SSF model for used and available steps"></a> ## Supplementary Material {#sec-sup-mat}</p>
+<p>All R code and preprocessing steps are publicly available:</p>
+<ul>
+<li>Red fox: UK wader nesting season home ranges: <a href="https://elkeelke.github.io/MovebankProject/preprocessing_uk_wader_nesting_season_home_range.html">link</a></li>
+<li>Red fox: monthly home ranges: <a href="https://elkeelke.github.io/MovebankProject/preprocessing_monthly_home_ranges.html">link</a></li>
+<li>Bobcat/coyote: data preparation and statistical modelling: <a href="https://elkeelke.github.io/MovebankProject/preprocessing_SSF_complete.html">link</a></li>
+<li>Human Footprint Index data preparation: <a href="https://elkeelke.github.io/MovebankProject/preprocessing_HFP_subsetting.html">link</a></li>
+<li>ESA WorldCover data preparation: <a href="https://elkeelke.github.io/MovebankProject/preprocessing_ESA_world_cover.html">link</a></li>
+</ul>
 </section>
 <section id="use-of-generative-ai" class="level2">
 <h2 class="anchored" data-anchor-id="use-of-generative-ai">Use of generative AI</h2>
@@ -899,35 +954,29 @@ Figure&nbsp;18: Density plot showing predicted relative use from the SSF model f
 <div id="ref-zanaga2022esa" class="csl-entry" role="listitem">
 <div class="csl-left-margin">[7] </div><div class="csl-right-inline">D. Zanaga <em>et al.</em>, <span>“ESA WorldCover 10 m 2021 v200,”</span> 2022.</div>
 </div>
-<div id="ref-kranstauber2024move2" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[8] </div><div class="csl-right-inline">B. Kranstauber, K. Safi, and A. K. Scharf, <span>“move2: R package for processing movement data,”</span> <em>Methods in Ecology and Evolution</em>, vol. 15, no. 9, pp. 1561–1567, 2024.</div>
-</div>
-<div id="ref-signer2019animal" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[9] </div><div class="csl-right-inline">J. Signer, J. Fieberg, and T. Avgar, <span>“Animal movement tools (amt): R package for managing tracking data and conducting habitat selection analyses,”</span> <em>Ecology and evolution</em>, vol. 9, no. 2, pp. 880–890, 2019.</div>
-</div>
-<div id="ref-lapaine2011mollweide" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[10] </div><div class="csl-right-inline">M. Lapaine, <span>“Mollweide map projection,”</span> <em>KoG</em>, vol. 15, no. 15., pp. 7–16, 2011.</div>
-</div>
 <div id="ref-laube2011" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[11] </div><div class="csl-right-inline">P. Laube and R. S. Purves, <span>“How fast is a cow? Cross-scale analysis of movement data,”</span> <em>Transactions in GIS</em>, vol. 15, no. 3, pp. 401–418, 2011.</div>
+<div class="csl-left-margin">[8] </div><div class="csl-right-inline">P. Laube and R. S. Purves, <span>“How fast is a cow? Cross-scale analysis of movement data,”</span> <em>Transactions in GIS</em>, vol. 15, no. 3, pp. 401–418, 2011.</div>
 </div>
 <div id="ref-fortin2005wolves" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[12] </div><div class="csl-right-inline">D. Fortin, H. L. Beyer, M. S. Boyce, D. W. Smith, T. Duchesne, and J. S. Mao, <span>“Wolves influence elk movements: Behavior shapes a trophic cascade in yellowstone national park,”</span> <em>Ecology</em>, vol. 86, no. 5, pp. 1320–1330, 2005.</div>
+<div class="csl-left-margin">[9] </div><div class="csl-right-inline">D. Fortin, H. L. Beyer, M. S. Boyce, D. W. Smith, T. Duchesne, and J. S. Mao, <span>“Wolves influence elk movements: Behavior shapes a trophic cascade in yellowstone national park,”</span> <em>Ecology</em>, vol. 86, no. 5, pp. 1320–1330, 2005.</div>
+</div>
+<div id="ref-signer2019animal" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[10] </div><div class="csl-right-inline">J. Signer, J. Fieberg, and T. Avgar, <span>“Animal movement tools (amt): R package for managing tracking data and conducting habitat selection analyses,”</span> <em>Ecology and evolution</em>, vol. 9, no. 2, pp. 880–890, 2019.</div>
 </div>
 <div id="ref-manly2007resource" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[13] </div><div class="csl-right-inline">B. Manly, L. McDonald, D. L. Thomas, T. L. McDonald, and W. P. Erickson, <em>Resource selection by animals: Statistical design and analysis for field studies</em>. Springer Science &amp; Business Media, 2007.</div>
+<div class="csl-left-margin">[11] </div><div class="csl-right-inline">B. Manly, L. McDonald, D. L. Thomas, T. L. McDonald, and W. P. Erickson, <em>Resource selection by animals: Statistical design and analysis for field studies</em>. Springer Science &amp; Business Media, 2007.</div>
 </div>
 <div id="ref-muff2020accounting" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[14] </div><div class="csl-right-inline">S. Muff, J. Signer, and J. Fieberg, <span>“Accounting for individual-specific variation in habitat-selection studies: Efficient estimation of mixed-effects models using bayesian or frequentist computation,”</span> <em>Journal of Animal Ecology</em>, vol. 89, no. 1, pp. 80–92, 2020.</div>
+<div class="csl-left-margin">[12] </div><div class="csl-right-inline">S. Muff, J. Signer, and J. Fieberg, <span>“Accounting for individual-specific variation in habitat-selection studies: Efficient estimation of mixed-effects models using bayesian or frequentist computation,”</span> <em>Journal of Animal Ecology</em>, vol. 89, no. 1, pp. 80–92, 2020.</div>
 </div>
 <div id="ref-nilsen2008can" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[15] </div><div class="csl-right-inline">E. B. Nilsen, S. Pedersen, and J. D. Linnell, <span>“Can minimum convex polygon home ranges be used to draw biologically meaningful conclusions?”</span> <em>Ecological research</em>, vol. 23, pp. 635–639, 2008.</div>
+<div class="csl-left-margin">[13] </div><div class="csl-right-inline">E. B. Nilsen, S. Pedersen, and J. D. Linnell, <span>“Can minimum convex polygon home ranges be used to draw biologically meaningful conclusions?”</span> <em>Ecological research</em>, vol. 23, pp. 635–639, 2008.</div>
 </div>
 <div id="ref-kobryn2023foxes" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[16] </div><div class="csl-right-inline">H. T. Kobryn, E. J. Swinhoe, P. W. Bateman, P. J. Adams, J. M. Shephard, and P. A. Fleming, <span>“Foxes at your front door? Habitat selection and home range estimation of suburban red foxes (vulpes vulpes),”</span> <em>Urban Ecosystems</em>, vol. 26, no. 1, pp. 1–17, 2023.</div>
+<div class="csl-left-margin">[14] </div><div class="csl-right-inline">H. T. Kobryn, E. J. Swinhoe, P. W. Bateman, P. J. Adams, J. M. Shephard, and P. A. Fleming, <span>“Foxes at your front door? Habitat selection and home range estimation of suburban red foxes (vulpes vulpes),”</span> <em>Urban Ecosystems</em>, vol. 26, no. 1, pp. 1–17, 2023.</div>
 </div>
 <div id="ref-riley2003effects" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[17] </div><div class="csl-right-inline">S. P. D. Riley <em>et al.</em>, <span>“Effects of urbanization and habitat fragmentation on bobcats and coyotes in southern california,”</span> <em>Conservation Biology</em>, vol. 17, no. 2, pp. 566–576, 2003.</div>
+<div class="csl-left-margin">[15] </div><div class="csl-right-inline">S. P. D. Riley <em>et al.</em>, <span>“Effects of urbanization and habitat fragmentation on bobcats and coyotes in southern california,”</span> <em>Conservation Biology</em>, vol. 17, no. 2, pp. 566–576, 2003.</div>
 </div>
 </div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1351,7 +1400,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","openEffect":"zoom","selector":".lightbox","descPosition":"bottom","loop":false});
+<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","descPosition":"bottom","closeEffect":"zoom","loop":false,"selector":".lightbox"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {
