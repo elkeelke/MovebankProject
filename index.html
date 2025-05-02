@@ -150,7 +150,7 @@ window.Quarto = {
   <li><a href="#home-range-size-assessment" id="toc-home-range-size-assessment" class="nav-link" data-scroll-target="#home-range-size-assessment">Home range size assessment</a></li>
   <li><a href="#habitat-selection-modeling" id="toc-habitat-selection-modeling" class="nav-link" data-scroll-target="#habitat-selection-modeling">Habitat selection modeling</a>
   <ul class="collapse">
-  <li><a href="#step-generation-and-covariates" id="toc-step-generation-and-covariates" class="nav-link" data-scroll-target="#step-generation-and-covariates">Step Generation and Covariates</a></li>
+  <li><a href="#sec-step-cov" id="toc-sec-step-cov" class="nav-link" data-scroll-target="#sec-step-cov">Step Generation and Covariates</a></li>
   <li><a href="#statistical-model" id="toc-statistical-model" class="nav-link" data-scroll-target="#statistical-model">Statistical model</a></li>
   <li><a href="#bobcat-data-exclusion" id="toc-bobcat-data-exclusion" class="nav-link" data-scroll-target="#bobcat-data-exclusion">Bobcat data exclusion</a></li>
   </ul></li>
@@ -234,19 +234,17 @@ This is examined by comparing red fox (<em>vulpes vulpes</em>) home ranges in lo
 <p>We analyzed four animal tracking datasets obtained from the Movebank database <span class="citation" data-cites="kays2022movebank"><a href="#ref-kays2022movebank" role="doc-biblioref">[2]</a></span>, including red fox (<em>Vulpes vulpes</em>) tracks from Wiltshire, UK <span class="citation" data-cites="porteus2024movement"><a href="#ref-porteus2024movement" role="doc-biblioref">[3]</a></span>, Bylot Island, Canada, and Herschel Island, Canada <span class="citation" data-cites="lai2022red"><a href="#ref-lai2022red" role="doc-biblioref">[4]</a></span>, as well as bobcat (<em>Lynx rufus</em>) and coyote (<em>Canis latrans</em>) tracks from northeastern Washington, USA <span class="citation" data-cites="prugh2023fear"><a href="#ref-prugh2023fear" role="doc-biblioref">[5]</a></span>. The tracking data varied in temporal resolution and geographic context, with sample sizes and data characteristics summarized in Table X.</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 11%">
-<col style="width: 15%">
-<col style="width: 15%">
+<col style="width: 13%">
+<col style="width: 18%">
+<col style="width: 14%">
 <col style="width: 12%">
-<col style="width: 10%">
-<col style="width: 22%">
-<col style="width: 12%">
+<col style="width: 26%">
+<col style="width: 14%">
 </colgroup>
 <thead>
 <tr class="header">
 <th>Dataset</th>
 <th>Species</th>
-<th>Location</th>
 <th>Years</th>
 <th>N animals</th>
 <th>Sampling interval</th>
@@ -257,7 +255,6 @@ This is examined by comparing red fox (<em>vulpes vulpes</em>) home ranges in lo
 <tr class="odd">
 <td>Wiltshire</td>
 <td>Red fox</td>
-<td>Wiltshire, UK</td>
 <td>2016–2019</td>
 <td>35</td>
 <td>10–60 min</td>
@@ -266,7 +263,6 @@ This is examined by comparing red fox (<em>vulpes vulpes</em>) home ranges in lo
 <tr class="even">
 <td>Bylot</td>
 <td>Red fox</td>
-<td>Bylot Island</td>
 <td>2011–2015</td>
 <td>2</td>
 <td>1/day (afternoon)</td>
@@ -275,7 +271,6 @@ This is examined by comparing red fox (<em>vulpes vulpes</em>) home ranges in lo
 <tr class="odd">
 <td>Herschel</td>
 <td>Red fox</td>
-<td>Herschel Island</td>
 <td>2009–2010</td>
 <td>2</td>
 <td>1/day (afternoon)</td>
@@ -284,7 +279,6 @@ This is examined by comparing red fox (<em>vulpes vulpes</em>) home ranges in lo
 <tr class="even">
 <td>Washington</td>
 <td>Coyote</td>
-<td>NE Washington</td>
 <td>2014–2015</td>
 <td>34</td>
 <td>4-hour programmed</td>
@@ -293,7 +287,6 @@ This is examined by comparing red fox (<em>vulpes vulpes</em>) home ranges in lo
 <tr class="odd">
 <td>Washington</td>
 <td>Bobcat</td>
-<td>NE Washington</td>
 <td>2014–2015</td>
 <td>36</td>
 <td>4-hour programmed</td>
@@ -302,7 +295,7 @@ This is examined by comparing red fox (<em>vulpes vulpes</em>) home ranges in lo
 </tbody>
 </table>
 <p>In addition to movement data, we used global covariate datasets: the 2020 global terrestrial Human Footprint Index (HFP-100) at 100 m resolution <span class="citation" data-cites="gassert2023operational"><a href="#ref-gassert2023operational" role="doc-biblioref">[6]</a></span>, and the ESA WorldCover 2021 land cover dataset at 10 m resolution <span class="citation" data-cites="zanaga2022esa"><a href="#ref-zanaga2022esa" role="doc-biblioref">[7]</a></span>.</p>
-<p>Detailed descriptions of data preprocessing, filtering, and acquisition procedures are provided in the Supplementary Material <a href="#sec-sup-mat" class="quarto-xref">Section&nbsp;7.2</a>.</p>
+<p>Detailed descriptions of data preprocessing, filtering, and acquisition procedures are provided in <a href="#sec-sup-mat">Supplementary Material</a>.</p>
 <!--## Data preparation and processing
 
 ### Movebank {#sec-movebank}
@@ -323,7 +316,7 @@ The relevant European Space Agency (ESA) WorldCover 2021 data at 10 m resolution
 <h2 class="anchored" data-anchor-id="exploratory-data-assessment">Exploratory data assessment</h2>
 <section id="sec-redfoxdata" class="level3">
 <h3 class="anchored" data-anchor-id="sec-redfoxdata">Red fox</h3>
-<p>Data from Wiltshire (<a href="#fig-wiltshire-map" class="quarto-xref">Figure&nbsp;1</a>) was collected between 2016 to 2019 during the UK wader nesting season, which was defined to be March 15th to June 15th, for 35 foxes in total. It was sampled at 10 and 60 minute rates. The research team controlled the sampling rate remotely to save battery at times the data was considered less interesting.</p>
+<p>Data from Wiltshire (<a href="#fig-wiltshire-map" class="quarto-xref">Figure&nbsp;1</a>) were collected between 2016 to 2019 during the UK wader nesting season, defined as March 15th to June 15th, for a total of 35 foxes. GPS locations were recorded every 10 or 60 minutes, with the sampling rate remotely reduced during periods deemed less informative to conserve battery.</p>
 <div id="fig-wiltshire-map" class="lightbox quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-wiltshire-map-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -369,7 +362,7 @@ Figure&nbsp;2: Maps of Bylot and Herschel island, with high level view of animal
 </figcaption>
 </figure>
 </div>
-<p>Data from Bylot (<a href="#fig-bylot-map" class="quarto-xref">Figure&nbsp;2 (a)</a>) and Herschel (<a href="#fig-herschel-map" class="quarto-xref">Figure&nbsp;2 (b)</a>) was collected all year round, at a much lower sampling rate of once per day at random afternoon times. The collection period was June 2009 to Feb 2010 for Herschel and from 2011 to 2015 for Bylot, for two foxes each per island. <a href="#fig-datapoints-year" class="quarto-xref">Figure&nbsp;3 (a)</a> provides an overview of the amount of data points available per year. There is much more data from Wiltshire because of the higher number of foxes and the higher sampling rate. Looking at the breakdowns by month as shown in <a href="#fig-datapoints-month" class="quarto-xref">Figure&nbsp;3 (b)</a> reveals seasonal differences in the amount of data available.</p>
+<p>Data from Bylot (<a href="#fig-bylot-map" class="quarto-xref">Figure&nbsp;2 (a)</a>) and Herschel (<a href="#fig-herschel-map" class="quarto-xref">Figure&nbsp;2 (b)</a>) were collected year-round, at a lower sampling rate of once per day at random afternoon times. The collection period spanned 2009 to 2010 for Herschel and 2011 to 2015 for Bylot, for two foxes each per island. <a href="#fig-datapoints-year" class="quarto-xref">Figure&nbsp;3 (a)</a> shows annual data availability, highlighting the much larger dataset from Wiltshire due to more animals and higher sampling frequency. Monthly patterns <a href="#fig-datapoints-month" class="quarto-xref">Figure&nbsp;3 (b)</a> reveal seasonal differences in data availability.</p>
 <div id="fig-data-points" class="quarto-layout-panel">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-data-points-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -410,28 +403,28 @@ Figure&nbsp;3: Amount of data per year and month
 </section>
 <section id="bobcat-and-coyote" class="level3">
 <h3 class="anchored" data-anchor-id="bobcat-and-coyote">Bobcat and coyote</h3>
-<p><a href="#fig-esa" class="quarto-xref">Figure&nbsp;4</a> shows that the two species reside in two separated geographical areas and have interspersed home ranges. It also features a plot of the animal locations in the context of the extracted land cover data. <a href="#fig-hfp" class="quarto-xref">Figure&nbsp;5</a> reveals the human footprint in the area, which is generally low except for some settlements and country roads.</p>
+<p>Coyote and bobcat GPS were collected in northeastern Washington between 2014 and 2015, with collars programmed to record locations every four hours. The two species occupied two distinct geographic areas with overlapping but species-specific home ranges <a href="#fig-esa" class="quarto-xref">Figure&nbsp;4</a>, shown in relation to land cover data. Human footprint was generally low across the study area, except for localized settlements and roads <a href="#fig-hfp" class="quarto-xref">Figure&nbsp;5</a>.</p>
 <div id="fig-esa" class="lightbox quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-esa-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="img/land_cover.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Figure&nbsp;4: Bobcat and coyote locations in the context of the land cover data"><img src="img/land_cover.png" class="img-fluid figure-img" style="width:100.0%"></a>
+<a href="img/land_cover.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Figure&nbsp;4: Bobcat and coyote locations in the context of the land cover data (for classification details, see Section&nbsp;3.3.2.1)"><img src="img/land_cover.png" class="img-fluid figure-img" style="width:100.0%"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-esa-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4: Bobcat and coyote locations in the context of the land cover data
+Figure&nbsp;4: Bobcat and coyote locations in the context of the land cover data (for classification details, see <a href="#sec-step-cov" class="quarto-xref">Section&nbsp;3.3.2.1</a>)
 </figcaption>
 </figure>
 </div>
 <div id="fig-hfp" class="lightbox quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-hfp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="img/hfp.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Figure&nbsp;5: HFP-100 data with bobcat and coyote tracks"><img src="img/hfp.png" class="img-fluid figure-img" style="width:100.0%"></a>
+<a href="img/hfp.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Figure&nbsp;5: Bobcat and coyote locations overlaid on human footprint index (0 = wilderness; 50 = highly urbanized)"><img src="img/hfp.png" class="img-fluid figure-img" style="width:100.0%"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-hfp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5: HFP-100 data with bobcat and coyote tracks
+Figure&nbsp;5: Bobcat and coyote locations overlaid on human footprint index (0 = wilderness; 50 = highly urbanized)
 </figcaption>
 </figure>
 </div>
-<p>Although all GPS collars were programmed to record locations at four-hour intervals, the actual sampling was irregular and included numerous outliers (<a href="#fig-sampling-rates" class="quarto-xref">Figure&nbsp;6</a>). Sampling intervals for bobcats were particularly sparse and inconsistent compared to those for coyotes.</p>
+<p>Although collars were programmed for regular sampling, actual intervals were irregular, with substantial variation, especially among bobcats. Sampling interval distributions are shown in <a href="#fig-sampling-rates" class="quarto-xref">Figure&nbsp;6</a>.</p>
 <div id="fig-sampling-rates" class="quarto-layout-panel">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-sampling-rates-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -480,8 +473,8 @@ Figure&nbsp;6: Box plots of sampling rates for bobcat and coyote data
 <section id="habitat-selection-modeling" class="level3">
 <h3 class="anchored" data-anchor-id="habitat-selection-modeling">Habitat selection modeling</h3>
 <p>To model fine-scale habitat preferences, we used step-selection functions (SSFs) <span class="citation" data-cites="fortin2005wolves"><a href="#ref-fortin2005wolves" role="doc-biblioref">[9]</a></span>. These compare environmental attributes at “used” locations to those at randomly sampled “available” locations along the animal’s movement path. This allows to quantify how animals respond to environmental covariates, such as human footprint and land cover. Selection patterns are then compared to assess how habitat preferences vary with human influence.</p>
-<section id="step-generation-and-covariates" class="level4">
-<h4 class="anchored" data-anchor-id="step-generation-and-covariates">Step Generation and Covariates</h4>
+<section id="sec-step-cov" class="level4">
+<h4 class="anchored" data-anchor-id="sec-step-cov">Step Generation and Covariates</h4>
 <p>Coyote and bobcat GPS tracks <span class="citation" data-cites="prugh2023fear"><a href="#ref-prugh2023fear" role="doc-biblioref">[5]</a></span> were irregularly spaced (<a href="#fig-bobcat-coyote-sampling" class="quarto-xref">Figure&nbsp;6 (b)</a>) and were resampled for temporal consistency — coyotes to 4-hour intervals and bobcats to 8-hour intervals, both with a 10-minute tolerance - using the <code>amt::track_resample</code> function <span class="citation" data-cites="signer2019animal"><a href="#ref-signer2019animal" role="doc-biblioref">[10]</a></span>. Steps were then generated using the <code>amt::steps_by_burst</code> and <code>amt::random_steps</code> functions. For each used step, ten random available steps were generated based on empirical step length (gamma distribution) and turning angle (Von Mises distribution). Log-transformed step lengths were calculated for modeling to account for potential bias in the availability distribution.</p>
 <p>Each observed step and its corresponding random steps were grouped into strata using a unique step ID, following a matched case-control design <span class="citation" data-cites="prugh2023fear"><a href="#ref-prugh2023fear" role="doc-biblioref">[5]</a></span>. Habitat covariates (land cover and human footprint) were extracted for each step endpoint.</p>
 <p>Land cover was reclassified into five ecologically meaningful categories to improve interpretability and model convergence (<a href="#tbl-landcover-reclass" class="quarto-xref">Table&nbsp;1</a>). Human footprint index (HFP) values were standardized across the dataset for modeling.</p>
@@ -1422,7 +1415,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","openEffect":"zoom","loop":false,"descPosition":"bottom","selector":".lightbox"});
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","descPosition":"bottom","loop":false,"openEffect":"zoom","closeEffect":"zoom"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {
