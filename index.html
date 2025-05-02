@@ -59,6 +59,9 @@ div.csl-indent {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -221,7 +224,8 @@ window.Quarto = {
 <h1>Introduction</h1>
 <p>Disturbance by humans has widespread impacts on the movements of animals, as confirmed by a large-scale meta study <span class="citation" data-cites="doherty2021human"><a href="#ref-doherty2021human" role="doc-biblioref">[1]</a></span>. In this paper, two related research questions are addressed:</p>
 <ol type="1">
-<li>Home range size implications: Do animals exhibit smaller home ranges in high human impact areas? This is examined by comparing red fox (<em>vulpes vulpes</em>) home ranges in low and high human impact areas.</li>
+<li>Home range size implications: Do animals exhibit smaller home ranges in high human impact areas?<br>
+This is examined by comparing red fox (<em>vulpes vulpes</em>) home ranges in low and high human impact areas.</li>
 <li>Habitat selection in human-influenced landscapes: How do animals select habitats under varying levels of human presence? This is analysed based on bobcat (<em>lynx rufus</em>) and coyote (<em>canis latrans</em>) data from a national park area.</li>
 </ol>
 <p>Together, these analyses allow us to evaluate both large-scale home range adjustments and fine-scale habitat preferences in response to human activity.</p>
@@ -235,7 +239,6 @@ window.Quarto = {
 </section>
 <section id="data-preparation-and-processing" class="level2">
 <h2 class="anchored" data-anchor-id="data-preparation-and-processing">Data preparation and processing</h2>
-<p>This section describes data preparation and processing for all the datasets employed.</p>
 <section id="sec-movebank" class="level3">
 <h3 class="anchored" data-anchor-id="sec-movebank">Movebank</h3>
 <p>All Movebank datasets have the same schema. This simplifies enables code re-use, and requires data contributors do perform preprocessing on their side to provide the data in an appropriate format. Libraries for data processing and trajectory handling in R are provided <span class="citation" data-cites="kranstauber2024move2"><a href="#ref-kranstauber2024move2" role="doc-biblioref">[8]</a></span> <span class="citation" data-cites="signer2019animal"><a href="#ref-signer2019animal" role="doc-biblioref">[9]</a></span>.</p>
@@ -252,7 +255,6 @@ window.Quarto = {
 </section>
 <section id="data-exploration-and-analysis" class="level2">
 <h2 class="anchored" data-anchor-id="data-exploration-and-analysis">Data exploration and analysis</h2>
-<p>This section describes the data exploration steps taken.</p>
 <section id="sec-redfoxdata" class="level3">
 <h3 class="anchored" data-anchor-id="sec-redfoxdata">Red fox</h3>
 <p>Data from Wiltshire (see <a href="#fig-wiltshire-map" class="quarto-xref">Figure&nbsp;1</a>) was collected between 2016 to 2019 during the UK wader nesting season, which was defined to be March 15th to June 15th, for 35 foxes in total. It was sampled at 10 and 60 minute rates. The research team controlled the sampling rate remotely to save battery at times the data was considered less interesting.</p>
@@ -480,10 +482,10 @@ Figure&nbsp;7: Human footprint distribution by land cover type
 </figure>
 </div>
 <p>To explore the relationship between movement behavior and human disturbance, we visualized the joint distribution of the Human Footprint Index (HFP) and log-transformed step length using a hexbin density plot (see <a href="#fig-coy-eda-hex" class="quarto-xref">Figure&nbsp;8</a>). Most steps occurred under conditions of low human footprint and were characterized by short to moderate movement distances. By including log-transformed step length as a covariate, the model accounts for underlying variation in movement intensity that could otherwise confound habitat selection estimates.</p>
-<div id="fig-coy-eda-hex" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<div id="fig-coy-eda-hex" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-coy-eda-hex-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/coyote_EDA_hexbin.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:75.0%">
+<img src="img/coyote_EDA_hexbin.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-coy-eda-hex-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;8: Relationship between movement and human footprint
@@ -494,7 +496,7 @@ Figure&nbsp;8: Relationship between movement and human footprint
 <section id="statistical-model" class="level4">
 <h4 class="anchored" data-anchor-id="statistical-model">Statistical model</h4>
 <p>Step selection functions (SSFs) are commonly modeled using conditional logistic regression, which compares observed and available steps within matched strata (e.g., <code>survival::clogit</code>; <span class="citation" data-cites="manly2007resource"><a href="#ref-manly2007resource" role="doc-biblioref">[13]</a></span>). However, for datasets involving multiple individuals, this approach can be limiting in terms of flexibility. Since conditional logistic regression is likelihood-equivalent to a Poisson regression model with stratum-specific fixed intercepts, these can be treated as random effects with a large fixed variance <span class="citation" data-cites="muff2020accounting"><a href="#ref-muff2020accounting" role="doc-biblioref">[14]</a></span>. By treating these intercepts as random effects with a large fixed variance, the model can be reformulated as a generalized linear mixed-effects model (GLMM), allowing for the inclusion of random slopes to account for individual variation in habitat selection.</p>
-<p>Following this framework, we modeled habitat selection in relation to human impact using a Poisson GLMM with a log link, implemented via <code>glmmTMB::glmmTMB</code>. Stratum-specific intercepts (one per <code>step_id_</code>) were modeled as random effects with a fixed, large variance to approximate the <code>clogit</code> structure, enabling the inclusion of individual-level random slopes and better capturing heterogeneity in selection behavior.</p>
+<p>Following this framework, we modeled habitat selection in relation to human impact using a Poisson GLMM with a log link, implemented via <code>glmmTMB::glmmTMB</code>. Stratum-specific intercepts (one per <code>step_id_</code>) were modeled as random effects with a fixed, large variance to approximate the conditional logistic structure, enabling the inclusion of individual-level random slopes and better capturing heterogeneity in selection behavior.</p>
 <p>The fixed effects included a two-way interaction between land cover class and both the linear and quadratic terms of standardized human footprint, as well as the natural logarithm of step length (<code>log_sl_</code>) to control for movement bias. Human footprint index (HFP) values were standardized before modeling.</p>
 <p>The model can be expressed as:</p>
 <p><span class="math display">\[
@@ -502,7 +504,7 @@ Figure&nbsp;8: Relationship between movement and human footprint
 \beta_1 \cdot \text{LC}_{ij} +
 \beta_2 \cdot \text{HFP}_{ij} +
 \beta_3 \cdot \text{HFP}_{ij}^2 +
-\beta_4 \cdot \log(\text{StepLength}_{ij}) +
+\beta_4 \cdot \log(\text{SL}_{ij}) +
 b_{0,step(i,j)} +
 u_{i}
 \]</span></p>
@@ -512,14 +514,14 @@ u_{i}
 </li>
 <li><span class="math inline">\(\text{LC}_{ij}\)</span> is the land cover class,<br>
 </li>
-<li><span class="math inline">\(\text{HFP}_{ij}\)</span> is the standardized human footprint value,<br>
-</li>
+<li><span class="math inline">\(\text{HFP}_{ij}\)</span> is the standardized human footprint value,</li>
+<li><span class="math inline">\(\text{SL}_{ij}\)</span> is the step length,</li>
 <li><span class="math inline">\(b_{0,\text{step}(i,j)}\)</span> is a random intercept for each stratum (<code>step_id_</code>),<br>
 </li>
 <li><span class="math inline">\(u_i\)</span> represents individual-level random slopes.</li>
 </ul>
 <p>Interaction terms between land cover and human footprint (both linear and quadratic) were also included but are omitted here for clarity.</p>
-<p>Following model fitting, we used average marginal effects and relative selection strength (RSS) to visualize how habitat selection varied across the gradient of human footprint (HFP). These metrics were computed from the fitted model to provide an interpretable scale of selection intensity.</p>
+<p>Following model fitting, we used average marginal effects and relative selection strength (RSS) to visualize how habitat selection varied across the human footprint gradient. These metrics were computed from the fitted model to provide an interpretable measure of selection intensity.</p>
 </section>
 <section id="bobcat-data-exclusion" class="level4">
 <h4 class="anchored" data-anchor-id="bobcat-data-exclusion">Bobcat data exclusion</h4>
@@ -530,14 +532,13 @@ u_{i}
 </section>
 <section id="results" class="level1">
 <h1>Results</h1>
-<p>This section describes the results.</p>
 <section id="fox-home-ranges" class="level2">
 <h2 class="anchored" data-anchor-id="fox-home-ranges">Fox home ranges</h2>
 <p>The resulting fox home ranges for the UK wader nesting season time frame are shown in <a href="#fig-home-ranges-bylot" class="quarto-xref">Figure&nbsp;9</a> and <a href="#fig-home-ranges-wiltshire" class="quarto-xref">Figure&nbsp;10 (a)</a>. The median home range size for the remote foxes in Bylot (75.3 km<sup>2</sup>) is more than 65 times larger compared to the one for rural foxes in Wiltshire (1.1 km<sup>2</sup>). The home ranges for the sub-sampled Wiltshire data are shown in <a href="#fig-home-ranges-wiltshire-sampled24h" class="quarto-xref">Figure&nbsp;10 (b)</a>. The median home range size is 0.56 km<sup>2</sup> for the sampled data, which is roughly half as much as for the full data.</p>
-<div id="fig-home-ranges-bylot" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-home-ranges-bylot" class="lightbox quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-home-ranges-bylot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/home_range_bylot_wader.png" class="img-fluid figure-img">
+<a href="img/home_range_bylot_wader.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;9: Home ranges for Bylot foxes (March 15th to June 15th, 2012)"><img src="img/home_range_bylot_wader.png" class="img-fluid figure-img" style="width:100.0%"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-home-ranges-bylot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;9: Home ranges for Bylot foxes (March 15th to June 15th, 2012)
@@ -548,11 +549,11 @@ Figure&nbsp;9: Home ranges for Bylot foxes (March 15th to June 15th, 2012)
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-sampling-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row">
-<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-sampling" style="flex-basis: 100.0%;justify-content: flex-start;">
-<div id="fig-home-ranges-wiltshire" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-sampling" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-home-ranges-wiltshire" class="lightbox quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-home-ranges-wiltshire-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/home_range_wiltshire_wader.png" class="img-fluid figure-img" data-ref-parent="fig-sampling">
+<a href="img/home_range_wiltshire_wader.png" class="lightbox" data-gallery="fig-sampling" title="Figure&nbsp;10&nbsp;(a): 10/60 minute sampling interval"><img src="img/home_range_wiltshire_wader.png" class="img-fluid figure-img" data-ref-parent="fig-sampling"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-home-ranges-wiltshire-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 (a) 10/60 minute sampling interval
@@ -560,13 +561,11 @@ Figure&nbsp;9: Home ranges for Bylot foxes (March 15th to June 15th, 2012)
 </figure>
 </div>
 </div>
-</div>
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-sampling" style="flex-basis: 100.0%;justify-content: flex-start;">
-<div id="fig-home-ranges-wiltshire-sampled24h" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-sampling" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-home-ranges-wiltshire-sampled24h" class="lightbox quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-home-ranges-wiltshire-sampled24h-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/home_range_wiltshire_wader_sampled.png" class="img-fluid figure-img" data-ref-parent="fig-sampling">
+<a href="img/home_range_wiltshire_wader_sampled.png" class="lightbox" data-gallery="fig-sampling" title="Figure&nbsp;10&nbsp;(b): 24 hour sampling interval"><img src="img/home_range_wiltshire_wader_sampled.png" class="img-fluid figure-img" data-ref-parent="fig-sampling"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-home-ranges-wiltshire-sampled24h-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 (b) 24 hour sampling interval
@@ -623,12 +622,12 @@ Table&nbsp;2: Estimated marginal trends of human footprint on coyote habitat sel
 </colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: left;"><strong>Land cover</strong></th>
-<th style="text-align: right;"><strong>Linear trend (<span class="math inline">\(\beta_1\)</span>)</strong></th>
-<th style="text-align: right;"><strong>SE</strong></th>
-<th style="text-align: center;"><strong>95% CI</strong></th>
-<th style="text-align: right;"><strong><em>z</em></strong></th>
-<th style="text-align: right;"><strong><em>p</em></strong></th>
+<th style="text-align: left;">Land cover</th>
+<th style="text-align: right;">Linear trend (<span class="math inline">\(\beta_1\)</span>)</th>
+<th style="text-align: right;">SE</th>
+<th style="text-align: center;">95% CI</th>
+<th style="text-align: right;"><em>z</em></th>
+<th style="text-align: right;"><em>p</em></th>
 </tr>
 </thead>
 <tbody>
@@ -701,7 +700,7 @@ Table&nbsp;2: Estimated marginal trends of human footprint on coyote habitat sel
 <th style="text-align: left;">Land cover</th>
 <th style="text-align: right;">Quadratic trend (<span class="math inline">\(\beta_2\)</span>)</th>
 <th style="text-align: right;">SE</th>
-<th style="text-align: center;">95% CI</th>
+<th style="text-align: right;">95% CI</th>
 <th style="text-align: right;"><em>z</em></th>
 <th style="text-align: right;"><em>p</em></th>
 </tr>
@@ -711,7 +710,7 @@ Table&nbsp;2: Estimated marginal trends of human footprint on coyote habitat sel
 <td style="text-align: left;">TreeCover</td>
 <td style="text-align: right;">-0.183</td>
 <td style="text-align: right;">0.039</td>
-<td style="text-align: center;">-0.260 – -0.106</td>
+<td style="text-align: right;">-0.260 – -0.106</td>
 <td style="text-align: right;">-4.68</td>
 <td style="text-align: right;">&lt;.0001</td>
 </tr>
@@ -719,7 +718,7 @@ Table&nbsp;2: Estimated marginal trends of human footprint on coyote habitat sel
 <td style="text-align: left;">Open</td>
 <td style="text-align: right;">-0.181</td>
 <td style="text-align: right;">0.039</td>
-<td style="text-align: center;">-0.257 – -0.104</td>
+<td style="text-align: right;">-0.257 – -0.104</td>
 <td style="text-align: right;">-4.62</td>
 <td style="text-align: right;">&lt;.0001</td>
 </tr>
@@ -727,7 +726,7 @@ Table&nbsp;2: Estimated marginal trends of human footprint on coyote habitat sel
 <td style="text-align: left;">Cropland</td>
 <td style="text-align: right;">-0.153</td>
 <td style="text-align: right;">0.046</td>
-<td style="text-align: center;">-0.243 – -0.064</td>
+<td style="text-align: right;">-0.243 – -0.064</td>
 <td style="text-align: right;">-3.35</td>
 <td style="text-align: right;">0.0008</td>
 </tr>
@@ -735,7 +734,7 @@ Table&nbsp;2: Estimated marginal trends of human footprint on coyote habitat sel
 <td style="text-align: left;">BuiltUp</td>
 <td style="text-align: right;">-0.161</td>
 <td style="text-align: right;">0.077</td>
-<td style="text-align: center;">-0.312 – -0.011</td>
+<td style="text-align: right;">-0.312 – -0.011</td>
 <td style="text-align: right;">-2.11</td>
 <td style="text-align: right;">0.0351</td>
 </tr>
@@ -743,7 +742,7 @@ Table&nbsp;2: Estimated marginal trends of human footprint on coyote habitat sel
 <td style="text-align: left;">Water</td>
 <td style="text-align: right;">-0.013</td>
 <td style="text-align: right;">0.081</td>
-<td style="text-align: center;">-0.172 – 0.146</td>
+<td style="text-align: right;">-0.172 – 0.146</td>
 <td style="text-align: right;">-0.16</td>
 <td style="text-align: right;">0.870</td>
 </tr>
@@ -757,14 +756,14 @@ Table&nbsp;2: Estimated marginal trends of human footprint on coyote habitat sel
 </div>
 </figure>
 </div>
-<p>The average marginal effect plot (Figure <a href="#fig-avg-eff" class="quarto-xref">Figure&nbsp;12</a>) shows highest relative selection for TreeCover and Open habitats at low human footprint, with declining selection under increased human footprint. BuiltUp, Cropland, and Water habitats were consistently selected less, regardless of human footprint level.</p>
+<p>The average marginal effect plot (Figure <a href="#fig-avg-eff" class="quarto-xref">Figure&nbsp;12</a>) shows highest relative selection for TreeCover and Open habitats at low to moderate human footprint, with declining selection under increased human footprint. BuiltUp, Cropland, and Water habitats were consistently selected less, regardless of human footprint level.</p>
 <div id="fig-avg-eff" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-avg-eff-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/avg_effect.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-avg-eff-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;12: Average marginal effects across human footprint gradient
+Figure&nbsp;12: Average marginal effects (± 95% confidence intervals) of human footprint on coyote habitat selection across land cover types. Plots quantify the relative change in log selection probability across the range of human footprint, while averaging over other covariates. Positive values indicate above-average selection, negative values indicate below-average selection. Vertical dashed lines indicate estimated human footprint values at peak selection.
 </figcaption>
 </figure>
 </div>
@@ -775,7 +774,7 @@ Figure&nbsp;12: Average marginal effects across human footprint gradient
 <img src="img/rss.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rss-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;13: Coyote habitat selection across the human footprint gradient
+Figure&nbsp;13: Relative selection strength (± 95% confidence intervals) for coyotes across the human footprint gradient by land cover type. RSS was quantified relative to the minimum observed human footprint (corresponding to least human disturbance). Values &gt;1 indicate selection, values &lt;1 indicate avoidance.
 </figcaption>
 </figure>
 </div>
@@ -860,7 +859,7 @@ Figure&nbsp;17: Variation in human footprint across and cover types
 <img src="img/coyote_predicted_vs_used.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pred-vs-used-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;18: Predicted relative use by observed use category
+Figure&nbsp;18: Density plot showing predicted relative use from the SSF model for used and available steps
 </figcaption>
 </figure>
 </div>
@@ -1354,6 +1353,38 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"loop":false,"descPosition":"bottom","closeEffect":"zoom","openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 
