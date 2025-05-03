@@ -213,20 +213,17 @@ window.Quarto = {
 
 <section id="abstract" class="level1">
 <h1>Abstract</h1>
-<p>We investigate how human activity influences the movement patterns of wild animals by analyzing red fox and coyote GPS tracking data from rural and remote areas in England, Canada, and the United States. We compare home range sizes and model habitat selection in relation to human footprint and land cover, using spatial analysis and step selection functions. Our results show that foxes maintain substantially smaller home ranges in human-impacted areas. Coyotes preferentially selected forested and open habitats at low to moderate human footprint levels, while avoiding highly developed landscapes as human disturbance increased.</p>
+<p>We analyze how human activity affects the movement patterns of wild animals by analyzing GPS tracking data of red foxes and coyotes from rural and remote areas in England, Canada, and the U.S. We compare home range sizes and model habitat selection in relation to human footprint and land cover, using spatial analysis and step selection functions. Our results show that foxes maintain substantially smaller home ranges in human-impacted areas. Coyotes preferentially selected forested and open habitats at low to moderate human footprint, while avoiding highly developed landscapes as human disturbance increased.</p>
+<p>We investigate how human activity affects the movement patterns of wild animals by analyzing GPS tracking data of red foxes and coyotes from rural and remote areas in England, Canada, and the U.S. We compare home range sizes and model habitat selection in relation to human footprint and land cover, using spatial analysis and step selection functions. Our results show that foxes maintain substantially smaller home ranges in human-impacted areas. Coyotes preferentially selected forested and open habitats at low to moderate human footprint, while avoiding highly developed landscapes as human disturbance increased.</p>
 </section>
 <section id="introduction" class="level1">
 <h1>Introduction</h1>
 <p>Human disturbance has been shown to have widespread impacts on animal movement patterns, as confirmed by a large-scale meta-analysis <span class="citation" data-cites="doherty2021human"><a href="#ref-doherty2021human" role="doc-biblioref">[1]</a></span>. In this study, two related research questions are addressed:</p>
 <ol type="1">
-<li><p><strong>Home range size implications</strong>: Do animals exhibit smaller home ranges in areas with higher human impact?<br>
-&gt; This is addressed by comparing red fox (<em>Vulpes vulpes</em>) home ranges across landscapes with varying levels of human footprint.</p></li>
-<li><p><strong>Habitat selection in human-influenced landscapes</strong>: How do animals select habitats under different degrees of human presence?<br>
-&gt; This is analyzed using bobcat (<em>Lynx rufus</em>) and coyote (<em>Canis latrans</em>) tracking data from northeastern Washington.</p></li>
 <li><p><strong>Home range size implications</strong>: Do animals exhibit smaller home ranges in areas with higher human impact?</p>
 <p>This is addressed by comparing red fox (<em>Vulpes vulpes</em>) home ranges across landscapes with varying levels of human footprint.</p></li>
 <li><p><strong>Habitat selection in human-influenced landscapes</strong>: How do animals select habitats under different degrees of human presence?</p>
-<p>This is analyzed using bobcat (<em>Lynx rufus</em>) and coyote (<em>Canis latrans</em>) tracking data from northeastern Washington.</p></li>
+<p>This is analyzed using coyote (<em>Canis latrans</em>) and initially also bobcat (<em>Lynx rufus</em>) tracking data from northeastern Washington.</p></li>
 </ol>
 <p>Together, these analyses aim to evaluate both large-scale home range adjustments and fine-scale habitat preferences in response to human activity.</p>
 </section>
@@ -359,7 +356,7 @@ Figure&nbsp;2: Maps of Bylot Island and Herschel Island, with high level view of
 </figcaption>
 </figure>
 </div>
-<p>Data from Bylot and Herschel (<a href="#fig-tracks" class="quarto-xref">Figure&nbsp;2</a>) were collected year-round, at a lower sampling rate of once per day at random afternoon times. Data collection spanned 2009–2010 for Herschel and 2011–2015 for Bylot, with two foxes monitored per island. <a href="#fig-datapoints-year" class="quarto-xref">Figure&nbsp;3 (a)</a> shows annual data availability, highlighting the much larger dataset from Wiltshire due to more animals and higher sampling frequency. Monthly patterns <a href="#fig-datapoints-month" class="quarto-xref">Figure&nbsp;3 (b)</a> reveal seasonal differences in data availability.</p>
+<p>Data from Bylot and Herschel (<a href="#fig-tracks" class="quarto-xref">Figure&nbsp;2</a>) were collected year-round, at a lower sampling rate of once per day at random afternoon times. Data collection spanned 2009–2010 for Herschel and 2011–2015 for Bylot, with two foxes monitored per island. <a href="#fig-datapoints-year" class="quarto-xref">Figure&nbsp;3 (a)</a> shows annual data availability, highlighting the much larger dataset from Wiltshire due to more animals and higher sampling frequency. <a href="#fig-datapoints-month" class="quarto-xref">Figure&nbsp;3 (b)</a> reveals seasonal variation in data availability at the monthly scale.</p>
 <div id="fig-data-points" class="quarto-layout-panel">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-data-points-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -531,7 +528,7 @@ Table&nbsp;2: Reclassification of ESA WorldCover classes into five ecologically 
 </figure>
 </div>
 <p>Refer to the <a href="https://worldcover2021.esa.int/data/docs/WorldCover_PUM_V2.0.pdf">ESA WorldCover user manual</a> for detailed original class definitions.</p>
-<p>To assess the distribution of human footprint across land cover types, we visualized the HFP values at used locations using a ridgeline density plot (<a href="#fig-coy-eda-ridge" class="quarto-xref">Figure&nbsp;7</a>). The figure illustrates that TreeCover was generally associated with lower human footprint, while BuiltUp and Cropland had higher HFP values, supporting the relevance of the interaction terms in our model. As a complementary visualization to the ridgeline plot, we include a boxplot in the Appendix showing the spread of human footprint values across land cover types (<a href="#fig-coy-eda-box" class="quarto-xref">Figure&nbsp;14</a>).</p>
+<p>To assess the distribution of human footprint across land cover types, we visualized the HFP values at used locations using a ridgeline density plot (<a href="#fig-coy-eda-ridge" class="quarto-xref">Figure&nbsp;7</a>). The figure shows that TreeCover was generally associated with lower human footprint, while BuiltUp and Cropland had higher HFP values, supporting the relevance of the interaction terms in our model. As a complementary visualization, we include a boxplot in the Appendix showing the spread of human footprint values across land cover types (<a href="#fig-coy-eda-box" class="quarto-xref">Figure&nbsp;14</a>).</p>
 <div id="fig-coy-eda-ridge" class="lightbox quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-coy-eda-ridge-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -582,7 +579,7 @@ u_{i}
 <li><span class="math inline">\(u_i\)</span> represents individual-level random slopes.</li>
 </ul>
 <p>Interaction terms between land cover and human footprint (both linear and quadratic) were also included but are omitted here for clarity.</p>
-<p>Following model fitting, we used average marginal effects and relative selection strength (RSS) to visualize how habitat selection varied across the human footprint gradient <span class="citation" data-cites="avgar2017relative"><a href="#ref-avgar2017relative" role="doc-biblioref">[14]</a></span>; <span class="citation" data-cites="prugh2023fear"><a href="#ref-prugh2023fear" role="doc-biblioref">[5]</a></span>. These metrics were computed from the fitted model to provide an interpretable measure of selection intensity.</p>
+<p>Following model fitting, we used average marginal effects and relative selection strength (RSS) to visualize how habitat selection varied across the human footprint gradient <span class="citation" data-cites="avgar2017relative"><a href="#ref-avgar2017relative" role="doc-biblioref">[14]</a></span>. These metrics were computed from the fitted model to provide an interpretable measure of selection intensity.</p>
 </section>
 <section id="bobcat-data-exclusion" class="level4">
 <h4 class="anchored" data-anchor-id="bobcat-data-exclusion">Bobcat data exclusion</h4>
@@ -1367,7 +1364,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","closeEffect":"zoom","loop":false,"descPosition":"bottom","openEffect":"zoom"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {
