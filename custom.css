@@ -20,35 +20,8 @@ a.citation:hover {
   text-decoration: none;
 }
 
-/* Sidebar active link color */
-.sidebar nav .active > a {
-  color: #00A67D;
-}
-
-/* Sidebar link hover color */
-.sidebar nav a:hover {
-  color: #007;
-}
-
 /* Thin outline around all images */
 img {
   border: 1px solid #424242;
   border-radius: 4px;
 }
-
-/*-- scss:rules --*/
-.quarto-float-fig .figure-caption,
-.quarto-subfigure .figure-caption {
-  .figcaption-number::after {
-    content: none;
-  }
-  
-  .figcaption-number ~ .figcaption-subfig::before {
-    content: none;
-  }
-  
-  .figcaption-subfig::after {
-    content: none;
-  }
-}
-
