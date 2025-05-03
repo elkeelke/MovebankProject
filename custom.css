@@ -20,16 +20,14 @@ a.citation:hover {
   text-decoration: none;
 }
 
+.sidebar nav[role=doc-toc] ul>li>a.active, .sidebar nav[role=doc-toc] ul>li>ul>li>a.active {
+    border-left: 1px solid #00A67D;
+    color: #00A67D !important;
+}
+
 /* Thin outline around all images */
 img {
   border: 1px solid #424242;
   border-radius: 4px;
 }
 
-/*-- scss:rules --*/
-
-// Change the color of active chapter in TOC
-.sidebar nav[role="doc-toc"] ul li a.active {
-  color: #00A67D !important; // Using your link color
-  border-left: 3px solid #00A67D; // Optional: adds a left border indicator
-}
