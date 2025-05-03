@@ -1071,31 +1071,6 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 
 
 </main> <!-- /main -->
-// This script removes parentheses from subfigure labels and optionally adds a dot
-document.addEventListener('DOMContentLoaded', function() {
-  // Function to process text content and fix subfigure references
-  function fixSubfigureReferences(text) {
-    // Match patterns like "Figure 2 (a)" and replace with "Figure 2a"
-    // Option 1: Without dot - "Figure 2a"
-    return text.replace(/Figure (\d+) \(([a-z])\)/g, 'Figure $1$2');
-    
-    // Option 2: With dot - "Figure 2.a"
-    // Uncomment this and comment out the line above if you prefer the dot version
-    // return text.replace(/Figure (\d+) \(([a-z])\)/g, 'Figure $1.$2');
-  }
-
-  // Fix subfigure captions
-  document.querySelectorAll('.figure-caption').forEach(caption =&gt; {
-    caption.innerHTML = fixSubfigureReferences(caption.innerHTML);
-  });
-  
-  // Fix cross-references in text
-  document.querySelectorAll('p, li, td, th, div').forEach(element =&gt; {
-    if (element.innerHTML.includes('Figure') &amp;&amp; element.innerHTML.includes('(')) {
-      element.innerHTML = fixSubfigureReferences(element.innerHTML);
-    }
-  });
-});
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

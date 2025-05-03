@@ -327,10 +327,10 @@ Figure&nbsp;1: High level view of animal GPS tracks in Wiltshire.
 <div id="fig-bylot-map" class="lightbox quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-bylot-map-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="img/bylot_map.png" class="lightbox" data-gallery="fig-tracks" title="Figure&nbsp;2&nbsp;(a): Bylot island (11.067 km2)"><img src="img/bylot_map.png" class="img-fluid figure-img" data-ref-parent="fig-tracks"></a>
+<a href="img/bylot_map.png" class="lightbox" data-gallery="fig-tracks" title="Figure&nbsp;2&nbsp;(a): Bylot Island (11.067 km2)"><img src="img/bylot_map.png" class="img-fluid figure-img" data-ref-parent="fig-tracks"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-bylot-map-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-(a) Bylot island (11.067 km<sup>2</sup>)
+(a) Bylot Island (11.067 km<sup>2</sup>)
 </figcaption>
 </figure>
 </div>
@@ -339,10 +339,10 @@ Figure&nbsp;1: High level view of animal GPS tracks in Wiltshire.
 <div id="fig-herschel-map" class="lightbox quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-herschel-map-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="img/herschel_map.png" class="lightbox" data-gallery="fig-tracks" title="Figure&nbsp;2&nbsp;(b): Herschel island (116 km2)"><img src="img/herschel_map.png" class="img-fluid figure-img" data-ref-parent="fig-tracks"></a>
+<a href="img/herschel_map.png" class="lightbox" data-gallery="fig-tracks" title="Figure&nbsp;2&nbsp;(b): Herschel Island (116 km2)"><img src="img/herschel_map.png" class="img-fluid figure-img" data-ref-parent="fig-tracks"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-herschel-map-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-(b) Herschel island (116 km<sup>2</sup>)
+(b) Herschel Island (116 km<sup>2</sup>)
 </figcaption>
 </figure>
 </div>
@@ -350,7 +350,7 @@ Figure&nbsp;1: High level view of animal GPS tracks in Wiltshire.
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tracks-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: Maps of Bylot and Herschel island, with high level view of animal GPS tracks.
+Figure&nbsp;2: Maps of Bylot Island and Herschel Island, with high level view of animal GPS tracks.
 </figcaption>
 </figure>
 </div>
@@ -462,7 +462,7 @@ Figure&nbsp;6: Box plots of sampling rates for bobcat and coyote data.
 <p>We estimated home range sizes using minimum convex polygons (MCP), providing standardized, comparable measures of space use across individuals. However, differences in temporal scale between the datasets posed challenges for comparability. The Wiltshire data were sampled at 10–60 minute intervals, while the Bylot and Herschel datasets were sampled once daily. Additionally, data coverage varied across seasons and years, and sample sizes differed substantially.</p>
 <p>These discrepancies introduce potential biases in home range estimation <span class="citation" data-cites="laube2011"><a href="#ref-laube2011" role="doc-biblioref">[8]</a></span>. To mitigate these effects, we employed three strategies:</p>
 <ol type="1">
-<li><p>We limited analyses to the same seasonal period (March 15th – June 15th) across datasets to control for seasonal variation. Due to limited data from Herschel Island for that timeframe (<a href="#fig-data-points" class="quarto-xref">Figure&nbsp;3</a>), we focused comparative analyses on the Wiltshire and Bylot datasets.</p></li>
+<li><p>We limited analyses to the same seasonal period (March 15th – June 15th) across datasets to control for seasonal variation. Due to limited data from Herschel Island for that timeframe (<a href="#fig-datapoints-month" class="quarto-xref">Figure&nbsp;3 (b)</a>), we focused comparative analyses on the Wiltshire and Bylot datasets.</p></li>
 <li><p>We generated a downsampled Wiltshire dataset by selecting a random daily location per individual, matching the lower sampling frequency of the Arctic datasets.</p></li>
 <li><p>We computed monthly home ranges for all datasets to explore temporal variation.</p></li>
 </ol>
@@ -472,8 +472,8 @@ Figure&nbsp;6: Box plots of sampling rates for bobcat and coyote data.
 <p>To model fine-scale habitat preferences, we used step-selection functions (SSFs) <span class="citation" data-cites="fortin2005wolves"><a href="#ref-fortin2005wolves" role="doc-biblioref">[9]</a></span>. These compare environmental attributes at “used” locations to those at randomly sampled “available” locations along the animal’s movement path. This allows to quantify how animals respond to environmental covariates, such as human footprint and land cover. Selection patterns are then compared to assess how habitat preferences vary with human influence.</p>
 <section id="sec-step-cov" class="level4">
 <h4 class="anchored" data-anchor-id="sec-step-cov">Step Generation and Covariates</h4>
-<p>Coyote and bobcat GPS tracks <span class="citation" data-cites="prugh2023fear"><a href="#ref-prugh2023fear" role="doc-biblioref">[5]</a></span> were irregularly spaced (<a href="#fig-sampling-rates" class="quarto-xref">Figure&nbsp;6</a>) and were resampled for temporal consistency — coyotes to 4-hour intervals and bobcats to 8-hour intervals, both with a 10-minute tolerance - using the <code>amt::track_resample</code> function <span class="citation" data-cites="signer2019animal"><a href="#ref-signer2019animal" role="doc-biblioref">[10]</a></span>. Steps were then generated using the <code>amt::steps_by_burst</code> and <code>amt::random_steps</code> functions. For each used step, ten random available steps were generated based on empirical step length (gamma distribution) and turning angle (Von Mises distribution). Log-transformed step lengths were calculated for modeling to account for potential bias in the availability distribution.</p>
-<p>Each observed step and its corresponding random steps were grouped into strata using a unique step ID, following a matched case-control design <span class="citation" data-cites="prugh2023fear"><a href="#ref-prugh2023fear" role="doc-biblioref">[5]</a></span>. Habitat covariates (land cover and human footprint) were extracted for each step endpoint.</p>
+<p>Coyote and bobcat GPS tracks were irregularly spaced (<a href="#fig-sampling-rates" class="quarto-xref">Figure&nbsp;6</a>) and were resampled for temporal consistency — coyotes to 4-hour intervals and bobcats to 8-hour intervals, both with a 10-minute tolerance - using the <code>amt::track_resample</code> function <span class="citation" data-cites="signer2019animal"><a href="#ref-signer2019animal" role="doc-biblioref">[10]</a></span>. Steps were then generated using the <code>amt::steps_by_burst</code> and <code>amt::random_steps</code> functions. For each used step, ten random available steps were generated based on empirical step length (gamma distribution) and turning angle (Von Mises distribution). Log-transformed step lengths were calculated for modeling to account for potential bias in the availability distribution.</p>
+<p>Each observed step and its corresponding random steps were grouped into strata using a unique <code>step_id_</code>, following a matched case-control design <span class="citation" data-cites="prugh2023fear"><a href="#ref-prugh2023fear" role="doc-biblioref">[5]</a></span>. Habitat covariates (land cover and human footprint) were extracted for each step endpoint.</p>
 <p>Land cover was reclassified into five ecologically meaningful categories to improve interpretability and model convergence (<a href="#tbl-landcover-reclass" class="quarto-xref">Table&nbsp;2</a>). Human footprint index (HFP) values were standardized across the dataset for modeling.</p>
 <div id="tbl-landcover-reclass" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -552,8 +552,8 @@ Figure&nbsp;8: Joint distribution of human footprint index and log-transformed s
 <section id="statistical-model" class="level4">
 <h4 class="anchored" data-anchor-id="statistical-model">Statistical model</h4>
 <p>Step selection functions (SSFs) are commonly modeled using conditional logistic regression, which compares observed and available steps within matched strata (e.g., <code>survival::clogit</code>; <span class="citation" data-cites="manly2007resource"><a href="#ref-manly2007resource" role="doc-biblioref">[11]</a></span>). However, for datasets involving multiple individuals, this approach can be limiting in terms of flexibility. Since conditional logistic regression is likelihood-equivalent to a Poisson regression model with stratum-specific fixed intercepts, these can be treated as random effects with a large fixed variance <span class="citation" data-cites="muff2020accounting"><a href="#ref-muff2020accounting" role="doc-biblioref">[12]</a></span>. By treating these intercepts as random effects with a large fixed variance, the model can be reformulated as a generalized linear mixed-effects model (GLMM), allowing for the inclusion of random slopes to account for individual variation in habitat selection.</p>
-<p>Following this framework, we modeled habitat selection in relation to human impact using a Poisson GLMM with a log link, implemented via <code>glmmTMB::glmmTMB</code>. Stratum-specific intercepts (one per <code>step_id_</code>) were modeled as random effects with a fixed, large variance to approximate the conditional logistic structure, enabling the inclusion of individual-level random slopes and better capturing heterogeneity in selection behavior.</p>
-<p>The fixed effects included a two-way interaction between land cover class and both the linear and quadratic terms of standardized human footprint, as well as the natural logarithm of step length (<code>log_sl_</code>) to control for movement bias. Human footprint index (HFP) values were standardized before modeling.</p>
+<p>Following this framework, we modeled habitat selection in relation to human impact using a Poisson GLMM with a log link, implemented via <code>glmmTMB::glmmTMB</code> <span class="citation" data-cites="brooks2017glmmTMB"><a href="#ref-brooks2017glmmTMB" role="doc-biblioref">[13]</a></span>. Stratum-specific intercepts (one per <code>step_id_</code>) were modeled as random effects with a fixed, large variance to approximate the conditional logistic structure, enabling the inclusion of individual-level random slopes and better capturing heterogeneity in selection behavior.</p>
+<p>The fixed effects included a two-way interaction between land cover class and both the linear and quadratic terms of standardized human footprint, as well as the natural logarithm of step length to control for movement bias. Human footprint index (HFP) values were standardized before modeling.</p>
 <p>The model can be expressed as:</p>
 <p><span class="math display">\[
 \log(\lambda_{ij}) =
@@ -577,7 +577,7 @@ u_{i}
 <li><span class="math inline">\(u_i\)</span> represents individual-level random slopes.</li>
 </ul>
 <p>Interaction terms between land cover and human footprint (both linear and quadratic) were also included but are omitted here for clarity.</p>
-<p>Following model fitting, we used average marginal effects and relative selection strength (RSS) to visualize how habitat selection varied across the human footprint gradient. These metrics were computed from the fitted model to provide an interpretable measure of selection intensity.</p>
+<p>Following model fitting, we used average marginal effects and relative selection strength (RSS) to visualize how habitat selection varied across the human footprint gradient <span class="citation" data-cites="avgar2017relative"><a href="#ref-avgar2017relative" role="doc-biblioref">[14]</a></span> <span class="citation" data-cites="prugh2023fear"><a href="#ref-prugh2023fear" role="doc-biblioref">[5]</a></span>. These metrics were computed from the fitted model to provide an interpretable measure of selection intensity.</p>
 </section>
 <section id="bobcat-data-exclusion" class="level4">
 <h4 class="anchored" data-anchor-id="bobcat-data-exclusion">Bobcat data exclusion</h4>
@@ -814,7 +814,7 @@ Figure&nbsp;13: Relative selection strength (± 95% confidence interval) for coy
 <h2 class="anchored" data-anchor-id="model-validation">Model validation</h2>
 <section id="fox-home-ranges-1" class="level3">
 <h3 class="anchored" data-anchor-id="fox-home-ranges-1">Fox home ranges</h3>
-<p>To validate the home range estimation, we evaluated the influence of coordinate system choice and data properties on the results. Specifically, we compared median home range sizes calculated using minimum convex polygons (MCP) across three coordinate systems: WGS84 (EPSG:4326), NAD83 (EPSG:3347), and UTM Zone 17N (EPSG:2958), identified using the CRS Explorer. The differences in median home range area were small (75.3 km² for WGS84, 73.3 km² for NAD83, and 75.8 km² for UTM Zone 17N), suggesting minimal distortion effects. Our validation criterion required that any coordinate system effect be an order of magnitude smaller than observed ecological differences (≥10x smaller) <span class="citation" data-cites="nilsen2008can"><a href="#ref-nilsen2008can" role="doc-biblioref">[13]</a></span>. Given this threshold was met, we considered the choice of coordinate system to have negligible impact on home range estimates.</p>
+<p>To validate the home range estimation, we evaluated the influence of coordinate system choice and data properties on the results. Specifically, we compared median home range sizes calculated using minimum convex polygons (MCP) across three coordinate systems: WGS84 (EPSG:4326), NAD83 (EPSG:3347), and UTM Zone 17N (EPSG:2958), identified using the CRS Explorer. The differences in median home range area were small (75.3 km² for WGS84, 73.3 km² for NAD83, and 75.8 km² for UTM Zone 17N), suggesting minimal distortion effects. Our validation criterion required that any coordinate system effect be an order of magnitude smaller than observed ecological differences (≥10x smaller) <span class="citation" data-cites="nilsen2008can"><a href="#ref-nilsen2008can" role="doc-biblioref">[15]</a></span>. Given this threshold was met, we considered the choice of coordinate system to have negligible impact on home range estimates.</p>
 </section>
 <section id="coyote-habitat-selection-1" class="level3">
 <h3 class="anchored" data-anchor-id="coyote-habitat-selection-1">Coyote habitat selection</h3>
@@ -827,13 +827,13 @@ Figure&nbsp;13: Relative selection strength (± 95% confidence interval) for coy
 <section id="home-range-size-assessment-1" class="level2">
 <h2 class="anchored" data-anchor-id="home-range-size-assessment-1">Home range size assessment</h2>
 <p>The fox home range size results show enormous differences between rural and remote areas, with substantially smaller home ranges observed in Wiltshire compared to Bylot. This suggests that human presence fundamentally alters fox movement behavior, likely due to a combination of reduced space availability and access to anthropogenic food resources. Interestingly, home range sizes for Bylot and Herschel foxes are similar, even if the island sizes differ by a factor of 100, implying that environmental factors other than available land area constrain movements in these remote settings.</p>
-<p>One fox in Wiltshire exhibited an exceptionally large home range compared to its conspecifics, as highlighted in <a href="#fig-home-range-sizes" class="quarto-xref">Figure&nbsp;10</a>. This individual may represent a disperser or exhibit exploratory behavior. Similar patterns of occasional extensive movements in urban foxes have been reported elsewhere <span class="citation" data-cites="kobryn2023foxes"><a href="#ref-kobryn2023foxes" role="doc-biblioref">[14]</a></span>, reinforcing that such variation reflects biological rather than technical factors.</p>
+<p>One fox in Wiltshire exhibited an exceptionally large home range compared to its conspecifics, as highlighted in <a href="#fig-home-range-sizes" class="quarto-xref">Figure&nbsp;10</a>. This individual may represent a disperser or exhibit exploratory behavior. Similar patterns of occasional extensive movements in urban foxes have been reported elsewhere <span class="citation" data-cites="kobryn2023foxes"><a href="#ref-kobryn2023foxes" role="doc-biblioref">[16]</a></span>, reinforcing that such variation reflects biological rather than technical factors.</p>
 <p>Although methodological factors such as sampling interval and home range estimator can influence results, their impact appears minor relative to the overarching differences in movement behavior across landscapes. This supports the validity of comparing home range sizes across these heterogeneous datasets despite inherent differences in data collection.</p>
 </section>
 <section id="habitat-selection" class="level2">
 <h2 class="anchored" data-anchor-id="habitat-selection">Habitat selection</h2>
 <p>Coyote habitat selection was driven by both land cover and the degree of human modification. Animals strongly favored forest and open habitats under low-to-moderate human footprint but reduced use of these habitats once disturbance exceeded an apparent threshold, indicating a trade-off between resource gain and risk. Cropland, built-up areas, and water were rarely selected, revealing broad avoidance of highly modified landscapes.</p>
-<p>Land-cover-specific relative selection strength (RSS) curves showed that human disturbance altered preferences differently among habitats—selection for forest declined more steeply with increasing footprint than did selection for open areas—echoing earlier work that forests function as crucial refuges in human-dominated settings (e.g., <span class="citation" data-cites="riley2003effects"><a href="#ref-riley2003effects" role="doc-biblioref">[15]</a></span>). Model diagnostics confirmed that the SSF was well specified, with no over-dispersion or problematic collinearity. A comparable analysis for bobcats was infeasible because of sparse, uneven data, underscoring the limitations of opportunistic tracking datasets.</p>
+<p>Land-cover-specific relative selection strength (RSS) curves showed that human disturbance altered preferences differently among habitats—selection for forest declined more steeply with increasing footprint than did selection for open areas—echoing earlier work that forests function as crucial refuges in human-dominated settings (e.g., <span class="citation" data-cites="riley2003effects"><a href="#ref-riley2003effects" role="doc-biblioref">[17]</a></span>). Model diagnostics confirmed that the SSF was well specified, with no over-dispersion or problematic collinearity. A comparable analysis for bobcats was infeasible because of sparse, uneven data, underscoring the limitations of opportunistic tracking datasets.</p>
 </section>
 </section>
 <section id="conclusion" class="level1">
@@ -925,41 +925,22 @@ Figure&nbsp;15: Density plot showing predicted relative use from the SSF model f
 <div id="ref-muff2020accounting" class="csl-entry" role="listitem">
 <div class="csl-left-margin">[12] </div><div class="csl-right-inline">S. Muff, J. Signer, and J. Fieberg, <span>“Accounting for individual-specific variation in habitat-selection studies: Efficient estimation of mixed-effects models using bayesian or frequentist computation,”</span> <em>Journal of Animal Ecology</em>, vol. 89, no. 1, pp. 80–92, 2020.</div>
 </div>
+<div id="ref-brooks2017glmmTMB" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[13] </div><div class="csl-right-inline">M. E. Brooks <em>et al.</em>, <span>“{glmmTMB} balances speed and flexibility among packages for zero-inflated generalized linear mixed modeling,”</span> <em>The R Journal</em>, vol. 9, no. 2, pp. 378–400, 2017, doi: <a href="https://doi.org/10.32614/RJ-2017-066">10.32614/RJ-2017-066</a>.</div>
+</div>
+<div id="ref-avgar2017relative" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[14] </div><div class="csl-right-inline">T. Avgar, S. R. Lele, J. L. Keim, and M. S. Boyce, <span>“Relative selection strength: Quantifying effect size in habitat- and step-selection inference,”</span> <em>Ecology and Evolution</em>, vol. 7, no. 14, pp. 5322–5330, 2017, doi: <a href="https://doi.org/10.1002/ece3.3122">10.1002/ece3.3122</a>.</div>
+</div>
 <div id="ref-nilsen2008can" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[13] </div><div class="csl-right-inline">E. B. Nilsen, S. Pedersen, and J. D. Linnell, <span>“Can minimum convex polygon home ranges be used to draw biologically meaningful conclusions?”</span> <em>Ecological research</em>, vol. 23, pp. 635–639, 2008.</div>
+<div class="csl-left-margin">[15] </div><div class="csl-right-inline">E. B. Nilsen, S. Pedersen, and J. D. Linnell, <span>“Can minimum convex polygon home ranges be used to draw biologically meaningful conclusions?”</span> <em>Ecological research</em>, vol. 23, pp. 635–639, 2008.</div>
 </div>
 <div id="ref-kobryn2023foxes" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[14] </div><div class="csl-right-inline">H. T. Kobryn, E. J. Swinhoe, P. W. Bateman, P. J. Adams, J. M. Shephard, and P. A. Fleming, <span>“Foxes at your front door? Habitat selection and home range estimation of suburban red foxes (vulpes vulpes),”</span> <em>Urban Ecosystems</em>, vol. 26, no. 1, pp. 1–17, 2023.</div>
+<div class="csl-left-margin">[16] </div><div class="csl-right-inline">H. T. Kobryn, E. J. Swinhoe, P. W. Bateman, P. J. Adams, J. M. Shephard, and P. A. Fleming, <span>“Foxes at your front door? Habitat selection and home range estimation of suburban red foxes (vulpes vulpes),”</span> <em>Urban Ecosystems</em>, vol. 26, no. 1, pp. 1–17, 2023.</div>
 </div>
 <div id="ref-riley2003effects" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[15] </div><div class="csl-right-inline">S. P. D. Riley <em>et al.</em>, <span>“Effects of urbanization and habitat fragmentation on bobcats and coyotes in southern california,”</span> <em>Conservation Biology</em>, vol. 17, no. 2, pp. 566–576, 2003.</div>
+<div class="csl-left-margin">[17] </div><div class="csl-right-inline">S. P. D. Riley <em>et al.</em>, <span>“Effects of urbanization and habitat fragmentation on bobcats and coyotes in southern california,”</span> <em>Conservation Biology</em>, vol. 17, no. 2, pp. 566–576, 2003.</div>
 </div>
 </div></section></div></main> <!-- /main -->
-// This script removes parentheses from subfigure labels and optionally adds a dot
-document.addEventListener('DOMContentLoaded', function() {
-  // Function to process text content and fix subfigure references
-  function fixSubfigureReferences(text) {
-    // Match patterns like "Figure 2 (a)" and replace with "Figure 2a"
-    // Option 1: Without dot - "Figure 2a"
-    return text.replace(/Figure (\d+) \(([a-z])\)/g, 'Figure $1$2');
-    
-    // Option 2: With dot - "Figure 2.a"
-    // Uncomment this and comment out the line above if you prefer the dot version
-    // return text.replace(/Figure (\d+) \(([a-z])\)/g, 'Figure $1.$2');
-  }
-
-  // Fix subfigure captions
-  document.querySelectorAll('.figure-caption').forEach(caption =&gt; {
-    caption.innerHTML = fixSubfigureReferences(caption.innerHTML);
-  });
-  
-  // Fix cross-references in text
-  document.querySelectorAll('p, li, td, th, div').forEach(element =&gt; {
-    if (element.innerHTML.includes('Figure') &amp;&amp; element.innerHTML.includes('(')) {
-      element.innerHTML = fixSubfigureReferences(element.innerHTML);
-    }
-  });
-});
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -1381,7 +1362,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","selector":".lightbox","loop":false,"descPosition":"bottom","openEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","selector":".lightbox","loop":false,"openEffect":"zoom"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {
