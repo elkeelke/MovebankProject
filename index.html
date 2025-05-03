@@ -213,17 +213,22 @@ window.Quarto = {
 
 <section id="abstract" class="level1">
 <h1>Abstract</h1>
-<p>We investigate how human activity influences the movement patterns of wild animals. Using tracking data from red foxes and coyotes across rural and remote areas in England, Canada, and the US, we analyze home range sizes and habitat selection in relation to human footprint and land cover.</p>
+<p>We investigate how human activity influences the movement patterns of wild animals by analyzing red fox and coyote GPS tracking data from rural and remote areas in England, Canada, and the United States. We compare home range sizes and model habitat selection in relation to human footprint and land cover, using spatial analysis and step selection functions. Our results show that foxes maintain substantially smaller home ranges in human-impacted areas. Coyotes preferentially selected forested and open habitats at low to moderate human footprint levels, while avoiding highly developed landscapes as human disturbance increased.</p>
 </section>
 <section id="introduction" class="level1">
 <h1>Introduction</h1>
-<p>Disturbance by humans has widespread impacts on the movements of animals, as confirmed by a large-scale meta study <span class="citation" data-cites="doherty2021human"><a href="#ref-doherty2021human" role="doc-biblioref">[1]</a></span>. In this paper, two related research questions are addressed:</p>
+<p>Human disturbance has been shown to have widespread impacts on animal movement patterns, as confirmed by a large-scale meta-analysis <span class="citation" data-cites="doherty2021human"><a href="#ref-doherty2021human" role="doc-biblioref">[1]</a></span>. In this study, two related research questions are addressed:</p>
 <ol type="1">
-<li>Home range size implications: Do animals exhibit smaller home ranges in high human impact areas?<br>
-This is examined by comparing red fox (<em>vulpes vulpes</em>) home ranges in low and high human impact areas.</li>
-<li>Habitat selection in human-influenced landscapes: How do animals select habitats under varying levels of human presence? This is analysed based on bobcat (<em>lynx rufus</em>) and coyote (<em>canis latrans</em>) data from a national park area.</li>
+<li><p><strong>Home range size implications</strong>: Do animals exhibit smaller home ranges in areas with higher human impact?<br>
+&gt; This is addressed by comparing red fox (<em>Vulpes vulpes</em>) home ranges across landscapes with varying levels of human footprint.</p></li>
+<li><p><strong>Habitat selection in human-influenced landscapes</strong>: How do animals select habitats under different degrees of human presence?<br>
+&gt; This is analyzed using bobcat (<em>Lynx rufus</em>) and coyote (<em>Canis latrans</em>) tracking data from northeastern Washington.</p></li>
+<li><p><strong>Home range size implications</strong>: Do animals exhibit smaller home ranges in areas with higher human impact?</p>
+<p>This is addressed by comparing red fox (<em>Vulpes vulpes</em>) home ranges across landscapes with varying levels of human footprint.</p></li>
+<li><p><strong>Habitat selection in human-influenced landscapes</strong>: How do animals select habitats under different degrees of human presence?</p>
+<p>This is analyzed using bobcat (<em>Lynx rufus</em>) and coyote (<em>Canis latrans</em>) tracking data from northeastern Washington.</p></li>
 </ol>
-<p>Together, these analyses allow us to evaluate both large-scale home range adjustments and fine-scale habitat preferences in response to human activity.</p>
+<p>Together, these analyses aim to evaluate both large-scale home range adjustments and fine-scale habitat preferences in response to human activity.</p>
 </section>
 <section id="data-and-methods" class="level1">
 <h1>Data and methods</h1>
@@ -472,7 +477,7 @@ Figure&nbsp;6: Box plots of sampling rates for bobcat and coyote data.
 <p>To model fine-scale habitat preferences, we used step-selection functions (SSFs) <span class="citation" data-cites="fortin2005wolves"><a href="#ref-fortin2005wolves" role="doc-biblioref">[9]</a></span>. These compare environmental attributes at “used” locations to those at randomly sampled “available” locations along the animal’s movement path. This allows to quantify how animals respond to environmental covariates, such as human footprint and land cover. Selection patterns are then compared to assess how habitat preferences vary with human influence.</p>
 <section id="sec-step-cov" class="level4">
 <h4 class="anchored" data-anchor-id="sec-step-cov">Step Generation and Covariates</h4>
-<p>Coyote and bobcat GPS tracks were irregularly spaced (<a href="#fig-sampling-rates" class="quarto-xref">Figure&nbsp;6</a>) and were resampled for temporal consistency — coyotes to 4-hour intervals and bobcats to 8-hour intervals, both with a 10-minute tolerance - using the <code>amt::track_resample</code> function <span class="citation" data-cites="signer2019animal"><a href="#ref-signer2019animal" role="doc-biblioref">[10]</a></span>. Steps were then generated using the <code>amt::steps_by_burst</code> and <code>amt::random_steps</code> functions. For each used step, ten random available steps were generated based on empirical step length (gamma distribution) and turning angle (Von Mises distribution). Log-transformed step lengths were calculated for modeling to account for potential bias in the availability distribution.</p>
+<p>Coyote and bobcat GPS tracks were irregularly spaced (<a href="#fig-sampling-rates" class="quarto-xref">Figure&nbsp;6</a>) and were resampled for temporal consistency — coyotes to 4-hour intervals and bobcats to 8-hour intervals, both with a 10-minute tolerance — using the <code>amt::track_resample</code> function <span class="citation" data-cites="signer2019animal"><a href="#ref-signer2019animal" role="doc-biblioref">[10]</a></span>. Steps were then generated using the <code>amt::steps_by_burst</code> and <code>amt::random_steps</code> functions. For each used step, ten random available steps were generated based on empirical step length (gamma distribution) and turning angle (Von Mises distribution). Log-transformed step lengths were calculated for modeling to account for potential bias in the availability distribution.</p>
 <p>Each observed step and its corresponding random steps were grouped into strata using a unique <code>step_id_</code>, following a matched case-control design <span class="citation" data-cites="prugh2023fear"><a href="#ref-prugh2023fear" role="doc-biblioref">[5]</a></span>. Habitat covariates (land cover and human footprint) were extracted for each step endpoint.</p>
 <p>Land cover was reclassified into five ecologically meaningful categories to improve interpretability and model convergence (<a href="#tbl-landcover-reclass" class="quarto-xref">Table&nbsp;2</a>). Human footprint index (HFP) values were standardized across the dataset for modeling.</p>
 <div id="tbl-landcover-reclass" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -552,7 +557,7 @@ Figure&nbsp;8: Joint distribution of human footprint index and log-transformed s
 <section id="statistical-model" class="level4">
 <h4 class="anchored" data-anchor-id="statistical-model">Statistical model</h4>
 <p>Step selection functions (SSFs) are commonly modeled using conditional logistic regression, which compares observed and available steps within matched strata (e.g., <code>survival::clogit</code>; <span class="citation" data-cites="manly2007resource"><a href="#ref-manly2007resource" role="doc-biblioref">[11]</a></span>). However, for datasets involving multiple individuals, this approach can be limiting in terms of flexibility. Since conditional logistic regression is likelihood-equivalent to a Poisson regression model with stratum-specific fixed intercepts, these can be treated as random effects with a large fixed variance <span class="citation" data-cites="muff2020accounting"><a href="#ref-muff2020accounting" role="doc-biblioref">[12]</a></span>. By treating these intercepts as random effects with a large fixed variance, the model can be reformulated as a generalized linear mixed-effects model (GLMM), allowing for the inclusion of random slopes to account for individual variation in habitat selection.</p>
-<p>Following this framework, we modeled habitat selection in relation to human impact using a Poisson GLMM with a log link, implemented via <code>glmmTMB::glmmTMB</code> <span class="citation" data-cites="brooks2017glmmTMB"><a href="#ref-brooks2017glmmTMB" role="doc-biblioref">[13]</a></span>. Stratum-specific intercepts (one per <code>step_id_</code>) were modeled as random effects with a fixed, large variance to approximate the conditional logistic structure, enabling the inclusion of individual-level random slopes and better capturing heterogeneity in selection behavior.</p>
+<p>Following this framework, we modeled habitat selection in relation to human impact using a Poisson GLMM with a log link (implemented via <code>glmmTMB::glmmTMB</code>; <span class="citation" data-cites="brooks2017glmmTMB"><a href="#ref-brooks2017glmmTMB" role="doc-biblioref">[13]</a></span>). Stratum-specific intercepts (one per <code>step_id_</code>) were modeled as random effects with a fixed, large variance to approximate the conditional logistic structure, enabling the inclusion of individual-level random slopes and better capturing heterogeneity in selection behavior.</p>
 <p>The fixed effects included a two-way interaction between land cover class and both the linear and quadratic terms of standardized human footprint, as well as the natural logarithm of step length to control for movement bias. Human footprint index (HFP) values were standardized before modeling.</p>
 <p>The model can be expressed as:</p>
 <p><span class="math display">\[
@@ -577,7 +582,7 @@ u_{i}
 <li><span class="math inline">\(u_i\)</span> represents individual-level random slopes.</li>
 </ul>
 <p>Interaction terms between land cover and human footprint (both linear and quadratic) were also included but are omitted here for clarity.</p>
-<p>Following model fitting, we used average marginal effects and relative selection strength (RSS) to visualize how habitat selection varied across the human footprint gradient <span class="citation" data-cites="avgar2017relative"><a href="#ref-avgar2017relative" role="doc-biblioref">[14]</a></span> <span class="citation" data-cites="prugh2023fear"><a href="#ref-prugh2023fear" role="doc-biblioref">[5]</a></span>. These metrics were computed from the fitted model to provide an interpretable measure of selection intensity.</p>
+<p>Following model fitting, we used average marginal effects and relative selection strength (RSS) to visualize how habitat selection varied across the human footprint gradient <span class="citation" data-cites="avgar2017relative"><a href="#ref-avgar2017relative" role="doc-biblioref">[14]</a></span>; <span class="citation" data-cites="prugh2023fear"><a href="#ref-prugh2023fear" role="doc-biblioref">[5]</a></span>. These metrics were computed from the fitted model to provide an interpretable measure of selection intensity.</p>
 </section>
 <section id="bobcat-data-exclusion" class="level4">
 <h4 class="anchored" data-anchor-id="bobcat-data-exclusion">Bobcat data exclusion</h4>
@@ -838,7 +843,7 @@ Figure&nbsp;13: Relative selection strength (± 95% confidence interval) for coy
 </section>
 <section id="conclusion" class="level1">
 <h1>Conclusion</h1>
-<p>We have performed spatial data analysis and statistical modeling on externally contributed publicly available data to demonstrate that human activity influences animal behavior significantly. We could show that (1) fox home range sizes are larger in remote areas, and that (2) coyotes prefer forests over built-up areas for habitat selection depending on human footprint.</p>
+<p>This study demonstrates, through spatial analysis and statistical modeling, that human activity significantly influences wild animal movement. We found that (1) red foxes in remote areas have substantially larger home ranges than those in human-impacted landscapes, and (2) coyotes preferentially selected forested and open habitats at low to moderate human footprint, with selection declining as disturbance increased. These results underscore the role of human disturbance in shaping movement behavior and habitat selection.</p>
 </section>
 <section id="appendix" class="level1">
 <h1>Appendix</h1>
@@ -878,7 +883,7 @@ Figure&nbsp;15: Density plot showing predicted relative use from the SSF model f
 </section>
 <section id="use-of-generative-ai" class="level2">
 <h2 class="anchored" data-anchor-id="use-of-generative-ai">Use of generative AI</h2>
-<p>Elke used NotebookLM for querying the papers cited, and ChatGPT for ggplot related queries. Jannis utilized GitHub Copilot for debugging and for assisting in plot creation.</p>
+<p>Elke used <a href="https://notebooklm.google">NotebookLM</a> to query the cited literature and <a href="https://chat.openai.com">ChatGPT</a> for ggplot-related questions; Jannis used <a href="https://github.com/features/copilot">GitHub Copilot</a> for debugging and for assisting with plot creation.</p>
 </section>
 </section>
 <section id="references" class="level1">
@@ -890,40 +895,40 @@ Figure&nbsp;15: Density plot showing predicted relative use from the SSF model f
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body" data-entry-spacing="0" role="list">
 <div id="ref-doherty2021human" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[1] </div><div class="csl-right-inline">T. S. Doherty, G. C. Hays, and D. A. Driscoll, <span>“Human disturbance causes widespread disruption of animal movement,”</span> <em>Nature Ecology &amp; Evolution</em>, vol. 5, no. 4, pp. 513–519, 2021.</div>
+<div class="csl-left-margin">[1] </div><div class="csl-right-inline">T. S. Doherty, G. C. Hays, and D. A. Driscoll, <span>“Human disturbance causes widespread disruption of animal movement,”</span> <em>Nature Ecology &amp; Evolution</em>, vol. 5, no. 4, 2021, doi: <a href="https://doi.org/10.1038/s41559-020-01380-1">10.1038/s41559-020-01380-1</a>.</div>
 </div>
 <div id="ref-kays2022movebank" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[2] </div><div class="csl-right-inline">R. Kays <em>et al.</em>, <span>“The movebank system for studying global animal movement and demography,”</span> <em>Methods in Ecology and Evolution</em>, vol. 13, no. 2, pp. 419–431, 2022.</div>
+<div class="csl-left-margin">[2] </div><div class="csl-right-inline">R. Kays <em>et al.</em>, <span>“The movebank system for studying global animal movement and demography,”</span> <em>Methods in Ecology and Evolution</em>, vol. 13, no. 2, 2022, doi: <a href="https://doi.org/10.1111/2041-210X.13767">10.1111/2041-210X.13767</a>.</div>
 </div>
 <div id="ref-porteus2024movement" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[3] </div><div class="csl-right-inline">T. A. Porteus, M. J. Short, A. N. Hoodless, and J. C. Reynolds, <span>“Movement ecology and minimum density estimates of red foxes in wet grassland habitats used by breeding wading birds,”</span> <em>European Journal of Wildlife Research</em>, vol. 70, no. 1, p. 8, 2024.</div>
+<div class="csl-left-margin">[3] </div><div class="csl-right-inline">T. A. Porteus, M. J. Short, A. N. Hoodless, and J. C. Reynolds, <span>“Movement ecology and minimum density estimates of red foxes in wet grassland habitats used by breeding wading birds,”</span> <em>European Journal of Wildlife Research</em>, vol. 70, no. 8, 2024, doi: <a href="https://doi.org/10.1007/s10344-023-01759-y">10.1007/s10344-023-01759-y</a>.</div>
 </div>
 <div id="ref-lai2022red" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[4] </div><div class="csl-right-inline">S. Lai, C. Warret Rodrigues, D. Gallant, J. D. Roth, and D. Berteaux, <span>“Red foxes at their northern edge: Competition with the arctic fox and winter movements,”</span> <em>Journal of Mammalogy</em>, vol. 103, no. 3, pp. 586–597, 2022.</div>
+<div class="csl-left-margin">[4] </div><div class="csl-right-inline">S. Lai, C. Warret Rodrigues, D. Gallant, J. D. Roth, and D. Berteaux, <span>“Red foxes at their northern edge: Competition with the arctic fox and winter movements,”</span> <em>Journal of Mammalogy</em>, vol. 103, no. 3, pp. 586–597, 2022, doi: <a href="https://doi.org/10.1093/jmammal/gyab164">10.1093/jmammal/gyab164</a>.</div>
 </div>
 <div id="ref-prugh2023fear" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[5] </div><div class="csl-right-inline">L. R. Prugh <em>et al.</em>, <span>“Fear of large carnivores amplifies human-caused mortality for mesopredators,”</span> <em>Science</em>, vol. 380, no. 6646, pp. 754–758, 2023.</div>
+<div class="csl-left-margin">[5] </div><div class="csl-right-inline">L. R. Prugh <em>et al.</em>, <span>“Fear of large carnivores amplifies human-caused mortality for mesopredators,”</span> <em>Science</em>, vol. 380, no. 6646, pp. 754–758, 2023, doi: <a href="https://doi.org/10.1126/science.adf2472">10.1126/science.adf2472</a>.</div>
 </div>
 <div id="ref-gassert2023operational" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[6] </div><div class="csl-right-inline">F. Gassert <em>et al.</em>, <span>“An operational approach to near real time global high resolution mapping of the terrestrial human footprint,”</span> <em>Frontiers in Remote Sensing</em>, vol. 4, p. 1130896, 2023.</div>
+<div class="csl-left-margin">[6] </div><div class="csl-right-inline">F. Gassert <em>et al.</em>, <span>“An operational approach to near real time global high resolution mapping of the terrestrial human footprint,”</span> <em>Frontiers in Remote Sensing</em>, vol. 4, 2023, doi: <a href="https://doi.org/10.3389/frsen.2023.1130896">10.3389/frsen.2023.1130896</a>.</div>
 </div>
 <div id="ref-zanaga2022esa" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[7] </div><div class="csl-right-inline">D. Zanaga <em>et al.</em>, <span>“ESA WorldCover 10 m 2021 v200,”</span> 2022.</div>
+<div class="csl-left-margin">[7] </div><div class="csl-right-inline">D. Zanaga <em>et al.</em>, <span>“ESA WorldCover 10&nbsp;m 2021 v200,”</span> 2022, doi: <a href="https://doi.org/10.5281/zenodo.7254221">10.5281/zenodo.7254221</a>.</div>
 </div>
 <div id="ref-laube2011" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[8] </div><div class="csl-right-inline">P. Laube and R. S. Purves, <span>“How fast is a cow? Cross-scale analysis of movement data,”</span> <em>Transactions in GIS</em>, vol. 15, no. 3, pp. 401–418, 2011.</div>
+<div class="csl-left-margin">[8] </div><div class="csl-right-inline">P. Laube and R. S. Purves, <span>“How fast is a cow? Cross-scale analysis of movement data,”</span> <em>Transactions in GIS</em>, vol. 15, no. 3, pp. 401–418, 2011, doi: <a href="https://doi.org/10.1111/j.1467-9671.2011.01256.x">10.1111/j.1467-9671.2011.01256.x</a>.</div>
 </div>
 <div id="ref-fortin2005wolves" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[9] </div><div class="csl-right-inline">D. Fortin, H. L. Beyer, M. S. Boyce, D. W. Smith, T. Duchesne, and J. S. Mao, <span>“Wolves influence elk movements: Behavior shapes a trophic cascade in yellowstone national park,”</span> <em>Ecology</em>, vol. 86, no. 5, pp. 1320–1330, 2005.</div>
+<div class="csl-left-margin">[9] </div><div class="csl-right-inline">D. Fortin, H. L. Beyer, M. S. Boyce, D. W. Smith, T. Duchesne, and J. S. Mao, <span>“Wolves influence elk movements: Behavior shapes a trophic cascade in yellowstone national park,”</span> <em>Ecology</em>, vol. 86, no. 5, 2005, doi: <a href="https://doi.org/10.1890/04-0953">10.1890/04-0953</a>.</div>
 </div>
 <div id="ref-signer2019animal" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[10] </div><div class="csl-right-inline">J. Signer, J. Fieberg, and T. Avgar, <span>“Animal movement tools (amt): R package for managing tracking data and conducting habitat selection analyses,”</span> <em>Ecology and evolution</em>, vol. 9, no. 2, pp. 880–890, 2019.</div>
+<div class="csl-left-margin">[10] </div><div class="csl-right-inline">J. Signer, J. Fieberg, and T. Avgar, <span>“Animal movement tools (amt): R package for managing tracking data and conducting habitat selection analyses,”</span> <em>Ecology and Evolution</em>, vol. 9, no. 2, pp. 880–890, 2019, doi: <a href="https://doi.org/10.1002/ece3.4823">10.1002/ece3.4823</a>.</div>
 </div>
 <div id="ref-manly2007resource" class="csl-entry" role="listitem">
 <div class="csl-left-margin">[11] </div><div class="csl-right-inline">B. Manly, L. McDonald, D. L. Thomas, T. L. McDonald, and W. P. Erickson, <em>Resource selection by animals: Statistical design and analysis for field studies</em>. Springer Science &amp; Business Media, 2007.</div>
 </div>
 <div id="ref-muff2020accounting" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[12] </div><div class="csl-right-inline">S. Muff, J. Signer, and J. Fieberg, <span>“Accounting for individual-specific variation in habitat-selection studies: Efficient estimation of mixed-effects models using bayesian or frequentist computation,”</span> <em>Journal of Animal Ecology</em>, vol. 89, no. 1, pp. 80–92, 2020.</div>
+<div class="csl-left-margin">[12] </div><div class="csl-right-inline">S. Muff, J. Signer, and J. Fieberg, <span>“Accounting for individual-specific variation in habitat-selection studies: Efficient estimation of mixed-effects models for habitat selection,”</span> <em>Journal of Animal Ecology</em>, vol. 89, no. 1, pp. 80–92, 2020, doi: <a href="https://doi.org/10.1111/1365-2656.13087">10.1111/1365-2656.13087</a>.</div>
 </div>
 <div id="ref-brooks2017glmmTMB" class="csl-entry" role="listitem">
 <div class="csl-left-margin">[13] </div><div class="csl-right-inline">M. E. Brooks <em>et al.</em>, <span>“{glmmTMB} balances speed and flexibility among packages for zero-inflated generalized linear mixed modeling,”</span> <em>The R Journal</em>, vol. 9, no. 2, pp. 378–400, 2017, doi: <a href="https://doi.org/10.32614/RJ-2017-066">10.32614/RJ-2017-066</a>.</div>
@@ -932,13 +937,13 @@ Figure&nbsp;15: Density plot showing predicted relative use from the SSF model f
 <div class="csl-left-margin">[14] </div><div class="csl-right-inline">T. Avgar, S. R. Lele, J. L. Keim, and M. S. Boyce, <span>“Relative selection strength: Quantifying effect size in habitat- and step-selection inference,”</span> <em>Ecology and Evolution</em>, vol. 7, no. 14, pp. 5322–5330, 2017, doi: <a href="https://doi.org/10.1002/ece3.3122">10.1002/ece3.3122</a>.</div>
 </div>
 <div id="ref-nilsen2008can" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[15] </div><div class="csl-right-inline">E. B. Nilsen, S. Pedersen, and J. D. Linnell, <span>“Can minimum convex polygon home ranges be used to draw biologically meaningful conclusions?”</span> <em>Ecological research</em>, vol. 23, pp. 635–639, 2008.</div>
+<div class="csl-left-margin">[15] </div><div class="csl-right-inline">E. B. Nilsen, S. Pedersen, and J. D. C. Linnell, <span>“Can minimum convex polygon home ranges be used to draw biologically meaningful conclusions?”</span> <em>Ecological Research</em>, vol. 23, no. 3, pp. 635–639, 2008, doi: <a href="https://doi.org/10.1007/s11284-007-0421-9">10.1007/s11284-007-0421-9</a>.</div>
 </div>
 <div id="ref-kobryn2023foxes" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[16] </div><div class="csl-right-inline">H. T. Kobryn, E. J. Swinhoe, P. W. Bateman, P. J. Adams, J. M. Shephard, and P. A. Fleming, <span>“Foxes at your front door? Habitat selection and home range estimation of suburban red foxes (vulpes vulpes),”</span> <em>Urban Ecosystems</em>, vol. 26, no. 1, pp. 1–17, 2023.</div>
+<div class="csl-left-margin">[16] </div><div class="csl-right-inline">H. T. Kobryn, E. J. Swinhoe, P. W. Bateman, P. J. Adams, J. M. Shephard, and P. A. Fleming, <span>“Foxes at your front door? Habitat selection and home range estimation of suburban red foxes (<em>vulpes vulpes</em>),”</span> <em>Urban Ecosystems</em>, vol. 26, pp. 1–17, 2023, doi: <a href="https://doi.org/10.1007/s11252-022-01252-5">10.1007/s11252-022-01252-5</a>.</div>
 </div>
 <div id="ref-riley2003effects" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[17] </div><div class="csl-right-inline">S. P. D. Riley <em>et al.</em>, <span>“Effects of urbanization and habitat fragmentation on bobcats and coyotes in southern california,”</span> <em>Conservation Biology</em>, vol. 17, no. 2, pp. 566–576, 2003.</div>
+<div class="csl-left-margin">[17] </div><div class="csl-right-inline">S. P. D. Riley <em>et al.</em>, <span>“Effects of urbanization and habitat fragmentation on bobcats and coyotes in southern california,”</span> <em>Conservation Biology</em>, vol. 17, no. 2, pp. 566–576, 2003, doi: <a href="https://doi.org/10.1046/j.1523-1739.2003.01458.x">10.1046/j.1523-1739.2003.01458.x</a>.</div>
 </div>
 </div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1362,7 +1367,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","selector":".lightbox","loop":false,"openEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {
