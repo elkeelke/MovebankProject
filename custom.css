@@ -25,20 +25,3 @@ img {
   border: 1px solid #424242;
   border-radius: 4px;
 }
-
-/* Remove parentheses from subfigure labels */
-.fig-caption .subfigure-label::before {
-  content: attr(data-subfigure);
-  font-weight: bold;
-}
-
-/* Hide default parentheses */
-.fig-caption .subfigure-label {
-  display: none;
-}
-
-/* Re-insert the label inline without parentheses */
-.fig-caption::after {
-  content: " " attr(data-subfigure);
-  font-weight: bold;
-}
