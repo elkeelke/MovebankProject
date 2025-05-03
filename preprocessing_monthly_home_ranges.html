@@ -430,6 +430,18 @@ Attaching package: 'lubridate'</code></pre>
 [1] 3
 [1] 4
 [1] 5
+&lt;error/move2_error_movebank_api_multiple_rows_of_study_info&gt;
+Error in `movebank_download_study()`:
+! Unexpected event, more then one row of study info
+---
+Backtrace:
+    ▆
+ 1. └─global calculate_monthly_home_ranges(...)
+ 2.   ├─base::tryCatch(...)
+ 3.   │ └─base (local) tryCatchList(expr, classes, parentenv, handlers)
+ 4.   │   └─base (local) tryCatchOne(expr, names, parentenv, handlers[[1L]])
+ 5.   │     └─base (local) doTryCatch(return(expr), name, parentenv, handler)
+ 6.   └─move2::movebank_download_study(...)
 [1] 6
 [1] 7</code></pre>
 </div>
