@@ -25,3 +25,11 @@ img {
   border: 1px solid #424242;
   border-radius: 4px;
 }
+
+/*-- scss:rules --*/
+
+// Change the color of active chapter in TOC
+.sidebar nav[role="doc-toc"] ul li a.active {
+  color: #00A67D !important; // Using your link color
+  border-left: 3px solid #00A67D; // Optional: adds a left border indicator
+}
