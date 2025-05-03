@@ -20,15 +20,14 @@ a.citation:hover {
   text-decoration: none;
 }
 
-.sidebar nav[role=doc-toc] ul>li>a.active, 
-.sidebar nav[role=doc-toc] ul>li>ul>li>a.active {
-  border-left: 1px solid #00A67D !important;
-  color: #00A67D !important;
-}
-
 /* Thin outline around all images */
 img {
   border: 1px solid #424242;
   border-radius: 4px;
 }
 
+.sidebar nav[role=doc-toc] ul>li>a.active,
+.sidebar nav[role=doc-toc] ul>li>ul>li>a.active {
+    border-left: 1px solid #00A67D !important;
+    color: #00A67D !important;
+}
